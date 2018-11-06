@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:MereNear.Views.ViewCells"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.ChatPage" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:TemplateSelector x:Key="MessageTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <Image Margin="10,0,0,0" Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="default_back_icon" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/> 
+                    </Image.GestureRecognizers>
+                </Image>
+                <Grid Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="SenderImage" Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                    <Label x:Name="SenderName" Grid.Column="1" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End"/>
+                    </Grid>
+                
+                <Label Grid.Column="2" BackgroundColor="White" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="&#xf05a;" TextColor="Black" Style="{StaticResource FontAwesomeLabel}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding }"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <StackLayout Grid.Row="1">
+                <ListView ItemTemplate="{StaticResource MessageTemplateSelector}" HasUnevenRows="true" SeparatorVisibility="None" x:Name="listView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding Messages}">
+
+                </ListView>
+            </StackLayout>
+            <Grid Grid.Row="2" Padding="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button BackgroundColor="Transparent" BorderColor="Black" BorderWidth="1" BorderRadius="20" Grid.Column="0" Grid.ColumnSpan="4"/>
+                <Label Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="&#xf118;"  Style="{StaticResource FontAwesomeLabel}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding }"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Entry Placeholder="Type a message.." Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Fill" HeightRequest="30" Text="{Binding MyMessage}"/>
+                <Label Grid.Column="2" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="&#xf0c6;"  Style="{StaticResource FontAwesomeLabel}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SendCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Grid.Column="3" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="&#xf030;"  Style="{StaticResource FontAwesomeLabel}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding }"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Grid.Column="4" BackgroundColor="Green" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Fill" Text="&#xf130;" TextColor="White" Style="{StaticResource FontAwesomeLabel}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding JoinCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.HomeDetailPage" NavigationPage.HasNavigationBar="False"
+             xmlns:common="clr-namespace:MereNear.Views.Common"
+             xmlns:customcontrol="clr-namespace:MereNear.CustomControl">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <common:CustomHeader Grid.Row="0" TitleText="Plumber"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" Padding="5" CornerRadius="30" HasShadow="false"  VerticalOptions="Center"  HeightRequest="40" WidthRequest="300" BorderColor="#3498db" BackgroundColor="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Text="Map" BorderRadius="20"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="{Binding MapButtonTextColor}" BackgroundColor="{Binding MapButtonColor}" Command="{Binding MapViewCommand}"/>
+                    <Button Grid.Column="1" Text="Satellite" BorderRadius="20" HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="{Binding SatelliteButtonTextColor}" BackgroundColor="{Binding SatelliteButtonColor}" Command="{Binding SatelliteViewCommand}"/>
+                </Grid>
+            </Frame>
+
+            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <common:MapView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <Frame Grid.Row="0" HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start" BackgroundColor="Transparent" Padding="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <BoxView Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black"/>
+                        <customcontrol:BaseEntry x:Name="mapSearch" Grid.Row="0" HorizontalOptions="FillAndExpand" Placeholder="Search Address" PlaceholderColor="White" FontSize="16" Text="{Binding SearchBarText}" TextColor="White" ReturnType="Search" Completed="SearchClicked" Margin="10,0,10,0"/>
+                        <!--<Entry Grid.Row="0" HorizontalOptions="FillAndExpand" Placeholder="Search Address" PlaceholderColor="White" FontSize="25" Text="{Binding SearchBarText}" TextColor="White"/>-->
+                        <Image Grid.Row="0" Source="searchicon" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="20" WidthRequest="20" Margin="0,0,10,0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SearchCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </Frame>
+                <!--<SearchBar x:Name="mapSearch" Placeholder="Search Address" PlaceholderColor="LightPink"
+                           HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start" FontSize="20" HorizontalTextAlignment="Start" 
+                           SearchCommand="{Binding SearchCommand}" Text="{Binding SearchBarText}"/>-->
+            </Grid>
+
+            <Button Grid.Row="2" Grid.Column="1" Text="Submit" CornerRadius="30" HorizontalOptions="FillAndExpand" BackgroundColor="Black" TextColor="White" HeightRequest="50" VerticalOptions="Center" Command="{Binding SubmitCommand}"/>
+        </Grid>
+    </Grid>
+</ContentPage>

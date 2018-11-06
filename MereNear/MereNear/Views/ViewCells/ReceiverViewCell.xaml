@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MereNear.Views.ViewCells.ReceiverViewCell">
+  <ViewCell.View>
+        <StackLayout Margin="0" Padding="10,10,80,10">
+            <Grid>
+                <Frame Margin="0" BackgroundColor="White" HasShadow="True" Padding="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="15"/>
+                        </Grid.RowDefinitions>
+                        <Label FontSize="14" Grid.Row="0" Text="{Binding Message}" HorizontalOptions="Fill" VerticalOptions="Start" HorizontalTextAlignment="Start">
+                        </Label>
+                        <Label FontSize="10" Grid.Row="1" Text="{Binding Time}" HorizontalOptions="End" VerticalOptions="End">
+                        </Label>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>

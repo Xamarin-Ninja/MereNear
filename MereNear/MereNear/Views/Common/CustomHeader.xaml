@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MereNear.Views.Common.CustomHeader"
+             x:Name="Root" Padding="0"
+             BackgroundColor="Transparent">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        <Image Margin="10,0,0,0" Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="default_back_icon" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CloseCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Label Grid.Column="1" Text="{Binding Source={x:Reference Root}, Path=TitleText}" FontFamily="Poppins-Regular.ttf#Poppins Regular" FontSize="20" TextColor="Black"  BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Label Margin="0,0,10,0" Grid.Column="2" BackgroundColor="Transparent" HorizontalOptions="End" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="{Binding Source={x:Reference Root}, Path=HeaderRightIcon}"  Style="{StaticResource FontAwesomeLabel}">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HeaderRightIconCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+    </Grid>
+</ContentView>

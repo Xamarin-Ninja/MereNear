@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "765540590957",
+    "firebase_url": "https://merenear-b0ed2.firebaseio.com",
+    "project_id": "merenear-b0ed2",
+    "storage_bucket": "merenear-b0ed2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765540590957:android:4b492e45ac3031c3",
+        "android_client_info": {
+          "package_name": "com.qservices.merenear"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765540590957-8mfr062kc6mhsckgiqcoadgt8hknlc9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qservices.merenear",
+            "certificate_hash": "664d1f7e1ff7e7f1c317822cd47aee9f03d0cda0"
+          }
+        },
+        {
+          "client_id": "765540590957-sdl662lsfgsge901r2k84m0jhk26mdq7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8R6jioWwzXVL7TXWKTSwApRi9NG6GdqI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765540590957-sdl662lsfgsge901r2k84m0jhk26mdq7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SignalR.Views.PersonList">
+    <Grid>
+        <ListView x:Name="personChatList" ItemsSource="{Binding PersonChatList}" SelectedItem="{Binding PersonChatListDetail}"
+                  ItemSelected="PersonChatListItemSeleted">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="logo.png" Grid.Column="0"/>
+                            <Label Text="{Binding PersonName}" Grid.Column="1"/>
+                            <Frame Grid.Column="2" HeightRequest="30" WidthRequest="30" CornerRadius="15" Padding="0" BackgroundColor="Green" IsVisible="{Binding IsNewMessage}">
+                                <Label Text="1" TextColor="Black" BackgroundColor="Transparent"/>
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

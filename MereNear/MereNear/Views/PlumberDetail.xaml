@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.PlumberDetail" NavigationPage.HasNavigationBar="False"
+             xmlns:common="clr-namespace:MereNear.Views.Common"
+             xmlns:Round="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:converters="clr-namespace:MereNear.CustomControl.Converters">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:BoolToNotBoolConverter x:Key="BoolToNotBoolConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <common:CustomHeader Grid.Row="0" TitleText="Plumber"/>
+        <ScrollView Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" IsVisible="{Binding IsMapViewVisible,Converter={StaticResource BoolToNotBoolConverter}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Round:CircleImage Margin="0,0,0,0" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Source="{Binding WorkerPic}" Aspect="AspectFit" BorderColor="#3C3737" BorderThickness="1"/>
+
+                    <StackLayout Orientation="Vertical" Spacing="0" Grid.Row="1" Grid.Column="2" VerticalOptions="Center">
+                        <Label Text="{Binding WorkerName}" HorizontalOptions="StartAndExpand" VerticalOptions="Start"/>
+
+                        <StackLayout Orientation="Horizontal" Spacing="5">
+                            <Image Source="{Binding StarRating1}" VerticalOptions="FillAndExpand">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding StarRating1Command}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image Source="{Binding StarRating2}" VerticalOptions="FillAndExpand">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding StarRating2Command}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image Source="{Binding StarRating3}" VerticalOptions="FillAndExpand">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding StarRating3Command}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image Source="{Binding StarRating4}" VerticalOptions="FillAndExpand">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding StarRating4Command}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image Source="{Binding StarRating5}" VerticalOptions="FillAndExpand">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding StarRating5Command}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <Image Grid.Row="1" Grid.Column="3" Source="call_icon" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding WorkerCallingCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Image Grid.Row="1" Grid.Column="4" Source="info_icon" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding WorkerInfoCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6" HeightRequest="1" BackgroundColor="LightGray"/>
+
+                    <Grid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Column="0" HeightRequest="30" Padding="5,0,5,0" VerticalOptions="Center">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding WorkerLocationCommand}"/>
+                            </Frame.GestureRecognizers>
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="1"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="map_icon" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <BoxView Grid.Column="1" WidthRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="LightGray"/>
+                                <Label Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Locate On Map"/>
+                            </Grid>
+                        </Frame>
+
+                        <Frame Grid.Column="2" HeightRequest="30" VerticalOptions="Center" Padding="5,0,5,0">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="1"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Budget" TextColor="#B3AFAF"/>
+                                <BoxView Grid.Column="1" WidthRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="LightGray"/>
+                                <Label Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="$2500" TextColor="Black" FontAttributes="Bold"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </Grid>
+                
+                <!--Map View-->
+                <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="200" IsVisible="{Binding IsMapViewVisible}">
+                    <common:MapView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Source="setting.png" VerticalOptions="Start" HeightRequest="20" WidthRequest="20"/>
+                    <Label Grid.Row="0" Grid.Column="2" Text="Job Description" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="1" Grid.Column="2" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start">
+                        <Label.Text>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </Label.Text>
+                    </Label>
+
+                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="SkyBlue" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+
+                    <Image Grid.Row="3" Grid.Column="1" Source="time.png" VerticalOptions="Center" HeightRequest="20" WidthRequest="20"/>
+                    <Label Grid.Row="3" Grid.Column="2" Text="Need Services After 5:00 Hours" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+
+                    <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="SkyBlue" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+
+                    <Grid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" VerticalOptions="Center" Source="dbz.jpg"/>
+                        <Image Grid.Column="1" VerticalOptions="Center" Source="dbzs.jpg"/>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </ScrollView>
+        
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <BoxView Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="#C1B6B6" VerticalOptions="Start"/>
+            <Button Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="40" Text="Complete" CornerRadius="30" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="Black" TextColor="White" IsVisible="{Binding IsMapViewVisible,Converter={StaticResource BoolToNotBoolConverter}}" Margin="10,0,10,0"/>
+            <Button Grid.Column="2" Grid.ColumnSpan="2" HeightRequest="40" Text="Not Complete" CornerRadius="30" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="Transparent" TextColor="Black" BorderWidth="1" BorderColor="Black" IsVisible="{Binding IsMapViewVisible,Converter={StaticResource BoolToNotBoolConverter}}" Margin="10,0,10,0"/>
+
+            <Button Grid.Column="1" Grid.ColumnSpan="2" HeightRequest="40" Text="Apply" CornerRadius="30" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="Black" TextColor="White" IsVisible="{Binding IsMapViewVisible}" Command="{Binding ApplyCommand}"/>
+        </Grid>
+    </Grid>
+</ContentPage>

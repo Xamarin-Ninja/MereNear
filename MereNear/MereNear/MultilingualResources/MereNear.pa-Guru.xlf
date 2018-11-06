@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-IN" target-language="pa-Guru" original="MERENEAR/RESOURCES/APPRESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6900.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="MERENEAR/RESOURCES/APPRESOURCES.RESX" datatype="resx">
+        <trans-unit id="HomePageTitle" translate="yes" xml:space="preserve">
+          <source>Home</source>
+          <target state="new">Home</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">HomePage</note>
+        </trans-unit>
+        <trans-unit id="Login_RegisterButton" translate="yes" xml:space="preserve">
+          <source>Login</source>
+          <target state="new">Login</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">SendOtpPage</note>
+        </trans-unit>
+        <trans-unit id="MessagesTab" translate="yes" xml:space="preserve">
+          <source>Messages</source>
+          <target state="new">Messages</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">HomePage</note>
+        </trans-unit>
+        <trans-unit id="MyJobsTab" translate="yes" xml:space="preserve">
+          <source>MyJobs</source>
+          <target state="new">MyJobs</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">HomePage</note>
+        </trans-unit>
+        <trans-unit id="MyPostsTab" translate="yes" xml:space="preserve">
+          <source>My Posts</source>
+          <target state="new">My Posts</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">HomePage</note>
+        </trans-unit>
+        <trans-unit id="NotificationsTab" translate="yes" xml:space="preserve">
+          <source>Notifications</source>
+          <target state="new">Notifications</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">HomePage</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

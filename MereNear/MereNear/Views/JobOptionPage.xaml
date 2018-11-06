@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:common="clr-namespace:MereNear.Views.Common"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.JobOptionPage">
+    <Grid BackgroundColor="White" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Image Margin="10,0,0,0" Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="default_back_icon" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+        <Frame BackgroundColor="White" BorderColor="Gray" HasShadow="True" Grid.Row="1" CornerRadius="10" HeightRequest="300">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="8*"/>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Column="0" Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="White">
+                    <Image Source="pot_job_icon" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Frame>
+                <Label Text="Post a job" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <BoxView BackgroundColor="Gray" HorizontalOptions="Fill" Grid.Row="1" Grid.ColumnSpan="2"/>
+                <Frame Grid.Column="0" Grid.Row="2" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="White">
+                    <Image Source="pot_job_icon" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Frame>
+                <Label Text="Post a job" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:common="clr-namespace:MereNear.Views.Common"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.NotificationsPage" NavigationPage.HasNavigationBar="False">
+    <Grid BackgroundColor="White" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <common:CustomHeader_Hamburger Grid.Row="0" TitleText="Notifications" HeaderRightIcon="&#xf2ed;"/>
+        <ListView x:Name="NotificationList" Grid.Row="1"
+                  RowHeight="80"
+                 SeparatorVisibility="Default"
+                SeparatorColor="#3498db">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="20"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding Icon}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="Start"  VerticalOptions="Center"/>
+                            <Label Text="{Binding Text}" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="Black"/>
+                            <Label Text="{Binding Time}" Grid.Row="1" Grid.Column="1" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" VerticalOptions="Start"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

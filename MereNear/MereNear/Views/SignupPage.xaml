@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.SignupPage" NavigationPage.HasNavigationBar="False"
+             xmlns:common="clr-namespace:MereNear.Views.Common">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <common:CustomHeader Grid.Row="0" TitleText="Sign Up"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="1" Source="logo.png" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="100"/>
+            <Label Grid.Row="1" Grid.Column="1" Text="Mere Near" HorizontalOptions="Center" VerticalOptions="Start" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="50"/>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="85"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--Name Field-->
+                <Grid Grid.Row="0" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Row="0" Grid.Column="0" Source="user_name.png" HeightRequest="20" WidthRequest="20"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Name" Style="{StaticResource BlueLabel}"/>
+
+                    <Entry Grid.Row="1" Grid.Column="1" Placeholder="Enter Your Name" Text="{Binding PersonName}" PlaceholderColor="LightGray"/>
+                    <BoxView Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="LightGray"/>
+                </Grid>
+
+                <!--Phone Number Field-->
+                <Grid Grid.Row="1" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Row="0" Grid.Column="0" Source="phone.png" HeightRequest="20" WidthRequest="20"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Phone Number" Style="{StaticResource BlueLabel}"/>
+
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" CornerRadius="5" HeightRequest="30" HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="#8DB7E0" Text="+91" BackgroundColor="White" BorderColor="#8DB7E0" BorderWidth="1"/>
+                        <Entry Grid.Column="1" Placeholder="XXX-XXX-XXXX" Text="{Binding MobileNumber}" PlaceholderColor="LightGray"/>
+                    </Grid>
+                    <BoxView Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="LightGray"/>
+                </Grid>
+
+                <!--Button Field-->
+                <Grid Grid.Row="2" VerticalOptions="End">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="45"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0" Orientation="Horizontal" Margin="15,0,0,0">
+                        <Image Source="{Binding CheckImage}" HeightRequest="15" WidthRequest="15"/>
+                        <Label Text="I agree with all Terms and Conditions" FontSize="12"/>
+                    </StackLayout>
+                    <Button Grid.Row="1" Text="Sign Up" CornerRadius="25" BackgroundColor="Black" TextColor="White" Command="{Binding SignupCommand}"/>
+                </Grid>
+
+                <!--Footer Label Field-->
+                <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10">
+                    <Label Text="Already Have An Account"/>
+                    <Label Text="Login" TextColor="#8DB7E0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FooterLabelCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</ContentPage>

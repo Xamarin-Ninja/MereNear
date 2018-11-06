@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.ProfilePage" NavigationPage.HasNavigationBar="False"
+             xmlns:common="clr-namespace:MereNear.Views.Common">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <common:CustomHeader Grid.Row="0" TitleText="Profile"/>
+        <Grid Grid.Row="1" Padding="0,30,0,0" RowSpacing="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="profilepic.png" Grid.Row="0" HeightRequest="100" WidthRequest="150" HorizontalOptions="CenterAndExpand" />
+            <Frame Grid.Row="1" HorizontalOptions="Center" Padding="0" BackgroundColor="Transparent" CornerRadius="5" OutlineColor="#253888">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#253888"/>
+                    <Label Grid.Column="0" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding StarRatingText}"/>
+
+                    <Image Grid.Column="1" Source="{Binding StarRating1}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding StarRating1Command}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Grid.Column="2" Source="{Binding StarRating2}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding StarRating2Command}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Grid.Column="3" Source="{Binding StarRating3}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding StarRating3Command}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Grid.Column="4" Source="{Binding StarRating4}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding StarRating4Command}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Grid.Column="5" Source="{Binding StarRating5}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding StarRating5Command}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Frame>
+
+            <Grid Grid.Row="2" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="0"  Grid.Column="0"  Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
+                    <Label Text="($100)"   HorizontalOptions="Start" HorizontalTextAlignment="Center" FontSize="15"  TextColor="#3498db"/>
+                    <Label Text="Earning" TextColor="Gray" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalOptions="End">
+                    <Label Text="($100)" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="15" TextColor="#3498db"/>
+                    <Label Text="Spent" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="15" TextColor="Gray"/>
+                </StackLayout>
+
+                <StackLayout  Grid.Row="0" Grid.Column="2" Orientation="Horizontal" VerticalOptions="End">
+                    <Label Text="(50)" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="15" TextColor="#3498db"/>
+                    <Label Text="Comments" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="15" TextColor="Gray"/>
+                </StackLayout>
+
+            </Grid>
+            <BoxView Grid.Row="3"   BackgroundColor="#3498db" VerticalOptions="FillAndExpand"/>
+
+            <Label Text="Personal Details" Margin="20,0,0,0" Grid.Row="3" HorizontalOptions="Start" VerticalOptions="Center" FontSize="18" TextColor="White"/>
+
+            <Grid Grid.Row="4" RowSpacing="5" Padding="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1"/>
+                </Grid.RowDefinitions>
+                <Label Text="Name"  Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End" FontSize="20" Margin="20,0,0,0" TextColor="Black" />
+                <Entry Grid.Row="1" Placeholder="Name" Text="{Binding PersonName}" HorizontalOptions="FillAndExpand" FontSize="20" VerticalOptions="Start" Margin="20,0,0,0" TextColor="Gray" PlaceholderColor="Gray"/>
+                <BoxView Grid.Row="2" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" BackgroundColor="#3498db"/>
+                <Label Text="Mobile No." Grid.Row="4" HorizontalOptions="Start" VerticalOptions="End" VerticalTextAlignment="End" FontSize="20" Margin="20,0,0,0" TextColor="Black"/>
+                <Entry Placeholder="(+91) xxx-xxx-xxxx" Text="{Binding PersonMobileNumber}" Grid.Row="5" HorizontalOptions="FillAndExpand" FontSize="20" VerticalOptions="FillAndExpand" Margin="20,0,0,0"  TextColor="Gray" PlaceholderColor="Gray"/>
+                <BoxView Grid.Row="6" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" BackgroundColor="#3498db"/>
+            </Grid>
+            <Button Text="Save Details" BackgroundColor="Black" CornerRadius="30" TextColor="White" Grid.Row="5" HorizontalOptions="Center" HeightRequest="60" WidthRequest="300" VerticalOptions="Center" Command="{Binding SaveCommand}"/>
+        </Grid>
+    </Grid>
+</ContentPage>

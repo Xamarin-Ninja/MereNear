@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.Common.MenuPage"
+             Title="Main Menu">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label"  x:Key="itemLableStyle">
+                <Setter Property="FontSize" Value ="14"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <!--<Setter Property="FontAttributes" Value="Bold"/>-->
+            </Style>
+            <Style TargetType="Image"  x:Key="ImageStyle">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="End"></Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Spacing="0">
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="4.2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Start" Source="logout.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding LogoutCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Margin="0,10,0,0" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Source="logo.png" Aspect="AspectFit"/>
+                <Label Text="app version:2.3" HorizontalOptions="Center"
+                       Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                       BackgroundColor="#036af"
+                       FontSize="12"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center"/>
+            </Grid>
+            <!--MENU LIST-->
+            <StackLayout Spacing="0">
+                <!--#region StaticMasterPage-->
+                <!--<Grid ColumnSpacing="0" RowSpacing="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="34"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="34"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="34"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="34"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    --><!--Home--><!--
+                    <Grid BackgroundColor="#f2f2f2" Grid.Row="0" Grid.Column="0">
+                        <Image Style="{StaticResource ImageStyle}" Source="{Binding HomeIcon}"/>
+                    </Grid>
+                    <Grid BackgroundColor="#f2f2f2" Grid.Row="0" Grid.Column="1">
+                        <Label Style="{StaticResource itemLableStyle}" BackgroundColor="#f2f2f2"  Text="Home" Margin="10,0,0,0">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateToHomeCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+
+                    --><!--Profile--><!--
+                    <Image Style="{StaticResource ImageStyle}" Grid.Row="1" Grid.Column="0"  Source="{Binding ProfileIcon}"/>
+                    <Label FontAttributes="Bold" Style="{StaticResource itemLableStyle}" Grid.Row="1" Grid.Column="1" Text="Profile" Margin="10,0,0,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToProfileCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    --><!--Change Language--><!--
+                    <Grid BackgroundColor="#f2f2f2" Grid.Row="2" Grid.Column="0" >
+                        <Image Style="{StaticResource ImageStyle}" Source="{Binding LanguageIcon}"/>
+                    </Grid>
+                    <Grid BackgroundColor="#f2f2f2" Grid.Row="2" Grid.Column="1" >
+                        <Label FontAttributes="Bold" Style="{StaticResource itemLableStyle}" Text="Change Language" Margin="10,0,0,0">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateToLanguageCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                    
+                    --><!--Rate Us--><!--
+                    <Image Style="{StaticResource ImageStyle}" Grid.Row="3" Grid.Column="0" Source="{Binding RateIcon}"/>
+                    <Label FontAttributes="Bold" Style="{StaticResource itemLableStyle}" Grid.Row="3" Grid.Column="1" Text="Rate Us" Margin="10,0,0,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToRateusCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    
+                    --><!--How Mere Near Work--><!--
+                    <Grid BackgroundColor="#f2f2f2" Grid.Row="4" Grid.Column="0" >
+                        <Image Style="{StaticResource ImageStyle}" Source="{Binding MereNearWorkIcon}"/>
+                    </Grid>
+                    <Grid BackgroundColor="#f2f2f2" Grid.Row="4" Grid.Column="1" >
+                        <Label FontAttributes="Bold" Style="{StaticResource itemLableStyle}"  Text="How Mere Near Work" Margin="10,0,0,0">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateToMereNearWorkCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                    <Image Style="{StaticResource ImageStyle}" Grid.Row="5" Margin="20,5,0,5" Grid.Column="0" Source="menu3.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Label FontAttributes="Bold" Style="{StaticResource itemLableStyle}" Grid.Row="5" Grid.Column="1" Text="{artina:Translate Brands}"  Margin="10,0,0,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToBrandsCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Grid BackgroundColor="#f2f2f2" Grid.Row="6" Grid.Column="0" >
+                        <Image Style="{StaticResource ImageStyle}"   Source="settings.png"/>
+                    </Grid>
+                    <Grid BackgroundColor="#f2f2f2" Grid.Row="6" Grid.Column="1">
+                        <Label FontAttributes="Bold" Style="{StaticResource itemLableStyle}" Text="{artina:Translate Settings}" Margin="10,0,0,0">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateToSettingsCommand}"/>
+
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                    <Image Style="{StaticResource ImageStyle}" Grid.Row="7" Grid.Column="0" Source="logout.png"/>
+                    <Label FontAttributes="Bold" Style="{StaticResource itemLableStyle}" Grid.Row="7" Grid.Column="1" Text="{artina:Translate Logout}" Margin="10,0,0,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateLogoutCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Grid.Row="8" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Grid.ColumnSpan="2" ></Label>
+                </Grid>-->
+                <!--#endregion-->
+                <ListView x:Name="masterMenuList" ItemsSource="{Binding MasterMenuListData}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid BackgroundColor="#f2f2f2" Grid.Row="0" Grid.Column="0">
+                                        <Image Style="{StaticResource ImageStyle}" Source="{Binding MasterMenuIcon}"/>
+                                    </Grid>
+                                    <Grid BackgroundColor="#f2f2f2" Grid.Row="0" Grid.Column="1">
+                                        <Label Style="{StaticResource itemLableStyle}" BackgroundColor="#f2f2f2"  Text="{Binding MasterMenuLabel}" Margin="10,0,0,0"/>
+                                    </Grid>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

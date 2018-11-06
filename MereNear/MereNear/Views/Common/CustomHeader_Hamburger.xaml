@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MereNear.Views.Common.CustomHeader_Hamburger"
+             x:Name="Root" Padding="0"
+             BackgroundColor="Transparent">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        <Label Margin="15,0,0,0" Grid.Column="0"  BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Medium" TextColor="Black" Text="{Binding Source={x:Reference Root}, Path=HeaderLeftIcon}" Style="{StaticResource FontAwesomeLabel}">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HeaderLeftIconCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Margin="0,0,0,0" Grid.Column="1" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" Text="{Binding Source={x:Reference Root}, Path=HeaderLeft2ndIcon}" Style="{StaticResource FontAwesomeLabel}">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HeaderLeft2ndIconCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+        
+        <Label Grid.Column="2" Text="{Binding Source={x:Reference Root}, Path=TitleText}"  FontSize="20" TextColor="Black"  BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+        <Label Margin="0,0,0,0" Grid.Column="3" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black" Text="{Binding Source={x:Reference Root}, Path=HeaderRight2ndIcon}" Style="{StaticResource FontAwesomeLabel}">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HeaderRight2ndIconCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Margin="0,0,10,0" Grid.Column="4" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" Text="{Binding Source={x:Reference Root}, Path=HeaderRightIcon}" Style="{StaticResource FontAwesomeLabel}">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HeaderRightIconCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+    </Grid>
+</ContentView>

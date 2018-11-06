@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SignalR.Views.LoginPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Frame Margin="10,0,10,0" Grid.Row="1" Padding="0" CornerRadius="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Entry Grid.Row="0" Text="{Binding User_First_Name}" Placeholder="Enter your first name..."/>
+                <!--<Entry Grid.Row="1" Text="{Binding User_Last_Name}" Placeholder="Enter your last name..."/>-->
+                <Button Text="Login" Command="{Binding LoginCommand}" Grid.Row="2"/>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>
