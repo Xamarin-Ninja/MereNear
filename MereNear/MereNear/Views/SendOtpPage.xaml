@@ -32,6 +32,6 @@
         <Entry x:Name="OTP4" Placeholder="." Grid.Row="2" Grid.Column="3" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Fill" VerticalOptions="Center" FontFamily="Poppins-Bold.ttf#Poppins Bold" PlaceholderColor="Gray" TextColor="Gray" MaxLength="1"/>
         <BoxView BackgroundColor="Black" HeightRequest="1" Grid.Row="3" Grid.ColumnSpan="4" HorizontalOptions="Fill" VerticalOptions="Start"/>
         <Label Text="Auto verifying OTP" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" FontSize="15" TextColor="Gray"/>
-        <Button BackgroundColor="#70DA44" x:Name="SubmitButton" Text="SUBMIT" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="5" Grid.ColumnSpan="5" Command="{Binding SubmitCommand}" />
+        <Button BackgroundColor="#70DA44" Margin="-20,0,-20,-20" x:Name="SubmitButton" Text="SUBMIT" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="5" Grid.ColumnSpan="5" Command="{Binding SubmitCommand}" />
     </Grid>
 </ContentPage>

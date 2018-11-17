@@ -4,6 +4,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:common="clr-namespace:MereNear.Views.Common"
              prism:ViewModelLocator.AutowireViewModel="True"
+             NavigationPage.HasNavigationBar="False"
              x:Class="MereNear.Views.JobOptionPage">
     <Grid BackgroundColor="White" RowSpacing="0">
         <Grid.RowDefinitions>
@@ -20,11 +21,11 @@
             </Grid.ColumnDefinitions>
             <Image Margin="10,0,0,0" Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="default_back_icon" >
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    <TapGestureRecognizer Command="{Binding BackIconCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
         </Grid>
-        <Frame BackgroundColor="White" BorderColor="Gray" HasShadow="True" Grid.Row="1" CornerRadius="10" HeightRequest="300">
+        <Frame Margin="20" BackgroundColor="White" BorderColor="Gray" Padding="0" HasShadow="True" Grid.Row="2" CornerRadius="10" HeightRequest="250">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -32,18 +33,26 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="6*"/>
                 </Grid.ColumnDefinitions>
-                <Frame Grid.Column="0" Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="White">
-                    <Image Source="pot_job_icon" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Frame Grid.Column="0" Grid.Row="0" BorderColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="White" HasShadow="True">
+                    <Image Source="post_job_icon" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Frame>
-                <Label Text="Post a job" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text="Post a job" Grid.Row="0" Grid.Column="1" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PostJobCliked}"/>
+                    </Label.GestureRecognizers>
+                </Label>
                 <BoxView BackgroundColor="Gray" HorizontalOptions="Fill" Grid.Row="1" Grid.ColumnSpan="2"/>
-                <Frame Grid.Column="0" Grid.Row="2" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="White">
-                    <Image Source="pot_job_icon" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Frame Grid.Column="0" Grid.Row="2" BorderColor="Gray" HasShadow="True" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White">
+                    <Image Source="post_job_icon" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Frame>
-                <Label Text="Post a job" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text="Looking for a job" Grid.Row="2" Grid.Column="1" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding LookingForAJobCliked}"/>
+                    </Label.GestureRecognizers>
+                </Label>
             </Grid>
         </Frame>
     </Grid>

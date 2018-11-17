@@ -14,7 +14,7 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class ChatPageViewModel : BindableBase
+	public class ChatPageViewModel : BindableBase, INavigationAware
 	{
         private readonly INavigationService _navigationService;
         private IChatServices _chatServices;
@@ -69,19 +69,18 @@ namespace MereNear.ViewModels
             _roomName = "Rahul";
 
             _chatServices.Connect();
-            try
-            {
-                if (a == 1)
-                {
-                    _chatServices.JoinRoom(_roomName);
-                    a = 2;
-                    //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
-                }
-            }
-            catch (Exception ex)
-            {
-                UserDialogs.Instance.Alert(ex.Message);
-            }
+            //try
+            //{
+            //    if (a == 1)
+            //    {
+            //        _chatServices.JoinRoom(_roomName);
+            //        a = 2;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    UserDialogs.Instance.Alert(ex.Message);
+            //}
             _chatServices.OnMessageReceived += _chatServices_OnMessageReceived;
         }
         void _chatServices_OnMessageReceived(object sender, ChatItem e)
@@ -98,6 +97,20 @@ namespace MereNear.ViewModels
             _messages.Add(new ChatItem { Name = e.Name, Message = e.Message, SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm")});
         }
 
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+           
+        }
+
+        public void OnNavigatingTo(INavigationParameters parameters)
+        {
+            
+        }
 
         public int a = 1;
         public ICommand SendCommand

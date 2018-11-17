@@ -1,4 +1,5 @@
-﻿using MereNear.Views;
+﻿using Acr.UserDialogs;
+using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -50,15 +51,24 @@ namespace MereNear.ViewModels
                     //param.Add("RoomName", PersonRoomName);
                     ////param.Add("PersonChatList", PersonChatList);
                     //_navigationService.NavigateAsync("/NavigationPage/ChatPage",param);
-                    App.Current.MainPage.Navigation.PushAsync(new ChatPage());
+                    try
+                    {
+                        //App.Current.MainPage.Navigation.PushAsync(new ChatPage());
+                        GetNavigation();
+                    }
+                    catch (Exception ex)
+                    {
+                        UserDialogs.Instance.Alert(ex.Message);
+                    }
 
                 }
             }
         }
 
 
-        public MessagesPageViewModel()
+        public MessagesPageViewModel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
             GetPersonChatList();
         }
 
@@ -66,6 +76,11 @@ namespace MereNear.ViewModels
         {
             PersonChatList.Add(new MessagesListItems { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit", Icon = "logo.png", Time = "01:40pm", Name = "Rahul" });
             PersonChatList.Add(new MessagesListItems { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit", Icon = "logo.png", Time = "01:40pm", Name = "Pardeep" });
+        }
+
+        public async void GetNavigation()
+        {
+            await _navigationService.NavigateAsync(nameof(ChatPage));
         }
     }
 }

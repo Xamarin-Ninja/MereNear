@@ -442,9 +442,17 @@ namespace MereNear.ViewModels
         {
             get
             {
-                return new DelegateCommand(() =>
+                return new DelegateCommand(async() =>
                 {
-                    _navigationService.NavigateAsync("/NavigationPage/JobOptionPage");
+                    try
+                    {
+                        await _navigationService.NavigateAsync(new Uri("/NavigationPage/JobOptionPage", UriKind.Absolute));
+                    }
+                    catch (Exception ex)
+                    {
+                        UserDialogs.Instance.Alert(ex.Message);
+                    }
+                    
                 });
             }
         }

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MereNear.Views.PopUp.PopUpLogin">
+  <ContentView.Content>
+        <Frame HeightRequest="300" BackgroundColor="White" CornerRadius="10" HasShadow="True" Padding="5">
+            <StackLayout>
+                <Image Source="close_red.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start"/>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Label Text="You must login in the app to contact for any service" FontSize="20" TextColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                    <Button BackgroundColor="#70DA44" Margin="-25,0,-25,0" Image="login_icon.png" x:Name="NextButton" Text="Go to Login" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="40"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+  </ContentView.Content>
+</ContentView>

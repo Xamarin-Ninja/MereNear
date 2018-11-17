@@ -77,6 +77,9 @@
     <EmbeddedResource Update="Views\ChatPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ChooseCategoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\HomeTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -95,6 +98,15 @@
     <EmbeddedResource Update="Views\MessagesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\MyJobs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MyPosts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MyPostsDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\NewView\HomePageListData.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -102,6 +114,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\NotificationsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PickLocationMapPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PopUp\PopUpLogin.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PostDescriptionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ViewCells\ReceiverViewCell.xaml">
@@ -116,6 +137,12 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChooseCategoryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\Common\CustomHeader.xaml">
@@ -142,6 +169,9 @@
     <None Update="Views\HomeTabbedPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Views\JobOptionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Views\LanguagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
@@ -151,7 +181,22 @@
     <None Update="Views\Login_Page.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Views\Login_Page2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MessagesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MyJobs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MyPosts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MyPostsDetail.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\NewView\HomePageListData.xaml">
@@ -160,7 +205,19 @@
     <None Update="Views\NewView\HomePageView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Views\NotificationsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\PickLocationMapPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Views\PlumberDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\PopUp\PopUpLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\PostDescriptionPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\PostPage.xaml">
@@ -179,6 +236,12 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\TermConditionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ViewCells\ReceiverViewCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ViewCells\SenderViewCell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
   </ItemGroup>

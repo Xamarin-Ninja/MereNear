@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:common="clr-namespace:MereNear.Views.Common"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.MyPosts" NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <common:CustomHeader Grid.Row="0" TitleText="My Posts"/>
+        <!--<ListView x:Name="postListItems"  RowHeight="70"
+              SeparatorVisibility="Default" SeparatorColor="#3498db">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10,20,10,0" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding WorkerJobType}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"  VerticalOptions="Center"  TextColor="Black" FontSize="15"/>
+                            <Label Text="{Binding WorkerJobStatus}" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" TextColor="{Binding JobStatusColor}"/>
+                            <Label Text="{Binding WorkerJobDate}" Grid.Row="1" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Start" FontSize="12"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+        <ListView x:Name="postListItems" ItemsSource="{Binding MyPostItems}" Grid.Row="1"
+              SelectedItem="{Binding SelectedPost}"
+                 RowHeight="120"
+                 SeparatorVisibility="Default"
+                SeparatorColor="Transparent"
+                 ItemSelected="Handle_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame  Padding="0" HasShadow="true"  Margin="10,10,10,10" BorderColor="#f7f7f7" CornerRadius="5">
+                            <Grid Padding="10,10,10,5" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="30"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Image}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" HorizontalOptions="Start" VerticalOptions="Start"/>
+                                <Label Text="{Binding CategoryName}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start"  VerticalOptions="Center"  TextColor="Black" FontSize="15"/>
+                                <Label Text="Posted By:" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start" TextColor="Black" FontSize="12"/>
+                                <Label Text="{Binding Name}" Grid.Row="1" Grid.Column="1"  HorizontalOptions="End" VerticalOptions="Start" TextColor="Gray" FontSize="12"/>
+                                <Label Text="When" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start" FontSize="10" TextColor="Black"/>
+                                <Label Text="{Binding Date}" Grid.Row="2" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" FontSize="10" TextColor="Gray"/>
+                                <Label Text="Time" Grid.Row="2" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Start" FontSize="10" TextColor="Black"/>
+                                <Label Text="{Binding Time}" Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Start" FontSize="10" TextColor="Gray"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

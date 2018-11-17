@@ -104,6 +104,30 @@ namespace MereNear.ViewModels
             }
         }
 
+        public ICommand MyJobTapped
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    await _navigationService.NavigateAsync(new Uri("/NavigationPage/MyJobs", UriKind.Relative));
+                    //App.Current.MainPage.Navigation.PushAsync(new MyJobs());
+                });
+            }
+        }
+
+        public ICommand MyPostTapped
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    await _navigationService.NavigateAsync(new Uri("/NavigationPage/MyPosts", UriKind.Relative));
+                    //App.Current.MainPage.Navigation.PushAsync(new MyPosts());
+                });
+            }
+        }
+
         public ICommand MessagesTapped
         {
             get

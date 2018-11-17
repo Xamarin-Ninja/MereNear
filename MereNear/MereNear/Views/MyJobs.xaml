@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:common="clr-namespace:MereNear.Views.Common"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.MyJobs" NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <common:CustomHeader Grid.Row="0" TitleText="My Jobs"/>
+        <ListView x:Name="jobListItems" ItemsSource="{Binding MyjobItems}" Grid.Row="1"
+                  SelectedItem="{Binding SelectedJobs}"
+                 RowHeight="70"
+                 SeparatorVisibility="Default"
+                SeparatorColor="Gray">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10,20,10,0" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding WorkerJobType}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"  VerticalOptions="Center"  TextColor="Black" FontSize="15"/>
+                            <Label Text="{Binding WorkerJobStatus}" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" TextColor="{Binding JobStatusColor}"/>
+                            <Label Text="{Binding WorkerJobDate}" Grid.Row="1" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Start" FontSize="12"/>
+                            <StackLayout  Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                                <Image Source="" VerticalOptions="Start" HeightRequest="10" WidthRequest="10" HorizontalOptions="Start"/>
+                                <Label Text="{Binding WorkerJobAddress}" VerticalOptions="Start" TextColor="Gray"  FontSize="12"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

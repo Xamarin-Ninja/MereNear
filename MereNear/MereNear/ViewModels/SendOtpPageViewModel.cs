@@ -36,7 +36,7 @@ namespace MereNear.ViewModels
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine("Ex:- Exception on going to About Page:" + ex.Message);
+                        Debug.WriteLine("Ex:- Exception on going to Home Page:" + ex.Message);
                     }
                 });
             }

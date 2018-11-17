@@ -7,11 +7,11 @@
             x:Class="MereNear.Views.HomeTabbedPage"
             NavigationPage.HasNavigationBar="False"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.ToolbarPlacement="Bottom" BarTextColor="LightGreen"
             android:TabbedPage.IsSwipePagingEnabled="False">
-    <tabs:HomePage Icon="homeblack.png" Title="Home" IsTabStop="False"/>
+    <tabs:HomePage Icon="car_wash.png" Title="Home" IsTabStop="False"/>
     <ContentPage Icon="post_job.png" Title="MyJobs"/>
     <tabs:NotificationsPage Icon="notification.png" Title="Notifications"/>
     <tabs:MessagesPage Icon="message.png" Title="Messages"/>
-    <tabs:PostPage Title="Post"/>
+    <tabs:PostPage Title="Post" Icon="call_icon.png"/>
 </TabbedPage>

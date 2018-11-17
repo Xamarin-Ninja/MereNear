@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using MereNear.Model;
+using MereNear.Views;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -71,9 +72,10 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Private Methods
-        private void GoToHomePage()
+        private async void GoToHomePage()
         {
-            _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
+            //_navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
+            await _navigationService.NavigateAsync(nameof(Login_Page));
         }
         //private void GetLanguages()
         //{

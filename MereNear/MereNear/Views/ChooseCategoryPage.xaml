@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:flv="clr-namespace:CustomFlowListView"
+             xmlns:common="clr-namespace:MereNear.Views.Common"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.ChooseCategoryPage" NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <common:CustomHeader Grid.Row="0" TitleText="Post a job"/>
+        <Grid Padding="10" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="Choose category" FontSize="15" HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,0,0" VerticalTextAlignment="Center"/>
+            <flv:FlowListView Grid.Row="1" FlowItemTapped="SelectedItemTap" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="True"
+                          FlowItemsSource="{Binding PostJobcategory}" FlowLastTappedItem="{Binding SelectedItemCommand}">
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10,20,0,10" CornerRadius="4" Margin="5" OutlineColor="{Binding FrameColor}">
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Grid.Row="0" Source="{Binding ServiceCategoryImage}" HorizontalOptions="Start" HeightRequest="80" WidthRequest="80"/>
+                                <Label Grid.Row="1" Text="{Binding ServiceCategoryName}" TextColor="Black" FontSize="15"/>
+                                <Label Grid.Row="2" Text="{Binding AvailableServiceProvider,StringFormat='Available {0:N} Persons'}" TextColor="#9A9A9A" FontSize="12"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+
+            </flv:FlowListView>
+
+        </Grid>
+        <Button BackgroundColor="#70DA44" x:Name="NextButton" Text="Next" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="2" IsVisible="False" Command="{Binding NextButtonCommand}"/>
+    </Grid>
+</ContentPage>

@@ -47,7 +47,7 @@ namespace MereNear
             DependencyService.Get<ILocalize>().SetLocale();
             App.CultureCode = string.Empty;
 
-            await NavigationService.NavigateAsync("NavigationPage/Login_Page2");
+            await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -74,6 +74,12 @@ namespace MereNear
             containerRegistry.RegisterForNavigation<MessagesPage, MessagesPageViewModel>();
             containerRegistry.RegisterForNavigation<ChatPage, ChatPageViewModel>();
             containerRegistry.RegisterForNavigation<JobOptionPage, JobOptionPageViewModel>();
+            containerRegistry.RegisterForNavigation<ChooseCategoryPage, ChooseCategoryPageViewModel>();
+            containerRegistry.RegisterForNavigation<MyPosts, MyPostsViewModel>();
+            containerRegistry.RegisterForNavigation<MyPostsDetail, MyPostsDetailViewModel>();
+            containerRegistry.RegisterForNavigation<MyJobs, MyJobsViewModel>();
+            containerRegistry.RegisterForNavigation<PostDescriptionPage, PostDescriptionPageViewModel>();
+            containerRegistry.RegisterForNavigation<PickLocationMapPage, PickLocationMapPageViewModel>();
         }
 
         //protected override void OnStart()

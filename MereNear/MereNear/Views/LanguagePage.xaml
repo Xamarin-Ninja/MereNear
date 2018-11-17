@@ -18,7 +18,7 @@
             </Grid.RowDefinitions>
             <!--<Image Source="logo.png" Grid.Row="1"  HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFill"/>-->
             <Grid Grid.Row="1">
-                <Frame BackgroundColor="White" CornerRadius="10" Margin="5,0,5,0" IsClippedToBounds="True">
+                <Frame BackgroundColor="White" CornerRadius="10" Margin="5,0,5,0" IsClippedToBounds="True" BorderColor="Gray" HasShadow="True">
                 </Frame>
             </Grid>
         </Grid>
