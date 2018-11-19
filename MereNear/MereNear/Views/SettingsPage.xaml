@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:common="clr-namespace:MereNear.Views.Common"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.SettingsPage" NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <common:CustomHeader_Hamburger Grid.Row="0" TitleText="Settings" HeaderLeftIcon="&#xf0c9;"/>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="user_icon" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text="Account" Grid.Row="0" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
+
+                <Label Text="Change mobile number" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text=">" Grid.Row="1" Grid.Column="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="End" VerticalOptions="Center"/>
+
+
+                <Image Source="notification_icon" Grid.Row="3" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text="Notifications" Grid.Row="3" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
+
+                <Label Text="Notifications" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Switch Grid.Row="4" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" OnColor="LawnGreen"/>
+
+                <Label Text="App Notifications" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Switch Grid.Row="5" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" OnColor="LawnGreen"/>
+
+                <Image Source="tickbox_icon" Grid.Row="7" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text="More" Grid.Row="7" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
+
+                <Label Text="Change language" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text=">" Grid.Row="8" Grid.Column="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="End" VerticalOptions="Center"/>
+
+
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

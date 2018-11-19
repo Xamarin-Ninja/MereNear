@@ -22,11 +22,8 @@
                     <BoxView BackgroundColor="Black" HeightRequest="1" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
                 </Grid>
                 <!--MENU LIST-->
-                <ScrollView>
-                    <StackLayout VerticalOptions="FillAndExpand">
-                        <StackLayout Spacing="0" Margin="0,10,0,0">
-
-                            <Grid RowSpacing="5">
+                <ScrollView Padding="0">
+                    <Grid RowSpacing="5" Margin="0,10,0,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50"/>
                                     <ColumnDefinition Width="*"/>
@@ -41,61 +38,78 @@
                                     <RowDefinition Height="40"/>
                                     <RowDefinition Height="40"/>
                                     <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
+
                                 <Label Text="&#xf518;" Grid.Row="0" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <Label Text="About Us" Margin="7,0,0,0" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
+                                <Label Text="Home" Margin="7,0,0,0" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding HomePageTappped}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+
+                                <Label Text="&#xf518;" Grid.Row="1" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Label Text="About Us" Margin="7,0,0,0" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding AboutUsTapped}"/>
                                     </Label.GestureRecognizers>
                                 </Label>
 
-                                <Label Text="&#xf0b1;" Grid.Row="1" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <Label Text="My Jobs" Margin="7,0,0,0" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
+                                <Label Text="&#xf0b1;" Grid.Row="2" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Label Text="My Jobs" Margin="7,0,0,0" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding MyJobTapped}"/>
                                     </Label.GestureRecognizers>
                                 </Label>
 
-                                <Label Text="&#xf022;" Grid.Row="2" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <Label Text="My Posts" Margin="7,0,0,0" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
+                                <Label Text="&#xf022;" Grid.Row="3" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Label Text="My Posts" Margin="7,0,0,0" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding MyPostTapped}"/>
                                     </Label.GestureRecognizers>
                                 </Label>
 
-                                <Label Text="&#xf15c;" Grid.Row="3" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <Label Text="Our Policies" Margin="7,0,0,0" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
+                                <Label Text="&#xf15c;" Grid.Row="4" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Label Text="Our Policies" Margin="7,0,0,0" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding PolicyTapped}"/>
                                     </Label.GestureRecognizers>
                                 </Label>
 
-                                <Label Text="&#xf27a;" Grid.Row="4" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <Label Text="Messages" Margin="7,0,0,0" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
+                                <Label Text="&#xf27a;" Grid.Row="5" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Label Text="Rate Us" Margin="7,0,0,0" Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                                     <Label.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding MessagesTapped}"/>
+                                        <TapGestureRecognizer Command="{Binding RateUsTapped}"/>
                                     </Label.GestureRecognizers>
                                 </Label>
 
-                                <Label Text="&#xf013;" Grid.Row="5" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <Label Text="Settings" Margin="7,0,0,0" Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                                <Label Text="&#xf013;" Grid.Row="6" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
+                        <Label Text="Settings" Margin="7,0,0,0" Grid.Row="6" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SettingsTapped}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
 
-                                <Label Text="&#xf0c0;" Grid.Row="6" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <Label Text="Support" Margin="7,0,0,0" Grid.Row="6" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
-                                <BoxView BackgroundColor="#DD5049"  Grid.Row="7" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                                <Label Text="&#xf2f5;" Grid.Row="7" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <Label Text="Logout" Margin="7,0,0,0" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="White"/>
+                        <Label Text="&#xf0c0;" Grid.Row="7" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Label Text="Support" Margin="7,0,0,0" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SupportTapped}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <BoxView BackgroundColor="#DD5049"  Grid.Row="8" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                <Label Text="&#xf2f5;" Grid.Row="8" Grid.Column="0" Style="{StaticResource FontAwesomeLabel}" TextColor="White" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Label Text="Logout" Margin="7,0,0,0" Grid.Row="8" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="White">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding LogOutTapped}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <BoxView Grid.Row="9" BackgroundColor="LightGreen" HeightRequest="2" Grid.ColumnSpan="2" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"/>
                             </Grid>
                             <!--#endregion-->
-                        </StackLayout>
-                        <Grid VerticalOptions="End">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <BoxView Grid.Row="1" BackgroundColor="LightGreen" HeightRequest="2" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
-                        </Grid>
-                    </StackLayout>
                 </ScrollView>
             </StackLayout>
         </ContentPage>

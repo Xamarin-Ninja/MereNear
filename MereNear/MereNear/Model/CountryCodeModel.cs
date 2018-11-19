@@ -9,10 +9,10 @@ namespace MereNear.Model
     {
         [JsonProperty ("name")]
         public string CountryName { get; set; }
-        [JsonProperty("code")]
-        public string CountryCode { get; set; }
         [JsonProperty("dial_code")]
         public string CountryDialCode { get; set; }
+        [JsonProperty("code")]
+        public string CountryCode { get; set; }
     }
 
     public class CountryStatusModel

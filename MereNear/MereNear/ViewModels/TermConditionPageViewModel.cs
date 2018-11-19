@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
@@ -26,6 +27,17 @@ namespace MereNear.ViewModels
                 return new DelegateCommand(() =>
                 {
                     _navigationService.GoBackAsync();
+                });
+            }
+        }
+
+        public ICommand HeaderLeftIconCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    MessagingCenter.Send("HamburgurClick", "OpenMasterDetailPage");
                 });
             }
         }

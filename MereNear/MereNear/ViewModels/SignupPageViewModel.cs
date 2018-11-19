@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MereNear.Services;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -13,20 +14,35 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class LoginMobilePageViewModel : BindableBase
+	public class SignupPageViewModel : BindableBase
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
+
+        private ImageSource _checkImage = "check.png";
         private string _mobileNumber;
+        private string _personName;
         #endregion
 
         #region Public Variables
+        public int a;
         public string OTPNumber;
-        public int a, b;
+        public ImageSource CheckImage
+        {
+            get { return _checkImage; }
+            set { SetProperty(ref _checkImage, value); }
+        }
+
         public string MobileNumber
         {
             get { return _mobileNumber; }
             set { SetProperty(ref _mobileNumber, value); }
+        }
+
+        public string PersonName
+        {
+            get { return _personName; }
+            set { SetProperty(ref _personName, value); }
         }
         #endregion
 
@@ -35,25 +51,14 @@ namespace MereNear.ViewModels
         {
             get
             {
-                return new DelegateCommand(async () =>
+                return new DelegateCommand(() =>
                 {
-                    try
-                    {
-                        UserDialogs.Instance.ShowLoading("Loading");
-                        await Task.Delay(1000);
-                        //await _navigationService.NavigateAsync(nameof(SignupPage), null, true);
-                        UserDialogs.Instance.HideLoading();
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine("Ex:- Exception on going to Signup Page:" + ex.Message);
-                        UserDialogs.Instance.HideLoading();
-                    }
+                    _navigationService.GoBackAsync();
                 });
             }
         }
 
-        public ICommand LoginCommand
+        public ICommand SignupCommand
         {
             get
             {
@@ -83,10 +88,10 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Constructor
-        public LoginMobilePageViewModel(INavigationService navigationService)
+        public SignupPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            a = b = 1;
+            a = 1;
         }
         #endregion
 

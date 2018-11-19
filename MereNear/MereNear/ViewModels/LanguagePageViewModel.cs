@@ -67,14 +67,29 @@ namespace MereNear.ViewModels
         public LanguagePageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+            //GetLanguages();
         }
         #endregion
 
         #region Private Methods
         private async void GoToHomePage()
         {
+            //_navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
             await _navigationService.NavigateAsync(nameof(Login_Page));
         }
+        //private void GetLanguages()
+        //{
+        //    LanguagePicker.Add(new LanguageModel
+        //    {
+        //        DisplayName = "English",
+        //        ShortName = "en"
+        //    });
+        //    LanguagePicker.Add(new LanguageModel
+        //    {
+        //        DisplayName = "Hindi",
+        //        ShortName = "hi"
+        //    });
+        //}
         #endregion
     }
 }

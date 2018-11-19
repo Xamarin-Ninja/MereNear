@@ -10,25 +10,23 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <common:CustomHeader_Hamburger Grid.Row="0" TitleText="Our policy and Terms &amp; Conditions" HeaderLeftIcon="&#xf0c9;" />
+        <common:CustomHeader_Hamburger Grid.Row="0" TitleText="Our Policy" HeaderLeftIcon="&#xf0c9;" />
         <ScrollView Grid.Row="1">
             <Grid Padding="5" RowSpacing="10" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Text="About mere near" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="End" HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                    <BoxView HeightRequest="2.5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" HorizontalOptions="Fill" VerticalOptions="End" BackgroundColor="#70DA44"/>
-                </Grid>
-                <Image Source="Image1.jpg" Grid.Row="1" Aspect="Fill" Margin="0,10,0,5"/>
-                <Label  Grid.Row="2"  TextColor="Gray" FontSize="15" FontFamily="Poppins-Regular.ttf#Poppins Regular" Text="Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use.The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use.The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use.The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use.The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum  "/>
+                <Label Text="Privacy Policy" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold"/>
+                <Label  Grid.Row="1" TextColor="Gray" FontSize="15" FontFamily="Poppins-Regular.ttf#Poppins Regular" Text="At QServices Inc. we are committed to safeguarding and preserving the privacy of our visitors. The data is gathered under two stages by QSI. The individual and contact data is asked by people contacting us via our hire-us form. This information is used to analyze the the demand of the prospect and to get in touch with them back. Upon the beginning of a project, some other information in regarding the project specifics and payments is exchanged with the customer. This information is never imparted with any outsider under any conditions. The information we gather is used exclusively for the purpose of contacting the clients and providing them with a hospitable and quick service."/>
+                <Label Text="Privacy Policy" Grid.Row="2" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold"/>
+                <Label  Grid.Row="3" TextColor="Gray" FontSize="15" FontFamily="Poppins-Regular.ttf#Poppins Regular" Text="At QServices Inc. we are committed to safeguarding and preserving the privacy of our visitors. The data is gathered under two stages by QSI. The individual and contact data is asked by people contacting us via our hire-us form. This information is used to analyze the the demand of the prospect and to get in touch with them back. Upon the beginning of a project, some other information in regarding the project specifics and payments is exchanged with the customer. This information is never imparted with any outsider under any conditions. The information we gather is used exclusively for the purpose of contacting the clients and providing them with a hospitable and quick service."/>
+                <Label Text="Privacy Policy" Grid.Row="4" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold"/>
+                <Label  Grid.Row="5" TextColor="Gray" FontSize="15" FontFamily="Poppins-Regular.ttf#Poppins Regular" Text="At QServices Inc. we are committed to safeguarding and preserving the privacy of our visitors. The data is gathered under two stages by QSI. The individual and contact data is asked by people contacting us via our hire-us form. This information is used to analyze the the demand of the prospect and to get in touch with them back. Upon the beginning of a project, some other information in regarding the project specifics and payments is exchanged with the customer. This information is never imparted with any outsider under any conditions. The information we gather is used exclusively for the purpose of contacting the clients and providing them with a hospitable and quick service."/>
 
             </Grid>
         </ScrollView>

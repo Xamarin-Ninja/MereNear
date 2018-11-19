@@ -22,6 +22,8 @@ namespace MereNear.Model
         public string Image { get; set; }
 
         public string Name { get; set; }
+
+        public int ID { get; set; }
     }
 
 }

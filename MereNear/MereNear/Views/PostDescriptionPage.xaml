@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:common="clr-namespace:MereNear.Views.Common"
+             xmlns:Popup="clr-namespace:MereNear.Views.PopUp"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MereNear.Views.PostDescriptionPage" NavigationPage.HasNavigationBar="False">
 
@@ -63,11 +64,13 @@
         </Grid>
 
 
-        <Label Text="Add Photos(Optional)" FontFamily="Poppins-Regular.ttf#Poppins Regular" Grid.Row="5" Grid.Column="0" HorizontalOptions="Start" FontSize="14"/>
+        <Label Text="Add Photos(Optional)" FontFamily="Poppins-Regular.ttf#Poppins Regular" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Start" FontSize="14"/>
 
         <Image Source="upload_photo_icon.jpg" Grid.Row="6" Grid.Column="0" Aspect="AspectFill" HeightRequest="70"/>
         <Image Source="upload_photo_icon.jpg" Grid.Row="6" Grid.Column="1" Aspect="AspectFill" HeightRequest="70"/>
         
-        <Button BackgroundColor="#70DA44" Text="Submit" Grid.ColumnSpan="2" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="8" Margin="-10,0,-10,-10" Command="{Binding SubmitClicked}" />
+        <Button BackgroundColor="#70DA44" Text="Preview" Grid.ColumnSpan="2" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="8" Margin="-10,0,-10,-10" Command="{Binding PreviewClicked}" />
+        <BoxView BackgroundColor="Transparent" Grid.Row="0" Grid.RowSpan="9" IsVisible="{Binding IsPreviewVisible}"/>
+        <Popup:PreviewPopup Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="9" IsVisible="{Binding IsPreviewVisible}" Margin="10,50"/>
     </Grid>
 </ContentPage>

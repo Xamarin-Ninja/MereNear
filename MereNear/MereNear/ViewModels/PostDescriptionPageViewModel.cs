@@ -24,11 +24,25 @@ namespace MereNear.ViewModels
         private PostJobModel _jobModel = new PostJobModel();
         private DateTime _jobDate;
         private DateTime _jobTime;
+        private string _categoryName;
+        private string _locationAddress;
+
+        private bool _isPreviewVisible = false;
         #endregion
 
         #region Public Variables
-        public string LocationAddress { get; set; }
-        public string CategoryName { get; set; }
+        public string LocationAddress
+        {
+            get { return _locationAddress; }
+            set { SetProperty(ref _locationAddress, value); }
+        }
+
+        public string CategoryName
+        {
+            get { return _categoryName; }
+            set { SetProperty(ref _categoryName, value); }
+        }
+
         public string Description
         {
             get { return _description; }
@@ -48,6 +62,11 @@ namespace MereNear.ViewModels
         {
             get { return _jobTime; }
             set { SetProperty(ref _jobTime, value); }
+        }
+        public bool IsPreviewVisible
+        {
+            get { return _isPreviewVisible; }
+            set { SetProperty(ref _isPreviewVisible, value); }
         }
 
 
@@ -97,12 +116,34 @@ namespace MereNear.ViewModels
                 });
             }
         }
+        public ICommand PopupCloseCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    IsPreviewVisible = false;
+                });
+            }
+        }
 
-        public ICommand SubmitClicked
+        public ICommand SubmitPostCommand
         {
             get
             {
                 return new DelegateCommand(async() =>
+                {
+                    var param = new NavigationParameters();
+                    param.Add("PostJobData", JobModel);
+                    await _navigationService.NavigateAsync("/NavigationPage/MyPosts", param);
+                });
+            }
+        }
+        public ICommand PreviewClicked
+        {
+            get
+            {
+                return new DelegateCommand(() =>
                 {
                     JobModel.Address = LocationAddress;
                     JobModel.CategoryName = CategoryName;
@@ -114,25 +155,27 @@ namespace MereNear.ViewModels
                     }
                     else
                     {
-                        JobModel.Date = DateTime.Now.Date.ToString();
-                        JobModel.Time = DateTime.Now.TimeOfDay.ToString();
+                        JobModel.Date = DateTime.Now.Date.ToString("dd/MM/yyyy");
+                       // JobModel.Time = DateTime.Now.TimeOfDay.ToString("HH:mm");
                     }
-                    bool item = await App.Current.MainPage.DisplayAlert("Post Job", "Sure To Post a Job", "Post", "Cancel");
-                    if (item)
-                    {
-                        var param = new NavigationParameters();
-                        param.Add("PostJobData", JobModel);
-                        await _navigationService.NavigateAsync("/NavigationPage/MyPosts",param);
-                    }
-                    else
-                    {
-                        await _navigationService.GoBackToRootAsync();
-                    }
+
+                    MessagingCenter.Send(JobModel, "PreviewData");
+
+                    IsPreviewVisible = true;
+                    //bool item = await App.Current.MainPage.DisplayAlert("Post Job", "Sure To Post a Job", "Post", "Cancel");
+                    //if (item)
+                    //{
+                    //    var param = new NavigationParameters();
+                    //    param.Add("PostJobData", JobModel);
+                    //    await _navigationService.NavigateAsync("/NavigationPage/MyPosts",param);
+                    //}
+                    //else
+                    //{
+                    //    await _navigationService.GoBackToRootAsync();
+                    //}
                 });
             }
         }
-
-
         #endregion
 
         #region Constructor

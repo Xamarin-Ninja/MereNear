@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using Android.Content;
 using MereNear.Model;
 using MereNear.Views;
 using Prism.Commands;
@@ -93,6 +94,17 @@ namespace MereNear.ViewModels
 
         #region Command
 
+        public ICommand HomePageTappped
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    _navigationService.NavigateAsync(new Uri("/NavigationPage/HomeTabbedPage", UriKind.Relative));
+                });
+            }
+        }
+
         public ICommand AboutUsTapped
         {
             get
@@ -128,28 +140,65 @@ namespace MereNear.ViewModels
             }
         }
 
-        public ICommand MessagesTapped
-        {
-            get
-            {
-                return new DelegateCommand(() =>
-                {
-                    _navigationService.NavigateAsync(new Uri("/NavigationPage/MessagesPage", UriKind.Relative));
-                });
-            }
-        }
-
         public ICommand PolicyTapped
         {
             get
             {
-                return new DelegateCommand(() =>
+                return new DelegateCommand(async() =>
                 {
-                    _navigationService.NavigateAsync(new Uri("/NavigationPage/TermConditionPage", UriKind.Relative));
+                  await _navigationService.NavigateAsync(new Uri("/NavigationPage/TermConditionPage", UriKind.Relative));
                 });
             }
         }
-
+        
+        public ICommand RateUsTapped
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {    
+                    if(Device.RuntimePlatform == Device.Android)
+                    {
+                        Device.OpenUri(new Uri("https://play.google.com/store/apps/details?id=com.qservices.mereNear&hl=en"));
+                    }
+                    if (Device.RuntimePlatform == Device.iOS)
+                    {
+                        Device.OpenUri(new Uri("https://itunes.apple.com/in/app/fishdom/id1046482500?mt=12"));
+                    }
+                });
+            }
+        }
+        
+        public ICommand SupportTapped
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    await _navigationService.NavigateAsync(new Uri("/NavigationPage/ChatPage", UriKind.Relative));
+                });
+            }
+        }
+        public ICommand SettingsTapped
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                   await _navigationService.NavigateAsync(new Uri("/NavigationPage/SettingsPage", UriKind.Relative));
+                });
+            }
+        }
+        public ICommand LogOutTapped
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                  await _navigationService.NavigateAsync(new Uri("/NavigationPage/Login_page"));
+                });
+            }
+        }
         #endregion
 
         #region Constructor

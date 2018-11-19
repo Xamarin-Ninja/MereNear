@@ -3,7 +3,7 @@ using MereNear.Interface;
 using Prism;
 using Prism.Ioc;
 using UIKit;
-
+using Xamarin;
 
 namespace MereNear.iOS
 {
@@ -23,7 +23,7 @@ namespace MereNear.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-
+            FormsMaps.Init();
             /*Screen height and width */
             App.ScreenHeight = (int)UIScreen.MainScreen.Bounds.Height;
             App.ScreenWidth = (int)UIScreen.MainScreen.Bounds.Width;

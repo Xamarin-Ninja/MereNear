@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MereNear.ViewModels
@@ -49,6 +50,19 @@ namespace MereNear.ViewModels
                         UserDialogs.Instance.Alert(ex.Message);
                     }
                 }
+            }
+        }
+        #endregion
+
+        #region Command
+        public ICommand HeaderLeftIconCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    MessagingCenter.Send("HamburgurClick", "OpenMasterDetailPage");
+                });
             }
         }
         #endregion

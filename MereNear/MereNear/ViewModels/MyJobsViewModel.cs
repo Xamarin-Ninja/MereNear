@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MereNear.ViewModels
@@ -12,12 +13,15 @@ namespace MereNear.ViewModels
 	public class MyJobsViewModel : BindableBase
 	{
         private ObservableCollection<MyJobsModel> _myjobItems = new ObservableCollection<MyJobsModel>();
+        private MyJobsModel _selectedJobs;
+
+
+
         public ObservableCollection<MyJobsModel> MyjobItems
         {
             get { return _myjobItems; }
             set { SetProperty(ref _myjobItems, value); }
         }
-        private MyJobsModel _selectedJobs;
         public MyJobsModel SelectedJobs
         {
             get { return _selectedJobs; }
@@ -34,6 +38,8 @@ namespace MereNear.ViewModels
                 }
             }
         }
+
+
         public MyJobsViewModel()
         {
             MyjobItems.Add(new MyJobsModel
@@ -69,7 +75,21 @@ namespace MereNear.ViewModels
                 JobStatusColor = Color.Green
             });
         }
-	}
+
+        public ICommand HeaderLeftIconCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    MessagingCenter.Send("HamburgurClick", "OpenMasterDetailPage");
+                });
+            }
+        }
+
+    }
+
+
     public class MyJobsModel
     {
         public string WorkerJobType { get; set; }

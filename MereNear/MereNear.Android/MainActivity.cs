@@ -8,6 +8,7 @@ using Plugin.Permissions;
 using Prism;
 using Prism.Ioc;
 using Xamarin;
+using Xamarin.Forms;
 
 namespace MereNear.Droid
 {
