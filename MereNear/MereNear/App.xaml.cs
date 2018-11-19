@@ -38,6 +38,7 @@ namespace MereNear
         {
             InitializeComponent();
 
+
             #region SignalR Chat Implement Part 2
             _chatServices = DependencyService.Get<IChatServices>();
             //_chatServices.Connect();
