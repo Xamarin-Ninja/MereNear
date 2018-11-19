@@ -17,6 +17,10 @@ namespace MereNear.ViewModels
         private readonly INavigationService _navigationService;
         #endregion
 
+        #region Public Variables
+
+        #endregion
+
         #region Commnad
 
         public ICommand PostJobCliked
@@ -51,11 +55,19 @@ namespace MereNear.ViewModels
             }
         }
         #endregion
+
+        #region Constructor
         public JobOptionPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
         }
+        #endregion
 
+        #region Private Method
+
+        #endregion
+
+        #region Navigation Parameters
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
             
@@ -70,5 +82,6 @@ namespace MereNear.ViewModels
         {
             
         }
+        #endregion
     }
 }

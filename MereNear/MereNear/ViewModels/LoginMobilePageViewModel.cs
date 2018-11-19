@@ -21,8 +21,6 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Public Variables
-        public string OTPNumber;
-        public int a, b;
         public string MobileNumber
         {
             get { return _mobileNumber; }
@@ -31,28 +29,6 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Command
-        public ICommand FooterLabelCommand
-        {
-            get
-            {
-                return new DelegateCommand(async () =>
-                {
-                    try
-                    {
-                        UserDialogs.Instance.ShowLoading("Loading");
-                        await Task.Delay(1000);
-                        //await _navigationService.NavigateAsync(nameof(SignupPage), null, true);
-                        UserDialogs.Instance.HideLoading();
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine("Ex:- Exception on going to Signup Page:" + ex.Message);
-                        UserDialogs.Instance.HideLoading();
-                    }
-                });
-            }
-        }
-
         public ICommand LoginCommand
         {
             get
@@ -63,13 +39,7 @@ namespace MereNear.ViewModels
                     {
                         UserDialogs.Instance.ShowLoading("Loading");
                         await Task.Delay(1000);
-                        Application.Current.Properties["OTPNumber"] = OTPNumber = GenerateRandomNo().ToString();
-                        //var smsMessanger = CrossMessaging.Current.SmsMessenger;
-                        //if (smsMessanger.CanSendSms)
-                        //{
-                        //    smsMessanger.SendSmsInBackground(MobileNumber, OTPNumber);
                         await _navigationService.NavigateAsync(nameof(SendOtpPage), null, null, true);
-                        //}
                         UserDialogs.Instance.HideLoading();
                     }
                     catch (Exception ex)
@@ -86,18 +56,10 @@ namespace MereNear.ViewModels
         public LoginMobilePageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            a = b = 1;
         }
         #endregion
 
-        #region Private Methods
-        private int GenerateRandomNo()
-        {
-            Random _rdm = new Random();
-            int _min = 0000;
-            int _max = 9999;
-            return _rdm.Next(_min, _max);
-        }
+        #region Private Methods        
         #endregion
     }
 }
