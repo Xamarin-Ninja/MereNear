@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace MereNear.ViewModels
 {
@@ -36,6 +37,8 @@ namespace MereNear.ViewModels
             get { return _locationAddress; }
             set { SetProperty(ref _locationAddress, value); }
         }
+
+        public Position LocationAddressPosition { get; set; }
 
         public string CategoryName
         {
@@ -212,8 +215,12 @@ namespace MereNear.ViewModels
             {
                 if (parameters.ContainsKey("Categoryname"))
                 {
-                    LocationAddress = (string)parameters["Address"];
-                    CategoryName = (string)parameters["Categoryname"];
+                    if (parameters.ContainsKey("AddressPosition"))
+                    {
+                        LocationAddress = (string)parameters["Address"];
+                        CategoryName = (string)parameters["Categoryname"];
+                        LocationAddressPosition = (Position)parameters["AddressPosition"];
+                    }
                 }
             }
         }

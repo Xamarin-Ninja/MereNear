@@ -25,7 +25,7 @@ namespace MereNear.Views
                     IEnumerable<string> pickedaddress = await gc.GetAddressesForPositionAsync(pickedposition);
 
                     address = pickedaddress.First().ToString();
-                    MessagingCenter.Send(address, "LocationAddress");
+                    MessagingCenter.Send(address, "LocationAddress",pickedposition);
                 }
             };
         }

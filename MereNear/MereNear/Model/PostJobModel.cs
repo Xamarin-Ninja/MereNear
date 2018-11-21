@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace MereNear.Model
 {
     public class PostJobModel
     {
+        public int ID { get; set; }
+
         public string Address { get; set; }
 
         public string CategoryName { get; set; }
+
+        public string CategoryWork { get; set; }
+
+        public string WorkTitle { get; set; }
 
         public string Description { get; set; }
 
@@ -23,7 +24,13 @@ namespace MereNear.Model
 
         public string Name { get; set; }
 
-        public int ID { get; set; }
+        public string Status { get; set; }
+
+        public Color StatusColor { get; set; }
+
+        public Color TimeColor { get; set; }
+
+        public string Distance { get; set; }
     }
 
 }

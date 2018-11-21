@@ -10,6 +10,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace MereNear.ViewModels
 {
@@ -27,7 +28,8 @@ namespace MereNear.ViewModels
         public bool IsPostAJob { get; set; }
         public bool IsLookingForAJob { get; set; }
         public string LocationAddress { get; set; }
-        
+        public Position LocationAddressPosition { get; set; }
+
         public CategoryListModel SelectedItemCommand
         {
             get { return _selectedItemCommand; }
@@ -72,6 +74,7 @@ namespace MereNear.ViewModels
                         var data = (CategoryListModel)Application.Current.Properties["LastSelectedValue"];
                         var param = new NavigationParameters();
                         param.Add("Address", LocationAddress);
+                        param.Add("AddressPosition", LocationAddressPosition);
                         param.Add("Categoryname", data.ServiceCategoryName);
                         await _navigationService.NavigateAsync(nameof(PostDescriptionPage), param);
                     }
@@ -80,7 +83,7 @@ namespace MereNear.ViewModels
                         var data = (CategoryListModel)Application.Current.Properties["LastSelectedValue"];
                         var param = new NavigationParameters();
                         param.Add("Categoryname", data.ServiceCategoryName);
-                        await _navigationService.NavigateAsync(nameof(MyJobs), param);
+                        await _navigationService.NavigateAsync(nameof(AllJobs), param);
                     }
 
                 });
@@ -119,8 +122,12 @@ namespace MereNear.ViewModels
         {
             if (parameters.ContainsKey("Address"))
             {
-                LocationAddress = (string)parameters["Address"];
-                IsPostAJob = true;
+                if (parameters.ContainsKey("AddressPosition"))
+                {
+                    LocationAddress = (string)parameters["Address"];
+                    LocationAddressPosition = (Position)parameters["AddressPosition"];
+                    IsPostAJob = true; 
+                }
             }
             else
             {

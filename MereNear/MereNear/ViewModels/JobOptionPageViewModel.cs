@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace MereNear.ViewModels
 {
-	public class JobOptionPageViewModel : BindableBase,INavigationAware
+	public class JobOptionPageViewModel : BindableBase
 	{
 
         #region Private Variables
@@ -18,7 +18,6 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Commnad
-
         public ICommand PostJobCliked
         {
             get
@@ -30,6 +29,7 @@ namespace MereNear.ViewModels
                 });
             }
         }
+
         public ICommand LookingForAJobCliked
         {
             get
@@ -40,6 +40,7 @@ namespace MereNear.ViewModels
                 });
             }
         }
+
         public ICommand BackIconCommand
         {
             get
@@ -51,24 +52,12 @@ namespace MereNear.ViewModels
             }
         }
         #endregion
+
+        #region Constructor
         public JobOptionPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
         }
-
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            
-        }
-
-        public void OnNavigatedTo(INavigationParameters parameters)
-        {
-            
-        }
-
-        public void OnNavigatingTo(INavigationParameters parameters)
-        {
-            
-        }
+        #endregion
     }
 }

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace MereNear.ViewModels
 {
@@ -15,6 +16,7 @@ namespace MereNear.ViewModels
         #region Private Variables
         private readonly INavigationService _navigationService;
         private string _address;
+        private Position _addressPosition;
         #endregion
 
         #region Public Variables
@@ -23,6 +25,12 @@ namespace MereNear.ViewModels
             get { return _address; }
             set { SetProperty(ref _address, value); }
         }
+        
+        public Position AddressPosition
+        {
+            get { return _addressPosition; }
+            set { SetProperty(ref _addressPosition, value); }
+        }
         #endregion
 
         #region Constructor
@@ -30,9 +38,10 @@ namespace MereNear.ViewModels
         {
             _navigationService = navigationService;
 
-            MessagingCenter.Subscribe<string>(this, "LocationAddress", (sender) =>
+            MessagingCenter.Subscribe<string,Position>(this, "LocationAddress", (sender, pickedposition) =>
             {
                 Address = sender;
+                AddressPosition = pickedposition;
             });
         }
         #endregion
@@ -46,6 +55,7 @@ namespace MereNear.ViewModels
                 {
                     var param = new NavigationParameters();
                     param.Add("Address", Address);
+                    param.Add("AddressPosition", AddressPosition);
                     await _navigationService.NavigateAsync(nameof(ChooseCategoryPage),param);
                 });
             }

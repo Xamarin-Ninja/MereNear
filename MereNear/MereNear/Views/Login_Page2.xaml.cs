@@ -25,10 +25,10 @@ namespace MereNear.Views
             }
         }
 
-        private void NextButton_Clicked(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new SendOtpPage(MobileEntry.Text), true);
-           // Navigation.PushAsync(new MessagesPage(), true);
-        }
+        //private void NextButton_Clicked(object sender, System.EventArgs e)
+        //{
+        //    Navigation.PushAsync(new SendOtpPage(MobileEntry.Text), true);
+        //   // Navigation.PushAsync(new MessagesPage(), true);
+        //}
     }
 }

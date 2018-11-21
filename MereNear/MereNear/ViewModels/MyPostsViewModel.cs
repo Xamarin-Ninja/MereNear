@@ -115,7 +115,7 @@ namespace MereNear.ViewModels
         public async void GetNavigation(PostJobModel data)
         {
             var param = new NavigationParameters();
-            param.Add("MyPostDetailed", data);
+            param.Add("MyPostsData", data);
             await _navigationService.NavigateAsync(nameof(MyPostsDetail), param);
         }
 

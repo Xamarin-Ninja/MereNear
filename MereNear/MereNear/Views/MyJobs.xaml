@@ -10,33 +10,52 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <common:CustomHeader_Hamburger Grid.Row="0" TitleText="My Jobs" HeaderLeftIcon="&#xf0c9;"/>
+        <common:CustomHeader Grid.Row="0" TitleText="My Jobs"/>
         <ListView x:Name="jobListItems" ItemsSource="{Binding MyjobItems}" Grid.Row="1"
-                  SelectedItem="{Binding SelectedJobs}"
-                 RowHeight="70"
+              SelectedItem="{Binding SelectedJobs}"
+                 RowHeight="160"
                  SeparatorVisibility="Default"
-                SeparatorColor="Gray">
+                SeparatorColor="Transparent">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="10,20,10,0" RowSpacing="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Text="{Binding WorkerJobType}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"  VerticalOptions="Center"  TextColor="Black" FontSize="15"/>
-                            <Label Text="{Binding WorkerJobStatus}" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" TextColor="{Binding JobStatusColor}"/>
-                            <Label Text="{Binding WorkerJobDate}" Grid.Row="1" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Start" FontSize="12"/>
-                            <StackLayout  Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
-                                <Image Source="" VerticalOptions="Start" HeightRequest="10" WidthRequest="10" HorizontalOptions="Start"/>
-                                <Label Text="{Binding WorkerJobAddress}" VerticalOptions="Start" TextColor="Gray"  FontSize="12"/>
-                            </StackLayout>
-                        </Grid>
+                        <Frame Padding="0"  Margin="10" BorderColor="#f7f7f7" CornerRadius="5">
+                            <Grid Padding="10,0,10,0" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="6*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Image}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                                    <Label Text="{Binding Name}" Style="{StaticResource GreenLabel}" FontSize="12"/>
+                                    <Label Text="{Binding CategoryName,StringFormat='({0:N})'}" Style="{StaticResource GrayLabel}" FontSize="12"/>
+                                </StackLayout>
+                                <Label Text="{Binding Status}" TextColor="{Binding StatusColor}" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" FontSize="12"/>
+
+                                <Label Text="{Binding CategoryWork}" Grid.Row="1" Grid.Column="1" Style="{StaticResource GrayLabel}" HorizontalOptions="Start" FontSize="12"/>
+
+                                <StackLayout Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Binding Date}" HorizontalOptions="End" HorizontalTextAlignment="End" FontSize="10" Style="{StaticResource GrayLabel}"/>
+
+                                    <Label Text="{Binding Time}" TextColor="{Binding TimeColor}" HorizontalOptions="End" HorizontalTextAlignment="End" FontSize="10"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="Start">
+                                    <Image Source="" HeightRequest="10" WidthRequest="10"/>
+                                    <Label Text="{Binding Address}" Style="{StaticResource GrayLabel}" LineBreakMode="TailTruncation"/>
+                                </StackLayout>
+
+                                <Label Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" Text="{Binding Distance,StringFormat='({0:N} Km)'}" Style="{StaticResource BlueLabel}" FontSize="12" VerticalOptions="Start"/>
+                            </Grid>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
