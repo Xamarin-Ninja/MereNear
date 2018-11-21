@@ -8,7 +8,10 @@
             set;
         }
 
-        public string Name { get; set; }
+        public string Name
+        {
+            get; set;
+        }
 
         public string Message
         {
@@ -23,6 +26,22 @@
         }
 
         public int SenderType
+        {
+            get;
+            set;
+        }
+
+        public bool IsRecieverDealType
+        {
+            get;
+            set;
+        }
+        public string DealAmount
+        {
+            get;
+            set;
+        }
+        public string CurrencyType
         {
             get;
             set;

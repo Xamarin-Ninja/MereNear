@@ -26,6 +26,44 @@ namespace MereNear.ViewModels
             set { SetProperty(ref _senderType, value); }
         }
 
+        private bool _isMenuVisible = false;
+
+        public bool IsMenuVisible
+        {
+            get { return _isMenuVisible; }
+            set { SetProperty(ref _isMenuVisible, value); }
+        }
+        private bool _isOverlayVisible = false;
+
+        public bool IsOverlayVisible
+        {
+            get { return _isOverlayVisible; }
+            set { SetProperty(ref _isOverlayVisible, value); }
+        }
+        private bool _isMakeDealVisible = false;
+
+        public bool IsMakeDealVisible
+        {
+            get { return _isMakeDealVisible; }
+            set { SetProperty(ref _isMakeDealVisible, value); }
+        }
+
+
+        private string _dealAmount;
+
+        public string DealAmount
+        {
+            get { return _dealAmount; }
+            set { SetProperty(ref _dealAmount, value); }
+        }
+
+        private string _currencyType;
+
+        public string CurrencyType
+        {
+            get { return _currencyType; }
+            set { SetProperty(ref _currencyType, value); }
+        }
         #region ChatMsgViewModel
         private ChatMessageViewModel _chatMessage;
         public ChatMessageViewModel ChatMessage
@@ -89,12 +127,14 @@ namespace MereNear.ViewModels
             if (e.Name == App.CurrentUser)
             {
                 SenderType = 1;
+                _messages.Add(new ChatItem { Name = e.Name, Message = e.Message,SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm") });
             }
-            else
+            else if(e.Name == "150")
             {
                 SenderType = 2;
+                _messages.Add(new ChatItem { DealAmount = "150", SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm") });
             }
-            _messages.Add(new ChatItem { Name = e.Name, Message = e.Message, SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm")});
+           
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)
@@ -146,6 +186,75 @@ namespace MereNear.ViewModels
                     {
                         UserDialogs.Instance.Alert(ex.Message);
                     }
+                });
+            }
+        }
+
+        public ICommand MenuIconTapCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    if(IsMenuVisible == false)
+                    {
+                        IsMenuVisible = true;
+                        return;
+                    }
+                    if (IsMenuVisible == true)
+                    {
+                        IsMenuVisible = false;
+                        return;
+                    }
+                });
+            }
+        }
+        public ICommand MakeDealCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    IsOverlayVisible = true;
+                    IsMakeDealVisible = true;
+                });
+            }
+        }
+        public ICommand ClosePopupCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    IsOverlayVisible = false;
+                    IsMakeDealVisible = false;
+                });
+            }
+        }
+
+        public ICommand SubmitDealCommand
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    try
+                    {
+                        if (a == 1)
+                        {
+                            await _chatServices.JoinRoom(_roomName);
+                            a = 2;
+                            //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
+                        }
+                        
+                        await _chatServices.SendDeal(new ChatItem { DealAmount = "150",CurrencyType = CurrencyType, Time = DateTime.Now.TimeOfDay.ToString() }, _roomName);
+                    }
+                    catch (Exception ex)
+                    {
+                        UserDialogs.Instance.Alert(ex.Message);
+                    }
+                    IsOverlayVisible = false;
+                    IsMakeDealVisible = false;
                 });
             }
         }

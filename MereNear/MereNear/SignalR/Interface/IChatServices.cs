@@ -8,6 +8,7 @@ namespace SignalR.Interface
     {
         Task Connect();
         Task Send(ChatItem message, string roomName);
+        Task SendDeal(ChatItem message, string roomName);
         Task JoinRoom(string roomName);
         event EventHandler<ChatItem> OnMessageReceived;
     }

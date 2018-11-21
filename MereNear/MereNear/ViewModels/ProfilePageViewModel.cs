@@ -18,54 +18,15 @@ namespace MereNear.ViewModels
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
-
-        private ImageSource _starRating1 = "star_2.png";
-        private ImageSource _starRating2 = "star_2.png";
-        private ImageSource _starRating3 = "star_2.png";
-        private ImageSource _starRating4 = "star_2.png";
-        private ImageSource _starRating5 = "star_2.png";
-
-        private string _starRatingText = "0.0";
+        private bool _isCertifiedClicked = false;
         private string _personName;
         private string _personMobileNumber;
+        private string _certificationText = "GET CERTIFIED";
         #endregion
-
+                     
+        
+        
         #region Public Variables
-        public ImageSource StarRating1
-        {
-            get { return _starRating1; }
-            set { SetProperty(ref _starRating1, value); }
-        }
-
-        public ImageSource StarRating2
-        {
-            get { return _starRating2; }
-            set { SetProperty(ref _starRating2, value); }
-        }
-
-        public ImageSource StarRating3
-        {
-            get { return _starRating3; }
-            set { SetProperty(ref _starRating3, value); }
-        }
-
-        public ImageSource StarRating4
-        {
-            get { return _starRating4; }
-            set { SetProperty(ref _starRating4, value); }
-        }
-
-        public ImageSource StarRating5
-        {
-            get { return _starRating5; }
-            set { SetProperty(ref _starRating5, value); }
-        }
-
-        public string StarRatingText
-        {
-            get { return _starRatingText; }
-            set { SetProperty(ref _starRatingText, value); }
-        }
 
         public string PersonName
         {
@@ -78,106 +39,52 @@ namespace MereNear.ViewModels
             get { return _personMobileNumber; }
             set { SetProperty(ref _personMobileNumber, value); }
         }
+        public bool IsCertifiedClicked
+        {
+            get { return _isCertifiedClicked; }
+            set { SetProperty(ref _isCertifiedClicked, value); }
+        }
+        public string CertificationText
+        {
+            get { return _certificationText; }
+            set { SetProperty(ref _certificationText, value); }
+        }
         #endregion
 
         #region Command
-        public ICommand StarRating1Command
+
+        public ICommand GetCertifiedClicked
         {
             get
             {
                 return new DelegateCommand(() =>
                 {
-                    StarRating1 = "star_1.png";
-                    StarRating2 = "star_2.png";
-                    StarRating3 = "star_2.png";
-                    StarRating4 = "star_2.png";
-                    StarRating5 = "star_2.png";
-                    StarRatingText = "1.0";
+                    IsCertifiedClicked = true;
+                });
+            }
+        }
+        
+        public ICommand CertificationSubmitCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    CertificationText = "CERTIFIED";
+                });
+            }
+        }
+        public ICommand HeaderRightIconCommand
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    await _navigationService.NavigateAsync(nameof(EditProfilePage));
                 });
             }
         }
 
-        public ICommand StarRating2Command
-        {
-            get
-            {
-                return new DelegateCommand(() =>
-                {
-                    StarRating1 = "star_1.png";
-                    StarRating2 = "star_1.png";
-                    StarRating3 = "star_2.png";
-                    StarRating4 = "star_2.png";
-                    StarRating5 = "star_2.png";
-                    StarRatingText = "2.0";
-                });
-            }
-        }
-
-        public ICommand StarRating3Command
-        {
-            get
-            {
-                return new DelegateCommand(() =>
-                {
-                    StarRating1 = "star_1.png";
-                    StarRating2 = "star_1.png";
-                    StarRating3 = "star_1.png";
-                    StarRating4 = "star_2.png";
-                    StarRating5 = "star_2.png";
-                    StarRatingText = "3.0";
-                });
-            }
-        }
-
-        public ICommand StarRating4Command
-        {
-            get
-            {
-                return new DelegateCommand(() =>
-                {
-                    StarRating1 = "star_1.png";
-                    StarRating2 = "star_1.png";
-                    StarRating3 = "star_1.png";
-                    StarRating4 = "star_1.png";
-                    StarRating5 = "star_2.png";
-                    StarRatingText = "4.0";
-                });
-            }
-        }
-
-        public ICommand StarRating5Command
-        {
-            get
-            {
-                return new DelegateCommand(() =>
-                {
-                    StarRating1 = "star_1.png";
-                    StarRating2 = "star_1.png";
-                    StarRating3 = "star_1.png";
-                    StarRating4 = "star_1.png";
-                    StarRating5 = "star_1.png";
-                    StarRatingText = "5.0";
-                });
-            }
-        }
-
-        public ICommand SaveCommand
-        {
-            get
-            {
-                return new DelegateCommand(() =>
-                {
-                    try
-                    {
-                        //_navigationService.NavigateAsync(nameof(MapIntegration), null, null, true);
-                    }
-                    catch (Exception ex)
-                    {
-                        UserDialogs.Instance.Alert(ex.Message);                        
-                    }
-                });
-            }
-        }
         #endregion
 
         #region Constructor

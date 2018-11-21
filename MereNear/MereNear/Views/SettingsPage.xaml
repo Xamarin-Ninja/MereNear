@@ -12,25 +12,26 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <common:CustomHeader_Hamburger Grid.Row="0" TitleText="Settings" HeaderLeftIcon="&#xf0c9;"/>
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" Padding="10">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
-                <Image Source="user_icon" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Image Source="user_icon" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text="Account" Grid.Row="0" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
 
@@ -38,22 +39,28 @@
                 <Label Text=">" Grid.Row="1" Grid.Column="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="End" VerticalOptions="Center"/>
 
 
-                <Image Source="notification_icon" Grid.Row="3" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Image Source="notification_icon" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text="Notifications" Grid.Row="3" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
 
                 <Label Text="Notifications" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
-                <Switch Grid.Row="4" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" OnColor="LawnGreen"/>
+                <Switch Grid.Row="4" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" OnColor="Green"/>
 
                 <Label Text="App Notifications" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
-                <Switch Grid.Row="5" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" OnColor="LawnGreen"/>
+                <Switch Grid.Row="5" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" OnColor="Green"/>
 
-                <Image Source="tickbox_icon" Grid.Row="7" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
-                <Label Text="More" Grid.Row="7" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Image Source="filter_icon" Grid.Row="7" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Label Text="Distance" Grid.Row="7" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
+                <Slider Minimum="0" Maximum="100" Value="25" MinimumTrackColor="Green" MaximumTrackColor="LightGray" ThumbColor="Green" Grid.Row="8" Grid.ColumnSpan="3" HorizontalOptions="Fill" VerticalOptions="Center"/>
 
-                <Label Text="Change language" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
-                <Label Text=">" Grid.Row="8" Grid.Column="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="End" VerticalOptions="Center"/>
+
+                <Image Source="tickbox_icon" Grid.Row="9" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Label Text="More" Grid.Row="9" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
+
+                <Label Text="Change language" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text=">" Grid.Row="10" Grid.Column="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="End" VerticalOptions="Center"/>
 
 
             </Grid>

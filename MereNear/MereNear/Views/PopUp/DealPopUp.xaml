@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MereNear.Views.PopUp.DealPopUp">
+  <ContentView.Content>
+        <Frame BackgroundColor="Transparent" HasShadow="True" Padding="5">
+            <StackLayout>
+                <StackLayout BackgroundColor="Transparent" HeightRequest="400">
+                    <Image Source="close_red.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start" TranslationX="10" TranslationY="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ClosePopupCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Frame BackgroundColor="White" Padding="0">
+                        <StackLayout Padding="20" Spacing="0">
+                            <Label Text="Make a deal" FontSize="20" TextColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                                <BoxView BackgroundColor="LightGray" HeightRequest="1" HorizontalOptions="Fill"/>
+                                <Grid HeightRequest="80" VerticalOptions="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start" HeightRequest="40" HasShadow="True" BackgroundColor="White">
+                                        <Entry Placeholder="Enter deal amount" HorizontalOptions="Fill" VerticalOptions="Fill" FontSize="14" Text="{Binding DealAmount}"/>
+                                    </Frame>
+                                    <Label Text="Vat 5%" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Frame Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Start" HeightRequest="40" HasShadow="True" BackgroundColor="White">
+                                        <Picker HorizontalOptions="Fill" VerticalOptions="Fill" FontSize="14" Title="Choose Currency" ItemDisplayBinding="{Binding CurrencyType}">
+                                            <Picker.Items>
+                                                <x:String>USD</x:String>
+                                                <x:String>INR</x:String>
+                                            </Picker.Items>
+                                        </Picker>
+                                    </Frame>
+                                </Grid>
+                            <Button BackgroundColor="#70DA44" Margin="-25,0,-25,-25" x:Name="SubmitButton" Text="SUBMIT" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" HeightRequest="40" Command="{Binding SubmitDealCommand}"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

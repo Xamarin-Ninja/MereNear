@@ -39,6 +39,11 @@ namespace SignalR.Interface
             _proxy.Invoke("SendMessage", message.Name, message.Message, roomName);
         }
 
+        public async Task SendDeal(ChatItem message, string roomName)
+        {
+            _proxy.Invoke("SendMessage", message.DealAmount, message.CurrencyType, roomName);
+        }
+
         public async Task JoinRoom(string roomName)
         {
             _proxy.Invoke("JoinRoom", roomName);
