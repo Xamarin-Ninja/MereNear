@@ -5,11 +5,12 @@ namespace MereNear.Views
 {
     public partial class HomeTabbedPage : TabbedPage
     {
-        int count = 0;
+        
         public HomeTabbedPage()
         {
             InitializeComponent();
         }
+        int count = 0;
         protected override bool OnBackButtonPressed()
         {
             if(count == 0)

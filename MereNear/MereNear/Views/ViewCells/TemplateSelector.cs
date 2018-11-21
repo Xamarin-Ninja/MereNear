@@ -8,11 +8,13 @@ namespace MereNear.Views.ViewCells
     {
         private readonly DataTemplate incomingDataTemplate;
         private readonly DataTemplate outgoingDataTemplate;
+        private readonly DataTemplate recieverDealTemplate;
         public TemplateSelector()
         {
             // Retain instances!
             this.incomingDataTemplate = new DataTemplate(typeof(ReceiverViewCell));
             this.outgoingDataTemplate = new DataTemplate(typeof(SenderViewCell));
+            this.recieverDealTemplate = new DataTemplate(typeof(RecieverDealViewCell));
         }
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
@@ -26,7 +28,20 @@ namespace MereNear.Views.ViewCells
             var messageVm = item as ChatItem;
             if (messageVm == null)
                 return null;
-            return messageVm.SenderType == 1 ? this.outgoingDataTemplate : this.incomingDataTemplate;
+
+            else if(messageVm.SenderType ==2 && messageVm.IsRecieverDealType == true)
+            {
+                return this.recieverDealTemplate;
+            }
+            else if(messageVm.SenderType == 1)
+            {
+                return this.outgoingDataTemplate;
+            }
+            else
+            {
+                return this.recieverDealTemplate;
+            }
+            
         }
     }
 }

@@ -10,18 +10,6 @@ namespace MereNear.Views
         public MessagesPage()
         {
             InitializeComponent();
-            //messageList = new List<MessagesListItems>();
-            //var msglist1 = new MessagesListItems() { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit", Icon = "logo.png", Time = "01:40pm",Name = "Himanshu" };
-            //var msglist2 = new MessagesListItems() { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit", Icon = "logo.png", Time = "01:40pm", Name = "Pardeep" };
-            //var msglist3 = new MessagesListItems() { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit", Icon = "logo.png", Time = "01:40pm", Name = "Mohit" };
-            //var msglist4 = new MessagesListItems() { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit", Icon = "logo.png", Time = "01:40pm", Name = "Rakesh" };
-
-            //messageList.Add(msglist1);
-            //messageList.Add(msglist2);
-            //messageList.Add(msglist3);
-            //messageList.Add(msglist4);
-
-            //MesagesList.ItemsSource = messageList;       
             
         }
 
@@ -38,5 +26,6 @@ namespace MereNear.Views
         public string Icon { get; set; }
         public string Time { get; set; }
         public string Name { get; set; }
+        public bool IsUnread { get; set; }
     }
 }

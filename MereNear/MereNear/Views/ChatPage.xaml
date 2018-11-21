@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:local="clr-namespace:MereNear.Views.ViewCells"
+             xmlns:popup="clr-namespace:MereNear.Views.PopUp"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MereNear.Views.ChatPage" NavigationPage.HasNavigationBar="False">
     <ContentPage.Resources>
@@ -15,6 +16,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="90"/>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
@@ -47,12 +49,22 @@
                     </Label.GestureRecognizers>
                 </Label>
             </Grid>
-            <StackLayout Grid.Row="1">
+            <StackLayout Grid.Row="1" Grid.RowSpan="2">
                 <ListView ItemTemplate="{StaticResource MessageTemplateSelector}" HasUnevenRows="true" SeparatorVisibility="None" x:Name="listView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding Messages}">
 
                 </ListView>
             </StackLayout>
-            <Grid Grid.Row="2" Padding="2">
+            <Grid Grid.Row="2" IsVisible="{Binding IsMenuVisible}" Margin="20,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Padding="0" BackgroundColor="White" Text="Share Location" WidthRequest="100" FontSize="8" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding ShareLocationCommand}"/>
+                <Button Grid.Row="1" Padding="0" BackgroundColor="White" Text="Report" WidthRequest="100" FontSize="8" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding ReportCommand}"/>
+                <Button Grid.Row="2" Padding="0" BackgroundColor="White" Text="Make A Deal" WidthRequest="100" FontSize="8" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding MakeDealCommand}"/>
+            </Grid>
+            <Grid Grid.Row="3" Padding="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="6*"/>
@@ -60,29 +72,26 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button BackgroundColor="Transparent" BorderColor="Black" BorderWidth="1" BorderRadius="20" Grid.Column="0" Grid.ColumnSpan="4"/>
-                <Label Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="&#xf118;"  Style="{StaticResource FontAwesomeLabel}">
+                <Button BackgroundColor="Transparent" BorderColor="Black" BorderWidth="1" BorderRadius="20" Grid.Column="1" Grid.ColumnSpan="3" Padding="0"/>
+                <Image Source="chat_menu" Grid.Column="0" HorizontalOptions="Fill" HeightRequest="20" WidthRequest="20" VerticalOptions="Fill">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MenuIconTapCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Entry Placeholder="Type a message.." Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Fill" HeightRequest="30" Text="{Binding MyMessage}" FontSize="14"/>
+                <Label Grid.Column="3" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="&#xf0c6;"  Style="{StaticResource FontAwesomeLabel}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding }"/>
                     </Label.GestureRecognizers>
                 </Label>
-                <Entry Placeholder="Type a message.." Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Fill" HeightRequest="30" Text="{Binding MyMessage}"/>
-                <Label Grid.Column="2" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="&#xf0c6;"  Style="{StaticResource FontAwesomeLabel}">
-                    <Label.GestureRecognizers>
+                <Image Source="chat_send_icon" Grid.Column="4"  HorizontalOptions="Fill" HeightRequest="20" WidthRequest="20" VerticalOptions="Fill">
+                    <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SendCommand}"/>
-                    </Label.GestureRecognizers>
-                </Label>
-                <Label Grid.Column="3" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="&#xf030;"  Style="{StaticResource FontAwesomeLabel}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding }"/>
-                    </Label.GestureRecognizers>
-                </Label>
-                <Label Grid.Column="4" BackgroundColor="Green" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Fill" Text="&#xf130;" TextColor="White" Style="{StaticResource FontAwesomeLabel}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding JoinCommand}"/>
-                    </Label.GestureRecognizers>
-                </Label>
+                    </Image.GestureRecognizers>
+                </Image>
             </Grid>
+            <BoxView BackgroundColor="Gray" Opacity="0.5" Grid.Row="0" Grid.RowSpan="4" IsVisible="{Binding IsOverlayVisible}"/>
+            <popup:DealPopUp Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="300" IsVisible="{Binding IsMakeDealVisible}" Margin="10,0"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

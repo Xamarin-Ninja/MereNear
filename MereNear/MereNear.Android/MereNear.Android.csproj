@@ -105,6 +105,7 @@
     <Compile Include="Renderers\MyEditorRenderer.cs" />
     <Compile Include="Renderers\MyEntryRenderer.cs" />
     <Compile Include="Renderers\MyPickerRenderer.cs" />
+    <Compile Include="Renderers\MySwitchRenderer.cs" />
     <Compile Include="Renderers\SmsReceiver.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1643,6 +1644,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\user_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\chat_send_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\chat_menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

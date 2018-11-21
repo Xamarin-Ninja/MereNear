@@ -83,6 +83,7 @@ namespace MereNear
             containerRegistry.RegisterForNavigation<PickLocationMapPage, PickLocationMapPageViewModel>();
             containerRegistry.RegisterForNavigation<AllJobs, AllJobsViewModel>();
             containerRegistry.RegisterForNavigation<SettingsPage, SettingsPageViewModel>();
+            containerRegistry.RegisterForNavigation<EditProfilePage, EditProfilePageViewModel>();
         }
 
         //protected override void OnStart()
