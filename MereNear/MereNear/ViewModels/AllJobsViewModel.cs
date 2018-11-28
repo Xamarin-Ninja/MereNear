@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MereNear.ViewModels
@@ -21,6 +22,7 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Public Variables
+        public PostJobModel postJobData = new PostJobModel();
 
         public ObservableCollection<PostJobModel> AllJobItems
         {
@@ -46,6 +48,19 @@ namespace MereNear.ViewModels
         }
         #endregion
 
+        #region Commands
+        public ICommand CloseCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    await _navigationService.GoBackAsync();
+                });
+            }
+        }
+        #endregion
+
         #region Constructor
         public AllJobsViewModel(INavigationService navigationService)
         {
@@ -57,66 +72,26 @@ namespace MereNear.ViewModels
         #region Private Methods
         private void GetAllJobData()
         {
-            AllJobItems.Add(new PostJobModel
+            if (Application.Current.Properties.ContainsKey("PostJobModel"))
             {
-                Address = "QServices Inc, Office no: 52, D-185, 2nd Floor, Phase 8b, SAS Nagar, Mohali",
-                CategoryName = "Plumber",
-                Date = "20/11/2018",
-                Time = "11:40 AM",
-                Name = "Pardeep",
-                Status = "Active",
-                StatusColor = Xamarin.Forms.Color.LightGreen,
-                Distance = "20"
-            });
-
-            AllJobItems.Add(new PostJobModel
-            {
-                Address = "QServices Inc, Office no: 52, D-185, 2nd Floor, Phase 8b, SAS Nagar, Mohali",
-                CategoryName = "Electrician",
-                Date = "20/11/2018",
-                Time = "Now",
-                Name = "Pardeep",
-                Status = "Active",
-                StatusColor = Xamarin.Forms.Color.LightGreen,
-                Distance = "5"
-            });
-
-            AllJobItems.Add(new PostJobModel
-            {
-                Address = "QServices Inc, Office no: 52, D-185, 2nd Floor, Phase 8b, SAS Nagar, Mohali",
-                CategoryName = "Cleaning",
-                Date = "20/11/2018",
-                Time = "Now",
-                Name = "Pardeep",
-                Status = "Completed",
-                StatusColor = Xamarin.Forms.Color.OrangeRed,
-                Distance = "12"
-            });
-
-            AllJobItems.Add(new PostJobModel
-            {
-                Address = "QServices Inc, Office no: 52, D-185, 2nd Floor, Phase 8b, SAS Nagar, Mohali",
-                CategoryName = "Ac Repairs",
-                Date = "20/11/2018",
-                Time = "06:00 PM",
-                Name = "Pardeep",
-                Status = "Disabled",
-                StatusColor = Xamarin.Forms.Color.DarkRed,
-                Distance = "10"
-            });
-
-            AllJobItems.Add(new PostJobModel
-            {
-                Address = "QServices Inc, Office no: 52, D-185, 2nd Floor, Phase 8b, SAS Nagar, Mohali",
-                CategoryName = "Car Wash",
-                Date = "20/11/2018",
-                Time = "06:45 AM",
-                Name = "Pardeep",
-                Status = "Completed",
-                StatusColor = Xamarin.Forms.Color.OrangeRed,
-                Distance = "30"
-            });
-        }
+                postJobData = (PostJobModel)Application.Current.Properties["PostJobModel"];
+                AllJobItems.Add(new PostJobModel
+                {
+                    Image = postJobData.Image,
+                    Description = postJobData.Description,
+                    CategoryWork = postJobData.CategoryWork,
+                    Address = postJobData.Address,
+                    CategoryName = postJobData.CategoryName,
+                    Date = postJobData.Date,
+                    Time = postJobData.Time,
+                    TimeColor = postJobData.TimeColor,
+                    Name = "Pardeep",
+                    Status = "Active",
+                    StatusColor = Xamarin.Forms.Color.LightGreen,
+                    Distance = postJobData.Distance
+                });
+            }
+        }  
 
         private async void NavigateToDetailPage(PostJobModel selectedjob)
         {

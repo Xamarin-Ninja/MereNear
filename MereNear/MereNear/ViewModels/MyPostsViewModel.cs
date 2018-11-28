@@ -1,4 +1,5 @@
 using Acr.UserDialogs;
+using MereNear.Helpers;
 using MereNear.Model;
 using MereNear.Views;
 using Prism.Commands;
@@ -78,36 +79,7 @@ namespace MereNear.ViewModels
         #region Private Methods
         private void GetData()
         {
-            MyPostItems.Add(new PostJobModel
-            {
-                CategoryName = jobModel.CategoryName,
-                Address = jobModel.Address,
-                Date = jobModel.Date,
-                Time = jobModel.Time,
-                Description = jobModel.Description,
-                Name = "Pardeep",
-                Image = "logo.png"
-            });
-            MyPostItems.Add(new PostJobModel
-            {
-                CategoryName = "Electrician",
-                Address = "Mohali",
-                Date = jobModel.Date,
-                Time = jobModel.Time,
-                Description = jobModel.Description,
-                Name = "Pardeep",
-                Image = "logo.png"
-            });
-            MyPostItems.Add(new PostJobModel
-            {
-                CategoryName = "Car Repair",
-                Address = "Phase 5, Mohali",
-                Date = jobModel.Date,
-                Time = jobModel.Time,
-                Description = jobModel.Description,
-                Name = "Pardeep",
-                Image = "logo.png"
-            });
+            MyPostItems.Add(jobModel);
         }
         #endregion
 
@@ -118,7 +90,9 @@ namespace MereNear.ViewModels
             param.Add("MyPostsData", data);
             await _navigationService.NavigateAsync(nameof(MyPostsDetail), param);
         }
+        #endregion
 
+        #region Navigation Parameters
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
             
@@ -134,6 +108,18 @@ namespace MereNear.ViewModels
             if (parameters.ContainsKey("PostJobData"))
             {
                 jobModel = (PostJobModel)parameters["PostJobData"];
+                if(jobModel.Status == "Active")
+                {
+                    jobModel.StatusColor = Color.FromHex(ChangeColor.GreenColor);
+                }
+                else if(jobModel.Status == "Completed")
+                {
+                    jobModel.StatusColor = Color.FromHex(ChangeColor.OrangeColor);
+                }
+                else if(jobModel.Status == "Disabled")
+                {
+                    jobModel.StatusColor = Color.FromHex(ChangeColor.RedColor);
+                }
                 GetData();
             }
         }

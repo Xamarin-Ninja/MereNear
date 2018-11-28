@@ -49,6 +49,20 @@ namespace MereNear.ViewModels
                 return new DelegateCommand(async () =>
                 {
                     GetLoginApi();
+                    var param = new NavigationParameters();
+                    param.Add("MobileNumber", MobileNumber);
+                    await _navigationService.NavigateAsync(nameof(SendOtpPage), param);
+                });
+            }
+        }
+
+        public ICommand BackIconCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    await _navigationService.GoBackAsync();
                 });
             }
         }
@@ -59,9 +73,6 @@ namespace MereNear.ViewModels
         {
             loginModel.MobileNumber = MobileNumber;
             var result = await _webApiRestClient.PostAsync<LoginModel, LoginResponse>("?func=login", loginModel);
-            var param = new NavigationParameters();
-            param.Add("MobileNumber", MobileNumber);
-            await _navigationService.NavigateAsync(nameof(SendOtpPage),param);
             Debug.WriteLine("ex:", result.code);
         }
         #endregion

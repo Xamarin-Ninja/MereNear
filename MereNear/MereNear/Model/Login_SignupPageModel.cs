@@ -26,6 +26,9 @@ namespace MereNear.Model
 
         [JsonProperty("mobile")]
         public string MobileNumber { get; set; }
+
+        [JsonProperty("fcm_token")]
+        public string FCM_Token { get; set; }
     }
 
     public class OTPResponse

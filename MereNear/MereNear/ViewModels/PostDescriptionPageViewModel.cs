@@ -26,6 +26,7 @@ namespace MereNear.ViewModels
         private DateTime _jobDate;
         private DateTime _jobTime;
         private string _categoryName;
+        private string _categoryWork;
         private string _locationAddress;
 
         private bool _isPreviewVisible = false;
@@ -44,6 +45,12 @@ namespace MereNear.ViewModels
         {
             get { return _categoryName; }
             set { SetProperty(ref _categoryName, value); }
+        }
+
+        public string CategoryWork
+        {
+            get { return _categoryWork; }
+            set { SetProperty(ref _categoryWork, value); }
         }
 
         public string Description
@@ -94,6 +101,17 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Command
+        public ICommand CloseCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    await _navigationService.GoBackAsync();
+                });
+            }
+        }
+
         public ICommand ImmediatelySelected
         {
             get
@@ -136,9 +154,11 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(async() =>
                 {
+                    Application.Current.Properties["PostJobModel"] = JobModel;
                     var param = new NavigationParameters();
                     param.Add("PostJobData", JobModel);
-                    await _navigationService.NavigateAsync("/NavigationPage/MyPosts", param);
+                    //await _navigationService.NavigateAsync("/NavigationPage/MyPosts", param);
+                    await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/MyPosts", UriKind.Absolute), param);
                 });
             }
         }
@@ -148,9 +168,14 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(() =>
                 {
+                    JobModel.Image = "plumbing.png";
                     JobModel.Address = LocationAddress;
+                    JobModel.AddressPosition = LocationAddressPosition;
                     JobModel.CategoryName = CategoryName;
                     JobModel.Description = Description;
+                    JobModel.CategoryWork = CategoryWork;
+                    JobModel.Distance = "20";
+                    JobModel.Status = "Active";
                     if (IsScheduleSelected)
                     {
                         JobModel.Date = JobDate.ToString("dd/MM/yyyy");

@@ -107,6 +107,10 @@ namespace MereNear.ViewModels
                 OTP4 = ActivationCode[3].ToString();
                 UserDialogs.Instance.HideLoading();
             });
+            MessagingCenter.Subscribe<string>(this, "OTPAutoFillComplete", async (sender) =>
+            {
+                await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
+            });
         }
         #endregion
 
@@ -139,7 +143,7 @@ namespace MereNear.ViewModels
         {
             otpModel.MobileNumber = OTPMainLabel;
             otpModel.OTPNumber = ActivationCode;
-            var result = await _webApiRestClient.PostAsync<OTPModel, OTPResponse>("?func=otp", otpModel);
+            //var result = await _webApiRestClient.PostAsync<OTPModel, OTPResponse>("?func=otp", otpModel);
             await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
         }
         #endregion

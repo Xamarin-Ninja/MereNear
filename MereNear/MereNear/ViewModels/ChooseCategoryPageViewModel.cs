@@ -21,13 +21,18 @@ namespace MereNear.ViewModels
         private ObservableCollection<CategoryListModel> _postJobcategory = new ObservableCollection<CategoryListModel>();
 
         private CategoryListModel _selectedItemCommand;
-       
+        private string _customHeaderTitle;
         #endregion
 
         #region Public Variable
         public bool IsPostAJob { get; set; }
         public bool IsLookingForAJob { get; set; }
         public string LocationAddress { get; set; }
+        public string CustomHeaderTitle
+        {
+            get { return _customHeaderTitle; }
+            set { SetProperty(ref _customHeaderTitle, value); }
+        }
         public Position LocationAddressPosition { get; set; }
 
         public CategoryListModel SelectedItemCommand
@@ -74,9 +79,9 @@ namespace MereNear.ViewModels
                         var data = (CategoryListModel)Application.Current.Properties["LastSelectedValue"];
                         var param = new NavigationParameters();
                         param.Add("Address", LocationAddress);
-                        param.Add("AddressPosition", LocationAddressPosition);
                         param.Add("Categoryname", data.ServiceCategoryName);
-                        await _navigationService.NavigateAsync(nameof(PostDescriptionPage), param);
+                        param.Add("AddressPosition", LocationAddressPosition);
+                        await _navigationService.NavigateAsync(nameof(PostDescriptionPage),param);
                     }
                     if(IsLookingForAJob)
                     {
@@ -89,12 +94,23 @@ namespace MereNear.ViewModels
                 });
             }
         }
+
+        public ICommand CloseCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    await _navigationService.GoBackAsync();
+                });
+            }
+        }
         #endregion
 
         #region Private Methods
         private void GetData()
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 8; i++)
             {
                 PostJobcategory.Add(new CategoryListModel
                 {
@@ -122,15 +138,17 @@ namespace MereNear.ViewModels
         {
             if (parameters.ContainsKey("Address"))
             {
+                LocationAddress = (string)parameters["Address"];
+                CustomHeaderTitle = "Post A Job";
+                IsPostAJob = true;
                 if (parameters.ContainsKey("AddressPosition"))
                 {
-                    LocationAddress = (string)parameters["Address"];
                     LocationAddressPosition = (Position)parameters["AddressPosition"];
-                    IsPostAJob = true; 
                 }
             }
             else
             {
+                CustomHeaderTitle = "Looking For A Job";
                 IsLookingForAJob = true;
             }
         }

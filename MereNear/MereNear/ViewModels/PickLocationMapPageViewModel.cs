@@ -42,6 +42,7 @@ namespace MereNear.ViewModels
             {
                 Address = sender;
                 AddressPosition = pickedposition;
+
             });
         }
         #endregion
@@ -57,6 +58,17 @@ namespace MereNear.ViewModels
                     param.Add("Address", Address);
                     param.Add("AddressPosition", AddressPosition);
                     await _navigationService.NavigateAsync(nameof(ChooseCategoryPage),param);
+                });
+            }
+        }
+
+        public ICommand CloseCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    await _navigationService.GoBackAsync();
                 });
             }
         }

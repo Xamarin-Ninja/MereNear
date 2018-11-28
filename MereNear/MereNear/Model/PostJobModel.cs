@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace MereNear.Model
 {
@@ -8,11 +9,11 @@ namespace MereNear.Model
 
         public string Address { get; set; }
 
+        public Position AddressPosition { get; set; }
+
         public string CategoryName { get; set; }
 
         public string CategoryWork { get; set; }
-
-        public string WorkTitle { get; set; }
 
         public string Description { get; set; }
 

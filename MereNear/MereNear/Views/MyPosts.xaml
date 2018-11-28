@@ -11,29 +11,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <common:CustomHeader_Hamburger Grid.Row="0" TitleText="My Posts" HeaderLeftIcon="&#xf0c9;"/>
-        <!--<ListView x:Name="postListItems"  RowHeight="70"
-              SeparatorVisibility="Default" SeparatorColor="#3498db">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid Padding="10,20,10,0" RowSpacing="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Text="{Binding WorkerJobType}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"  VerticalOptions="Center"  TextColor="Black" FontSize="15"/>
-                            <Label Text="{Binding WorkerJobStatus}" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" TextColor="{Binding JobStatusColor}"/>
-                            <Label Text="{Binding WorkerJobDate}" Grid.Row="1" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Start" FontSize="12"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
         <ListView x:Name="postListItems" ItemsSource="{Binding MyPostItems}" Grid.Row="1"
               SelectedItem="{Binding SelectedPost}"
                  RowHeight="130"
@@ -58,15 +35,16 @@
                                 <Image Source="{Binding Image}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center"/>
                                 
                                 <Label Text="{Binding CategoryName}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="Start"  VerticalOptions="Center"  TextColor="Black" FontSize="15"/>
-                                
+                                <Label Text="{Binding Status}" TextColor="{Binding StatusColor}" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="15"/>
+
                                 <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="Start">
-                                    <Label Text="Posted By:"  TextColor="Black" FontSize="12"/>
-                                    <Label Text="{Binding Name}" TextColor="Gray" FontSize="12"/>
+                                    <!--<Label Text="Posted By:"  TextColor="Black" FontSize="12"/>-->
+                                    <Label Text="{Binding CategoryWork}" TextColor="Gray" FontSize="12"/>
                                 </StackLayout>
 
                                 <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start">
                                     <Label Text="When" FontSize="10" TextColor="Black"/>
-                                    <Label Text="{Binding Date}" Grid.Row="2" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" FontSize="10" TextColor="Gray"/>
+                                    <Label Text="{Binding Date}" HorizontalOptions="End" VerticalOptions="Start" FontSize="10" TextColor="Gray"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Start">
                                     <Label Text="Time" FontSize="10" TextColor="Black"/>

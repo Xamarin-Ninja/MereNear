@@ -19,6 +19,8 @@ namespace MereNear.Views.PopUp
             MessagingCenter.Subscribe<PostJobModel>(this, "PreviewData", (sender) =>
             {
                 description.Text = sender.Description;
+                jobTitle.Text = sender.CategoryWork;
+                needService.Text = sender.Date;
                 address.Text = sender.Address;
             });
 		}

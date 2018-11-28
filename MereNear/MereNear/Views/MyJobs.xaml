@@ -10,10 +10,10 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <common:CustomHeader Grid.Row="0" TitleText="My Jobs"/>
+        <common:CustomHeader_Hamburger Grid.Row="0" TitleText="My Jobs" HeaderLeftIcon="&#xf0c9;"/>
         <ListView x:Name="jobListItems" ItemsSource="{Binding MyjobItems}" Grid.Row="1"
-              SelectedItem="{Binding SelectedJobs}"
-                 RowHeight="160"
+              SelectedItem="{Binding SelectedAllJobs}" ItemSelected="jobListItems_ItemSelected"
+                 RowHeight="120"
                  SeparatorVisibility="Default"
                 SeparatorColor="Transparent">
             <ListView.ItemTemplate>
@@ -29,8 +29,8 @@
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="80"/>
-                                    <ColumnDefinition Width="6*"/>
-                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="3*"/>
                                 </Grid.ColumnDefinitions>
                                 <Image Source="{Binding Image}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center"/>
 
@@ -42,14 +42,13 @@
 
                                 <Label Text="{Binding CategoryWork}" Grid.Row="1" Grid.Column="1" Style="{StaticResource GrayLabel}" HorizontalOptions="Start" FontSize="12"/>
 
-                                <StackLayout Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                <StackLayout Orientation="Vertical" Spacing="0" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                                     <Label Text="{Binding Date}" HorizontalOptions="End" HorizontalTextAlignment="End" FontSize="10" Style="{StaticResource GrayLabel}"/>
-
-                                    <Label Text="{Binding Time}" TextColor="{Binding TimeColor}" HorizontalOptions="End" HorizontalTextAlignment="End" FontSize="10"/>
+                                    <Label Text="{Binding Time}" TextColor="{Binding TimeColor}" HorizontalOptions="End" HorizontalTextAlignment="End" VerticalOptions="Start" VerticalTextAlignment="Start" FontSize="10"/>
                                 </StackLayout>
 
-                                <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="Start">
-                                    <Image Source="" HeightRequest="10" WidthRequest="10"/>
+                                <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="End">
+                                    <Image Source="location_job.png" HeightRequest="10" WidthRequest="10"/>
                                     <Label Text="{Binding Address}" Style="{StaticResource GrayLabel}" LineBreakMode="TailTruncation"/>
                                 </StackLayout>
 

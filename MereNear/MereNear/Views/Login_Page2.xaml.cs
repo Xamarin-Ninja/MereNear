@@ -8,7 +8,10 @@ namespace MereNear.Views
         {
             InitializeComponent();
             NextButton.Text ="";
-            MobileEntry.Focus();
+            MessagingCenter.Subscribe<string>(this, "EntryFocus", (sender) =>
+            {
+                MobileEntry.Focus();
+            });
         }
 
         private void BackIcon_Tapped(object sender, System.EventArgs e)

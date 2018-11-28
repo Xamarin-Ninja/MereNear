@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Plugin.Geolocator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -9,10 +11,15 @@ namespace MereNear.Views
     public partial class PickLocationMapPage : ContentPage
     {
         public string address;
+        public Plugin.Geolocator.Abstractions.Position location;
         public PickLocationMapPage()
         {
             InitializeComponent();
-            customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(30.711262, 76.686310), Distance.FromMiles(0.1)));
+
+            GetCurrentPosition();
+
+
+
             customMap.PropertyChanged += async (object sender, System.ComponentModel.PropertyChangedEventArgs e) =>
             {
                 var m = (Map)sender;
@@ -28,6 +35,24 @@ namespace MereNear.Views
                     MessagingCenter.Send(address, "LocationAddress",pickedposition);
                 }
             };
+        }
+
+        private async void GetCurrentPosition()
+        {
+            var locator = CrossGeolocator.Current;
+            locator.DesiredAccuracy = 50;
+            location = await locator.GetPositionAsync(TimeSpan.FromTicks(10000));
+            double? latitude = Convert.ToDouble(location.Latitude);
+            double? longitude = Convert.ToDouble(location.Longitude);
+            var pickedposition = new Position(latitude.Value, longitude.Value);
+            customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(latitude.Value, longitude.Value), Distance.FromMiles(0.5)));
+            Geocoder gc = new Geocoder();
+
+            IEnumerable<string> pickedaddress = await gc.GetAddressesForPositionAsync(pickedposition);
+
+            address = pickedaddress.First().ToString();
+            MessagingCenter.Send(address, "LocationAddress", pickedposition);
+
         }
     }
 }
