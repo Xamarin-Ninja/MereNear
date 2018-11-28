@@ -1,7 +1,15 @@
-﻿namespace MereNear.Views.ViewCells
+﻿using Xamarin.Forms.Maps;
+
+namespace MereNear.Views.ViewCells
 {
+    
     public class ChatItem
     {
+        public int MessageType
+        {
+            get;
+            set;
+        }
         public string Icon
         {
             get;
@@ -45,6 +53,15 @@
         {
             get;
             set;
+        }
+        public Position Location
+        {
+            get;
+            set;
+        }
+        public ChatItem Data
+        {
+            get; set;
         }
     }
 }

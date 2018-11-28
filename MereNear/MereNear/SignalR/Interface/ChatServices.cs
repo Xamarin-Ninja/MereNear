@@ -27,21 +27,26 @@ namespace SignalR.Interface
         {
             await _connection.Start();
 
-            _proxy.On("GetMessage", (string name, string message) => OnMessageReceived(this, new ChatItem
+            _proxy.On("GetMessage", (int messagetype, string item) => OnMessageReceived(this, new ChatItem
             {
-                Name = name,
-                Message = message
+                MessageType = messagetype,
+                Name = item
             }));
         }
 
-        public async Task Send(ChatItem message, string roomName)
+        public async Task Send(ChatItem chatmessage, string roomName)
         {
-            _proxy.Invoke("SendMessage", message.Name, message.Message, roomName);
+            _proxy.Invoke("SendMessage", chatmessage.MessageType, chatmessage.Message, roomName);
         }
 
-        public async Task SendDeal(ChatItem message, string roomName)
+        public async Task SendDeal(ChatItem chatmessage, string roomName)
         {
-            _proxy.Invoke("SendMessage", message.DealAmount, message.CurrencyType, roomName);
+          _proxy.Invoke("SendMessage", chatmessage.MessageType, chatmessage.DealAmount, roomName);
+        }
+
+        public async Task SendLocation(ChatItem chatmessage, string roomName)
+        {
+            _proxy.Invoke("SendMessage", chatmessage.MessageType, chatmessage.Name, roomName);
         }
 
         public async Task JoinRoom(string roomName)

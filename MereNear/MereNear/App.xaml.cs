@@ -84,6 +84,7 @@ namespace MereNear
             containerRegistry.RegisterForNavigation<AllJobs, AllJobsViewModel>();
             containerRegistry.RegisterForNavigation<SettingsPage, SettingsPageViewModel>();
             containerRegistry.RegisterForNavigation<EditProfilePage, EditProfilePageViewModel>();
+            containerRegistry.RegisterForNavigation<ChangPhoneNumber, ChangPhoneNumberViewModel>();
         }
 
         //protected override void OnStart()

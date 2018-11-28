@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MereNear.Views.ViewCells.ReceiverViewCell">
   <ViewCell.View>
-        <StackLayout Margin="0" Padding="10,10,80,10">
+        <StackLayout Margin="0" Padding="10,10,80,0">
             <Grid>
                 <Frame Margin="0" BackgroundColor="White" HasShadow="True" Padding="10">
                     <Grid>
