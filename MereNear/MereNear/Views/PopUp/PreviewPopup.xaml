@@ -4,11 +4,6 @@
              x:Class="MereNear.Views.PopUp.PreviewPopup">
   <ContentView.Content>
         <Grid>
-            <Image Source="close_red.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding PopupCloseCommand}"/>
-                </Image.GestureRecognizers>
-            </Image>
             <Frame BackgroundColor="White" HeightRequest="500" CornerRadius="0" BorderColor="LightGray" HasShadow="True" Padding="10">
                 <ScrollView>
                     <Grid RowSpacing="0">
@@ -36,20 +31,20 @@
                             <Label Text="{Binding CategoryName}" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                         </StackLayout>
 
-                        <Image Source="map_icon" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start"/>
-                        <Label x:Name="address" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                        <Image Source="location.png" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" />
+                        <Label x:Name="address" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
 
-                        <Image Source="description_icon" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start"/>
-                        <Label Text="Job Title" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="End" FontFamily="Poppins-Bold.ttf#Poppins Bold" FontAttributes="Bold"/>
+                        <Image Source="job_title.png" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center"/>
+                        <Label Text="Job Title" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="Poppins-Bold.ttf#Poppins Bold" FontAttributes="Bold"/>
                         <Label x:Name="jobTitle"  Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                        
-                        <Image Source="description_icon" Grid.Row="5" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start"/>
-                        <Label Text="Job Description" Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="End" FontFamily="Poppins-Bold.ttf#Poppins Bold" FontAttributes="Bold"/>
+
+                        <Image Source="job_description.png" Grid.Row="5" Grid.Column="0" HorizontalOptions="Center" />
+                        <Label Text="Job Description" Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="Poppins-Bold.ttf#Poppins Bold" FontAttributes="Bold"/>
                         <Label x:Name="description"  Grid.Row="6" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
 
-                        <Image Source="clock_icon" Grid.Row="7" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start"/>
-                        <Label Text="Need Service" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start" FontFamily="Poppins-Bold.ttf#Poppins Bold" FontAttributes="Bold"/>
-                        <Label x:Name="needService" Grid.Row="7" Grid.Column="1" HorizontalOptions="End" HorizontalTextAlignment="Start" TextColor="LightBlue" VerticalOptions="Start" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                        <Image Source="need_service.png" Grid.Row="7" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start"/>
+                        <Label Text="Need Service" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="Poppins-Bold.ttf#Poppins Bold" FontAttributes="Bold"/>
+                        <Label x:Name="needService" Grid.Row="7" Grid.Column="1" HorizontalOptions="End" HorizontalTextAlignment="Start" TextColor="LightBlue" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
 
                         <Label Text="Photo" Grid.Row="8" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="Center"/>
 
@@ -61,6 +56,11 @@
                     </Grid>
                 </ScrollView>
             </Frame>
+            <Image Source="close_red.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PopupCloseCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
         </Grid>
     </ContentView.Content>
 </ContentView>

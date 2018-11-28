@@ -10,16 +10,16 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="40"/>
         </Grid.ColumnDefinitions>
-        <Image Margin="10,0,0,0" Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="default_back_icon" >
+        <Image Margin="10,0,0,0" Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="back_arrow.png" >
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding CloseCommand}"/>
             </Image.GestureRecognizers>
         </Image>
         <Label Grid.Column="1" Text="{Binding Source={x:Reference Root}, Path=TitleText}" FontFamily="Poppins-Regular.ttf#Poppins Regular" FontSize="20" TextColor="Black"  BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Margin="0,0,10,0" Grid.Column="2" BackgroundColor="Transparent" HorizontalOptions="End" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="{Binding Source={x:Reference Root}, Path=HeaderRightIcon}"  Style="{StaticResource FontAwesomeLabel}">
-            <Label.GestureRecognizers>
+        <Image Margin="0,0,10,0" Grid.Column="2" BackgroundColor="Transparent" HorizontalOptions="End" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="{Binding Source={x:Reference Root}, Path=RightIconImage}">
+            <Image.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding HeaderRightIconCommand}"/>
-            </Label.GestureRecognizers>
-        </Label>
+            </Image.GestureRecognizers>
+        </Image>
     </Grid>
 </ContentView>

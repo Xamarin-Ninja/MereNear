@@ -17,7 +17,7 @@
             <!--<RowDefinition Height="100"/>-->
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" RowSpacing="0" HeightRequest="50" IsVisible="{Binding IsInfoIconVisible}">
-            <common:CustomHeader_Hamburger TitleText="{Binding TitleText}" HeaderLeftIcon="&#xf0c9;" HeaderRightIcon="&#xf124;" />
+            <common:CustomHeader_Hamburger TitleText="{Binding TitleText}" RightIconImage="send_icon.png"/>
         </Grid>
         <Grid Grid.Row="1" RowSpacing="0" HeightRequest="100" IsVisible="{Binding IsInfoIconVisible}">
             <ScrollView Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" HorizontalScrollBarVisibility="Never">

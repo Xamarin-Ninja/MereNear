@@ -16,7 +16,7 @@ namespace MereNear.Views
     {
         private static readonly CompositeDisposable EventSubscriptions = new CompositeDisposable();
         private readonly PanGestureRecognizer _panGesture = new PanGestureRecognizer();
-        private double _transY;
+        //private double _transY;
 
         public HomePage()
         {

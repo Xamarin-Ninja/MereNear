@@ -20,7 +20,7 @@
             <ColumnDefinition Width="40"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Image Source="default_back_icon" Grid.Row="0" HorizontalOptions="Start" Grid.ColumnSpan="5" VerticalOptions="Start" HeightRequest="20" WidthRequest="20">
+        <Image Source="back_arrow.png" Grid.Row="0" HorizontalOptions="Start" Grid.ColumnSpan="5" VerticalOptions="Start" HeightRequest="20" WidthRequest="20">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="BackIcon_Tapped"/>
             </Image.GestureRecognizers>

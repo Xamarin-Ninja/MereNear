@@ -120,6 +120,17 @@ namespace MereNear.ViewModels
                 {
                     jobModel.StatusColor = Color.FromHex(ChangeColor.RedColor);
                 }
+
+                if(jobModel.Time == "Now")
+                {
+                    jobModel.TimeColor = Color.FromHex(ChangeColor.BlueColor);
+                    jobModel.IsDateVisible = false;
+                }
+                else
+                {
+                    jobModel.TimeColor = Color.FromHex(ChangeColor.GrayColor);
+                    jobModel.IsDateVisible = true;
+                }
                 GetData();
             }
         }

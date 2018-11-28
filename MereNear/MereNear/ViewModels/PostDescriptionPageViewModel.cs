@@ -21,9 +21,11 @@ namespace MereNear.ViewModels
         private string _scheduleRadioButtonImage = "unchecked_circle";
         private bool _isScheduleSelected = false;
 
+        private DateTime _minimumDate = DateTime.Today;
+
         private string _description;
         private PostJobModel _jobModel = new PostJobModel();
-        private DateTime _jobDate;
+        private DateTime _jobDate = DateTime.Today;
         private DateTime _jobTime;
         private string _categoryName;
         private string _categoryWork;
@@ -37,6 +39,12 @@ namespace MereNear.ViewModels
         {
             get { return _locationAddress; }
             set { SetProperty(ref _locationAddress, value); }
+        }
+
+        public DateTime MinimumDate
+        {
+            get { return _minimumDate; }
+            set { SetProperty(ref _minimumDate, value); }
         }
 
         public Position LocationAddressPosition { get; set; }
@@ -154,6 +162,7 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(async() =>
                 {
+                    JobModel.PostedDate = DateTime.Now.Date.ToString("dd/MM/yyyy");
                     Application.Current.Properties["PostJobModel"] = JobModel;
                     var param = new NavigationParameters();
                     param.Add("PostJobData", JobModel);
@@ -184,7 +193,8 @@ namespace MereNear.ViewModels
                     else
                     {
                         JobModel.Date = DateTime.Now.Date.ToString("dd/MM/yyyy");
-                       // JobModel.Time = DateTime.Now.TimeOfDay.ToString("HH:mm");
+                        JobModel.Time = "Now";
+                        //JobModel.Time = DateTime.Now.TimeOfDay.ToString("HH:mm");
                     }
 
                     MessagingCenter.Send(JobModel, "PreviewData");

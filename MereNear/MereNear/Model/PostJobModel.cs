@@ -17,6 +17,8 @@ namespace MereNear.Model
 
         public string Description { get; set; }
 
+        public string PostedDate { get; set; }
+
         public string Date { get; set; }
 
         public string Time { get; set; }
@@ -30,6 +32,8 @@ namespace MereNear.Model
         public Color StatusColor { get; set; }
 
         public Color TimeColor { get; set; }
+
+        public bool IsDateVisible { get; set; }
 
         public string Distance { get; set; }
     }

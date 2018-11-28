@@ -10,7 +10,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <common:CustomHeader_Hamburger Grid.Row="0" TitleText="My Jobs" HeaderLeftIcon="&#xf0c9;"/>
+        <common:CustomHeader_Hamburger Grid.Row="0" TitleText="My Jobs" />
         <ListView x:Name="jobListItems" ItemsSource="{Binding MyjobItems}" Grid.Row="1"
               SelectedItem="{Binding SelectedAllJobs}" ItemSelected="jobListItems_ItemSelected"
                  RowHeight="120"

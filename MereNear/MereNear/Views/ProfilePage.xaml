@@ -122,7 +122,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <common:CustomHeader_Hamburger Grid.Row="0" TitleText="Profile" HeaderLeftIcon="&#xf0c9;" HeaderRightIcon="&#xf044;"/>
+            <common:CustomHeader_Hamburger Grid.Row="0" TitleText="Profile" RightIconImage="edit_profile.png"/>
             <Image Source="profile_pic_icon.png" Grid.Row="1" HorizontalOptions="Center" />
             <Frame CornerRadius="5" HasShadow="true" Grid.Row="2" HorizontalOptions="Center" TranslationY="-50" BorderColor="Gray" BackgroundColor="Transparent"  WidthRequest="500" Padding="0"  VerticalOptions="Center">
                 <Grid>

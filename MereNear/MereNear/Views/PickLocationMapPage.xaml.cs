@@ -1,4 +1,5 @@
-﻿using Plugin.Geolocator;
+﻿using Acr.UserDialogs;
+using Plugin.Geolocator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,14 @@ namespace MereNear.Views
 {
     public partial class PickLocationMapPage : ContentPage
     {
-        public string address;
+        public string address { get; set; }
         public Plugin.Geolocator.Abstractions.Position location;
+        public bool? response;
         public PickLocationMapPage()
         {
             InitializeComponent();
 
             GetCurrentPosition();
-
-
-
             customMap.PropertyChanged += async (object sender, System.ComponentModel.PropertyChangedEventArgs e) =>
             {
                 var m = (Map)sender;
@@ -32,7 +31,7 @@ namespace MereNear.Views
                     IEnumerable<string> pickedaddress = await gc.GetAddressesForPositionAsync(pickedposition);
 
                     address = pickedaddress.First().ToString();
-                    MessagingCenter.Send(address, "LocationAddress",pickedposition);
+                    MessagingCenter.Send(address, "LocationAddress", pickedposition);
                 }
             };
         }
@@ -41,17 +40,38 @@ namespace MereNear.Views
         {
             var locator = CrossGeolocator.Current;
             locator.DesiredAccuracy = 50;
-            location = await locator.GetPositionAsync(TimeSpan.FromTicks(10000));
-            double? latitude = Convert.ToDouble(location.Latitude);
-            double? longitude = Convert.ToDouble(location.Longitude);
-            var pickedposition = new Position(latitude.Value, longitude.Value);
-            customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(latitude.Value, longitude.Value), Distance.FromMiles(0.5)));
-            Geocoder gc = new Geocoder();
+            try
+            {
+                location = await locator.GetPositionAsync(TimeSpan.FromTicks(10000));
+            }
+            catch (TaskCanceledException ex)
+            {
+                response = Convert.ToBoolean(ex.CancellationToken.IsCancellationRequested);
+            }
+            if (response.HasValue)
+            {
+                customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(30.7110779,76.686422), Distance.FromMiles(0.5)));
+                var pickedposition = new Position(30.7110779, 76.686422);
+                Geocoder gc = new Geocoder();
 
-            IEnumerable<string> pickedaddress = await gc.GetAddressesForPositionAsync(pickedposition);
+                IEnumerable<string> pickedaddress = await gc.GetAddressesForPositionAsync(pickedposition);
 
-            address = pickedaddress.First().ToString();
-            MessagingCenter.Send(address, "LocationAddress", pickedposition);
+                address = pickedaddress.First().ToString();
+                MessagingCenter.Send(address, "LocationAddress", pickedposition);
+            }
+            else
+            {
+                double? latitude = Convert.ToDouble(location.Latitude);
+                double? longitude = Convert.ToDouble(location.Longitude);
+                var pickedposition = new Position(latitude.Value, longitude.Value);
+                customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(latitude.Value, longitude.Value), Distance.FromMiles(0.5)));
+                Geocoder gc = new Geocoder();
+
+                IEnumerable<string> pickedaddress = await gc.GetAddressesForPositionAsync(pickedposition);
+
+                address = pickedaddress.First().ToString();
+                MessagingCenter.Send(address, "LocationAddress", pickedposition);
+            }
 
         }
     }

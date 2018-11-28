@@ -80,6 +80,7 @@ namespace MereNear.ViewModels
                     Image = postJobData.Image,
                     Description = postJobData.Description,
                     CategoryWork = postJobData.CategoryWork,
+                    AddressPosition = postJobData.AddressPosition,
                     Address = postJobData.Address,
                     CategoryName = postJobData.CategoryName,
                     Date = postJobData.Date,

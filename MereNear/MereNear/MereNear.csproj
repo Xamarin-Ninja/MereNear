@@ -172,6 +172,9 @@
     <None Update="Views\AboutPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Views\AllJobs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Views\ChatPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
@@ -191,6 +194,9 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\Common\MenuPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\EditProfilePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\HomeDetailPage.xaml">
@@ -247,7 +253,13 @@
     <None Update="Views\PlumberDetail.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Views\PopUp\DealPopUp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Views\PopUp\PopUpLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\PopUp\PreviewPopup.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\PostDescriptionPage.xaml">
@@ -265,13 +277,25 @@
     <None Update="Views\SendOtpPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Views\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Views\SignupPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\TermConditionPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Views\ViewCells\LocationViewCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Views\ViewCells\ReceiverViewCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ViewCells\RecieverDealViewCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ViewCells\SenderDealViewCell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\ViewCells\SenderViewCell.xaml">

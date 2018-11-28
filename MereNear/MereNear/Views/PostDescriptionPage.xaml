@@ -20,7 +20,7 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="150"/>
-                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="100"/>
@@ -66,11 +66,11 @@
                     <Label Text="Time" FontFamily="Poppins-Regular.ttf#Poppins Regular" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" FontSize="14"/>
 
                     <Frame BackgroundColor="Transparent" BorderColor="Gray" CornerRadius="0" Padding="0" HasShadow="False" Grid.Row="1" Grid.Column="0">
-                        <DatePicker MinimumDate="{Binding MinimumDate}" MaximumDate="{Binding MaximumDate}" Date="{Binding JobDate}" VerticalOptions="Center"  FontSize="14"/>
+                        <DatePicker MinimumDate="{Binding MinimumDate}" MaximumDate="{Binding MaximumDate}" Date="{Binding JobDate, Mode=TwoWay}" VerticalOptions="Center"  FontSize="14"/>
                     </Frame>
 
                     <Frame BackgroundColor="Transparent" BorderColor="Gray" CornerRadius="0" Padding="0" HasShadow="False" Grid.Row="1" Grid.Column="1">
-                        <TimePicker VerticalOptions="Center" FontSize="14" Time="{Binding JobTime}"></TimePicker>
+                        <TimePicker VerticalOptions="Center" FontSize="14" Time="{Binding JobTime, Mode=TwoWay, Converter={StaticResource DateTimeToTimeSpanConverter}}"></TimePicker>
                     </Frame>
                 </Grid>
 
@@ -84,7 +84,7 @@
             </Grid>
         </ScrollView>
 
-        <BoxView BackgroundColor="LightGray" Grid.Row="0" Grid.RowSpan="2" IsVisible="{Binding IsPreviewVisible}" Opacity="0.5"/>
+        <BoxView BackgroundColor="Black" Grid.Row="0" Grid.RowSpan="2" IsVisible="{Binding IsPreviewVisible}" Opacity="0.5"/>
         <Popup:PreviewPopup Grid.Row="0" Grid.RowSpan="2" IsVisible="{Binding IsPreviewVisible}" Margin="20,50"/>
     </Grid>
 </ContentPage>

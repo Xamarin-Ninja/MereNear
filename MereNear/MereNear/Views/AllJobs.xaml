@@ -49,7 +49,7 @@
                                 </StackLayout>
 
                                 <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="End">
-                                    <Image Source="location_job.png" HeightRequest="10" WidthRequest="10"/>
+                                    <Image Source="location.png" HeightRequest="10" WidthRequest="10"/>
                                     <Label Text="{Binding Address}" Style="{StaticResource GrayLabel}" LineBreakMode="TailTruncation"/>
                                 </StackLayout>
 
