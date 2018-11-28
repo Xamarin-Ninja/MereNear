@@ -8,5 +8,10 @@ namespace MereNear.Views
         {
             InitializeComponent();
         }
+
+        private void jobListItems_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            jobListItems.SelectedItem = null;
+        }
     }
 }

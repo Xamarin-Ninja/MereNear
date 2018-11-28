@@ -3,47 +3,81 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:common="clr-namespace:MereNear.Views.Common"
+             xmlns:local="clr-namespace:MereNear.CustomControl"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MereNear.Views.MyPostsDetail" NavigationPage.HasNavigationBar="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="7*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <common:CustomHeader x:Name="customheader" Grid.Row="0" TitleText="{Binding CustomHeaderTitle}"/>
-        <!--<common:MapView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>-->
+        <ScrollView Grid.Row="1">
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <!--<mymapview:MyMap Grid.Row="0" HeightRequest="100" WidthRequest="100"/>-->
+                <local:CustomMap x:Name="customMap" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <Grid Grid.Row="1" Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="map.png" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Text="{Binding Address}" Grid.Row="0" Grid.Column="1" Style="{StaticResource GrayLabel}" HorizontalOptions="Start" VerticalOptions="Center" LineBreakMode="WordWrap"/>
 
-        <Grid Grid.Row="2" RowSpacing="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10"/>
-                <ColumnDefinition Width="10"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="10"/>
-            </Grid.ColumnDefinitions>
-            <Image Source="location_job.png" Grid.Row="0" Grid.Column="1" HeightRequest="10" WidthRequest="10" VerticalOptions="Start"/>
-            <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,5,0">
-                <Label.Text>
-                    Dolor et iriure accusam stet justo eirmod vel takimata imperdiet vero invidunt nonumy takimata sed ut vel et eos vero
-                </Label.Text>
-            </Label>
+                    <Label Text="{Binding Distance,StringFormat='({0:N})'}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" Style="{StaticResource BlueLabel}" IsVisible="{Binding IsDistanceVisible}"/>
 
-            <Image Source="setting.png" Grid.Row="1" Grid.Column="1" HeightRequest="10" WidthRequest="10"/>
-            <Label Grid.Row="1" Grid.Column="2" Text="Job Description" TextColor="Gray"/>
+                    <Image Source="resume.png" Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Start"/>
+                    <Label Text="Job Title" Style="{StaticResource BlackLabelBold}"  FontAttributes="Bold" FontSize="12" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"/>
+                    <Label Grid.Row="3"  Grid.Column="1" Style="{StaticResource GrayLabel}" FontSize="10" HorizontalOptions="Start" VerticalOptions="Start" Text="{Binding CategoryWork}"/>
 
-            <Image Source="about.png" Grid.Row="2" Grid.Column="1" HeightRequest="10" WidthRequest="10"/>
-            <Label Grid.Row="2" Grid.Column="2" Text="Job Status" TextColor="Gray"/>
-            <Label x:Name="jobstatus" Grid.Row="2" Grid.Column="3" HorizontalOptions="End" Text="{Binding JobStatus}" TextColor="{Binding JobStatusColor}"/>
+                    <Image Source="resume.png" Grid.Row="4" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Start"/>
+                    <Label Text="Job Description(#01)" Style="{StaticResource BlackLabelBold}" FontSize="12" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"/>
+                    <Label Grid.Row="5"  Grid.Column="1" Style="{StaticResource GrayLabel}" FontSize="10" HorizontalOptions="Start" VerticalOptions="Start" Text="{Binding Description}" LineBreakMode="WordWrap"/>
 
-            <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="Need Service" TextColor="Gray" Margin="0,10,0,0"/>
-            <Label Grid.Row="3" Grid.Column="3" Text="Immediately/OnTime" TextColor="Gray" HorizontalOptions="End" Margin="0,10,0,0"/>
-        </Grid>
+
+                    <Image Source="status.png" Grid.Row="6" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Text="Job Status" Grid.Row="6" Grid.Column="1" Style="{StaticResource BlackLabelBold}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Text="{Binding Status}" TextColor="{Binding StatusColor}" Grid.Row="6" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" FontSize="12"/>
+
+                    <Image Source="need.png" Grid.Row="7" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Text="Need Service" Grid.Row="7" Grid.Column="1" Style="{StaticResource BlackLabelBold}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Text="{Binding Time}" TextColor="{Binding TimeColor}" Grid.Row="7" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+                <BoxView HeightRequest="1" Grid.Row="2" BackgroundColor="Gray" HorizontalOptions="Fill"/>
+                <Grid Grid.Row="3"  ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Photo" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Black"/>
+                    <Image Source="wall.png" Grid.Row="1" Grid.Column="0"/>
+                    <Image Source="wall.png" Grid.Row="1" Grid.Column="1"/>
+
+                    <Button Margin="-20,0,-20,-20" x:Name="applyButton" Text="{Binding ButtonTextChange}" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding ApplyButton}" IsVisible="{Binding IsApplyButtonVisible}"/>
+                </Grid>
+            </Grid>
+        </ScrollView>
     </Grid>
 </ContentPage>

@@ -8,7 +8,10 @@ namespace MereNear.Views
         {
             InitializeComponent();
             NextButton.Text ="";
-            MobileEntry.Focus();
+            MessagingCenter.Subscribe<string>(this, "EntryFocus", (sender) =>
+            {
+                MobileEntry.Focus();
+            });
         }
 
         private void BackIcon_Tapped(object sender, System.EventArgs e)
@@ -25,10 +28,10 @@ namespace MereNear.Views
             }
         }
 
-        private void NextButton_Clicked(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new SendOtpPage(MobileEntry.Text), true);
-           // Navigation.PushAsync(new MessagesPage(), true);
-        }
+        //private void NextButton_Clicked(object sender, System.EventArgs e)
+        //{
+        //    Navigation.PushAsync(new SendOtpPage(MobileEntry.Text), true);
+        //   // Navigation.PushAsync(new MessagesPage(), true);
+        //}
     }
 }

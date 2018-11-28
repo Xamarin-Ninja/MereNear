@@ -9,21 +9,39 @@
 		<!-- Application resource dictionary -->
         <ResourceDictionary>
             <converters:BoolToNotBoolConverter x:Key="BoolToNotBoolConverter"/>
-            
+
+            <!--#region Regular Label Styles-->
+            <Style x:Key="GreenLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#6fda44" />
+                <Setter Property="FontFamily" Value="Poppins-Regular.ttf#Poppins Regular"/>
+            </Style>
+
             <Style x:Key="BlueLabel" TargetType="Label">
-                <Setter Property="TextColor" Value="#8DB7E0" />
-                <Setter Property="HorizontalOptions" Value="Start"/>
-                <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="HorizontalTextAlignment" Value="Start"/>
-                <Setter Property="VerticalTextAlignment" Value="Center"/>
-                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="TextColor" Value="#2688e3" />
+                <Setter Property="FontFamily" Value="Poppins-Regular.ttf#Poppins Regular"/>
             </Style>
-            <Style x:Key="FrameBorderColor" TargetType="Frame">
-                <Setter Property="BorderColor" Value="#3B92E7"/>
-                <Setter Property="OutlineColor" Value="#3B92E7"/>
+
+            <Style x:Key="BlackLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#353535" />
+                <Setter Property="FontFamily" Value="Poppins-Regular.ttf#Poppins Regular"/>
             </Style>
-            
-            <Style TargetType="Label"  x:Key="FontAwesomeLabel">
+
+            <Style x:Key="GrayLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#747474" />
+                <Setter Property="FontFamily" Value="Poppins-Regular.ttf#Poppins Regular"/>
+            </Style>
+
+            <Style x:Key="OrangeLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#dc5800" />
+                <Setter Property="FontFamily" Value="Poppins-Regular.ttf#Poppins Regular"/>
+            </Style>
+
+            <Style x:Key="RedLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#dd5049" />
+                <Setter Property="FontFamily" Value="Poppins-Regular.ttf#Poppins Regular"/>
+            </Style>
+
+            <Style x:Key="FontAwesomeLabel" TargetType="Label">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="FontFamily">
                     <Setter.Value>
@@ -31,6 +49,45 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+            <!--#endregion-->
+
+            <!--#region Bold Label Styles-->
+            <Style x:Key="GreenLabelBold" TargetType="Label">
+                <Setter Property="TextColor" Value="#6fda44" />
+                <Setter Property="FontFamily" Value="Poppins-Bold.ttf#Poppins Bold"/>
+            </Style>
+
+            <Style x:Key="BlueLabelBold" TargetType="Label">
+                <Setter Property="TextColor" Value="#2688e3" />
+                <Setter Property="FontFamily" Value="Poppins-Bold.ttf#Poppins Bold"/>
+            </Style>
+
+            <Style x:Key="BlackLabelBold" TargetType="Label">
+                <Setter Property="TextColor" Value="#353535" />
+                <Setter Property="FontFamily" Value="Poppins-Bold.ttf#Poppins Bold"/>
+            </Style>
+
+            <Style x:Key="GrayLabelBold" TargetType="Label">
+                <Setter Property="TextColor" Value="#747474" />
+                <Setter Property="FontFamily" Value="Poppins-Bold.ttf#Poppins Bold"/>
+            </Style>
+
+            <Style x:Key="OrangeLabelBold" TargetType="Label">
+                <Setter Property="TextColor" Value="#dc5800" />
+                <Setter Property="FontFamily" Value="Poppins-Bold.ttf#Poppins Bold"/>
+            </Style>
+
+            <Style x:Key="RedLabelBold" TargetType="Label">
+                <Setter Property="TextColor" Value="#dd5049" />
+                <Setter Property="FontFamily" Value="Poppins-Bold.ttf#Poppins Bold"/>
+            </Style>
+            <!--#endregion-->
+
+            <!--#region Button Styles-->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#6fda44"/>
+            </Style>
+            <!--#endregion-->
         </ResourceDictionary>
         
 	</Application.Resources>

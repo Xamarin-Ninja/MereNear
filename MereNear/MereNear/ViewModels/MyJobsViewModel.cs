@@ -1,6 +1,8 @@
+using MereNear.Model;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,19 +12,21 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class MyJobsViewModel : BindableBase
+	public class MyJobsViewModel : BindableBase,INavigationAware
 	{
-        private ObservableCollection<MyJobsModel> _myjobItems = new ObservableCollection<MyJobsModel>();
-        private MyJobsModel _selectedJobs;
+        private readonly INavigationService _navigationService;
+        private ObservableCollection<PostJobModel> _myjobItems = new ObservableCollection<PostJobModel>();
+        private PostJobModel _selectedJobs;
+        public PostJobModel myJobDetail = new PostJobModel();
 
 
 
-        public ObservableCollection<MyJobsModel> MyjobItems
+        public ObservableCollection<PostJobModel> MyjobItems
         {
             get { return _myjobItems; }
             set { SetProperty(ref _myjobItems, value); }
         }
-        public MyJobsModel SelectedJobs
+        public PostJobModel SelectedJobs
         {
             get { return _selectedJobs; }
             set
@@ -40,40 +44,10 @@ namespace MereNear.ViewModels
         }
 
 
-        public MyJobsViewModel()
+        public MyJobsViewModel(INavigationService navigationService)
         {
-            MyjobItems.Add(new MyJobsModel
-            {
-                WorkerJobType = "Electrician",
-                WorkerJobDate = "01/10/2018",
-                WorkerJobStatus = "Completed",
-                WorkerJobAddress = "Mohali",
-                JobStatusColor = Color.Green
-            });
-            MyjobItems.Add(new MyJobsModel
-            {
-                WorkerJobType = "Plumber",
-                WorkerJobDate = "01/10/2018",
-                WorkerJobStatus = "In-Progress",
-                WorkerJobAddress = "Mohali",
-                JobStatusColor = Color.OrangeRed
-            });
-            MyjobItems.Add(new MyJobsModel
-            {
-                WorkerJobType = "Car Wash",
-                WorkerJobDate = "01/10/2018",
-                WorkerJobStatus = "Cancelled",
-                WorkerJobAddress = "Mohali",
-                JobStatusColor = Color.Red
-            });
-            MyjobItems.Add(new MyJobsModel
-            {
-                WorkerJobType = "Repair",
-                WorkerJobDate = "01/10/2018",
-                WorkerJobStatus = "Completed",
-                WorkerJobAddress = "Mohali",
-                JobStatusColor = Color.Green
-            });
+            _navigationService = navigationService;
+            //MyjobItems.Add(myJobDetail);
         }
 
         public ICommand HeaderLeftIconCommand
@@ -87,6 +61,24 @@ namespace MereNear.ViewModels
             }
         }
 
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            
+        }
+
+        public void OnNavigatingTo(INavigationParameters parameters)
+        {
+            if (parameters.ContainsKey("LookingJobFlow"))
+            {
+                myJobDetail = (PostJobModel)parameters["LookingJobFlow"];
+                MyjobItems.Add(myJobDetail);
+            }
+        }
     }
 
 

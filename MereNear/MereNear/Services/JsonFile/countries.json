@@ -2,1214 +2,1451 @@
     "status": true,
   "data": [
     {
-      "name": "Israel",
-      "dial_code": "+972",
-      "code": "IL"
+      "countryname": "Afghanistan",
+      "telpref": "+93",
+      "isocode": "AF",
+      "countryflag": "http://www.geognos.com/geo/en/cc/af.html"
     },
     {
-      "name": "Afghanistan",
-      "dial_code": "+93",
-      "code": "AF"
+      "countryname": "Albania",
+      "telpref": "+355",
+      "isocode": "AL",
+      "countryflag": "http://www.geognos.com/geo/en/cc/al.html"
     },
     {
-      "name": "Albania",
-      "dial_code": "+355",
-      "code": "AL"
+      "countryname": "Algeria",
+      "telpref": "+213",
+      "isocode": "DZ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/dz.html"
     },
     {
-      "name": "Algeria",
-      "dial_code": "+213",
-      "code": "DZ"
+      "countryname": "AmericanSamoa",
+      "telpref": "+1 684",
+      "isocode": "AS",
+      "countryflag": "http://www.geognos.com/geo/en/cc/as.html"
     },
     {
-      "name": "AmericanSamoa",
-      "dial_code": "+1 684",
-      "code": "AS"
+      "countryname": "Andorra",
+      "telpref": "+376",
+      "isocode": "AD",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ad.html"
     },
     {
-      "name": "Andorra",
-      "dial_code": "+376",
-      "code": "AD"
+      "countryname": "Angola",
+      "telpref": "+244",
+      "isocode": "AO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ao.html"
     },
     {
-      "name": "Angola",
-      "dial_code": "+244",
-      "code": "AO"
+      "countryname": "Anguilla",
+      "telpref": "+1 264",
+      "isocode": "AI",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ai.html"
     },
     {
-      "name": "Anguilla",
-      "dial_code": "+1 264",
-      "code": "AI"
+      "countryname": "Antigua and Barbuda",
+      "telpref": "+1268",
+      "isocode": "AG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ag.html"
     },
     {
-      "name": "Antigua and Barbuda",
-      "dial_code": "+1268",
-      "code": "AG"
+      "countryname": "Argentina",
+      "telpref": "+54",
+      "isocode": "AR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ar.html"
     },
     {
-      "name": "Argentina",
-      "dial_code": "+54",
-      "code": "AR"
+      "countryname": "Armenia",
+      "telpref": "+374",
+      "isocode": "AM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/am.html"
     },
     {
-      "name": "Armenia",
-      "dial_code": "+374",
-      "code": "AM"
+      "countryname": "Aruba",
+      "telpref": "+297",
+      "isocode": "AW",
+      "countryflag": "http://www.geognos.com/geo/en/cc/aw.html"
     },
     {
-      "name": "Aruba",
-      "dial_code": "+297",
-      "code": "AW"
+      "countryname": "Australia",
+      "telpref": "+61",
+      "isocode": "AU",
+      "countryflag": "http://www.geognos.com/geo/en/cc/au.html"
     },
     {
-      "name": "Australia",
-      "dial_code": "+61",
-      "code": "AU"
+      "countryname": "Austria",
+      "telpref": "+43",
+      "isocode": "AT",
+      "countryflag": "http://www.geognos.com/geo/en/cc/at.html"
     },
     {
-      "name": "Austria",
-      "dial_code": "+43",
-      "code": "AT"
+      "countryname": "Azerbaijan",
+      "telpref": "+994",
+      "isocode": "AZ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/az.html"
     },
     {
-      "name": "Azerbaijan",
-      "dial_code": "+994",
-      "code": "AZ"
+      "countryname": "Bahamas",
+      "telpref": "+1 242",
+      "isocode": "BS",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bs.html"
     },
     {
-      "name": "Bahamas",
-      "dial_code": "+1 242",
-      "code": "BS"
+      "countryname": "Bahrain",
+      "telpref": "+973",
+      "isocode": "BH",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bh.html"
     },
     {
-      "name": "Bahrain",
-      "dial_code": "+973",
-      "code": "BH"
+      "countryname": "Bangladesh",
+      "telpref": "+880",
+      "isocode": "BD",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bd.html"
     },
     {
-      "name": "Bangladesh",
-      "dial_code": "+880",
-      "code": "BD"
+      "countryname": "Barbados",
+      "telpref": "+1 246",
+      "isocode": "BB",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bb.html"
     },
     {
-      "name": "Barbados",
-      "dial_code": "+1 246",
-      "code": "BB"
+      "countryname": "Belarus",
+      "telpref": "+375",
+      "isocode": "BY",
+      "countryflag": "http://www.geognos.com/geo/en/cc/by.html"
     },
     {
-      "name": "Belarus",
-      "dial_code": "+375",
-      "code": "BY"
+      "countryname": "Belgium",
+      "telpref": "+32",
+      "isocode": "BE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/be.html"
+
     },
     {
-      "name": "Belgium",
-      "dial_code": "+32",
-      "code": "BE"
+      "countryname": "Belize",
+      "telpref": "+501",
+      "isocode": "BZ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bz.html"
     },
     {
-      "name": "Belize",
-      "dial_code": "+501",
-      "code": "BZ"
+      "countryname": "Benin",
+      "telpref": "+229",
+      "isocode": "BJ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bj.html"
     },
     {
-      "name": "Benin",
-      "dial_code": "+229",
-      "code": "BJ"
+      "countryname": "Bermuda",
+      "telpref": "+1 441",
+      "isocode": "BM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bm.html"
     },
     {
-      "name": "Bermuda",
-      "dial_code": "+1 441",
-      "code": "BM"
+      "countryname": "Bhutan",
+      "telpref": "+975",
+      "isocode": "BT",
+      "countryflag" : "http://www.geognos.com/geo/en/cc/bt.html"
     },
     {
-      "name": "Bhutan",
-      "dial_code": "+975",
-      "code": "BT"
+      "countryname": "Bosnia and Herzegovina",
+      "telpref": "+387",
+      "isocode": "BA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ba.html"
     },
     {
-      "name": "Bosnia and Herzegovina",
-      "dial_code": "+387",
-      "code": "BA"
+      "countryname": "Botswana",
+      "telpref": "+267",
+      "isocode": "BW",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bw.html"
     },
     {
-      "name": "Botswana",
-      "dial_code": "+267",
-      "code": "BW"
+      "countryname": "Brazil",
+      "telpref": "+55",
+      "isocode": "BR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/br.html"
     },
     {
-      "name": "Brazil",
-      "dial_code": "+55",
-      "code": "BR"
+      "countryname": "British Indian Ocean Territory",
+      "telpref": "+246",
+      "isocode": "IO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/io.html"
     },
     {
-      "name": "British Indian Ocean Territory",
-      "dial_code": "+246",
-      "code": "IO"
+      "countryname": "Bulgaria",
+      "telpref": "+359",
+      "isocode": "BG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bg.html"
     },
     {
-      "name": "Bulgaria",
-      "dial_code": "+359",
-      "code": "BG"
+      "countryname": "Burkina Faso",
+      "telpref": "+226",
+      "isocode": "BF",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bf.html"
     },
     {
-      "name": "Burkina Faso",
-      "dial_code": "+226",
-      "code": "BF"
+      "countryname": "Burundi",
+      "telpref": "+257",
+      "isocode": "BI",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bi.html"
     },
     {
-      "name": "Burundi",
-      "dial_code": "+257",
-      "code": "BI"
+      "countryname": "Cambodia",
+      "telpref": "+855",
+      "isocode": "KH",
+      "countryflag": "http://www.geognos.com/geo/en/cc/kh.html"
     },
     {
-      "name": "Cambodia",
-      "dial_code": "+855",
-      "code": "KH"
+      "countryname": "Cameroon",
+      "telpref": "+237",
+      "isocode": "CM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cm.html"
     },
     {
-      "name": "Cameroon",
-      "dial_code": "+237",
-      "code": "CM"
+      "countryname": "Canada",
+      "telpref": "+1",
+      "isocode": "CA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ca.html"
     },
     {
-      "name": "Canada",
-      "dial_code": "+1",
-      "code": "CA"
+      "countryname": "Cape Verde",
+      "telpref": "+238",
+      "isocode": "CV",
+      "countryflag": "http://www.geognos.com/geo/en/cc/v.html"
     },
     {
-      "name": "Cape Verde",
-      "dial_code": "+238",
-      "code": "CV"
+      "countryname": "Cayman Islands",
+      "telpref": "+ 345",
+      "isocode": "KY",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ky.html"
     },
     {
-      "name": "Cayman Islands",
-      "dial_code": "+ 345",
-      "code": "KY"
+      "countryname": "Central African Republic",
+      "telpref": "+236",
+      "isocode": "CF",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cf.html"
     },
     {
-      "name": "Central African Republic",
-      "dial_code": "+236",
-      "code": "CF"
+      "countryname": "Chad",
+      "telpref": "+235",
+      "isocode": "TD",
+      "countryflag": "http://www.geognos.com/geo/en/cc/td.html"
     },
     {
-      "name": "Chad",
-      "dial_code": "+235",
-      "code": "TD"
+      "countryname": "Chile",
+      "telpref": "+56",
+      "isocode": "CL",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cl.html"
     },
     {
-      "name": "Chile",
-      "dial_code": "+56",
-      "code": "CL"
+      "countryname": "China",
+      "telpref": "+86",
+      "isocode": "CN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cn.html"
     },
     {
-      "name": "China",
-      "dial_code": "+86",
-      "code": "CN"
+      "countryname": "Christmas Island",
+      "telpref": "+61",
+      "isocode": "CX",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cx.html"
     },
     {
-      "name": "Christmas Island",
-      "dial_code": "+61",
-      "code": "CX"
+      "countryname": "Colombia",
+      "telpref": "+57",
+      "isocode": "CO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/co.html"
     },
     {
-      "name": "Colombia",
-      "dial_code": "+57",
-      "code": "CO"
+      "countryname": "Comoros",
+      "telpref": "+269",
+      "isocode": "KM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/km.html"
     },
     {
-      "name": "Comoros",
-      "dial_code": "+269",
-      "code": "KM"
+      "countryname": "Congo",
+      "telpref": "+242",
+      "isocode": "CG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cz.html"
     },
     {
-      "name": "Congo",
-      "dial_code": "+242",
-      "code": "CG"
+      "countryname": "Cook Islands",
+      "telpref": "+682",
+      "isocode": "CK",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ck.html"
     },
     {
-      "name": "Cook Islands",
-      "dial_code": "+682",
-      "code": "CK"
+      "countryname": "Costa Rica",
+      "telpref": "+506",
+      "isocode": "CR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cr.html"
     },
     {
-      "name": "Costa Rica",
-      "dial_code": "+506",
-      "code": "CR"
+      "countryname": "Croatia",
+      "telpref": "+385",
+      "isocode": "HR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/hr.html"
     },
     {
-      "name": "Croatia",
-      "dial_code": "+385",
-      "code": "HR"
+      "countryname": "Cuba",
+      "telpref": "+53",
+      "isocode": "CU",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cu.html"
     },
     {
-      "name": "Cuba",
-      "dial_code": "+53",
-      "code": "CU"
+      "countryname": "Cyprus",
+      "telpref": "+537",
+      "isocode": "CY",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cy.html"
     },
     {
-      "name": "Cyprus",
-      "dial_code": "+537",
-      "code": "CY"
+      "countryname": "Czech Republic",
+      "telpref": "+420",
+      "isocode": "CZ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cz.html"
     },
     {
-      "name": "Czech Republic",
-      "dial_code": "+420",
-      "code": "CZ"
+      "countryname": "Denmark",
+      "telpref": "+45",
+      "isocode": "DK",
+      "countryflag": "http://www.geognos.com/geo/en/cc/dk.html"
     },
     {
-      "name": "Denmark",
-      "dial_code": "+45",
-      "code": "DK"
+      "countryname": "Djibouti",
+      "telpref": "+253",
+      "isocode": "DJ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/dj.html"
     },
     {
-      "name": "Djibouti",
-      "dial_code": "+253",
-      "code": "DJ"
+      "countryname": "Dominica",
+      "telpref": "+1 767",
+      "isocode": "DM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/dm.html"
     },
     {
-      "name": "Dominica",
-      "dial_code": "+1 767",
-      "code": "DM"
+      "countryname": "Dominican Republic",
+      "telpref": "+1 849",
+      "isocode": "DO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/do.html"
     },
     {
-      "name": "Dominican Republic",
-      "dial_code": "+1 849",
-      "code": "DO"
+      "countryname": "Ecuador",
+      "telpref": "+593",
+      "isocode": "EC",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ec.html"
     },
     {
-      "name": "Ecuador",
-      "dial_code": "+593",
-      "code": "EC"
+      "countryname": "Egypt",
+      "telpref": "+20",
+      "isocode": "EG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/eg.html"
     },
     {
-      "name": "Egypt",
-      "dial_code": "+20",
-      "code": "EG"
+      "countryname": "El Salvador",
+      "telpref": "+503",
+      "isocode": "SV",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sv.html"
     },
     {
-      "name": "El Salvador",
-      "dial_code": "+503",
-      "code": "SV"
+      "countryname": "Equatorial Guinea",
+      "telpref": "+240",
+      "isocode": "GQ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gq.html"
     },
     {
-      "name": "Equatorial Guinea",
-      "dial_code": "+240",
-      "code": "GQ"
+      "countryname": "Eritrea",
+      "telpref": "+291",
+      "isocode": "ER",
+      "countryflag": "http://www.geognos.com/geo/en/cc/er.html"
     },
     {
-      "name": "Eritrea",
-      "dial_code": "+291",
-      "code": "ER"
+      "countryname": "Estonia",
+      "telpref": "+372",
+      "isocode": "EE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ee.html"
     },
     {
-      "name": "Estonia",
-      "dial_code": "+372",
-      "code": "EE"
+      "countryname": "Ethiopia",
+      "telpref": "+251",
+      "isocode": "ET",
+      "countryflag": "http://www.geognos.com/geo/en/cc/et.html"
     },
     {
-      "name": "Ethiopia",
-      "dial_code": "+251",
-      "code": "ET"
+      "countryname": "Faroe Islands",
+      "telpref": "+298",
+      "isocode": "FO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/fo.html"
     },
     {
-      "name": "Faroe Islands",
-      "dial_code": "+298",
-      "code": "FO"
+      "countryname": "Fiji",
+      "telpref": "+679",
+      "isocode": "FJ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/fj.html"
     },
     {
-      "name": "Fiji",
-      "dial_code": "+679",
-      "code": "FJ"
+      "countryname": "Finland",
+      "telpref": "+358",
+      "isocode": "FI",
+      "countryflag": "http://www.geognos.com/geo/en/cc/fi.html"
     },
     {
-      "name": "Finland",
-      "dial_code": "+358",
-      "code": "FI"
+      "countryname": "France",
+      "telpref": "+33",
+      "isocode": "FR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/fr.html"
     },
     {
-      "name": "France",
-      "dial_code": "+33",
-      "code": "FR"
+      "countryname": "French Guiana",
+      "telpref": "+594",
+      "isocode": "GF",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gf.html"
     },
     {
-      "name": "French Guiana",
-      "dial_code": "+594",
-      "code": "GF"
+      "countryname": "French Polynesia",
+      "telpref": "+689",
+      "isocode": "PF",
+      "countryflag": "http://www.geognos.com/geo/en/cc/pf.html"
     },
     {
-      "name": "French Polynesia",
-      "dial_code": "+689",
-      "code": "PF"
+      "countryname": "Gabon",
+      "telpref": "+241",
+      "isocode": "GA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ga.html"
     },
     {
-      "name": "Gabon",
-      "dial_code": "+241",
-      "code": "GA"
+      "countryname": "Gambia",
+      "telpref": "+220",
+      "isocode": "GM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gm.html"
     },
     {
-      "name": "Gambia",
-      "dial_code": "+220",
-      "code": "GM"
+      "countryname": "Georgia",
+      "telpref": "+995",
+      "isocode": "GE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ge.html"
     },
     {
-      "name": "Georgia",
-      "dial_code": "+995",
-      "code": "GE"
+      "countryname": "Germany",
+      "telpref": "+49",
+      "isocode": "DE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/de.html"
     },
     {
-      "name": "Germany",
-      "dial_code": "+49",
-      "code": "DE"
+      "countryname": "Ghana",
+      "telpref": "+233",
+      "isocode": "GH",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gh.html"
     },
     {
-      "name": "Ghana",
-      "dial_code": "+233",
-      "code": "GH"
+      "countryname": "Gibraltar",
+      "telpref": "+350",
+      "isocode": "GI",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gi.html"
     },
     {
-      "name": "Gibraltar",
-      "dial_code": "+350",
-      "code": "GI"
+      "countryname": "Greece",
+      "telpref": "+30",
+      "isocode": "GR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gr.html"
     },
     {
-      "name": "Greece",
-      "dial_code": "+30",
-      "code": "GR"
+      "countryname": "Greenland",
+      "telpref": "+299",
+      "isocode": "GL",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gl.html"
     },
     {
-      "name": "Greenland",
-      "dial_code": "+299",
-      "code": "GL"
+      "countryname": "Grenada",
+      "telpref": "+1 473",
+      "isocode": "GD",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gd.html"
     },
     {
-      "name": "Grenada",
-      "dial_code": "+1 473",
-      "code": "GD"
+      "countryname": "Guadeloupe",
+      "telpref": "+590",
+      "isocode": "GP",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gp.html"
     },
     {
-      "name": "Guadeloupe",
-      "dial_code": "+590",
-      "code": "GP"
+      "countryname": "Guam",
+      "telpref": "+1 671",
+      "isocode": "GU",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gu.html"
     },
     {
-      "name": "Guam",
-      "dial_code": "+1 671",
-      "code": "GU"
+      "countryname": "Guatemala",
+      "telpref": "+502",
+      "isocode": "GT",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gt.html"
     },
     {
-      "name": "Guatemala",
-      "dial_code": "+502",
-      "code": "GT"
+      "countryname": "Guinea",
+      "telpref": "+224",
+      "isocode": "GN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gn.html"
     },
     {
-      "name": "Guinea",
-      "dial_code": "+224",
-      "code": "GN"
+      "countryname": "Guinea-Bissau",
+      "telpref": "+245",
+      "isocode": "GW",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gw.html"
     },
     {
-      "name": "Guinea-Bissau",
-      "dial_code": "+245",
-      "code": "GW"
+      "countryname": "Guyana",
+      "telpref": "+595",
+      "isocode": "GY",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gy.html"
     },
     {
-      "name": "Guyana",
-      "dial_code": "+595",
-      "code": "GY"
+      "countryname": "Haiti",
+      "telpref": "+509",
+      "isocode": "HT",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ht.html"
     },
     {
-      "name": "Haiti",
-      "dial_code": "+509",
-      "code": "HT"
+      "countryname": "Honduras",
+      "telpref": "+504",
+      "isocode": "HN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/hn.html"
     },
     {
-      "name": "Honduras",
-      "dial_code": "+504",
-      "code": "HN"
+      "countryname": "Hungary",
+      "telpref": "+36",
+      "isocode": "HU",
+      "countryflag": "http://www.geognos.com/geo/en/cc/hu.html"
     },
     {
-      "name": "Hungary",
-      "dial_code": "+36",
-      "code": "HU"
+      "countryname": "Iceland",
+      "telpref": "+354",
+      "isocode": "IS",
+      "countryflag": "http://www.geognos.com/geo/en/cc/is.html"
     },
     {
-      "name": "Iceland",
-      "dial_code": "+354",
-      "code": "IS"
+      "countryname": "India",
+      "telpref": "+91",
+      "isocode": "IN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/in.html"
     },
     {
-      "name": "India",
-      "dial_code": "+91",
-      "code": "IN"
+      "countryname": "Indonesia",
+      "telpref": "+62",
+      "isocode": "ID",
+      "countryflag": "http://www.geognos.com/geo/en/cc/id.html"
     },
     {
-      "name": "Indonesia",
-      "dial_code": "+62",
-      "code": "ID"
+      "countryname": "Iraq",
+      "telpref": "+964",
+      "isocode": "IQ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/iq.html"
     },
     {
-      "name": "Iraq",
-      "dial_code": "+964",
-      "code": "IQ"
+      "countryname": "Ireland",
+      "telpref": "+353",
+      "isocode": "IE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ie.html"
     },
     {
-      "name": "Ireland",
-      "dial_code": "+353",
-      "code": "IE"
+      "countryname": "Israel",
+      "telpref": "+972",
+      "isocode": "IL",
+      "countryflag": "http://www.geognos.com/geo/en/cc/il.html"
     },
     {
-      "name": "Israel",
-      "dial_code": "+972",
-      "code": "IL"
+      "countryname": "Italy",
+      "telpref": "+39",
+      "isocode": "IT",
+      "countryflag": "http://www.geognos.com/geo/en/cc/it.html"
     },
     {
-      "name": "Italy",
-      "dial_code": "+39",
-      "code": "IT"
+      "countryname": "Jamaica",
+      "telpref": "+1 876",
+      "isocode": "JM", 
+      "countryflag" : "http://www.geognos.com/geo/en/cc/jm.html"
     },
     {
-      "name": "Jamaica",
-      "dial_code": "+1 876",
-      "code": "JM"
+      "countryname": "Japan",
+      "telpref": "+81",
+      "isocode": "JP",
+      "countryflag": "http://www.geognos.com/geo/en/cc/jp.html"
     },
     {
-      "name": "Japan",
-      "dial_code": "+81",
-      "code": "JP"
+      "countryname": "Jordan",
+      "telpref": "+962",
+      "isocode": "JO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/jo.html"
     },
     {
-      "name": "Jordan",
-      "dial_code": "+962",
-      "code": "JO"
+      "countryname": "Kazakhstan",
+      "telpref": "+7 7",
+      "isocode": "KZ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/kz.html"
     },
     {
-      "name": "Kazakhstan",
-      "dial_code": "+7 7",
-      "code": "KZ"
+      "countryname": "Kenya",
+      "telpref": "+254",
+      "isocode": "KE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ke.html"
     },
     {
-      "name": "Kenya",
-      "dial_code": "+254",
-      "code": "KE"
+      "countryname": "Kiribati",
+      "telpref": "+686",
+      "isocode": "KI",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ki.html"
     },
     {
-      "name": "Kiribati",
-      "dial_code": "+686",
-      "code": "KI"
+      "countryname": "Kuwait",
+      "telpref": "+965",
+      "isocode": "KW",
+      "countryflag": "http://www.geognos.com/geo/en/cc/kw.html"
     },
     {
-      "name": "Kuwait",
-      "dial_code": "+965",
-      "code": "KW"
+      "countryname": "Kyrgyzstan",
+      "telpref": "+996",
+      "isocode": "KG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/kg.html"
     },
     {
-      "name": "Kyrgyzstan",
-      "dial_code": "+996",
-      "code": "KG"
+      "countryname": "Latvia",
+      "telpref": "+371",
+      "isocode": "LV",
+      "countryflag": "http://www.geognos.com/geo/en/cc/lv.html"
     },
     {
-      "name": "Latvia",
-      "dial_code": "+371",
-      "code": "LV"
+      "countryname": "Lebanon",
+      "telpref": "+961",
+      "isocode": "LB",
+      "countryflag": "http://www.geognos.com/geo/en/cc/lb.html"
     },
     {
-      "name": "Lebanon",
-      "dial_code": "+961",
-      "code": "LB"
+      "countryname": "Lesotho",
+      "telpref": "+266",
+      "isocode": "LS",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ls.html"
     },
     {
-      "name": "Lesotho",
-      "dial_code": "+266",
-      "code": "LS"
+      "countryname": "Liberia",
+      "telpref": "+231",
+      "isocode": "LR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/lr.html"
     },
     {
-      "name": "Liberia",
-      "dial_code": "+231",
-      "code": "LR"
+      "countryname": "Liechtenstein",
+      "telpref": "+423",
+      "isocode": "LI",
+      "countryflag": "http://www.geognos.com/geo/en/cc/li.html"
     },
     {
-      "name": "Liechtenstein",
-      "dial_code": "+423",
-      "code": "LI"
+      "countryname": "Lithuania",
+      "telpref": "+370",
+      "isocode": "LT",
+      "countryflag": "http://www.geognos.com/geo/en/cc/lt.html"
     },
     {
-      "name": "Lithuania",
-      "dial_code": "+370",
-      "code": "LT"
+      "countryname": "Luxembourg",
+      "telpref": "+352",
+      "isocode": "LU",
+      "countryflag": "http://www.geognos.com/geo/en/cc/lu.html"
     },
     {
-      "name": "Luxembourg",
-      "dial_code": "+352",
-      "code": "LU"
+      "countryname": "Madagascar",
+      "telpref": "+261",
+      "isocode": "MG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mg.html"
     },
     {
-      "name": "Madagascar",
-      "dial_code": "+261",
-      "code": "MG"
+      "countryname": "Malawi",
+      "telpref": "+265",
+      "isocode": "MW",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mw.html"
     },
     {
-      "name": "Malawi",
-      "dial_code": "+265",
-      "code": "MW"
+      "countryname": "Malaysia",
+      "telpref": "+60",
+      "isocode": "MY",
+      "countryflag": "http://www.geognos.com/geo/en/cc/my.html"
     },
     {
-      "name": "Malaysia",
-      "dial_code": "+60",
-      "code": "MY"
+      "countryname": "Maldives",
+      "telpref": "+960",
+      "isocode": "MV",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mv.html"
     },
     {
-      "name": "Maldives",
-      "dial_code": "+960",
-      "code": "MV"
+      "countryname": "Mali",
+      "telpref": "+223",
+      "isocode": "ML",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ml.html"
     },
     {
-      "name": "Mali",
-      "dial_code": "+223",
-      "code": "ML"
+      "countryname": "Malta",
+      "telpref": "+356",
+      "isocode": "MT",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mt.html"
     },
     {
-      "name": "Malta",
-      "dial_code": "+356",
-      "code": "MT"
+      "countryname": "Marshall Islands",
+      "telpref": "+692",
+      "isocode": "MH",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mh.html"
     },
     {
-      "name": "Marshall Islands",
-      "dial_code": "+692",
-      "code": "MH"
+      "countryname": "Martinique",
+      "telpref": "+596",
+      "isocode": "MQ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mq.html"
     },
     {
-      "name": "Martinique",
-      "dial_code": "+596",
-      "code": "MQ"
+      "countryname": "Mauritania",
+      "telpref": "+222",
+      "isocode": "MR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mr.html"
     },
     {
-      "name": "Mauritania",
-      "dial_code": "+222",
-      "code": "MR"
+      "countryname": "Mauritius",
+      "telpref": "+230",
+      "isocode": "MU",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mu.html"
     },
     {
-      "name": "Mauritius",
-      "dial_code": "+230",
-      "code": "MU"
+      "countryname": "Mayotte",
+      "telpref": "+262",
+      "isocode": "YT",
+      "countryflag": "http://www.geognos.com/geo/en/cc/yt.html"
     },
     {
-      "name": "Mayotte",
-      "dial_code": "+262",
-      "code": "YT"
+      "countryname": "Mexico",
+      "telpref": "+52",
+      "isocode": "MX",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mx.html"
     },
     {
-      "name": "Mexico",
-      "dial_code": "+52",
-      "code": "MX"
+      "countryname": "Monaco",
+      "telpref": "+377",
+      "isocode": "MC",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mc.html"
     },
     {
-      "name": "Monaco",
-      "dial_code": "+377",
-      "code": "MC"
+      "countryname": "Mongolia",
+      "telpref": "+976",
+      "isocode": "MN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mn.html"
     },
     {
-      "name": "Mongolia",
-      "dial_code": "+976",
-      "code": "MN"
+      "countryname": "Montenegro",
+      "telpref": "+382",
+      "isocode": "ME",
+      "countryflag": "http://www.geognos.com/geo/en/cc/me.html"
     },
     {
-      "name": "Montenegro",
-      "dial_code": "+382",
-      "code": "ME"
+      "countryname": "Montserrat",
+      "telpref": "+1664",
+      "isocode": "MS",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ms.html"
     },
     {
-      "name": "Montserrat",
-      "dial_code": "+1664",
-      "code": "MS"
+      "countryname": "Morocco",
+      "telpref": "+212",
+      "isocode": "MA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ma.html"
     },
     {
-      "name": "Morocco",
-      "dial_code": "+212",
-      "code": "MA"
+      "countryname": "Myanmar",
+      "telpref": "+95",
+      "isocode": "MM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mm.html"
     },
     {
-      "name": "Myanmar",
-      "dial_code": "+95",
-      "code": "MM"
+      "countryname": "Namibia",
+      "telpref": "+264",
+      "isocode": "NA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/na.html"
     },
     {
-      "name": "Namibia",
-      "dial_code": "+264",
-      "code": "NA"
+      "countryname": "Nauru",
+      "telpref": "+674",
+      "isocode": "NR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/nr.html"
     },
     {
-      "name": "Nauru",
-      "dial_code": "+674",
-      "code": "NR"
+      "countryname": "Nepal",
+      "telpref": "+977",
+      "isocode": "NP",
+      "countryflag": "http://www.geognos.com/geo/en/cc/np.html"
     },
     {
-      "name": "Nepal",
-      "dial_code": "+977",
-      "code": "NP"
+      "countryname": "Netherlands",
+      "telpref": "+31",
+      "isocode": "NL",
+      "countryflag": "http://www.geognos.com/geo/en/cc/nl.html"
     },
     {
-      "name": "Netherlands",
-      "dial_code": "+31",
-      "code": "NL"
+      "countryname": "Netherlands Antilles",
+      "telpref": "+599",
+      "isocode": "AN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/an.html"
     },
     {
-      "name": "Netherlands Antilles",
-      "dial_code": "+599",
-      "code": "AN"
+      "countryname": "New Caledonia",
+      "telpref": "+687",
+      "isocode": "NC",
+      "countryflag": "http://www.geognos.com/geo/en/cc/nc.html"
     },
     {
-      "name": "New Caledonia",
-      "dial_code": "+687",
-      "code": "NC"
+      "countryname": "New Zealand",
+      "telpref": "+64",
+      "isocode": "NZ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/nz.html"
     },
     {
-      "name": "New Zealand",
-      "dial_code": "+64",
-      "code": "NZ"
+      "countryname": "Nicaragua",
+      "telpref": "+505",
+      "isocode": "NI",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ni.html"
     },
     {
-      "name": "Nicaragua",
-      "dial_code": "+505",
-      "code": "NI"
+      "countryname": "Niger",
+      "telpref": "+227",
+      "isocode": "NE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ne.html"
     },
     {
-      "name": "Niger",
-      "dial_code": "+227",
-      "code": "NE"
+      "countryname": "Nigeria",
+      "telpref": "+234",
+      "isocode": "NG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ng.html"
     },
     {
-      "name": "Nigeria",
-      "dial_code": "+234",
-      "code": "NG"
+      "countryname": "Niue",
+      "telpref": "+683",
+      "isocode": "NU",
+      "countryflag": "http://www.geognos.com/geo/en/cc/nu.html"
     },
     {
-      "name": "Niue",
-      "dial_code": "+683",
-      "code": "NU"
+      "countryname": "Norfolk Island",
+      "telpref": "+672",
+      "isocode": "NF",
+      "countryflag": "http://www.geognos.com/geo/en/cc/nf.html"
     },
     {
-      "name": "Norfolk Island",
-      "dial_code": "+672",
-      "code": "NF"
+      "countryname": "Northern Mariana Islands",
+      "telpref": "+1 670",
+      "isocode": "MP",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mp.html"
     },
     {
-      "name": "Northern Mariana Islands",
-      "dial_code": "+1 670",
-      "code": "MP"
+      "countryname": "Norway",
+      "telpref": "+47",
+      "isocode": "NO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/no.html"
     },
     {
-      "name": "Norway",
-      "dial_code": "+47",
-      "code": "NO"
+      "countryname": "Oman",
+      "telpref": "+968",
+      "isocode": "OM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/om.html"
     },
     {
-      "name": "Oman",
-      "dial_code": "+968",
-      "code": "OM"
+      "countryname": "Pakistan",
+      "telpref": "+92",
+      "isocode": "PK",
+      "countryflag": "http://www.geognos.com/geo/en/cc/pk.html"
     },
     {
-      "name": "Pakistan",
-      "dial_code": "+92",
-      "code": "PK"
+      "countryname": "Palau",
+      "telpref": "+680",
+      "isocode": "PW",
+      "countryflag": "http://www.geognos.com/geo/en/cc/pw.html"
     },
     {
-      "name": "Palau",
-      "dial_code": "+680",
-      "code": "PW"
+      "countryname": "Panama",
+      "telpref": "+507",
+      "isocode": "PA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/pa.html"
     },
     {
-      "name": "Panama",
-      "dial_code": "+507",
-      "code": "PA"
+      "countryname": "Papua New Guinea",
+      "telpref": "+675",
+      "isocode": "PG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/pg.html"
     },
     {
-      "name": "Papua New Guinea",
-      "dial_code": "+675",
-      "code": "PG"
+      "countryname": "Paraguay",
+      "telpref": "+595",
+      "isocode": "PY",
+      "countryflag": "http://www.geognos.com/geo/en/cc/py.html"
     },
     {
-      "name": "Paraguay",
-      "dial_code": "+595",
-      "code": "PY"
+      "countryname": "Peru",
+      "telpref": "+51",
+      "isocode": "PE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/pe.html"
     },
     {
-      "name": "Peru",
-      "dial_code": "+51",
-      "code": "PE"
+      "countryname": "Philippines",
+      "telpref": "+63",
+      "isocode": "PH",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ph.html"
     },
     {
-      "name": "Philippines",
-      "dial_code": "+63",
-      "code": "PH"
+      "countryname": "Poland",
+      "telpref": "+48",
+      "isocode": "PL",
+      "countryflag": "http://www.geognos.com/geo/en/cc/pl.html"
     },
     {
-      "name": "Poland",
-      "dial_code": "+48",
-      "code": "PL"
+      "countryname": "Portugal",
+      "telpref": "+351",
+      "isocode": "PT",
+      "countryflag": "http://www.geognos.com/geo/en/cc/pt.html"
     },
     {
-      "name": "Portugal",
-      "dial_code": "+351",
-      "code": "PT"
+      "countryname": "Puerto Rico",
+      "telpref": "+1 939",
+      "isocode": "PR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/pr.html"
     },
     {
-      "name": "Puerto Rico",
-      "dial_code": "+1 939",
-      "code": "PR"
+      "countryname": "Qatar",
+      "telpref": "+974",
+      "isocode": "QA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/qa.html"
     },
     {
-      "name": "Qatar",
-      "dial_code": "+974",
-      "code": "QA"
+      "countryname": "Romania",
+      "telpref": "+40",
+      "isocode": "RO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ro.html"
     },
     {
-      "name": "Romania",
-      "dial_code": "+40",
-      "code": "RO"
+      "countryname": "Rwanda",
+      "telpref": "+250",
+      "isocode": "RW",
+      "countryflag": "http://www.geognos.com/geo/en/cc/rw.html"
     },
     {
-      "name": "Rwanda",
-      "dial_code": "+250",
-      "code": "RW"
+      "countryname": "Samoa",
+      "telpref": "+685",
+      "isocode": "WS",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ws.html"
     },
     {
-      "name": "Samoa",
-      "dial_code": "+685",
-      "code": "WS"
+      "countryname": "San Marino",
+      "telpref": "+378",
+      "isocode": "SM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sm.html"
     },
     {
-      "name": "San Marino",
-      "dial_code": "+378",
-      "code": "SM"
+      "countryname": "Saudi Arabia",
+      "telpref": "+966",
+      "isocode": "SA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sa.html"
     },
     {
-      "name": "Saudi Arabia",
-      "dial_code": "+966",
-      "code": "SA"
+      "countryname": "Senegal",
+      "telpref": "+221",
+      "isocode": "SN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sn.html"
     },
     {
-      "name": "Senegal",
-      "dial_code": "+221",
-      "code": "SN"
+      "countryname": "Serbia",
+      "telpref": "+381",
+      "isocode": "RS",
+      "countryflag": "http://www.geognos.com/geo/en/cc/rs.html"
     },
     {
-      "name": "Serbia",
-      "dial_code": "+381",
-      "code": "RS"
+      "countryname": "Seychelles",
+      "telpref": "+248",
+      "isocode": "SC",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sc.html"
     },
     {
-      "name": "Seychelles",
-      "dial_code": "+248",
-      "code": "SC"
+      "countryname": "Sierra Leone",
+      "telpref": "+232",
+      "isocode": "SL",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sl.html"
     },
     {
-      "name": "Sierra Leone",
-      "dial_code": "+232",
-      "code": "SL"
+      "countryname": "Singapore",
+      "telpref": "+65",
+      "isocode": "SG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sg.html"
     },
     {
-      "name": "Singapore",
-      "dial_code": "+65",
-      "code": "SG"
+      "countryname": "Slovakia",
+      "telpref": "+421",
+      "isocode": "SK",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sk.html"
     },
     {
-      "name": "Slovakia",
-      "dial_code": "+421",
-      "code": "SK"
+      "countryname": "Slovenia",
+      "telpref": "+386",
+      "isocode": "SI",
+      "countryflag": "http://www.geognos.com/geo/en/cc/si.html"
     },
     {
-      "name": "Slovenia",
-      "dial_code": "+386",
-      "code": "SI"
+      "countryname": "Solomon Islands",
+      "telpref": "+677",
+      "isocode": "SB",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sb.html"
     },
     {
-      "name": "Solomon Islands",
-      "dial_code": "+677",
-      "code": "SB"
+      "countryname": "South Africa",
+      "telpref": "+27",
+      "isocode": "ZA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/za.html"
     },
     {
-      "name": "South Africa",
-      "dial_code": "+27",
-      "code": "ZA"
+      "countryname": "South Georgia and the South Sandwich Islands",
+      "telpref": "+500",
+      "isocode": "GS",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gs.html"
     },
     {
-      "name": "South Georgia and the South Sandwich Islands",
-      "dial_code": "+500",
-      "code": "GS"
+      "countryname": "Spain",
+      "telpref": "+34",
+      "isocode": "ES",
+      "countryflag": "http://www.geognos.com/geo/en/cc/es.html"
     },
     {
-      "name": "Spain",
-      "dial_code": "+34",
-      "code": "ES"
+      "countryname": "Sri Lanka",
+      "telpref": "+94",
+      "isocode": "LK",
+      "countryflag": "http://www.geognos.com/geo/en/cc/lk.html"
     },
     {
-      "name": "Sri Lanka",
-      "dial_code": "+94",
-      "code": "LK"
+      "countryname": "Sudan",
+      "telpref": "+249",
+      "isocode": "SD",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sd.html"
     },
     {
-      "name": "Sudan",
-      "dial_code": "+249",
-      "code": "SD"
+      "countryname": "Suriname",
+      "telpref": "+597",
+      "isocode": "SR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sr.html"
     },
     {
-      "name": "Suriname",
-      "dial_code": "+597",
-      "code": "SR"
+      "countryname": "Swaziland",
+      "telpref": "+268",
+      "isocode": "SZ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sz.html"
     },
     {
-      "name": "Swaziland",
-      "dial_code": "+268",
-      "code": "SZ"
+      "countryname": "Sweden",
+      "telpref": "+46",
+      "isocode": "SE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/se.html"
     },
     {
-      "name": "Sweden",
-      "dial_code": "+46",
-      "code": "SE"
+      "countryname": "Switzerland",
+      "telpref": "+41",
+      "isocode": "CH",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ch.html"
     },
     {
-      "name": "Switzerland",
-      "dial_code": "+41",
-      "code": "CH"
+      "countryname": "Tajikistan",
+      "telpref": "+992",
+      "isocode": "TJ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tj.html"
     },
     {
-      "name": "Tajikistan",
-      "dial_code": "+992",
-      "code": "TJ"
+      "countryname": "Thailand",
+      "telpref": "+66",
+      "isocode": "TH",
+      "countryflag": "http://www.geognos.com/geo/en/cc/th.html"
     },
     {
-      "name": "Thailand",
-      "dial_code": "+66",
-      "code": "TH"
+      "countryname": "Togo",
+      "telpref": "+228",
+      "isocode": "TG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tg.html"
     },
     {
-      "name": "Togo",
-      "dial_code": "+228",
-      "code": "TG"
+      "countryname": "Tokelau",
+      "telpref": "+690",
+      "isocode": "TK",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tk.html"
     },
     {
-      "name": "Tokelau",
-      "dial_code": "+690",
-      "code": "TK"
+      "countryname": "Tonga",
+      "telpref": "+676",
+      "isocode": "TO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/to.html"
     },
     {
-      "name": "Tonga",
-      "dial_code": "+676",
-      "code": "TO"
+      "countryname": "Trinidad and Tobago",
+      "telpref": "+1 868",
+      "isocode": "TT",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tt.html"
     },
     {
-      "name": "Trinidad and Tobago",
-      "dial_code": "+1 868",
-      "code": "TT"
+      "countryname": "Tunisia",
+      "telpref": "+216",
+      "isocode": "TN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tn.html"
     },
     {
-      "name": "Tunisia",
-      "dial_code": "+216",
-      "code": "TN"
+      "countryname": "Turkey",
+      "telpref": "+90",
+      "isocode": "TR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tr.html"
     },
     {
-      "name": "Turkey",
-      "dial_code": "+90",
-      "code": "TR"
+      "countryname": "Turkmenistan",
+      "telpref": "+993",
+      "isocode": "TM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tm.html"
     },
     {
-      "name": "Turkmenistan",
-      "dial_code": "+993",
-      "code": "TM"
+      "countryname": "Turks and Caicos Islands",
+      "telpref": "+1 649",
+      "isocode": "TC",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tc.html"
     },
     {
-      "name": "Turks and Caicos Islands",
-      "dial_code": "+1 649",
-      "code": "TC"
+      "countryname": "Tuvalu",
+      "telpref": "+688",
+      "isocode": "TV",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tv.html"
     },
     {
-      "name": "Tuvalu",
-      "dial_code": "+688",
-      "code": "TV"
+      "countryname": "Uganda",
+      "telpref": "+256",
+      "isocode": "UG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ug.html"
     },
     {
-      "name": "Uganda",
-      "dial_code": "+256",
-      "code": "UG"
+      "countryname": "Ukraine",
+      "telpref": "+380",
+      "isocode": "UA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ua.html"
     },
     {
-      "name": "Ukraine",
-      "dial_code": "+380",
-      "code": "UA"
+      "countryname": "United Arab Emirates",
+      "telpref": "+971",
+      "isocode": "AE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ae.html"
     },
     {
-      "name": "United Arab Emirates",
-      "dial_code": "+971",
-      "code": "AE"
+      "countryname": "United Kingdom",
+      "telpref": "+44",
+      "isocode": "GB",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gb.html"
     },
     {
-      "name": "United Kingdom",
-      "dial_code": "+44",
-      "code": "GB"
+      "countryname": "United States",
+      "telpref": "+1",
+      "isocode": "US",
+      "countryflag": "http://www.geognos.com/geo/en/cc/us.html"
     },
     {
-      "name": "United States",
-      "dial_code": "+1",
-      "code": "US"
+      "countryname": "Uruguay",
+      "telpref": "+598",
+      "isocode": "UY",
+      "countryflag": "http://www.geognos.com/geo/en/cc/uy.html"
     },
     {
-      "name": "Uruguay",
-      "dial_code": "+598",
-      "code": "UY"
+      "countryname": "Uzbekistan",
+      "telpref": "+998",
+      "isocode": "UZ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/uz.html"
     },
     {
-      "name": "Uzbekistan",
-      "dial_code": "+998",
-      "code": "UZ"
+      "countryname": "Vanuatu",
+      "telpref": "+678",
+      "isocode": "VU",
+      "countryflag": "http://www.geognos.com/geo/en/cc/vu.html"
     },
     {
-      "name": "Vanuatu",
-      "dial_code": "+678",
-      "code": "VU"
+      "countryname": "Wallis and Futuna",
+      "telpref": "+681",
+      "isocode": "WF",
+      "countryflag": "http://www.geognos.com/geo/en/cc/wf.html"
     },
     {
-      "name": "Wallis and Futuna",
-      "dial_code": "+681",
-      "code": "WF"
+      "countryname": "Yemen",
+      "telpref": "+967",
+      "isocode": "YE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ye.html"
     },
     {
-      "name": "Yemen",
-      "dial_code": "+967",
-      "code": "YE"
+      "countryname": "Zambia",
+      "telpref": "+260",
+      "isocode": "ZM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/zm.html"
     },
     {
-      "name": "Zambia",
-      "dial_code": "+260",
-      "code": "ZM"
+      "countryname": "Zimbabwe",
+      "telpref": "+263",
+      "isocode": "ZW",
+      "countryflag": "http://www.geognos.com/geo/en/cc/zw.html"
     },
     {
-      "name": "Zimbabwe",
-      "dial_code": "+263",
-      "code": "ZW"
+      "countryname": "land Islands",
+      "telpref": "",
+      "isocode": "AX",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ax.html"
     },
     {
-      "name": "land Islands",
-      "dial_code": "",
-      "code": "AX"
+      "countryname": "Antarctica",
+      "telpref": null,
+      "isocode": "AQ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/aq.html"
     },
     {
-      "name": "Antarctica",
-      "dial_code": null,
-      "code": "AQ"
+      "countryname": "Bolivia, Plurinational State of",
+      "telpref": "+591",
+      "isocode": "BO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bo.html"
     },
     {
-      "name": "Bolivia, Plurinational State of",
-      "dial_code": "+591",
-      "code": "BO"
+      "countryname": "Brunei Darussalam",
+      "telpref": "+673",
+      "isocode": "BN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bn.html"
     },
     {
-      "name": "Brunei Darussalam",
-      "dial_code": "+673",
-      "code": "BN"
+      "countryname": "Cocos (Keeling) Islands",
+      "telpref": "+61",
+      "isocode": "CC",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cc.html"
     },
     {
-      "name": "Cocos (Keeling) Islands",
-      "dial_code": "+61",
-      "code": "CC"
+      "countryname": "Congo, The Democratic Republic of the",
+      "telpref": "+243",
+      "isocode": "CD",
+      "countryflag": "http://www.geognos.com/geo/en/cc/cd.html"
     },
     {
-      "name": "Congo, The Democratic Republic of the",
-      "dial_code": "+243",
-      "code": "CD"
+      "countryname": "Cote d'Ivoire",
+      "telpref": "+225",
+      "isocode": "CI",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ci.html"
     },
     {
-      "name": "Cote d'Ivoire",
-      "dial_code": "+225",
-      "code": "CI"
+      "countryname": "Falkland Islands (Malvinas)",
+      "telpref": "+500",
+      "isocode": "FK",
+      "countryflag": "http://www.geognos.com/geo/en/cc/fk.html"
     },
     {
-      "name": "Falkland Islands (Malvinas)",
-      "dial_code": "+500",
-      "code": "FK"
+      "countryname": "Guernsey",
+      "telpref": "+44",
+      "isocode": "GG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/gg.html"
     },
     {
-      "name": "Guernsey",
-      "dial_code": "+44",
-      "code": "GG"
+      "countryname": "Holy See (Vatican City State)",
+      "telpref": "+379",
+      "isocode": "VA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/va.html"
     },
     {
-      "name": "Holy See (Vatican City State)",
-      "dial_code": "+379",
-      "code": "VA"
+      "countryname": "Hong Kong",
+      "telpref": "+852",
+      "isocode": "HK",
+      "countryflag": "http://www.geognos.com/geo/en/cc/hk.html"
     },
     {
-      "name": "Hong Kong",
-      "dial_code": "+852",
-      "code": "HK"
+      "countryname": "Iran, Islamic Republic of",
+      "telpref": "+98",
+      "isocode": "IR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ir.html"
     },
     {
-      "name": "Iran, Islamic Republic of",
-      "dial_code": "+98",
-      "code": "IR"
+      "countryname": "Isle of Man",
+      "telpref": "+44",
+      "isocode": "IM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/im.html"
     },
     {
-      "name": "Isle of Man",
-      "dial_code": "+44",
-      "code": "IM"
+      "countryname": "Jersey",
+      "telpref": "+44",
+      "isocode": "JE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/je.html"
     },
     {
-      "name": "Jersey",
-      "dial_code": "+44",
-      "code": "JE"
+      "countryname": "Korea, Democratic People's Republic of",
+      "telpref": "+850",
+      "isocode": "KP",
+      "countryflag": "http://www.geognos.com/geo/en/cc/kp.html"
     },
     {
-      "name": "Korea, Democratic People's Republic of",
-      "dial_code": "+850",
-      "code": "KP"
+      "countryname": "Korea, Republic of",
+      "telpref": "+82",
+      "isocode": "KR",
+      "countryflag": "http://www.geognos.com/geo/en/cc/kr.html"
     },
     {
-      "name": "Korea, Republic of",
-      "dial_code": "+82",
-      "code": "KR"
+      "countryname": "Lao People's Democratic Republic",
+      "telpref": "+856",
+      "isocode": "LA",
+      "countryflag": "http://www.geognos.com/geo/en/cc/la.html"
     },
     {
-      "name": "Lao People's Democratic Republic",
-      "dial_code": "+856",
-      "code": "LA"
+      "countryname": "Libyan Arab Jamahiriya",
+      "telpref": "+218",
+      "isocode": "LY",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ly.html"
     },
     {
-      "name": "Libyan Arab Jamahiriya",
-      "dial_code": "+218",
-      "code": "LY"
+      "countryname": "Macao",
+      "telpref": "+853",
+      "isocode": "MO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mo.html"
     },
     {
-      "name": "Macao",
-      "dial_code": "+853",
-      "code": "MO"
+      "countryname": "Macedonia, The Former Yugoslav Republic of",
+      "telpref": "+389",
+      "isocode": "MK",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mk.html"
     },
     {
-      "name": "Macedonia, The Former Yugoslav Republic of",
-      "dial_code": "+389",
-      "code": "MK"
+      "countryname": "Micronesia, Federated States of",
+      "telpref": "+691",
+      "isocode": "FM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/fm.html"
     },
     {
-      "name": "Micronesia, Federated States of",
-      "dial_code": "+691",
-      "code": "FM"
+      "countryname": "Moldova, Republic of",
+      "telpref": "+373",
+      "isocode": "MD",
+      "countryflag": "http://www.geognos.com/geo/en/cc/md.html"
     },
     {
-      "name": "Moldova, Republic of",
-      "dial_code": "+373",
-      "code": "MD"
+      "countryname": "Mozambique",
+      "telpref": "+258",
+      "isocode": "MZ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mz.html"
     },
     {
-      "name": "Mozambique",
-      "dial_code": "+258",
-      "code": "MZ"
+      "countryname": "Palestinian Territory, Occupied",
+      "telpref": "+970",
+      "isocode": "PS",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ps.html"
     },
     {
-      "name": "Palestinian Territory, Occupied",
-      "dial_code": "+970",
-      "code": "PS"
+      "countryname": "Pitcairn",
+      "telpref": "+872",
+      "isocode": "PN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/pn.html"
     },
     {
-      "name": "Pitcairn",
-      "dial_code": "+872",
-      "code": "PN"
+      "countryname": "Réunion",
+      "telpref": "+262",
+      "isocode": "RE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/re.html"
     },
     {
-      "name": "Réunion",
-      "dial_code": "+262",
-      "code": "RE"
+      "countryname": "Russia",
+      "telpref": "+7",
+      "isocode": "RU",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ru.html"
     },
     {
-      "name": "Russia",
-      "dial_code": "+7",
-      "code": "RU"
+      "countryname": "Saint Barthélemy",
+      "telpref": "+590",
+      "isocode": "BL",
+      "countryflag": "http://www.geognos.com/geo/en/cc/bl.html"
     },
     {
-      "name": "Saint Barthélemy",
-      "dial_code": "+590",
-      "code": "BL"
+      "countryname": "Saint Helena, Ascension and Tristan Da Cunha",
+      "telpref": "+290",
+      "isocode": "SH",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sh.html"
     },
     {
-      "name": "Saint Helena, Ascension and Tristan Da Cunha",
-      "dial_code": "+290",
-      "code": "SH"
+      "countryname": "Saint Kitts and Nevis",
+      "telpref": "+1 869",
+      "isocode": "KN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/kn.html"
     },
     {
-      "name": "Saint Kitts and Nevis",
-      "dial_code": "+1 869",
-      "code": "KN"
+      "countryname": "Saint Lucia",
+      "telpref": "+1 758",
+      "isocode": "LC",
+      "countryflag": "http://www.geognos.com/geo/en/cc/lc.html"
     },
     {
-      "name": "Saint Lucia",
-      "dial_code": "+1 758",
-      "code": "LC"
+      "countryname": "Saint Martin",
+      "telpref": "+590",
+      "isocode": "MF",
+      "countryflag": "http://www.geognos.com/geo/en/cc/mf.html"
     },
     {
-      "name": "Saint Martin",
-      "dial_code": "+590",
-      "code": "MF"
+      "countryname": "Saint Pierre and Miquelon",
+      "telpref": "+508",
+      "isocode": "PM",
+      "countryflag": "http://www.geognos.com/geo/en/cc/pm.html"
     },
     {
-      "name": "Saint Pierre and Miquelon",
-      "dial_code": "+508",
-      "code": "PM"
+      "countryname": "Saint Vincent and the Grenadines",
+      "telpref": "+1 784",
+      "isocode": "VC",
+      "countryflag": "http://www.geognos.com/geo/en/cc/vc.html"
     },
     {
-      "name": "Saint Vincent and the Grenadines",
-      "dial_code": "+1 784",
-      "code": "VC"
+      "countryname": "Sao Tome and Principe",
+      "telpref": "+239",
+      "isocode": "ST",
+      "countryflag": "http://www.geognos.com/geo/en/cc/st.html"
     },
     {
-      "name": "Sao Tome and Principe",
-      "dial_code": "+239",
-      "code": "ST"
+      "countryname": "Somalia",
+      "telpref": "+252",
+      "isocode": "SO",
+      "countryflag": "http://www.geognos.com/geo/en/cc/so.html"
     },
     {
-      "name": "Somalia",
-      "dial_code": "+252",
-      "code": "SO"
+      "countryname": "Svalbard and Jan Mayen",
+      "telpref": "+47",
+      "isocode": "SJ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sj.html"
     },
     {
-      "name": "Svalbard and Jan Mayen",
-      "dial_code": "+47",
-      "code": "SJ"
+      "countryname": "Syrian Arab Republic",
+      "telpref": "+963",
+      "isocode": "SY",
+      "countryflag": "http://www.geognos.com/geo/en/cc/sy.html"
     },
     {
-      "name": "Syrian Arab Republic",
-      "dial_code": "+963",
-      "code": "SY"
+      "countryname": "Taiwan, Province of China",
+      "telpref": "+886",
+      "isocode": "TW",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tw.html"
     },
     {
-      "name": "Taiwan, Province of China",
-      "dial_code": "+886",
-      "code": "TW"
+      "countryname": "Tanzania, United Republic of",
+      "telpref": "+255",
+      "isocode": "TZ",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tz.html"
     },
     {
-      "name": "Tanzania, United Republic of",
-      "dial_code": "+255",
-      "code": "TZ"
+      "countryname": "Timor-Leste",
+      "telpref": "+670",
+      "isocode": "TL",
+      "countryflag": "http://www.geognos.com/geo/en/cc/tl.html"
     },
     {
-      "name": "Timor-Leste",
-      "dial_code": "+670",
-      "code": "TL"
+      "countryname": "Venezuela, Bolivarian Republic of",
+      "telpref": "+58",
+      "isocode": "VE",
+      "countryflag": "http://www.geognos.com/geo/en/cc/ve.html"
     },
     {
-      "name": "Venezuela, Bolivarian Republic of",
-      "dial_code": "+58",
-      "code": "VE"
+      "countryname": "Viet Nam",
+      "telpref": "+84",
+      "isocode": "VN",
+      "countryflag": "http://www.geognos.com/geo/en/cc/vn.html"
     },
     {
-      "name": "Viet Nam",
-      "dial_code": "+84",
-      "code": "VN"
+      "countryname": "Virgin Islands, British",
+      "telpref": "+1 284",
+      "isocode": "VG",
+      "countryflag": "http://www.geognos.com/geo/en/cc/vg.html"
     },
     {
-      "name": "Virgin Islands, British",
-      "dial_code": "+1 284",
-      "code": "VG"
-    },
-    {
-      "name": "Virgin Islands, U.S.",
-      "dial_code": "+1 340",
-      "code": "VI"
+      "countryname": "Virgin Islands, U.S.",
+      "telpref": "+1 340",
+      "isocode": "VI",
+      "countryflag": "http://www.geognos.com/geo/en/cc/vi.html"
     }
   ],
     "message": "successful"

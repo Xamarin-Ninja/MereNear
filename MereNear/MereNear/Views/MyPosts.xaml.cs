@@ -11,7 +11,7 @@ namespace MereNear.Views
 
         private void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            
+            postListItems.SelectedItem = null;
         }
     }
 }

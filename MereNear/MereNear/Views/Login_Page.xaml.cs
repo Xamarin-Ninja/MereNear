@@ -20,6 +20,7 @@ namespace MereNear.Views
         private void Entry_Focused(object sender, TappedEventArgs e)
         {
             Navigation.PushAsync(new Login_Page2(), true);
+            MessagingCenter.Send("EntryFocus", "EntryFocus");
         }
     }
 }

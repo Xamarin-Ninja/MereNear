@@ -10,6 +10,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace MereNear.ViewModels
 {
@@ -20,14 +21,20 @@ namespace MereNear.ViewModels
         private ObservableCollection<CategoryListModel> _postJobcategory = new ObservableCollection<CategoryListModel>();
 
         private CategoryListModel _selectedItemCommand;
-       
+        private string _customHeaderTitle;
         #endregion
 
         #region Public Variable
         public bool IsPostAJob { get; set; }
         public bool IsLookingForAJob { get; set; }
         public string LocationAddress { get; set; }
-        
+        public string CustomHeaderTitle
+        {
+            get { return _customHeaderTitle; }
+            set { SetProperty(ref _customHeaderTitle, value); }
+        }
+        public Position LocationAddressPosition { get; set; }
+
         public CategoryListModel SelectedItemCommand
         {
             get { return _selectedItemCommand; }
@@ -73,16 +80,28 @@ namespace MereNear.ViewModels
                         var param = new NavigationParameters();
                         param.Add("Address", LocationAddress);
                         param.Add("Categoryname", data.ServiceCategoryName);
-                        await _navigationService.NavigateAsync(nameof(PostDescriptionPage), param);
+                        param.Add("AddressPosition", LocationAddressPosition);
+                        await _navigationService.NavigateAsync(nameof(PostDescriptionPage),param);
                     }
                     if(IsLookingForAJob)
                     {
                         var data = (CategoryListModel)Application.Current.Properties["LastSelectedValue"];
                         var param = new NavigationParameters();
                         param.Add("Categoryname", data.ServiceCategoryName);
-                        await _navigationService.NavigateAsync(nameof(MyJobs), param);
+                        await _navigationService.NavigateAsync(nameof(AllJobs), param);
                     }
 
+                });
+            }
+        }
+
+        public ICommand CloseCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    await _navigationService.GoBackAsync();
                 });
             }
         }
@@ -91,7 +110,7 @@ namespace MereNear.ViewModels
         #region Private Methods
         private void GetData()
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 8; i++)
             {
                 PostJobcategory.Add(new CategoryListModel
                 {
@@ -120,10 +139,16 @@ namespace MereNear.ViewModels
             if (parameters.ContainsKey("Address"))
             {
                 LocationAddress = (string)parameters["Address"];
+                CustomHeaderTitle = "Post A Job";
                 IsPostAJob = true;
+                if (parameters.ContainsKey("AddressPosition"))
+                {
+                    LocationAddressPosition = (Position)parameters["AddressPosition"];
+                }
             }
             else
             {
+                CustomHeaderTitle = "Looking For A Job";
                 IsLookingForAJob = true;
             }
         }

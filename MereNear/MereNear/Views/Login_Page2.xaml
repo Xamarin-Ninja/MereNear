@@ -6,26 +6,26 @@
              x:Class="MereNear.Views.Login_Page2"
              NavigationPage.HasNavigationBar="False">
     <Grid Padding="20" BackgroundColor="White">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="8*"/>
-            </Grid.ColumnDefinitions>
-            <Image Source="default_back_icon" Grid.Row="0" HorizontalOptions="Start" Grid.ColumnSpan="2" VerticalOptions="Start" HeightRequest="20" WidthRequest="20">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="BackIcon_Tapped"/>
-                </Image.GestureRecognizers>
-            </Image>
-            <Label Text="Enter your mobile number to get started" Grid.Row="1" Grid.ColumnSpan="2" FontSize="18" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-            <Picker Title="+91" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,0,6"/>
-            <Entry x:Name="MobileEntry" Margin="0,1,0,0" Placeholder="Enter mobile number" Grid.Row="2" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black" TextChanged="Entry_TextChanged" MaxLength="10"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="default_back_icon" Grid.Row="0" HorizontalOptions="Start" Grid.ColumnSpan="2" VerticalOptions="Start" HeightRequest="20" WidthRequest="20">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="BackIcon_Tapped"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Label Text="Enter your mobile number to get started" Grid.Row="1" Grid.ColumnSpan="2" FontSize="18" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+        <Picker Title="+91" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,0,6"/>
+        <Entry x:Name="MobileEntry" Text="{Binding MobileNumber}" Margin="0,1,0,0" Placeholder="Enter mobile number" Grid.Row="2" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black" TextChanged="Entry_TextChanged" MaxLength="12"/>
         <BoxView BackgroundColor="Black" HeightRequest="1" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start"/>
-        <Button BackgroundColor="#70DA44" Margin="-20,0,-20,-20" x:Name="NextButton" Text="Next" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="4" Grid.ColumnSpan="2" Clicked="NextButton_Clicked"/>
-        </Grid>
+        <Button BackgroundColor="#70DA44" Margin="-20,0,-20,-20" x:Name="NextButton" Text="Next" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding NextButton}"/>
+    </Grid>
 </ContentPage>

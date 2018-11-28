@@ -50,8 +50,9 @@ namespace MereNear.Services.ApiService.Common
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Error in Api:-",ex.Message);
-                throw;
+                Debug.WriteLine("Error in GetApi:-",ex.Message);
+                UserDialogs.Instance.Alert("Error in GetApi:" + ex.Message);
+                return JsonConvert.DeserializeObject<TResponse>(null);
             }
         }
 
@@ -67,9 +68,11 @@ namespace MereNear.Services.ApiService.Common
 
                 return await HandleResponse<TResponse>(response);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Debug.WriteLine("Error in GetApi:-", ex.Message);
+                UserDialogs.Instance.Alert("Error in PostApi:" + ex.Message);
+                return await HandleResponse<TResponse>(null);
             }
         }
 

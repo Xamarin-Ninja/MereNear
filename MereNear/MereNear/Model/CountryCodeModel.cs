@@ -7,12 +7,17 @@ namespace MereNear.Model
 {
     public class CountryCodeModel
     {
-        [JsonProperty ("name")]
+        [JsonProperty ("countryname")]
         public string CountryName { get; set; }
-        [JsonProperty("dial_code")]
+
+        [JsonProperty("telpref")]
         public string CountryDialCode { get; set; }
-        [JsonProperty("code")]
+
+        [JsonProperty("isocode")]
         public string CountryCode { get; set; }
+
+        [JsonProperty("countryflag")]
+        public string CountryFlag { get; set; }
     }
 
     public class CountryStatusModel

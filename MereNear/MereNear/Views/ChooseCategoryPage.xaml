@@ -12,7 +12,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <common:CustomHeader Grid.Row="0" TitleText="Post a job"/>
+        <common:CustomHeader Grid.Row="0" TitleText="{Binding CustomHeaderTitle}"/>
         <Grid Padding="10" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
