@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace MereNear.ViewModels
 {
@@ -48,6 +49,23 @@ namespace MereNear.ViewModels
             set { SetProperty(ref _isMakeDealVisible, value); }
         }
 
+        private bool _isReportVisible = false;
+
+        public bool IsReportVisible
+        {
+            get { return _isReportVisible; }
+            set { SetProperty(ref _isReportVisible, value); }
+        }
+
+        private bool _isSendDealMessageButtonVisible = true;
+
+        public bool IsSendDealMessageButtonVisible
+        {
+            get { return _isSendDealMessageButtonVisible; }
+            set { SetProperty(ref _isSendDealMessageButtonVisible, value); }
+        }
+
+        
 
         private string _dealAmount;
 
@@ -107,32 +125,15 @@ namespace MereNear.ViewModels
             _roomName = "Rahul";
 
             _chatServices.Connect();
-            //try
-            //{
-            //    if (a == 1)
-            //    {
-            //        _chatServices.JoinRoom(_roomName);
-            //        a = 2;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    UserDialogs.Instance.Alert(ex.Message);
-            //}
             _chatServices.OnMessageReceived += _chatServices_OnMessageReceived;
         }
         void _chatServices_OnMessageReceived(object sender, ChatItem e)
         {
 
-            if (e.Name == App.CurrentUser)
+            if (e.MessageType!= 0)
             {
                 SenderType = 1;
-                _messages.Add(new ChatItem { Name = e.Name, Message = e.Message,SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm") });
-            }
-            else if(e.Name == "150")
-            {
-                SenderType = 2;
-                _messages.Add(new ChatItem { DealAmount = "150", SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm") });
+                _messages.Add(new ChatItem { Name = e.Name, MessageType = e.MessageType, DealAmount = e.DealAmount,CurrencyType = e.CurrencyType,Location = e.Location, Message = e.Message,SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm") });
             }
            
         }
@@ -180,7 +181,7 @@ namespace MereNear.ViewModels
                             a = 2;
                             //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
                         }
-                        await _chatServices.Send(new ChatItem { Name = App.CurrentUser, Message = MyMessage, Time = DateTime.Now.TimeOfDay.ToString()}, _roomName);
+                        await _chatServices.Send(new ChatItem { Name = App.CurrentUser, MessageType = 1, Message = MyMessage, Time = DateTime.Now.TimeOfDay.ToString()}, _roomName);
                     }
                     catch (Exception ex)
                     {
@@ -199,16 +200,59 @@ namespace MereNear.ViewModels
                     if(IsMenuVisible == false)
                     {
                         IsMenuVisible = true;
+                        IsSendDealMessageButtonVisible = false;
                         return;
                     }
                     if (IsMenuVisible == true)
                     {
                         IsMenuVisible = false;
+                        IsSendDealMessageButtonVisible = true;
                         return;
                     }
                 });
             }
         }
+        
+        public ICommand ShareLocationCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+
+                    try
+                    {
+
+                        var mylocation = new Position(30.711000, 76.686306);
+
+                        if (a == 1)
+                        {
+                            await _chatServices.JoinRoom(_roomName);
+                            a = 2;
+                            //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
+                        }
+
+                        await _chatServices.SendLocation(new ChatItem { MessageType = 3, Location = mylocation }, _roomName);
+                    }
+                    catch (Exception ex)
+                    {
+                        UserDialogs.Instance.Alert(ex.Message);
+                    }
+                });
+            }
+        }
+        public ICommand ReportCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    IsOverlayVisible = true;
+                    IsReportVisible = true;
+                });
+            }
+        }
+
         public ICommand MakeDealCommand
         {
             get
@@ -228,6 +272,7 @@ namespace MereNear.ViewModels
                 {
                     IsOverlayVisible = false;
                     IsMakeDealVisible = false;
+                    IsReportVisible = false;
                 });
             }
         }
@@ -247,7 +292,7 @@ namespace MereNear.ViewModels
                             //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
                         }
                         
-                        await _chatServices.SendDeal(new ChatItem { DealAmount = "150",CurrencyType = CurrencyType, Time = DateTime.Now.TimeOfDay.ToString() }, _roomName);
+                        await _chatServices.SendDeal(new ChatItem { DealAmount = "150", MessageType = 2,CurrencyType = CurrencyType, Time = DateTime.Now.TimeOfDay.ToString() }, _roomName);
                     }
                     catch (Exception ex)
                     {

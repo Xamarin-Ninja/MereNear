@@ -9,12 +9,15 @@ namespace MereNear.Views.ViewCells
         private readonly DataTemplate incomingDataTemplate;
         private readonly DataTemplate outgoingDataTemplate;
         private readonly DataTemplate recieverDealTemplate;
+        private readonly DataTemplate locationTemplate;
+
         public TemplateSelector()
         {
             // Retain instances!
             this.incomingDataTemplate = new DataTemplate(typeof(ReceiverViewCell));
             this.outgoingDataTemplate = new DataTemplate(typeof(SenderViewCell));
             this.recieverDealTemplate = new DataTemplate(typeof(RecieverDealViewCell));
+            this.locationTemplate = new DataTemplate(typeof(LocationViewCell));
         }
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
@@ -29,18 +32,24 @@ namespace MereNear.Views.ViewCells
             if (messageVm == null)
                 return null;
 
-            else if(messageVm.SenderType ==2 && messageVm.IsRecieverDealType == true)
-            {
-                return this.recieverDealTemplate;
-            }
-            else if(messageVm.SenderType == 1)
+
+            if(messageVm.MessageType == 1)
             {
                 return this.outgoingDataTemplate;
             }
-            else
+            else if(messageVm.MessageType == 2)
             {
                 return this.recieverDealTemplate;
             }
+            else if(messageVm.MessageType == 3)
+            {
+                return this.locationTemplate;
+            }
+            else
+            {
+                return null;
+            }
+
             
         }
     }

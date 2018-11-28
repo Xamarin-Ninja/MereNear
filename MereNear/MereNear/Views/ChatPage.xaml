@@ -64,6 +64,7 @@
                 <Button Grid.Row="1" Padding="0" BackgroundColor="White" Text="Report" WidthRequest="100" FontSize="8" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding ReportCommand}"/>
                 <Button Grid.Row="2" Padding="0" BackgroundColor="White" Text="Make A Deal" WidthRequest="100" FontSize="8" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding MakeDealCommand}"/>
             </Grid>
+            <Button Grid.Row="2" Padding="0" BackgroundColor="White" Text="Please send me the deal" IsVisible="{Binding IsSendDealMessageButtonVisible}" WidthRequest="150" HeightRequest="20" FontSize="10" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="End" Command="{Binding SendDealMessageCommand}"/>
             <Grid Grid.Row="3" Padding="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
@@ -90,8 +91,9 @@
                     </Image.GestureRecognizers>
                 </Image>
             </Grid>
-            <BoxView BackgroundColor="Gray" Opacity="0.5" Grid.Row="0" Grid.RowSpan="4" IsVisible="{Binding IsOverlayVisible}"/>
+            <BoxView BackgroundColor="LightGray" Opacity="0.8" Grid.Row="0" Grid.RowSpan="4" IsVisible="{Binding IsOverlayVisible}"/>
             <popup:DealPopUp Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="300" IsVisible="{Binding IsMakeDealVisible}" Margin="10,0"/>
+            <popup:ReportPopup Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="300" IsVisible="{Binding IsReportVisible}" Margin="10,0"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

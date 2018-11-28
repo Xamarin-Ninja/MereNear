@@ -51,9 +51,12 @@
 
                 <Image Source="filter_icon" Grid.Row="7" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text="Distance" Grid.Row="7" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Button BackgroundColor="White" BorderColor="LightGray" BorderWidth="0.5" Margin="0,0,0,2" BorderRadius="0" Grid.Row="7" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Center"/>
+                <Label x:Name="DistanceValue" Text="25" Grid.Row="7" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" />
                 <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
-                <Slider Minimum="0" Maximum="100" Value="25" MinimumTrackColor="Green" MaximumTrackColor="LightGray" ThumbColor="Green" Grid.Row="8" Grid.ColumnSpan="3" HorizontalOptions="Fill" VerticalOptions="Center"/>
-
+                <Label Text="0" Grid.Row="8" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" />
+                <Slider Minimum="0" Maximum="100" x:Name="Distance" Value="25" MinimumTrackColor="Green"  MaximumTrackColor="LightGray" ThumbColor="Green" Grid.Row="8" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" ValueChanged="Distance_ValueChanged"/>
+                <Label Text="100 km" Grid.Row="8" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" />
 
                 <Image Source="tickbox_icon" Grid.Row="9" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text="More" Grid.Row="9" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
