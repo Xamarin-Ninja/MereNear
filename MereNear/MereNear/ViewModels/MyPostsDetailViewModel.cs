@@ -133,7 +133,8 @@ namespace MereNear.ViewModels
                     var param = new NavigationParameters();
                     param.Add("LookingJobFlow", PostsModelDetail);
                     //await _navigationService.NavigateAsync(nameof(MyJobs));
-                    await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/MyJobs", UriKind.Absolute),param);
+                    await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute),param);
+                    MessagingCenter.Send("MyJobs", "ChangeCurrentPage");
                 });
             }
         }

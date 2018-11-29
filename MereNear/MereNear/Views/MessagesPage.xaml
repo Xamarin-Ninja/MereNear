@@ -15,7 +15,7 @@
                   SelectedItem="{Binding PersonChatListDetail}"
                   RowHeight="80" ItemSelected="MesagesList_ItemSelected"
                  SeparatorVisibility="Default"
-                SeparatorColor="#3498db">
+                SeparatorColor="#2688e3">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -29,7 +29,7 @@
                                 <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Button BackgroundColor="LightGreen" Grid.RowSpan="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="10" WidthRequest="10" CornerRadius="5" IsVisible="{Binding IsUnread}"/>
+                            <Button BackgroundColor="#6FDA44" Grid.RowSpan="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="10" WidthRequest="10" CornerRadius="5" IsVisible="{Binding IsUnread}"/>
                             <Image Source="{Binding Icon}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" HorizontalOptions="Start"  VerticalOptions="Center"/>
                             <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="2" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="Black" FontAttributes="Bold"/>
                             <Label Text="{Binding Time}" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="Gray" FontSize="10"/>

@@ -2,36 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:Popup="clr-namespace:MereNear.Views.PopUp"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MereNear.Views.ChangPhoneNumber"
              NavigationPage.HasNavigationBar="False">
-    <Grid Padding="20" BackgroundColor="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="1"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="1"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="8*"/>
-        </Grid.ColumnDefinitions>
-        <Image Source="back_arrow.png" Grid.Row="0" HorizontalOptions="Start" Grid.ColumnSpan="2" VerticalOptions="Start" HeightRequest="20" WidthRequest="20">
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding BackButtonCommand}"/>
-            </Image.GestureRecognizers>
-        </Image>
-        <Label Text="" Grid.Row="1" Grid.ColumnSpan="2" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-        <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="2" Grid.ColumnSpan="2"/>
-        <Label Text="My new number is:" Grid.Row="3" TextColor="Black" Grid.ColumnSpan="2" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-        <Picker Title="+91" Grid.Row="4" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,0,6"/>
-        <Entry x:Name="MobileEntry" Margin="0,1,0,0" Placeholder="Your number" Grid.Row="4" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black"  MaxLength="10"/>
-        <BoxView BackgroundColor="Black" HeightRequest="1" Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start"/>
-        <Label Text="Make sure this number can receive sms" Grid.Row="1" Grid.ColumnSpan="2" FontSize="10" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-        <Button BackgroundColor="#70DA44" Margin="-20,0,-20,-20"  Text="Continue" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="7" Grid.ColumnSpan="2"/>
+    <Grid>
+        <Grid Padding="20" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="back_arrow.png" Grid.Row="0" HorizontalOptions="Start" Grid.ColumnSpan="2" VerticalOptions="Start" HeightRequest="20" WidthRequest="20">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackButtonCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="{Binding CurrentNumberLabel, StringFormat='Current number {0:N}'}" Grid.Row="1" Grid.ColumnSpan="2" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="2" Grid.ColumnSpan="2"/>
+            <Label Text="My new number is:" Grid.Row="3" Style="{StaticResource BlackLabelBold}" Grid.ColumnSpan="2" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            <Picker Title="+91" Grid.Row="4" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,0,6"/>
+            <Entry x:Name="MobileEntry" Margin="0,1,0,0" Placeholder="Your number" Grid.Row="4" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black"  MaxLength="10"/>
+            <BoxView BackgroundColor="Black" HeightRequest="1" Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start"/>
+            <Label Text="Make sure this number can receive sms" Grid.Row="6" Grid.ColumnSpan="2" FontSize="10" Style="{StaticResource GrayLabel}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            <Button Margin="-20,0,-20,-20" Command="{Binding ContinueCommand}" Text="Continue" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="7" Grid.ColumnSpan="2"/>
+        </Grid>
+        <BoxView BackgroundColor="White"  IsVisible="{Binding IsPopupVisible}" Opacity="0.5"/>
+        <Popup:ChangeNumberPopup IsVisible="{Binding IsPopupVisible}"/>
     </Grid>
 </ContentPage>

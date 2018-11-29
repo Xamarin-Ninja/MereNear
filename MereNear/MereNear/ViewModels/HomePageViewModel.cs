@@ -466,41 +466,12 @@ namespace MereNear.ViewModels
                 var result = await _webApiRestClient.GetAsync<GetCatApiModel>("?func=getcat");
                 ListWidth = App.ScreenWidth;
                 NewCategoryData = new ObservableCollection<HomePageModel>(result.data);
-                //NewCategoryData.Add(new HomePageModel
-                //{
-                //    CategoryName = "Plumber",
-                //    CategoryImage = "logo.png"
-                //});
-                //NewCategoryData.Add(new HomePageModel
-                //{
-                //    CategoryName = "Plumber",
-                //    CategoryImage = "logo.png"
-                //});
-                //NewCategoryData.Add(new HomePageModel
-                //{
-                //    CategoryName = "Plumber",
-                //    CategoryImage = "logo.png"
-                //});
-                //NewCategoryData.Add(new HomePageModel
-                //{
-                //    CategoryName = "Plumber",
-                //    CategoryImage = "logo.png"
-                //});
-                //NewCategoryData.Add(new HomePageModel
-                //{
-                //    CategoryName = "Plumber",
-                //    CategoryImage = "logo.png"
-                //});
-                //NewCategoryData.Add(new HomePageModel
-                //{
-                //    CategoryName = "Plumber",
-                //    CategoryImage = "logo.png"
-                //});
-                //NewCategoryData.Add(new HomePageModel
-                //{
-                //    CategoryName = "Plumber",
-                //    CategoryImage = "logo.png"
-                //});
+                var item = new HomePageModel()
+                {
+                    CategoryName = "All",
+                    CategoryImage = "logo.png"
+                };
+                NewCategoryData.Insert(0, item);
             }
             catch (WebException ex)
             {

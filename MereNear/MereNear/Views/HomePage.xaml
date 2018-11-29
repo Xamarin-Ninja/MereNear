@@ -75,7 +75,7 @@
 
                                 <!--<Label Grid.Row="3" x:Name="WorkerInfo" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding WorkerDetail}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" HeightRequest="90" FontSize="15" TranslationY="140" BackgroundColor="Black" TextColor="White"/>
 
-                            <Button Grid.Row="4" x:Name="WorkerInfoButton" Grid.Column="0" Grid.ColumnSpan="2" Text="Contact Worker" BorderColor="LightGreen" BorderWidth="1" Command="{Binding ContactWorkerCommand}" Margin="0,0,0,10" BackgroundColor="LightGreen" HeightRequest="50" TranslationY="140"/>-->
+                            <Button Grid.Row="4" x:Name="WorkerInfoButton" Grid.Column="0" Grid.ColumnSpan="2" Text="Contact Worker" BorderColor="LightGreen" BorderWidth="1" Command="{Binding ContactWorkerCommand}" Margin="0,0,0,10" BackgroundColor="#6FDA44" HeightRequest="50" TranslationY="140"/>-->
                             </Grid>
                         </Frame>
                     </DataTemplate>
@@ -86,7 +86,7 @@
                 <Label x:Name="InfoIcon"  Text="&#xf05a;" HorizontalOptions="Center" VerticalOptions="Start" Style="{StaticResource FontAwesomeLabel}" TextColor="White" IsVisible="True" FontSize="40">
                 </Label>
                 <Label x:Name="WorkerInfo" Text="{Binding WorkerDetail}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" HeightRequest="90" FontSize="15" BackgroundColor="Black" IsVisible="False" TextColor="White"/>
-                <Button  x:Name="WorkerInfoButton" Text="Contact Worker" BorderColor="LightGreen" BorderWidth="1" Command="{Binding ContactWorkerCommand}" Margin="0,0,0,10" BackgroundColor="LightGreen" HeightRequest="50" IsVisible="False" />
+                <Button  x:Name="WorkerInfoButton" Text="Contact Worker" BorderColor="LightGreen" BorderWidth="1" Command="{Binding ContactWorkerCommand}" Margin="0,0,0,10" BackgroundColor="#6FDA44" HeightRequest="50" IsVisible="False" />
             </StackLayout>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="PanGestureRecognizer_PanUpdated"/>

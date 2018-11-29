@@ -98,9 +98,10 @@ namespace MereNear.ViewModels
         {
             get
             {
-                return new DelegateCommand(() =>
+                return new DelegateCommand(async() =>
                 {
-                    _navigationService.NavigateAsync(new Uri("/NavigationPage/HomeTabbedPage", UriKind.Relative));
+                    await _navigationService.NavigateAsync(new Uri("/NavigationPage/HomeTabbedPage", UriKind.Relative));
+                    MessagingCenter.Send("HomePage", "ChangeCurrentPage");
                 });
             }
         }
@@ -109,9 +110,9 @@ namespace MereNear.ViewModels
         {
             get
             {
-                return new DelegateCommand(() =>
+                return new DelegateCommand(async () =>
                 {
-                    _navigationService.NavigateAsync(new Uri("/NavigationPage/AboutPage", UriKind.Relative));
+                    await _navigationService.NavigateAsync(new Uri("/NavigationPage/AboutPage", UriKind.Relative));
                 });
             }
         }
@@ -122,7 +123,8 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(async() =>
                 {
-                    await _navigationService.NavigateAsync(new Uri("/NavigationPage/MyJobs", UriKind.Relative));
+                    await _navigationService.NavigateAsync(new Uri("/NavigationPage/HomeTabbedPage", UriKind.Relative));
+                    MessagingCenter.Send("MyJobs", "ChangeCurrentPage");
                     //App.Current.MainPage.Navigation.PushAsync(new MyJobs());
                 });
             }
@@ -205,7 +207,7 @@ namespace MereNear.ViewModels
         public MasterPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            GetMasterMenuList();
+            //GetMasterMenuList();
         }
         #endregion
 

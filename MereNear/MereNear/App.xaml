@@ -87,6 +87,8 @@
             <!--#region Button Styles-->
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#6fda44"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontFamily" Value="Poppins-SemiBold.ttf#Poppins SemiBold"/>
             </Style>
             <!--#endregion-->
         </ResourceDictionary>

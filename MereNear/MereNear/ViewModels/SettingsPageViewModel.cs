@@ -1,5 +1,7 @@
-﻿using Prism.Commands;
+﻿using MereNear.Views;
+using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +12,15 @@ namespace MereNear.ViewModels
 {
 	public class SettingsPageViewModel : BindableBase
 	{
+        #region Private Variable
+        private readonly INavigationService _navigationService;
+        #endregion
 
+        #region Public Variable
 
+        #endregion
+
+        #region Command
         public ICommand HeaderLeftIconCommand
         {
             get
@@ -22,9 +31,24 @@ namespace MereNear.ViewModels
                 });
             }
         }
-        public SettingsPageViewModel()
-        {
 
+        public ICommand ChangeNumberCommand
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    await _navigationService.NavigateAsync(nameof(ChangPhoneNumber));
+                });
+            }
         }
-	}
+        #endregion
+
+        #region Constructor
+        public SettingsPageViewModel(INavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
+        #endregion
+    }
 }

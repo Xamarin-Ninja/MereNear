@@ -12,7 +12,7 @@
     <MasterDetailPage.Master>
         <!--<navigation:MenuPage BindingContext="{Binding .}"/>-->
         <ContentPage Title="Main Menu">
-            <StackLayout Spacing="0">
+            <StackLayout Spacing="0" BackgroundColor="Blue">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="150"/>
@@ -22,7 +22,7 @@
                     <BoxView BackgroundColor="Black" HeightRequest="1" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
                 </Grid>
                 <!--MENU LIST-->
-                <ScrollView Padding="0">
+                <ScrollView Padding="0" BackgroundColor="Red">
                     <Grid RowSpacing="5" Margin="0,10,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50"/>
@@ -38,7 +38,6 @@
                             <RowDefinition Height="40"/>
                             <RowDefinition Height="40"/>
                             <RowDefinition Height="40"/>
-                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
                         <Image Source="home_master.png"  Grid.Row="0" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -105,10 +104,11 @@
                                 <TapGestureRecognizer Command="{Binding LogOutTapped}"/>
                             </Label.GestureRecognizers>
                         </Label>
-
-                        <BoxView Grid.Row="9" BackgroundColor="LightGreen" HeightRequest="2" Grid.ColumnSpan="2" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"/>
                     </Grid>
                 </ScrollView>
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <BoxView BackgroundColor="#6FDA44" HeightRequest="4" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                </Grid>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>

@@ -9,6 +9,9 @@ using DLToolkit.Forms.Controls;
 using MereNear.Services.ApiService.Common;
 using MereNear.Localization;
 using SignalR.Interface;
+using System;
+using Plugin.Connectivity;
+using Acr.UserDialogs;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MereNear
@@ -38,6 +41,13 @@ namespace MereNear
         {
             InitializeComponent();
 
+            #region Check Network Connection
+            var seconds = TimeSpan.FromSeconds(1);
+            Device.StartTimer(seconds,()=>
+            {
+                return CheckConnection();
+            });
+            #endregion
 
             #region SignalR Chat Implement Part 2
             _chatServices = DependencyService.Get<IChatServices>();
@@ -49,6 +59,19 @@ namespace MereNear
             App.CultureCode = string.Empty;
 
             await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
+        }
+
+        private bool CheckConnection()
+        {
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                UserDialogs.Instance.Alert("Please Check your network Connection");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
