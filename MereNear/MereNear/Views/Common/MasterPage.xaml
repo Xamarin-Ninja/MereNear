@@ -12,7 +12,7 @@
     <MasterDetailPage.Master>
         <!--<navigation:MenuPage BindingContext="{Binding .}"/>-->
         <ContentPage Title="Main Menu">
-            <StackLayout Spacing="0" BackgroundColor="Blue">
+            <StackLayout Spacing="0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="150"/>
@@ -22,7 +22,7 @@
                     <BoxView BackgroundColor="Black" HeightRequest="1" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
                 </Grid>
                 <!--MENU LIST-->
-                <ScrollView Padding="0" BackgroundColor="Red">
+                <ScrollView Padding="0">
                     <Grid RowSpacing="5" Margin="0,10,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50"/>

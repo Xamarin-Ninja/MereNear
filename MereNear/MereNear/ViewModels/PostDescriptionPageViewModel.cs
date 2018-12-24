@@ -1,10 +1,16 @@
-﻿using MereNear.Model;
+﻿using Acr.UserDialogs;
+using MereNear.Model;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -32,9 +38,24 @@ namespace MereNear.ViewModels
         private string _locationAddress;
 
         private bool _isPreviewVisible = false;
+
+        private ImageSource _cameraPicker = "upload_photo_icon.jpg";
+        private ImageSource _imagePicker = "upload_photo_icon.jpg";
         #endregion
 
         #region Public Variables
+        public ImageSource CameraPicker
+        {
+            get { return _cameraPicker; }
+            set { SetProperty(ref _cameraPicker, value); }
+        }
+
+        public ImageSource ImagePicker
+        {
+            get { return _imagePicker; }
+            set { SetProperty(ref _imagePicker, value); }
+        }
+
         public string LocationAddress
         {
             get { return _locationAddress; }
@@ -109,6 +130,89 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Command
+        //public ICommand CameraPickerCommand
+        //{
+        //    get
+        //    {
+        //        return new DelegateCommand(async() =>
+        //        {
+        //            try
+        //            {
+        //                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+        //                {
+        //                    await App.Current.MainPage.DisplayAlert("No Camera", ":( No camera available.", "OK");
+        //                    return;
+        //                }
+
+        //                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+        //                {
+        //                    Directory = "Profile Photo",
+        //                    SaveToAlbum = true,
+        //                    CompressionQuality = 75,
+        //                    CustomPhotoSize = 50,
+        //                    PhotoSize = PhotoSize.MaxWidthHeight,
+        //                    MaxWidthHeight = 2000,
+        //                    DefaultCamera = CameraDevice.Front
+        //                });
+
+        //                if (file == null)
+        //                    return;
+
+        //                await App.Current.MainPage.DisplayAlert("File Location", file.Path, "OK");
+
+        //                CameraPicker = ImageSource.FromStream(() =>
+        //                 {
+        //                     var stream = file.GetStream();
+        //                     file.Dispose();
+        //                     return stream;
+        //                 });
+        //            }
+        //            catch (Exception ex)
+        //            {
+
+        //            }
+        //        });
+        //    }
+        //}
+
+        public ICommand ImagePickerCommand
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    try
+                    {
+                        if (!CrossMedia.Current.IsPickPhotoSupported)
+                        {
+                            await App.Current.MainPage.DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                            return;
+                        }
+                        var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                        {
+                            PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+
+                        });
+
+
+                        if (file == null)
+                            return;
+
+                        ImagePicker = ImageSource.FromStream(() =>
+                        {
+                            var stream = file.GetStream();
+                            file.Dispose();
+                            return stream;
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                });
+            }
+        }
+
         public ICommand CloseCommand
         {
             get
@@ -230,6 +334,17 @@ namespace MereNear.ViewModels
         {
             ImmediatelyRadioButtonImage = "unchecked_circle.png";
             ScheduleRadioButtonImage = "unchecked_circle.png";
+        }
+
+        private byte[] ConvertMediaFileToByteArray(MediaFile mediaFile)
+        {
+
+            using (var memoryStream = new MemoryStream())
+            {
+                var stream = mediaFile.GetStream();
+                stream.CopyTo(memoryStream);
+                return memoryStream.ToArray();
+            }
         }
         #endregion
 

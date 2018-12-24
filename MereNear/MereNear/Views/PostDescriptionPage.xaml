@@ -77,8 +77,16 @@
 
                 <Label Text="Add Photos(Optional)" FontFamily="Poppins-Regular.ttf#Poppins Regular" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Start" FontSize="14"/>
 
-                <Image Source="upload_photo_icon.jpg" Grid.Row="7" Grid.Column="0" Aspect="AspectFill" HeightRequest="70"/>
-                <Image Source="upload_photo_icon.jpg" Grid.Row="7" Grid.Column="1" Aspect="AspectFill" HeightRequest="70"/>
+                <Image x:Name="cameraPicker" Source="{Binding CameraPicker}" Grid.Row="7" Grid.Column="0" Aspect="AspectFill" HeightRequest="70">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CameraPickerCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="imagePicker" Source="{Binding ImagePicker}" Grid.Row="7" Grid.Column="1" Aspect="AspectFill" HeightRequest="70">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ImagePickerCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
 
                 <Button Text="Preview" Grid.ColumnSpan="2" Margin="-10,0,-10,0" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="20" Grid.Row="9" Command="{Binding PreviewClicked}" />
             </Grid>
