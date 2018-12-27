@@ -12,7 +12,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <local:CustomMap x:Name="customMap" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-        <Image Source="default_back_icon" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Start" HeightRequest="20" WidthRequest="20" Margin="10,4,10,4">
+        <Image Source="back_arrow" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Start" HeightRequest="20" WidthRequest="20" Margin="10,4,10,4">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding CloseCommand}"/>
             </Image.GestureRecognizers>

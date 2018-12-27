@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using Acr.UserDialogs;
+using Foundation;
 using MereNear.Interface;
 using Prism;
 using Prism.Ioc;
@@ -23,6 +24,7 @@ namespace MereNear.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            
             FormsMaps.Init();
             /*Screen height and width */
             App.ScreenHeight = (int)UIScreen.MainScreen.Bounds.Height;
