@@ -130,50 +130,51 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Command
-        //public ICommand CameraPickerCommand
-        //{
-        //    get
-        //    {
-        //        return new DelegateCommand(async() =>
-        //        {
-        //            try
-        //            {
-        //                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-        //                {
-        //                    await App.Current.MainPage.DisplayAlert("No Camera", ":( No camera available.", "OK");
-        //                    return;
-        //                }
+        public ICommand CameraPickerCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    try
+                    {
+                        if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                        {
+                            await App.Current.MainPage.DisplayAlert("No Camera", ":( No camera available.", "OK");
+                            return;
+                        }
 
-        //                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-        //                {
-        //                    Directory = "Profile Photo",
-        //                    SaveToAlbum = true,
-        //                    CompressionQuality = 75,
-        //                    CustomPhotoSize = 50,
-        //                    PhotoSize = PhotoSize.MaxWidthHeight,
-        //                    MaxWidthHeight = 2000,
-        //                    DefaultCamera = CameraDevice.Front
-        //                });
+                        var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                        {
+                            Directory = "Profile Photo",
+                            SaveToAlbum = true,
+                            CompressionQuality = 75,
+                            CustomPhotoSize = 50,
+                            PhotoSize = PhotoSize.Medium,
+                            MaxWidthHeight = 2000,
+                            DefaultCamera = CameraDevice.Rear
+                        });
 
-        //                if (file == null)
-        //                    return;
 
-        //                await App.Current.MainPage.DisplayAlert("File Location", file.Path, "OK");
+                        if (file == null)
+                            return;
 
-        //                CameraPicker = ImageSource.FromStream(() =>
-        //                 {
-        //                     var stream = file.GetStream();
-        //                     file.Dispose();
-        //                     return stream;
-        //                 });
-        //            }
-        //            catch (Exception ex)
-        //            {
+                        //await App.Current.MainPage.DisplayAlert("File Location", file.Path, "OK");
 
-        //            }
-        //        });
-        //    }
-        //}
+                        CameraPicker = ImageSource.FromStream(() =>
+                         {
+                             var stream = file.GetStream();
+                             file.Dispose();
+                             return stream;
+                         });
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                });
+            }
+        }
 
         public ICommand ImagePickerCommand
         {

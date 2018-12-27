@@ -23,8 +23,8 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Text="Is this your phone number?" Grid.Row="0" Style="{Binding GrayLabel}" Grid.ColumnSpan="3"/>
-                    <Label Text="{Binding CurrentNumberLabel}" Grid.Row="0" Style="{Binding GrayLabel}" Grid.ColumnSpan="3"/>
-                    <Label Text="You'll recieve an SMS" Grid.Row="0" Style="{Binding GrayLabel}" Grid.ColumnSpan="3"/>
+                    <Label Text="{Binding CurrentNumberLabel}" Grid.Row="1" Style="{Binding GrayLabel}" Grid.ColumnSpan="3"/>
+                    <Label Text="You'll recieve an SMS" Grid.Row="2" Style="{Binding GrayLabel}" Grid.ColumnSpan="3"/>
                     
                     <Button Grid.Row="3" Grid.Column="0" Margin="-10,0,0,0" x:Name="editButton" Text="EDIT" HeightRequest="40" VerticalOptions="End" HorizontalOptions="Fill" Command="{Binding EditCommand}"/>
                     <Button Grid.Row="3" Grid.Column="2" Margin="0,0,-10,0" x:Name="yesButton" Text="YES" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Command="{Binding YesCommand}" />

@@ -27,18 +27,20 @@
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<application android:label="MereNear.Android" android:icon="@mipmap/ic_launcher">
 		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAGBfO8rlTxN5Q9XUFvG638gV1dxCytnO0" />
-		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
+		<!--<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
 		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
 			<intent-filter>
 				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
 				<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 				<category android:name="${applicationId}" />
 			</intent-filter>
-		</receiver>
+		</receiver>-->
 		<EmbeddedResource Include="MereNear/Resources/AppResources.resx">
 			<LogicalName>MereNear.Resources.AppResources.AppResources.hi</LogicalName>
 		</EmbeddedResource>
-  
+    <provider android:name="android.support.v4.content.FileProvider" android:authorities="com.qservices.merenear.fileprovider" android:exported="false" android:grantUriPermissions="true">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+    </provider>
     <!--Camera-->
     <!--<provider android:name="android.support.v4.content.FileProvider" 
                 android:authorities="com.qservices.merenear.fileprovider" 
