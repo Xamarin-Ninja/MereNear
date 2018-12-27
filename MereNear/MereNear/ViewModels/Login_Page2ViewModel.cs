@@ -48,10 +48,24 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(async () =>
                 {
-                    GetLoginApi();
-                    var param = new NavigationParameters();
-                    param.Add("MobileNumber", MobileNumber);
-                    await _navigationService.NavigateAsync(nameof(SendOtpPage), param);
+                    if (MobileNumber != null)
+                    {
+                        if (MobileNumber.Length == 10)
+                        {
+                            GetLoginApi();
+                            var param = new NavigationParameters();
+                            param.Add("LoginPage", MobileNumber);
+                            await _navigationService.NavigateAsync(nameof(SendOtpPage), param);
+                        }
+                        else
+                        {
+                            await App.Current.MainPage.DisplayAlert("Warning", "Please enter valid mobile number", "Ok");
+                        }
+                    }
+                    else
+                    {
+                        await App.Current.MainPage.DisplayAlert("Warning", "Please enter mobile number", "Ok");
+                    }
                 });
             }
         }

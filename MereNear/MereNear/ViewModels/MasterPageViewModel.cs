@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using Android.Content;
 using MereNear.Model;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -16,7 +17,7 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-    public class MasterPageViewModel : BindableBase
+    public class MasterPageViewModel : BaseViewModel
     {
         #region Private Variables
         private readonly INavigationService _navigationService;
@@ -197,7 +198,8 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(async() =>
                 {
-                  await _navigationService.NavigateAsync(new Uri("/NavigationPage/Login_page"));
+                    setString("LoginMobileNumber", "");
+                    await _navigationService.NavigateAsync("NavigationPage/Login_Page");
                 });
             }
         }

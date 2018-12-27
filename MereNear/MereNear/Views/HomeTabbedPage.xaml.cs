@@ -42,19 +42,14 @@ namespace MereNear.Views
         int count = 0;
         protected override bool OnBackButtonPressed()
         {
-            if(count == 0)
+            var result = DependencyService.Get<ToastMessage>().Show("Press back to close application.");
+            if (!result)
             {
-                DependencyService.Get<ToastMessage>().Show("Press back again to EXIT app");
-                count = 1;
                 return true;
-            }
-            else if(count == 1)
-            {
-                return false;
             }
             else
             {
-                return true;
+                return false;
             }
         }
     }

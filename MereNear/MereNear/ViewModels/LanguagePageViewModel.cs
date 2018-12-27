@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using MereNear.Model;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -8,7 +9,7 @@ using System.Collections.ObjectModel;
 
 namespace MereNear.ViewModels
 {
-    public class LanguagePageViewModel : BindableBase
+    public class LanguagePageViewModel : BaseViewModel
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
@@ -31,7 +32,7 @@ namespace MereNear.ViewModels
                 else
                 {
                     var language = LanguageSelected;
-
+                    setString("AppLanguage", language.DisplayName);
                     try
                     {
                         //DependencyService.Get<ILocalize>().ChangeLocale("hi");

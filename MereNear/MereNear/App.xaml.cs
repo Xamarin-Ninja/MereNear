@@ -12,6 +12,7 @@ using SignalR.Interface;
 using System;
 using Plugin.Connectivity;
 using Acr.UserDialogs;
+using MereNear.ViewModels.Common;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MereNear
@@ -58,7 +59,23 @@ namespace MereNear
             DependencyService.Get<ILocalize>().SetLocale();
             App.CultureCode = string.Empty;
 
-            await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
+            var languageexist = BaseViewModel.getString("AppLanguage");
+            var useralreadylogin = BaseViewModel.getString("LoginMobileNumber");
+            if (string.IsNullOrEmpty(useralreadylogin) || string.IsNullOrWhiteSpace(useralreadylogin))
+            {
+                if (string.IsNullOrEmpty(languageexist) || string.IsNullOrWhiteSpace(languageexist))
+                {
+                    await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
+                }
+                else
+                {
+                    await NavigationService.NavigateAsync("NavigationPage/Login_Page");
+                }
+            }
+            else
+            {
+                await NavigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
+            }
         }
 
         private bool CheckConnection()
