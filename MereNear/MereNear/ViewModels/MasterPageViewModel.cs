@@ -101,7 +101,7 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(async() =>
                 {
-                    await _navigationService.NavigateAsync(new Uri("/NavigationPage/HomeTabbedPage", UriKind.Relative));
+                    await _navigationService.NavigateAsync(new Uri("NavigationPage/HomeTabbedPage", UriKind.Relative));
                     MessagingCenter.Send("HomePage", "ChangeCurrentPage");
                 });
             }

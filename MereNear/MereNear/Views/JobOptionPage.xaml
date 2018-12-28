@@ -36,18 +36,20 @@
                     <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
                 </Grid.ColumnDefinitions>
-                <Frame Grid.Column="0" Grid.Row="0" BorderColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="White" HasShadow="True">
+                <!--<Frame Grid.Column="0" Grid.Row="0" BorderColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="White" HasShadow="True">
                     <Image Source="post_job_icon" HorizontalOptions="Center" VerticalOptions="Center"/>
-                </Frame>
+                </Frame>-->
+                <Image Grid.Column="0" Grid.Row="0" Source="post_a_job" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text="Post a job" Grid.Row="0" Grid.Column="1" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding PostJobCliked}"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <BoxView BackgroundColor="Gray" HorizontalOptions="Fill" Grid.Row="1" Grid.ColumnSpan="2"/>
-                <Frame Grid.Column="0" Grid.Row="2" BorderColor="Gray" HasShadow="True" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White">
+                <!--<Frame Grid.Column="0" Grid.Row="2" BorderColor="Gray" HasShadow="True" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White">
                     <Image Source="post_job_icon" HorizontalOptions="Center" VerticalOptions="Center"/>
-                </Frame>
+                </Frame>-->
+                <Image Grid.Column="0" Grid.Row="2" Source="looking_for_job" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text="Looking for a job" Grid.Row="2" Grid.Column="1" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding LookingForAJobCliked}"/>

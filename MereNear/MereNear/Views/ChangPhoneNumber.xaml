@@ -31,7 +31,7 @@
             <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="2" Grid.ColumnSpan="2"/>
             <Label Text="My new number is:" Grid.Row="3" Style="{StaticResource BlackLabelBold}" Grid.ColumnSpan="2" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
             <Picker Title="+91" Grid.Row="4" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,0,6"/>
-            <Entry x:Name="MobileEntry" Margin="0,1,0,0" Placeholder="Your number" Grid.Row="4" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black"  MaxLength="10"/>
+            <Entry x:Name="MobileEntry" Text="{Binding MobileNumber}" Margin="0,1,0,0" Placeholder="Your number" Grid.Row="4" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black"  MaxLength="10"/>
             <BoxView BackgroundColor="Gray" HeightRequest="1" Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start"/>
             <Label Text="Make sure this number can receive sms" Grid.Row="6" Grid.ColumnSpan="2" FontSize="10" Style="{StaticResource GrayLabel}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
             <Button Margin="-20,0,-20,-20" Command="{Binding ContinueCommand}" Text="Continue" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="7" Grid.ColumnSpan="2"/>

@@ -6,33 +6,47 @@
         <Grid Padding="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="300"/>
+                <RowDefinition Height="200"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Frame BackgroundColor="White" Grid.Row="1" BorderColor="LightGray" Padding="10,10,10,0" CornerRadius="0" HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Frame BackgroundColor="White" Grid.Row="1" BorderColor="LightGray" Padding="20,40,20,40" CornerRadius="0" HasShadow="False" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="15"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Is this your phone number?" Grid.Row="0" Style="{Binding GrayLabel}" Grid.ColumnSpan="3"/>
-                    <Label Text="{Binding CurrentNumberLabel}" Grid.Row="1" Style="{Binding GrayLabel}" Grid.ColumnSpan="3"/>
-                    <Label Text="You'll recieve an SMS" Grid.Row="2" Style="{Binding GrayLabel}" Grid.ColumnSpan="3"/>
-                    
-                    <Button Grid.Row="3" Grid.Column="0" Margin="-10,0,0,0" x:Name="editButton" Text="EDIT" HeightRequest="40" VerticalOptions="End" HorizontalOptions="Fill" Command="{Binding EditCommand}"/>
-                    <Button Grid.Row="3" Grid.Column="2" Margin="0,0,-10,0" x:Name="yesButton" Text="YES" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Command="{Binding YesCommand}" />
+                    <Label Text="Is this your phone number?" Grid.Row="0" Style="{StaticResource GrayLabel}" Grid.ColumnSpan="3"/>
+                    <Label Text="{Binding MobileNumber}" Grid.Row="1" Style="{StaticResource GrayLabel}" Grid.ColumnSpan="3"/>
+                    <Label Text="You'll recieve an SMS" Grid.Row="3" Style="{StaticResource GrayLabel}" Grid.ColumnSpan="3"/>
+
+                    <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.ColumnSpan="3" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand" Spacing="20">
+                        <Label Text="EDIT" Style="{StaticResource GreenLabel}" FontSize="18">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding EditCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Text="YES" Style="{StaticResource GreenLabelBold}" FontSize="18">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding YesCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <!--<Button Grid.Row="4" Grid.Column="0" Margin="-10,0,0,0" x:Name="editButton" Text="EDIT" HeightRequest="40" VerticalOptions="End" HorizontalOptions="Fill" Command="{Binding EditCommand}"/>
+                    <Button Grid.Row="4" Grid.Column="2" Margin="0,0,-10,0" x:Name="yesButton" Text="YES" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Command="{Binding YesCommand}" />-->
                 </Grid>
             </Frame>
-            <Image Source="close_red.png" Grid.Row="1" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start" Margin="-8">
+            <Image Source="cancel.png" Grid.Row="1" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start" Margin="-8">
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding ClosePopupCommand}"/>
+                    <TapGestureRecognizer Command="{Binding EditCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
         </Grid>

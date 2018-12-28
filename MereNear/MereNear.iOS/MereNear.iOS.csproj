@@ -205,11 +205,6 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default-568h@2x.png" />
-    <BundleResource Include="Resources\Default-Portrait.png" />
-    <BundleResource Include="Resources\Default-Portrait@2x.png" />
-    <BundleResource Include="Resources\Default.png" />
-    <BundleResource Include="Resources\Default@2x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
@@ -265,340 +260,496 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\about.png" />
+    <BundleResource Include="Resources\send_chatting%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\about_selected.png" />
+    <BundleResource Include="Resources\setting_active_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\about_shadow.png" />
+    <BundleResource Include="Resources\setting_active_master%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ac.png" />
+    <BundleResource Include="Resources\setting_active_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ac_select.png" />
+    <BundleResource Include="Resources\setting_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\back.png" />
+    <BundleResource Include="Resources\setting_master%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\back_arrow.png" />
+    <BundleResource Include="Resources\setting_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\back_icon.png" />
+    <BundleResource Include="Resources\spalsh%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\background.jpg" />
+    <BundleResource Include="Resources\spalsh%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\big_logo.png" />
+    <BundleResource Include="Resources\spalsh%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\call.png" />
+    <BundleResource Include="Resources\star%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\call_icon.png" />
+    <BundleResource Include="Resources\star%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\car_wash.png" />
+    <BundleResource Include="Resources\star%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\car_wash_select.png" />
+    <BundleResource Include="Resources\star_active%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\chat.png" />
+    <BundleResource Include="Resources\star_active%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\check.png" />
+    <BundleResource Include="Resources\star_active%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\check_2.png" />
+    <BundleResource Include="Resources\support_active_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\check_box.png" />
+    <BundleResource Include="Resources\support_active_master%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\close.png" />
+    <BundleResource Include="Resources\support_active_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\correcttick.png" />
+    <BundleResource Include="Resources\support_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\dbz.jpg" />
+    <BundleResource Include="Resources\support_master%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\dbzs.jpg" />
+    <BundleResource Include="Resources\support_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\default_back_icon.png" />
+    <BundleResource Include="Resources\about_active_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\discription_arrow.png" />
+    <BundleResource Include="Resources\about_active_master%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\down_arrow_black.png" />
+    <BundleResource Include="Resources\about_active_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\edit.png" />
+    <BundleResource Include="Resources\about_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\edit_select.png" />
+    <BundleResource Include="Resources\about_master%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\electricion.png" />
+    <BundleResource Include="Resources\about_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\electricion_select.png" />
+    <BundleResource Include="Resources\account_setting%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\email.png" />
+    <BundleResource Include="Resources\account_setting%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filter.png" />
+    <BundleResource Include="Resources\account_setting%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\final_deal.png" />
+    <BundleResource Include="Resources\attach%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\final_deal_icon.png" />
+    <BundleResource Include="Resources\attach%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\hamburguer_icon.png" />
+    <BundleResource Include="Resources\attach%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\back_arrow%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\home_delivery.png" />
+    <BundleResource Include="Resources\back_arrow%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\home_delivery_select.png" />
+    <BundleResource Include="Resources\back_arrow%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\home_office.png" />
+    <BundleResource Include="Resources\camera%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\home_office_select.png" />
+    <BundleResource Include="Resources\camera%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\home_selected.png" />
+    <BundleResource Include="Resources\camera%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\homeblack.png" />
+    <BundleResource Include="Resources\cancel%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\homewhite.png" />
+    <BundleResource Include="Resources\cancel%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_stat_name.png" />
+    <BundleResource Include="Resources\cancel%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image1.jpg" />
+    <BundleResource Include="Resources\clear%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image2.jpeg" />
+    <BundleResource Include="Resources\clear%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image3.jpeg" />
+    <BundleResource Include="Resources\clear%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image4.jpg" />
+    <BundleResource Include="Resources\distance_setting%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image5.jpg" />
+    <BundleResource Include="Resources\distance_setting%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image6.jpg" />
+    <BundleResource Include="Resources\distance_setting%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image7.jpg" />
+    <BundleResource Include="Resources\edit_profile%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image8.jpg" />
+    <BundleResource Include="Resources\edit_profile%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\info_icon.png" />
+    <BundleResource Include="Resources\edit_profile%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\language.png" />
+    <BundleResource Include="Resources\feed%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\language_icon.png" />
+    <BundleResource Include="Resources\feed%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\language_select.png" />
+    <BundleResource Include="Resources\feed%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\location.png" />
+    <BundleResource Include="Resources\google_language%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\location_1.png" />
+    <BundleResource Include="Resources\google_language%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\location_job.png" />
+    <BundleResource Include="Resources\google_language%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\LoginBanner.jpg" />
+    <BundleResource Include="Resources\heart%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\logo.png" />
+    <BundleResource Include="Resources\heart%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\logout.png" />
+    <BundleResource Include="Resources\heart%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\look_job.png" />
+    <BundleResource Include="Resources\home%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\look_job_button.png" />
+    <BundleResource Include="Resources\home%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\look_job_selected.png" />
+    <BundleResource Include="Resources\home%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\looking_job_icon.png" />
+    <BundleResource Include="Resources\home_active%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\map_icon.png" />
+    <BundleResource Include="Resources\home_active%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\map_location.png" />
+    <BundleResource Include="Resources\home_active%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\map_red_pin.png" />
+    <BundleResource Include="Resources\home_active_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\message.png" />
+    <BundleResource Include="Resources\home_active_master%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\mobile.png" />
+    <BundleResource Include="Resources\home_active_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\mobile_select.png" />
+    <BundleResource Include="Resources\home_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\my_post.png" />
+    <BundleResource Include="Resources\home_master%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\my_post_select.png" />
+    <BundleResource Include="Resources\home_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\new_splash.jpg" />
+    <BundleResource Include="Resources\info%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\notification.png" />
+    <BundleResource Include="Resources\info%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\notification_selected.png" />
+    <BundleResource Include="Resources\job_description%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\notification1.png" />
+    <BundleResource Include="Resources\job_description%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\notify.png" />
+    <BundleResource Include="Resources\job_description%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\painter.png" />
+    <BundleResource Include="Resources\job_status%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\painter_select.png" />
+    <BundleResource Include="Resources\job_status%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\password.png" />
+    <BundleResource Include="Resources\job_status%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\phone.png" />
+    <BundleResource Include="Resources\job_title%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\plumber.png" />
+    <BundleResource Include="Resources\job_title%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\plumber_select.png" />
+    <BundleResource Include="Resources\job_title%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\plumbing.png" />
+    <BundleResource Include="Resources\location%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\post_job.png" />
+    <BundleResource Include="Resources\location%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\post_job_button.png" />
+    <BundleResource Include="Resources\location%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\post_job_icon.png" />
+    <BundleResource Include="Resources\logout_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\post_job_selected.png" />
+    <BundleResource Include="Resources\logout_master%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\profie_image.png" />
+    <BundleResource Include="Resources\logout_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\profile.png" />
+    <BundleResource Include="Resources\lookingforjob%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\profile_pic_icon.png" />
+    <BundleResource Include="Resources\lookingforjob%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\profile_selected.png" />
+    <BundleResource Include="Resources\lookingforjob%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\rec.9.png" />
+    <BundleResource Include="Resources\menu%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\rec_req.png" />
+    <BundleResource Include="Resources\menu%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\searchicon.png" />
+    <BundleResource Include="Resources\menu%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\send_icon.png" />
+    <BundleResource Include="Resources\message%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\setting.png" />
+    <BundleResource Include="Resources\message%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\small_home.png" />
+    <BundleResource Include="Resources\message%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\splash.png" />
+    <BundleResource Include="Resources\message_active%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\star_1.png" />
+    <BundleResource Include="Resources\message_active%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\star_2.png" />
+    <BundleResource Include="Resources\message_active%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\star_3.png" />
+    <BundleResource Include="Resources\more_setting%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\teacher.png" />
+    <BundleResource Include="Resources\more_setting%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\teacher_select.png" />
+    <BundleResource Include="Resources\more_setting%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\time.png" />
+    <BundleResource Include="Resources\my_job%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\user.png" />
+    <BundleResource Include="Resources\my_job%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\user_name.png" />
+    <BundleResource Include="Resources\my_job%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\user_without_shadow.png" />
+    <BundleResource Include="Resources\my_job_active%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\view.png" />
+    <BundleResource Include="Resources\my_job_active%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\view_select.png" />
+    <BundleResource Include="Resources\my_job_active%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\youtube.png" />
+    <BundleResource Include="Resources\myjob_active_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\myjob_active_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\myjob_active_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\myjob_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\myjob_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\myjob_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mypost_active_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mypost_active_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mypost_active_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mypost_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mypost_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mypost_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\need_service%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\need_service%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\need_service%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification_active%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification_active%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification_active%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification_setting%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification_setting%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification_setting%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pin%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pin%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pin%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\policies_active_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\policies_active_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\policies_active_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\policies_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\policies_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\policies_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\postajob%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\postajob%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\postajob%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile_active%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile_active%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile_active%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rateus_active_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rateus_active_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rateus_active_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rateus_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rateus_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rateus_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\send%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\send%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\send%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\send_chatting%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\send_chatting%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

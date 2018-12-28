@@ -16,9 +16,17 @@ namespace MereNear.ViewModels
 
         private string _currentNumberLabel;
         private bool _isPopupVisible;
+
+        private string _mobileNumber;
         #endregion
 
         #region Public Variable
+        public string MobileNumber
+        {
+            get { return _mobileNumber; }
+            set { SetProperty(ref _mobileNumber, value); }
+        }
+
         private string CurrentNumberLabel
         {
             get { return _currentNumberLabel; }
@@ -37,9 +45,9 @@ namespace MereNear.ViewModels
         {
             get
             {
-                return new DelegateCommand(() =>
+                return new DelegateCommand(async() =>
                 {
-
+                    await _navigationService.GoBackAsync();
                 });
             }
         }
@@ -48,9 +56,23 @@ namespace MereNear.ViewModels
         {
             get
             {
-                return new DelegateCommand(() =>
+                return new DelegateCommand(async() =>
                 {
-                    IsPopupVisible = true;
+                    if (MobileNumber != null)
+                    {
+                        if (MobileNumber.Length == 10)
+                        {
+                            IsPopupVisible = true;
+                        }
+                        else
+                        {
+                            await App.Current.MainPage.DisplayAlert("Warning", "Please enter valid mobile number", "Ok");
+                        }
+                    }
+                    else
+                    {
+                        await App.Current.MainPage.DisplayAlert("Warning", "Please enter mobile number", "Ok");
+                    }
                 });
             }
         }
@@ -72,7 +94,9 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(async() =>
                 {
-                    await _navigationService.NavigateAsync(nameof(SendOtpPage));
+                    var param = new NavigationParameters();
+                    param.Add("ChangeNumber", MobileNumber);
+                    await _navigationService.NavigateAsync(nameof(SendOtpPage),param);
                 });
             }
         }

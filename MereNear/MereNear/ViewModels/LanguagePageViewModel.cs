@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 
 namespace MereNear.ViewModels
 {
-    public class LanguagePageViewModel : BaseViewModel
+    public class LanguagePageViewModel : BaseViewModel, INavigationAware
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
@@ -19,6 +19,7 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Public Variable
+        public string lastnavigatedpage { get; set; }
         public LanguageModel LanguageSelected
         {
             get { return _languageSelected; }
@@ -76,7 +77,14 @@ namespace MereNear.ViewModels
         private async void GoToHomePage()
         {
             //_navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
-            await _navigationService.NavigateAsync(nameof(Login_Page));
+            if (string.IsNullOrEmpty(lastnavigatedpage)||string.IsNullOrWhiteSpace(lastnavigatedpage))
+            {
+                await _navigationService.NavigateAsync(nameof(Login_Page));
+            }
+            else
+            {
+                await _navigationService.GoBackAsync();
+            }
         }
         //private void GetLanguages()
         //{
@@ -91,6 +99,26 @@ namespace MereNear.ViewModels
         //        ShortName = "hi"
         //    });
         //}
+        #endregion
+
+        #region Navigation Parameters
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            
+        }
+
+        public void OnNavigatingTo(INavigationParameters parameters)
+        {
+            if (parameters.ContainsKey("FromSettingPage"))
+            {
+                lastnavigatedpage = (string)parameters["FromSettingPage"];
+            }
+        }
         #endregion
     }
 }

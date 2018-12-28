@@ -148,8 +148,6 @@ namespace MereNear.ViewModels
                         {
                             Directory = "Profile Photo",
                             SaveToAlbum = true,
-                            CompressionQuality = 75,
-                            CustomPhotoSize = 50,
                             PhotoSize = PhotoSize.Medium,
                             MaxWidthHeight = 2000,
                             DefaultCamera = CameraDevice.Rear

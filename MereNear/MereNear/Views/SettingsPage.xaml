@@ -69,7 +69,11 @@
 
                 <Label Text="Change language" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <Label Text=">" Grid.Row="10" Grid.Column="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="End" VerticalOptions="Center"/>
-
+                <BoxView BackgroundColor="Transparent" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeLanguageCommand}"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
 
             </Grid>
         </Grid>

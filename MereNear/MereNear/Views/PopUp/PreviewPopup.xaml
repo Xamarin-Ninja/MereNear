@@ -49,14 +49,14 @@
                         <Label Text="Photo" Grid.Row="8" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="Center"/>
 
                         <Grid Grid.Row="9" Grid.ColumnSpan="2" ColumnSpacing="10">
-                            <Image Source="upload_photo_icon" Grid.Column="0" Aspect="AspectFill"/>
-                            <Image Source="upload_photo_icon" Grid.Column="1" Aspect="AspectFill"/>
+                            <Image Source="{Binding CameraPicker}" Grid.Column="0" Aspect="AspectFill"/>
+                            <Image Source="{Binding ImagePicker}" Grid.Column="1" Aspect="AspectFill"/>
                         </Grid>
                         <Button BackgroundColor="#70DA44" Text="Submit" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="10" Grid.ColumnSpan="2" Command="{Binding SubmitPostCommand}"/>
                     </Grid>
                 </ScrollView>
             </Frame>
-            <Image Source="close_red.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start">
+            <Image Source="cancel.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding PopupCloseCommand}"/>
                 </Image.GestureRecognizers>

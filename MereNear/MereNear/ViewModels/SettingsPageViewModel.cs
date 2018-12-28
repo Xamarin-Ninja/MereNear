@@ -36,9 +36,22 @@ namespace MereNear.ViewModels
         {
             get
             {
-                return new DelegateCommand(async() =>
+                return new DelegateCommand(async () =>
                 {
                     await _navigationService.NavigateAsync(nameof(ChangPhoneNumber));
+                });
+            }
+        }
+
+        public ICommand ChangeLanguageCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    var param = new NavigationParameters();
+                    param.Add("FromSettingPage", "Settings");
+                    await _navigationService.NavigateAsync(nameof(LanguagePage),param);
                 });
             }
         }

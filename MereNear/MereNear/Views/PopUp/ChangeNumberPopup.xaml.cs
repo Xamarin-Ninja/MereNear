@@ -16,5 +16,5 @@ namespace MereNear.Views.PopUp
 		{
 			InitializeComponent ();
 		}
-	}
+    }
 }

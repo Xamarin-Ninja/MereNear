@@ -32,6 +32,7 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Public Variables
+        public string lastNavigatedPage { get; set; }
         public string ActivationCode
         {
             get { return _activationCode; }
@@ -76,11 +77,18 @@ namespace MereNear.ViewModels
         {
             get
             {
-                return new DelegateCommand(() =>
+                return new DelegateCommand(async() =>
                 {
                     try
                     {
-                        CallOTPApi();
+                        if (lastNavigatedPage == "LoginPage")
+                        {
+                            CallOTPApi();
+                        }
+                        else
+                        {
+                            await _navigationService.GoBackToRootAsync();
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -135,7 +143,13 @@ namespace MereNear.ViewModels
             if (parameters.ContainsKey("LoginPage"))
             {
                 OTPMainLabel = (string)parameters["LoginPage"];
+                lastNavigatedPage = "LoginPage";
             }
+            if (parameters.ContainsKey("ChangeNumber"))
+            {
+                OTPMainLabel = (string)parameters["ChangeNumber"];
+                lastNavigatedPage = "ChangeNumber";
+            }            
         }
         #endregion
 
