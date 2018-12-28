@@ -12,6 +12,9 @@ using SignalR.Interface;
 using System;
 using Plugin.Connectivity;
 using Acr.UserDialogs;
+using Plugin.Multilingual;
+using MereNear.Resources;
+using System.Globalization;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MereNear
@@ -26,9 +29,20 @@ namespace MereNear
         public static int ScreenHeight { get; set; }
         public static int ScreenWidth { get; set; }
 
-        public App() : this(null) { }
+        public App() : this(null)
+        {
 
-        public App(IPlatformInitializer initializer) : base(initializer) { }
+            var culture = CrossMultilingual.Current.DeviceCultureInfo;
+            AppResources.Culture = culture;
+        }
+
+        public App(IPlatformInitializer initializer) : base(initializer)
+        {
+            var culture = CrossMultilingual.Current.DeviceCultureInfo;
+            AppResources.Culture = culture;
+
+
+        }
 
         #region SignalR Chat Implement Part 1
         private IChatServices _chatServices;
@@ -36,6 +50,14 @@ namespace MereNear
         #endregion
 
         public static string CultureCode { get; set; }
+
+        public static void Setlanguage(string name)
+        {
+            var culture = new CultureInfo(name);
+            AppResources.Culture = culture;
+            CrossMultilingual.Current.CurrentCultureInfo = culture;
+        }
+       
 
         protected override async void OnInitialized()
         {

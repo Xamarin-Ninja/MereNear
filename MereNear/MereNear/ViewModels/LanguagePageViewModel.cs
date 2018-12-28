@@ -31,7 +31,7 @@ namespace MereNear.ViewModels
                 else
                 {
                     var language = LanguageSelected;
-
+                    App.Setlanguage(language.ShortName);
                     try
                     {
                         //DependencyService.Get<ILocalize>().ChangeLocale("hi");
