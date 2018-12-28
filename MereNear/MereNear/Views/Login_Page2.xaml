@@ -22,7 +22,7 @@
                 <TapGestureRecognizer Tapped="BackIcon_Tapped"/>
             </Image.GestureRecognizers>
         </Image>
-        <Label Text="Enter your mobile number to get started" Grid.Row="1" Grid.ColumnSpan="2" FontSize="18" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+        <Label x:Name="MobileEntryTitle" Grid.Row="1" Grid.ColumnSpan="2" FontSize="18" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
         <Picker Title="+91" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,0,6"/>
         <Entry x:Name="MobileEntry" Text="{Binding MobileNumber}" Margin="0,1,0,0" Placeholder="Enter mobile number" Grid.Row="2" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black" TextChanged="Entry_TextChanged" MaxLength="10"/>
         <BoxView BackgroundColor="Black" HeightRequest="1" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start"/>

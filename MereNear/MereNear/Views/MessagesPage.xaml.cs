@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MereNear.Resources;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace MereNear.Views
@@ -10,7 +11,7 @@ namespace MereNear.Views
         public MessagesPage()
         {
             InitializeComponent();
-            
+            MessagesTitle.TitleText = AppResources.MessagesTab;
         }
 
         private void MesagesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)

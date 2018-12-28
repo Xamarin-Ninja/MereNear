@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using MereNear.Model;
+using MereNear.Resources;
 using MereNear.Services.ApiService.Common;
 using MereNear.ViewModels.Common;
 using MereNear.Views;
@@ -142,7 +143,7 @@ namespace MereNear.ViewModels
         {
             if (parameters.ContainsKey("LoginPage"))
             {
-                OTPMainLabel = (string)parameters["LoginPage"];
+                OTPMainLabel = AppResources.OTPMainLabel + (string)parameters["LoginPage"];
                 lastNavigatedPage = "LoginPage";
             }
             if (parameters.ContainsKey("ChangeNumber"))

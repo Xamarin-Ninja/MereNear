@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using MereNear.Resources;
+using Xamarin.Forms;
 
 namespace MereNear.Views
 {
@@ -7,6 +8,7 @@ namespace MereNear.Views
         public Login_Page2()
         {
             InitializeComponent();
+            MobileEntryTitle.Text = AppResources.MobileEntryTitle;
             NextButton.Text ="";
             MessagingCenter.Subscribe<string>(this, "EntryFocus", (sender) =>
             {
@@ -23,7 +25,7 @@ namespace MereNear.Views
         {
             if(MobileEntry.Text != null)
             {
-                NextButton.Text = "NEXT";
+                NextButton.Text = AppResources.NextButton;
                 App.CurrentUser = MobileEntry.Text;
             }
         }

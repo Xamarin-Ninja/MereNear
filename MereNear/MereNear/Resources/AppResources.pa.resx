@@ -117,28 +117,128 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HomePageTitle" xml:space="preserve">
-    <value>ਘਰ</value>
-    <comment>HomePage</comment>
+  <data name="AboutUsMenu" xml:space="preserve">
+    <value>ਸਾਡੇ ਬਾਰੇ</value>
+    <comment>MenuPage</comment>
   </data>
-  <data name="Login_RegisterButton" xml:space="preserve">
-    <value>Login</value>
-    <comment>SendOtpPage</comment>
+  <data name="AddPhotosLabel" xml:space="preserve">
+    <value>ਫੋਟੋਜ਼ ਸ਼ਾਮਲ ਕਰੋ</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="AppSlogan1" xml:space="preserve">
+    <value>ਆਸਾਨੀ ਨਾਲ ਤੁਹਾਡੇ ਆਸ-ਪਾਸ ਦੀਆਂ ਸੇਵਾਵਾਂ ਲੱਭੋ</value>
+    <comment>LoginPage</comment>
+  </data>
+  <data name="ChooseCategoryLabel" xml:space="preserve">
+    <value>ਸ਼੍ਰੇਣੀ ਚੁਣੋ</value>
+    <comment>CategoryPage</comment>
+  </data>
+  <data name="ChooseLocationLabel" xml:space="preserve">
+    <value>ਸਥਾਨ ਚੁਣੋ</value>
+    <comment>PickLocationPage</comment>
+  </data>
+  <data name="DateLabel" xml:space="preserve">
+    <value>ਤਾਰੀਖ</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="DescriptionEditorPlaceholder" xml:space="preserve">
+    <value>ਵੇਰਵਾ ਦਿਓ</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>ਵਰਣਨ</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="HomeTab" xml:space="preserve">
+    <value>ਘਰ</value>
+    <comment>HomeTabbedPage</comment>
+  </data>
+  <data name="ImmediatelyLabel" xml:space="preserve">
+    <value>ਤੁਰੰਤ</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="jobTitleLabel" xml:space="preserve">
+    <value>ਕੰਮ ਦਾ ਟਾਈਟਲ</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="LogoutMenu" xml:space="preserve">
+    <value>ਲਾੱਗ ਆਊਟ</value>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="LookingJob" xml:space="preserve">
+    <value>ਨੌਕਰੀ ਲੱਭ ਰਿਹਾ ਹੈ</value>
+    <comment>JobOptionPage</comment>
+  </data>
+  <data name="MereNear" xml:space="preserve">
+    <value>ਮੇਰੇ ਨੇੜੇ</value>
+    <comment>AppName</comment>
   </data>
   <data name="MessagesTab" xml:space="preserve">
-    <value>Messages</value>
-    <comment>HomePage</comment>
+    <value>ਸੁਨੇਹੇ</value>
+    <comment>HomeTabbedPage</comment>
+  </data>
+  <data name="MobileEntryPlaceholder" xml:space="preserve">
+    <value>ਤੁਹਾਡਾ ਨੰਬਰ</value>
+    <comment>LoginPage</comment>
+  </data>
+  <data name="MobileEntryTitle" xml:space="preserve">
+    <value>ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਆਪਣਾ ਮੋਬਾਈਲ ਨੰਬਰ ਦਰਜ ਕਰੋ</value>
+    <comment>LoginPage</comment>
   </data>
   <data name="MyJobsTab" xml:space="preserve">
-    <value>MyJobs</value>
-    <comment>HomePage</comment>
+    <value>ਮੇਰਾ ਕੰਮ</value>
+    <comment>HomeTabbedPage</comment>
   </data>
-  <data name="MyPostsTab" xml:space="preserve">
-    <value>My Posts</value>
-    <comment>HomePage</comment>
+  <data name="MyPostsMenu" xml:space="preserve">
+    <value>ਮੇਰੀ ਪੋਸਟ</value>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="NextButton" xml:space="preserve">
+    <value>ਅਗਲਾ</value>
+    <comment>LoginPage2</comment>
   </data>
   <data name="NotificationsTab" xml:space="preserve">
-    <value>Notifications</value>
-    <comment>HomePage</comment>
+    <value>ਸੂਚਨਾਵਾਂ</value>
+    <comment>HomeTabbedPage</comment>
+  </data>
+  <data name="OTPMainLabel" xml:space="preserve">
+    <value>ਕ੍ਰਿਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ. ਅਸੀਂ ਆਟੋਮੈਟਿਕਲੀ OTP ਦੀ ਪੁਸ਼ਟੀ ਕਰਾਂਗੇ.</value>
+    <comment>OTPPage</comment>
+  </data>
+  <data name="OurPoliciesMenu" xml:space="preserve">
+    <value>ਸਾਡੀ ਨੀਤੀਆਂ</value>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="PostJob" xml:space="preserve">
+    <value>ਕੋਈ ਨੌਕਰੀ ਪੋਸਟ ਕਰੋ</value>
+    <comment>JobOptionPage</comment>
+  </data>
+  <data name="PreviewButton" xml:space="preserve">
+    <value>ਪੂਰਵਦਰਸ਼ਨ</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="ProfileTab" xml:space="preserve">
+    <value>ਪ੍ਰੋਫਾਈਲ</value>
+    <comment>HomeTabbedPage</comment>
+  </data>
+  <data name="RateUsMenu" xml:space="preserve">
+    <value>ਰੇਟ ਕਰੋ</value>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="ScheduleLabel" xml:space="preserve">
+    <value>ਆਪਣਾ ਕੰਮ ਤਹਿ ਕਰੋ</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="SettingsMenu" xml:space="preserve">
+    <value>ਸੈਟਿੰਗਾਂ</value>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="SupportMenu" xml:space="preserve">
+    <value>ਮਦਦ</value>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="TimeLabel" xml:space="preserve">
+    <value>ਸਮਾਂ</value>
+    <comment>PostDescriptionPage</comment>
   </data>
 </root>

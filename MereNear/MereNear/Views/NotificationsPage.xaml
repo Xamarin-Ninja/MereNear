@@ -11,7 +11,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <common:CustomHeader_Hamburger Grid.Row="0" TitleText="Notifications" RightIconImage="clear.png"/>
+        <common:CustomHeader_Hamburger Grid.Row="0" x:Name="NotificationTitle" RightIconImage="clear.png"/>
         <ListView x:Name="NotificationList" Grid.Row="1"
                   RowHeight="80"
                  SeparatorVisibility="Default"

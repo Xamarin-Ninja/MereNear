@@ -1,4 +1,5 @@
 ﻿using MereNear.Model;
+using MereNear.Resources;
 using MereNear.ViewModels;
 using Xamarin.Forms;
 
@@ -10,6 +11,8 @@ namespace MereNear.Views
         public ChooseCategoryPage()
         {
             InitializeComponent();
+            ChooseCategoryLabel.Text = AppResources.ChooseCategoryLabel;
+            NextButton.Text = AppResources.NextButton;
         }
 
         private void SelectedItemTap(object sender, ItemTappedEventArgs e)

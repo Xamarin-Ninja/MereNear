@@ -1,3 +1,4 @@
+using MereNear.Resources;
 using Xamarin.Forms;
 
 namespace MereNear.Views
@@ -7,6 +8,7 @@ namespace MereNear.Views
         public MyJobs()
         {
             InitializeComponent();
+            MyJobTitle.TitleText = AppResources.MyJobsTab;
         }
 
         private void jobListItems_ItemSelected(object sender, SelectedItemChangedEventArgs e)

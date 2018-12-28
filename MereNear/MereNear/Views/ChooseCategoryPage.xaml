@@ -18,7 +18,7 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Text="Choose category" FontSize="15" HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,0,0" VerticalTextAlignment="Center"/>
+            <Label Grid.Row="0" x:Name="ChooseCategoryLabel" FontSize="15" HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,0,0" VerticalTextAlignment="Center"/>
             <flv:FlowListView Grid.Row="1" FlowItemTapped="SelectedItemTap" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="True"
                           FlowItemsSource="{Binding PostJobcategory}" FlowLastTappedItem="{Binding SelectedItemCommand}">
                 <flv:FlowListView.FlowColumnTemplate>
@@ -41,6 +41,6 @@
             </flv:FlowListView>
 
         </Grid>
-        <Button BackgroundColor="#70DA44" x:Name="NextButton" Text="Next" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="2" IsVisible="False" Command="{Binding NextButtonCommand}"/>
+        <Button BackgroundColor="#70DA44" x:Name="NextButton" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="2" IsVisible="False" Command="{Binding NextButtonCommand}"/>
     </Grid>
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using MereNear.Views;
+﻿using MereNear.Resources;
+using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -139,7 +140,7 @@ namespace MereNear.ViewModels
             if (parameters.ContainsKey("Address"))
             {
                 LocationAddress = (string)parameters["Address"];
-                CustomHeaderTitle = "Post A Job";
+                CustomHeaderTitle = AppResources.PostJob;
                 IsPostAJob = true;
                 if (parameters.ContainsKey("AddressPosition"))
                 {
@@ -148,7 +149,7 @@ namespace MereNear.ViewModels
             }
             else
             {
-                CustomHeaderTitle = "Looking For A Job";
+                CustomHeaderTitle = AppResources.LookingJob;
                 IsLookingForAJob = true;
             }
         }

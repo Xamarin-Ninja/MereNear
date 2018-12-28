@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MereNear.Resources;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace MereNear.Views
@@ -10,7 +11,7 @@ namespace MereNear.Views
         public NotificationsPage()
         {
             InitializeComponent();
-
+            NotificationTitle.TitleText = AppResources.NotificationsTab;
             notificationlist = new List<NotificationListItem>();
             var job = new NotificationListItem() { Text = "Job Completed", Icon = "logo.png" ,Time = "15 minutes ago" };
             var job1 = new NotificationListItem() { Text = "Someone sent a message", Icon = "logo.png", Time = "16 minutes ago" };

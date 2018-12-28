@@ -40,7 +40,7 @@
                     <Image Source="post_job_icon" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Frame>-->
                 <Image Grid.Column="0" Grid.Row="0" Source="post_a_job" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label Text="Post a job" Grid.Row="0" Grid.Column="1" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black">
+                <Label x:Name="PostJobLabel" Grid.Row="0" Grid.Column="1" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding PostJobCliked}"/>
                     </Label.GestureRecognizers>
@@ -50,7 +50,7 @@
                     <Image Source="post_job_icon" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Frame>-->
                 <Image Grid.Column="0" Grid.Row="2" Source="looking_for_job" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label Text="Looking for a job" Grid.Row="2" Grid.Column="1" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black">
+                <Label x:Name="LookingforJobLabel" Grid.Row="2" Grid.Column="1" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding LookingForAJobCliked}"/>
                     </Label.GestureRecognizers>

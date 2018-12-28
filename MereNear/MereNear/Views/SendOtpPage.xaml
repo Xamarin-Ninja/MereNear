@@ -25,7 +25,7 @@
                 <TapGestureRecognizer Tapped="BackIcon_Tapped"/>
             </Image.GestureRecognizers>
         </Image>
-        <Label x:Name="MainLabel" Text="{Binding OTPMainLabel, StringFormat='Please wait. We will auto verify the OTP sent to +91-{0:N}'}" Grid.Row="1" Grid.ColumnSpan="5" FontSize="18" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+        <Label x:Name="MainLabel" Text="{Binding OTPMainLabel}" Grid.Row="1" Grid.ColumnSpan="5" FontSize="18" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
         <Entry x:Name="OTP1" Text="{Binding OTP1}" Placeholder="." Grid.Row="2" Grid.Column="0" ReturnType="Send" Keyboard="Numeric"  HorizontalOptions="Fill" VerticalOptions="Center" FontFamily="Poppins-Bold.ttf#Poppins Bold" PlaceholderColor="Gray" TextColor="Gray" MaxLength="1"/>
         <Entry x:Name="OTP2" Text="{Binding OTP2}" Placeholder="." Grid.Row="2" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Fill" VerticalOptions="Center" FontFamily="Poppins-Bold.ttf#Poppins Bold" PlaceholderColor="Gray" TextColor="Gray" MaxLength="1"/>
         <Entry x:Name="OTP3" Text="{Binding OTP3}" Placeholder="." Grid.Row="2" Grid.Column="2" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Fill" VerticalOptions="Center" FontFamily="Poppins-Bold.ttf#Poppins Bold" PlaceholderColor="Gray" TextColor="Gray" MaxLength="1"/>

@@ -1,4 +1,5 @@
 ﻿using MereNear.Interface;
+using MereNear.Resources;
 using MereNear.Views.Common;
 using Xamarin.Forms;
 
@@ -9,6 +10,8 @@ namespace MereNear.Views
         public JobOptionPage()
         {
             InitializeComponent();
+            PostJobLabel.Text = AppResources.PostJob;
+            LookingforJobLabel.Text = AppResources.LookingJob;
         }
         int count = 0;
         protected override bool OnBackButtonPressed()

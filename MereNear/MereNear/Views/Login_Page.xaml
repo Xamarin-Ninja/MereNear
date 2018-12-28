@@ -19,16 +19,16 @@
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <Image Source="logo" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="0"/>
-        <Label x:Name="appName" Grid.Row="0" Grid.Column="1" FontSize="30" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
-        <Label Text="Find services near you very easily" Grid.Row="1" Grid.ColumnSpan="2" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+        <Label Text="merenear" Grid.Row="0" Grid.Column="1" FontSize="30" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Label x:Name="AppSlogan" Grid.Row="1" Grid.ColumnSpan="2" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
         <Image Source="banner.png" Grid.Row="2" Grid.ColumnSpan="2" Aspect="AspectFill" Margin="-20,0"/>
-        <Label Text="Enter your mobile number to get started" Grid.Row="3" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="End"/>
+        <Label x:Name="MobileEntryTitle" Grid.Row="3" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="End"/>
         <Picker Title="+91" Grid.Row="4" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center">
             <Picker.GestureRecognizers>
                 <TapGestureRecognizer Tapped="Entry_Focused"/>
             </Picker.GestureRecognizers>
         </Picker>
-        <Label Text="Enter mobile number" FontSize="Medium" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" TextColor="Gray">
+        <Label x:Name="MobileEntryPlaceholer" FontSize="Medium" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" TextColor="Gray">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="Entry_Focused"/>
             </Label.GestureRecognizers>

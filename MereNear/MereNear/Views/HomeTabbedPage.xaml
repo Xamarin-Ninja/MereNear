@@ -9,10 +9,10 @@
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
             android:TabbedPage.IsSwipePagingEnabled="False">
-    <tabs:HomePage x:Name="HomeTab" Icon="home.png" Title="Home"  />
+    <tabs:HomePage x:Name="HomeTab" Icon="home.png" />
     <!--<tabs:MyPosts x:Name="MyPostsTab" Icon="my_job.png" Title="MyPosts"/>-->
-    <tabs:MyJobs x:Name="MyJobsTab" Icon="my_job.png" Title="MyJobs"/>
-    <tabs:NotificationsPage x:Name="NotificationTab" Icon="notification.png" Title="Notifications"/>
-    <tabs:MessagesPage x:Name="MessageTab" Icon="message.png" Title="Messages"/>
-    <tabs:ProfilePage x:Name="ProfileTab" Title="Profile" Icon="profile.png"/>
+    <tabs:MyJobs x:Name="MyJobsTab" Icon="my_job.png"/>
+    <tabs:NotificationsPage x:Name="NotificationTab" Icon="notification.png" />
+    <tabs:MessagesPage x:Name="MessageTab" Icon="message.png" />
+    <tabs:ProfilePage x:Name="ProfileTab" Icon="profile.png"/>
 </TabbedPage>

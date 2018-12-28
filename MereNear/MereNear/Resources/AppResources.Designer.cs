@@ -61,20 +61,128 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Home.
+        ///   Looks up a localized string similar to About Us.
         /// </summary>
-        public static string HomePageTitle {
+        public static string AboutUsMenu {
             get {
-                return ResourceManager.GetString("HomePageTitle", resourceCulture);
+                return ResourceManager.GetString("AboutUsMenu", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Add Photos(optional).
         /// </summary>
-        public static string Login_RegisterButton {
+        public static string AddPhotosLabel {
             get {
-                return ResourceManager.GetString("Login_RegisterButton", resourceCulture);
+                return ResourceManager.GetString("AddPhotosLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find services near you very easily.
+        /// </summary>
+        public static string AppSlogan {
+            get {
+                return ResourceManager.GetString("AppSlogan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose category.
+        /// </summary>
+        public static string ChooseCategoryLabel {
+            get {
+                return ResourceManager.GetString("ChooseCategoryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Location.
+        /// </summary>
+        public static string ChooseLocationLabel {
+            get {
+                return ResourceManager.GetString("ChooseLocationLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string DateLabel {
+            get {
+                return ResourceManager.GetString("DateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Description.
+        /// </summary>
+        public static string DescriptionEditorPlaceholder {
+            get {
+                return ResourceManager.GetString("DescriptionEditorPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string DescriptionLabel {
+            get {
+                return ResourceManager.GetString("DescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string HomeTab {
+            get {
+                return ResourceManager.GetString("HomeTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Immediately.
+        /// </summary>
+        public static string ImmediatelyLabel {
+            get {
+                return ResourceManager.GetString("ImmediatelyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Job Title.
+        /// </summary>
+        public static string jobTitleLabel {
+            get {
+                return ResourceManager.GetString("jobTitleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logout.
+        /// </summary>
+        public static string LogoutMenu {
+            get {
+                return ResourceManager.GetString("LogoutMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Looking for a job.
+        /// </summary>
+        public static string LookingJob {
+            get {
+                return ResourceManager.GetString("LookingJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MereNear.
+        /// </summary>
+        public static string MereNear {
+            get {
+                return ResourceManager.GetString("MereNear", resourceCulture);
             }
         }
         
@@ -88,7 +196,25 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MyJobs.
+        ///   Looks up a localized string similar to Your number.
+        /// </summary>
+        public static string MobileEntryPlaceholder {
+            get {
+                return ResourceManager.GetString("MobileEntryPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your mobile number to get started.
+        /// </summary>
+        public static string MobileEntryTitle {
+            get {
+                return ResourceManager.GetString("MobileEntryTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Jobs.
         /// </summary>
         public static string MyJobsTab {
             get {
@@ -99,9 +225,18 @@ namespace MereNear.Resources {
         /// <summary>
         ///   Looks up a localized string similar to My Posts.
         /// </summary>
-        public static string MyPostsTab {
+        public static string MyPostsMenu {
             get {
-                return ResourceManager.GetString("MyPostsTab", resourceCulture);
+                return ResourceManager.GetString("MyPostsMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string NextButton {
+            get {
+                return ResourceManager.GetString("NextButton", resourceCulture);
             }
         }
         
@@ -111,6 +246,96 @@ namespace MereNear.Resources {
         public static string NotificationsTab {
             get {
                 return ResourceManager.GetString("NotificationsTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please wait. We will auto verify the OTP sent to +91-.
+        /// </summary>
+        public static string OTPMainLabel {
+            get {
+                return ResourceManager.GetString("OTPMainLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our Policies.
+        /// </summary>
+        public static string OurPoliciesMenu {
+            get {
+                return ResourceManager.GetString("OurPoliciesMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Post a job.
+        /// </summary>
+        public static string PostJob {
+            get {
+                return ResourceManager.GetString("PostJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preview.
+        /// </summary>
+        public static string PreviewButton {
+            get {
+                return ResourceManager.GetString("PreviewButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profile.
+        /// </summary>
+        public static string ProfileTab {
+            get {
+                return ResourceManager.GetString("ProfileTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rate Us.
+        /// </summary>
+        public static string RateUsMenu {
+            get {
+                return ResourceManager.GetString("RateUsMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Schedule your job.
+        /// </summary>
+        public static string ScheduleLabel {
+            get {
+                return ResourceManager.GetString("ScheduleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string SettingsMenu {
+            get {
+                return ResourceManager.GetString("SettingsMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support.
+        /// </summary>
+        public static string SupportMenu {
+            get {
+                return ResourceManager.GetString("SupportMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time.
+        /// </summary>
+        public static string TimeLabel {
+            get {
+                return ResourceManager.GetString("TimeLabel", resourceCulture);
             }
         }
     }

@@ -346,7 +346,7 @@ namespace MereNear.ViewModels
             //{
             //    TitleText = En.HomePageTitle;
             //}
-            TitleText = "Mere Near";
+            TitleText = AppResources.MereNear;
             GetCategoryApi();
             GetWorkerData();
             WorkerDetail = CategoryDataList.ElementAt(0).WorkerInformation;

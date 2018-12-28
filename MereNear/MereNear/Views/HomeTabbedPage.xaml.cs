@@ -1,4 +1,5 @@
 ﻿using MereNear.Interface;
+using MereNear.Resources;
 using System;
 using Xamarin.Forms;
 
@@ -10,6 +11,11 @@ namespace MereNear.Views
         public HomeTabbedPage()
         {
             InitializeComponent();
+            HomeTab.Title = AppResources.HomeTab;
+            MyJobsTab.Title = AppResources.MyJobsTab;
+            NotificationTab.Title = AppResources.NotificationsTab;
+            MessageTab.Title = AppResources.MessagesTab;
+            ProfileTab.Title = AppResources.ProfileTab;
             MessagingCenter.Subscribe<string>(this, "ChangeCurrentPage", (sender) =>
             {
                 if (sender.Equals("HomePage"))

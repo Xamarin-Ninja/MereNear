@@ -117,28 +117,128 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HomePageTitle" xml:space="preserve">
-    <value>Home</value>
-    <comment>HomePage</comment>
+  <data name="AboutUsMenu" xml:space="preserve">
+    <value>About Us</value>
+    <comment>MenuPage</comment>
   </data>
-  <data name="Login_RegisterButton" xml:space="preserve">
-    <value>Login</value>
-    <comment>SendOtpPage</comment>
+  <data name="AddPhotosLabel" xml:space="preserve">
+    <value>Add Photos(optional)</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="AppSlogan" xml:space="preserve">
+    <value>Find services near you very easily</value>
+    <comment>LoginPage</comment>
+  </data>
+  <data name="ChooseCategoryLabel" xml:space="preserve">
+    <value>Choose category</value>
+    <comment>CategoryPage</comment>
+  </data>
+  <data name="ChooseLocationLabel" xml:space="preserve">
+    <value>Choose Location</value>
+    <comment>PickLocationPage</comment>
+  </data>
+  <data name="DateLabel" xml:space="preserve">
+    <value>Date</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="DescriptionEditorPlaceholder" xml:space="preserve">
+    <value>Enter Description</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>Description</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="HomeTab" xml:space="preserve">
+    <value>Home</value>
+    <comment>HomeTabbedPage</comment>
+  </data>
+  <data name="ImmediatelyLabel" xml:space="preserve">
+    <value>Immediately</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="jobTitleLabel" xml:space="preserve">
+    <value>Job Title</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="LogoutMenu" xml:space="preserve">
+    <value>Logout</value>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="LookingJob" xml:space="preserve">
+    <value>Looking for a job</value>
+    <comment>JobOptionPage</comment>
+  </data>
+  <data name="MereNear" xml:space="preserve">
+    <value>MereNear</value>
+    <comment>AppName</comment>
   </data>
   <data name="MessagesTab" xml:space="preserve">
     <value>Messages</value>
-    <comment>HomePage</comment>
+    <comment>HomeTabbedPage</comment>
+  </data>
+  <data name="MobileEntryPlaceholder" xml:space="preserve">
+    <value>Your number</value>
+    <comment>LoginPage</comment>
+  </data>
+  <data name="MobileEntryTitle" xml:space="preserve">
+    <value>Enter your mobile number to get started</value>
+    <comment>LoginPage</comment>
   </data>
   <data name="MyJobsTab" xml:space="preserve">
-    <value>MyJobs</value>
-    <comment>HomePage</comment>
+    <value>My Jobs</value>
+    <comment>HomeTabbedPage</comment>
   </data>
-  <data name="MyPostsTab" xml:space="preserve">
+  <data name="MyPostsMenu" xml:space="preserve">
     <value>My Posts</value>
-    <comment>HomePage</comment>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="NextButton" xml:space="preserve">
+    <value>Next</value>
+    <comment>LoginPage2</comment>
   </data>
   <data name="NotificationsTab" xml:space="preserve">
     <value>Notifications</value>
-    <comment>HomePage</comment>
+    <comment>HomeTabbedPage</comment>
+  </data>
+  <data name="OTPMainLabel" xml:space="preserve">
+    <value>Please wait. We will auto verify the OTP sent to +91-</value>
+    <comment>OTPPage</comment>
+  </data>
+  <data name="OurPoliciesMenu" xml:space="preserve">
+    <value>Our Policies</value>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="PostJob" xml:space="preserve">
+    <value>Post a job</value>
+    <comment>JobOptionPage</comment>
+  </data>
+  <data name="PreviewButton" xml:space="preserve">
+    <value>Preview</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="ProfileTab" xml:space="preserve">
+    <value>Profile</value>
+    <comment>HomeTabbedPage</comment>
+  </data>
+  <data name="RateUsMenu" xml:space="preserve">
+    <value>Rate Us</value>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="ScheduleLabel" xml:space="preserve">
+    <value>Schedule your job</value>
+    <comment>PostDescriptionPage</comment>
+  </data>
+  <data name="SettingsMenu" xml:space="preserve">
+    <value>Settings</value>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="SupportMenu" xml:space="preserve">
+    <value>Support</value>
+    <comment>MenuPage</comment>
+  </data>
+  <data name="TimeLabel" xml:space="preserve">
+    <value>Time</value>
+    <comment>PostDescriptionPage</comment>
   </data>
 </root>

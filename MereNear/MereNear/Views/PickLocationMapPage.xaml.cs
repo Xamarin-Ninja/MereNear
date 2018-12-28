@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MereNear.Resources;
 using Plugin.Geolocator;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,8 @@ namespace MereNear.Views
         public PickLocationMapPage()
         {
             InitializeComponent();
-
+            ChooseLocationLabel.Text = AppResources.ChooseLocationLabel;
+            NextButton.Text = AppResources.NextButton;
             GetCurrentPosition();
             customMap.PropertyChanged += async (object sender, System.ComponentModel.PropertyChangedEventArgs e) =>
             {
