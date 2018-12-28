@@ -24,7 +24,7 @@
                     <Button BackgroundColor="#70DA44" CornerRadius="0" Margin="-9,0,-9,-20" x:Name="ReportButton" Text="Report" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding ClosePopupCommand}" />
                 </Grid>
             </Frame>
-            <Image Source="close_red.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start" Margin="-8">
+            <Image Source="cancel.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Start" Margin="-8">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ClosePopupCommand}"/>
                 </Image.GestureRecognizers>

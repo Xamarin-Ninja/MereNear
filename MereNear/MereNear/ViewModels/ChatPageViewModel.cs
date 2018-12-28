@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MereNear.Views;
 using MereNear.Views.ViewCells;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -17,31 +18,45 @@ namespace MereNear.ViewModels
 {
 	public class ChatPageViewModel : BindableBase, INavigationAware
 	{
+        #region Private Variables
         private readonly INavigationService _navigationService;
         private IChatServices _chatServices;
+
         private string _roomName;
+        private string _dealAmount;
+        private string _currencyType;
+        private string _senderImage;
+        private string _senderName;
+
         private int _senderType;
+
+        private bool _isMenuVisible = false;
+        private bool _isOverlayVisible = false;
+        private bool _isMakeDealVisible = false;
+        private bool _isReportVisible = false;
+        private bool _isSendDealMessageButtonVisible = true;
+        #endregion
+
+        #region Public Variables
+        public int a = 1;
+
         public int SenderType
         {
             get { return _senderType; }
             set { SetProperty(ref _senderType, value); }
-        }
-
-        private bool _isMenuVisible = false;
+        } 
 
         public bool IsMenuVisible
         {
             get { return _isMenuVisible; }
             set { SetProperty(ref _isMenuVisible, value); }
         }
-        private bool _isOverlayVisible = false;
 
         public bool IsOverlayVisible
         {
             get { return _isOverlayVisible; }
             set { SetProperty(ref _isOverlayVisible, value); }
         }
-        private bool _isMakeDealVisible = false;
 
         public bool IsMakeDealVisible
         {
@@ -49,39 +64,43 @@ namespace MereNear.ViewModels
             set { SetProperty(ref _isMakeDealVisible, value); }
         }
 
-        private bool _isReportVisible = false;
-
         public bool IsReportVisible
         {
             get { return _isReportVisible; }
             set { SetProperty(ref _isReportVisible, value); }
         }
 
-        private bool _isSendDealMessageButtonVisible = true;
-
         public bool IsSendDealMessageButtonVisible
         {
             get { return _isSendDealMessageButtonVisible; }
             set { SetProperty(ref _isSendDealMessageButtonVisible, value); }
         }
-
         
-
-        private string _dealAmount;
-
         public string DealAmount
         {
             get { return _dealAmount; }
             set { SetProperty(ref _dealAmount, value); }
         }
 
-        private string _currencyType;
-
         public string CurrencyType
         {
             get { return _currencyType; }
             set { SetProperty(ref _currencyType, value); }
         }
+
+        public string SenderImage
+        {
+            get { return _senderImage; }
+            set { SetProperty(ref _senderImage, value); }
+        }
+
+        public string SenderName
+        {
+            get { return _senderName; }
+            set { SetProperty(ref _senderName, value); }
+        }
+        #endregion
+
         #region ChatMsgViewModel
         private ChatMessageViewModel _chatMessage;
         public ChatMessageViewModel ChatMessage
@@ -116,6 +135,7 @@ namespace MereNear.ViewModels
 
         #endregion
 
+        #region Constructor
         public ChatPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
@@ -127,6 +147,9 @@ namespace MereNear.ViewModels
             _chatServices.Connect();
             _chatServices.OnMessageReceived += _chatServices_OnMessageReceived;
         }
+        #endregion
+
+        #region Private/public Methods
         void _chatServices_OnMessageReceived(object sender, ChatItem e)
         {
 
@@ -137,7 +160,9 @@ namespace MereNear.ViewModels
             }
            
         }
+        #endregion
 
+        #region Navigation Parameters
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
             
@@ -150,10 +175,16 @@ namespace MereNear.ViewModels
 
         public void OnNavigatingTo(INavigationParameters parameters)
         {
-            
+            if (parameters.ContainsKey("SingleChatMessage"))
+            {
+                var data = (MessagesListItems)parameters["SingleChatMessage"];
+                SenderName = data.Name;
+                SenderImage = data.Icon;
+            }
         }
+        #endregion
 
-        public int a = 1;
+        #region Command
         public ICommand SendCommand
         {
             get
@@ -325,5 +356,6 @@ namespace MereNear.ViewModels
                 });
             }
         }
+        #endregion
     }
 }
