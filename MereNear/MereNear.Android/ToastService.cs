@@ -17,9 +17,38 @@ namespace MereNear.Droid
 {
     public class ToastService : ToastMessage
     {
-        public void Show(string message)
+        public Toast mtoast
         {
-            Android.Widget.Toast.MakeText(Android.App.Application.Context, message, ToastLength.Long).Show();
+            get;
+            set;
+        }
+
+        public ToastService()
+        {
+            mtoast = null;
+        }
+
+        public bool Show(string message)
+        {
+            if (mtoast == null)
+            {
+                mtoast = Toast.MakeText(Android.App.Application.Context, message, ToastLength.Short);
+                mtoast.Show();
+                return false;
+            }
+            else
+            {
+                if (mtoast.View.IsShown)
+                {
+                    return true;
+                }
+                else
+                {
+
+                    mtoast.Show();
+                    return false;
+                }
+            }
         }
     }
 }

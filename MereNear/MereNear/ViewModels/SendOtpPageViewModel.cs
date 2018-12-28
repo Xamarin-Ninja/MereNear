@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using MereNear.Model;
 using MereNear.Services.ApiService.Common;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -15,7 +16,7 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class SendOtpPageViewModel : BindableBase,INavigationAware
+	public class SendOtpPageViewModel : BaseViewModel,INavigationAware
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
@@ -131,9 +132,9 @@ namespace MereNear.ViewModels
 
         public void OnNavigatingTo(INavigationParameters parameters)
         {
-            if (parameters.ContainsKey("MobileNumber"))
+            if (parameters.ContainsKey("LoginPage"))
             {
-                OTPMainLabel = (string)parameters["MobileNumber"];
+                OTPMainLabel = (string)parameters["LoginPage"];
             }
         }
         #endregion
@@ -144,6 +145,7 @@ namespace MereNear.ViewModels
             otpModel.MobileNumber = OTPMainLabel;
             otpModel.OTPNumber = ActivationCode;
             //var result = await _webApiRestClient.PostAsync<OTPModel, OTPResponse>("?func=otp", otpModel);
+            setString("LoginMobileNumber", OTPMainLabel);
             await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
         }
         #endregion

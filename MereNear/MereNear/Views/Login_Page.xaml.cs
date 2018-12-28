@@ -1,4 +1,5 @@
-﻿using MereNear.Resources;
+﻿using MereNear.ViewModels.Common;
+using MereNear.Resources;
 using Plugin.Multilingual;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,11 @@ namespace MereNear.Views
         {
             Navigation.PushAsync(new Login_Page2(), true);
             MessagingCenter.Send("EntryFocus", "EntryFocus");
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

@@ -6,6 +6,6 @@ namespace MereNear.Interface
 {
     public interface ToastMessage
     {
-        void Show(string message);
+        bool Show(string message);
     }
 }
