@@ -18,9 +18,7 @@ namespace MereNear.Views
 	{
 		public Login_Page ()
 		{
-			InitializeComponent ();         
-
-            appName.Text = AppResources.HomePageTitle;
+            InitializeComponent();
         }
 
         private void Entry_Focused(object sender, TappedEventArgs e)

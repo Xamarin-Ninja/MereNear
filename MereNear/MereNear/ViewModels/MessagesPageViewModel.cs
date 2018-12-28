@@ -80,7 +80,9 @@ namespace MereNear.ViewModels
 
         public async void GetNavigation()
         {
-            await _navigationService.NavigateAsync(nameof(ChatPage));
+            var param = new NavigationParameters();
+            param.Add("SingleChatMessage", PersonChatListDetail);
+            await _navigationService.NavigateAsync(nameof(ChatPage),param);
         }
     }
 }

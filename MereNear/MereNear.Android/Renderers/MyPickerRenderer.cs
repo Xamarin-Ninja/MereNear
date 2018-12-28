@@ -29,6 +29,7 @@ namespace MereNear.Droid.Renderers
             if (Control != null)
             {
                 Control.Background = new ColorDrawable(Android.Graphics.Color.Transparent);
+                Control?.SetPadding(0, 0, 0, 0);
             }
         }
     }

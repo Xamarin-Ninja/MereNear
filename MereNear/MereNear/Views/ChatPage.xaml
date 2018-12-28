@@ -25,7 +25,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="40"/>
                 </Grid.ColumnDefinitions>
-                <Image Margin="10,0,0,0" Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="default_back_icon" >
+                <Image Margin="10,0,0,0" Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="back_arrow" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/> 
                     </Image.GestureRecognizers>
@@ -39,8 +39,8 @@
                         <ColumnDefinition Width="30"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image x:Name="SenderImage" Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill"/>
-                    <Label x:Name="SenderName" Grid.Column="1" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End"/>
+                    <Image x:Name="SenderImage" Source="{Binding SenderImage}" Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                    <Label x:Name="SenderName" Text="{Binding SenderName}" Grid.Column="1" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End"/>
                     </Grid>
                 
                 <Label Grid.Column="2" BackgroundColor="White" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="&#xf05a;" TextColor="Black" Style="{StaticResource FontAwesomeLabel}">
@@ -74,7 +74,7 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
                 <Button BackgroundColor="Transparent" BorderColor="Black" BorderWidth="1" BorderRadius="20" Grid.Column="1" Grid.ColumnSpan="3" Padding="0"/>
-                <Image Source="chat_menu" Grid.Column="0" HorizontalOptions="Fill" HeightRequest="20" WidthRequest="20" VerticalOptions="Fill">
+                <Image Source="news_feed" Grid.Column="0" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding MenuIconTapCommand}"/>
                     </Image.GestureRecognizers>
@@ -85,7 +85,7 @@
                         <TapGestureRecognizer Command="{Binding }"/>
                     </Label.GestureRecognizers>
                 </Label>
-                <Image Source="chat_send_icon" Grid.Column="4"  HorizontalOptions="Fill" HeightRequest="20" WidthRequest="20" VerticalOptions="Fill">
+                <Image Source="send" Grid.Column="4"  HorizontalOptions="Fill" HeightRequest="20" WidthRequest="20" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SendCommand}"/>
                     </Image.GestureRecognizers>
