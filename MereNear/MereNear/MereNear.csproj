@@ -8,7 +8,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <NeutralLanguage>en-IN</NeutralLanguage>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
   <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
@@ -33,12 +33,7 @@
     <Compile Remove="Views\SignupPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Remove="Resources\AppResources.hi-IN.resx" />
     <EmbeddedResource Remove="Views\SignupPage.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="MultilingualResources\MereNear.hi-IN.xlf" />
-    <None Remove="MultilingualResources\MereNear.hi.xlf" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
@@ -47,6 +42,7 @@
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0-preview3-35497" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.1.0-preview3-35497" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Plugin.Multilingual" Version="1.1.6-beta" />
     <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
     <PackageReference Include="System.Reactive" Version="4.0.0" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
@@ -56,13 +52,6 @@
     <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.1.0.431" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="3.3.0.912540" />
-  </ItemGroup>
-  <ItemGroup>
-    <XliffResource Include="MultilingualResources\MereNear.hi-IN.xlf" />
-    <XliffResource Include="MultilingualResources\MereNear.hi.xlf" />
-    <None Include="Resources\AppResources.hi-IN.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
@@ -77,9 +66,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="Resources\AppResources.hi.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>

@@ -1,6 +1,9 @@
 ﻿using MereNear.ViewModels.Common;
+using MereNear.Resources;
+using Plugin.Multilingual;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +18,10 @@ namespace MereNear.Views
 	{
 		public Login_Page ()
 		{
-			InitializeComponent ();
-		}
+			InitializeComponent ();         
+
+            appName.Text = AppResources.HomePageTitle;
+        }
 
         private void Entry_Focused(object sender, TappedEventArgs e)
         {
