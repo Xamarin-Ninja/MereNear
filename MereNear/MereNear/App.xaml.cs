@@ -32,22 +32,14 @@ namespace MereNear
 
         public App() : this(null)
         {
-
-            var culture = CrossMultilingual.Current.DeviceCultureInfo;
-            AppResources.Culture = culture;
         }
 
         public App(IPlatformInitializer initializer) : base(initializer)
         {
-            var culture = CrossMultilingual.Current.DeviceCultureInfo;
-            AppResources.Culture = culture;
-
-
         }
 
         #region SignalR Chat Implement Part 1
         private IChatServices _chatServices;
-        public static string CurrentUser;
         #endregion
 
         public static string CultureCode { get; set; }
@@ -79,10 +71,12 @@ namespace MereNear
 
             FlowListView.Init();
             DependencyService.Get<ILocalize>().SetLocale();
-            App.CultureCode = string.Empty;
-
+            
             var languageexist = BaseViewModel.getString("AppLanguage");
             var useralreadylogin = BaseViewModel.getString("LoginMobileNumber");
+
+            Setlanguage(languageexist);
+
             if (string.IsNullOrEmpty(useralreadylogin) || string.IsNullOrWhiteSpace(useralreadylogin))
             {
                 if (string.IsNullOrEmpty(languageexist) || string.IsNullOrWhiteSpace(languageexist))

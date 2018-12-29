@@ -1,4 +1,5 @@
 using MereNear.Model;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -12,7 +13,7 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class MyJobsViewModel : BindableBase,INavigationAware
+	public class MyJobsViewModel : BaseViewModel, INavigationAware
 	{
         private readonly INavigationService _navigationService;
         private ObservableCollection<PostJobModel> _myjobItems = new ObservableCollection<PostJobModel>();

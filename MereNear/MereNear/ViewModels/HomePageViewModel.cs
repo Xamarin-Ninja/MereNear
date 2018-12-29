@@ -3,6 +3,7 @@ using MereNear.Helpers;
 using MereNear.Model;
 using MereNear.Resources;
 using MereNear.Services.ApiService.Common;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Newtonsoft.Json;
 using Prism.Commands;
@@ -21,8 +22,8 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class HomePageViewModel : BindableBase
-	{
+	public class HomePageViewModel : BaseViewModel
+    {
         #region Private Variables
         private readonly INavigationService _navigationService;
         protected readonly IWebApiRestClient _webApiRestClient;
@@ -398,7 +399,7 @@ namespace MereNear.ViewModels
             MessagesIcon = "message.png"; 
              NotificationsIcon = "notification.png";
 
-            TitleText = AppResources.HomePageTitle;
+            TitleText = AppResources.MereNear;
             HeaderLeft2ndIcon = "";
         }
 
@@ -420,7 +421,7 @@ namespace MereNear.ViewModels
                 MyPostsBGColor = Color.FromHex("#3B92E7");
                 MyPostsLabelColor = Color.White;
                 MyPostsIcon = "my_post_select.png";
-                TitleText = AppResources.MyPostsTab;
+                TitleText = AppResources.MyPostsMenu;
                 return;
             }
             if (Application.Current.Properties["TabClicked"].ToString() == "MessagesTab")

@@ -26,7 +26,6 @@ namespace MereNear.Views
             if(MobileEntry.Text != null)
             {
                 NextButton.Text = AppResources.NextButton;
-                App.CurrentUser = MobileEntry.Text;
             }
         }
 

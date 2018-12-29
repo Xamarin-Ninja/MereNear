@@ -1,4 +1,5 @@
 ﻿using MereNear.Resources;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -15,7 +16,7 @@ using Xamarin.Forms.Maps;
 
 namespace MereNear.ViewModels
 {
-	public class ChooseCategoryPageViewModel : BindableBase, INavigationAware
+	public class ChooseCategoryPageViewModel : BaseViewModel, INavigationAware
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;

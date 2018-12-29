@@ -1,4 +1,5 @@
-﻿using MereNear.Views;
+﻿using MereNear.ViewModels.Common;
+using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -9,8 +10,8 @@ using System.Windows.Input;
 
 namespace MereNear.ViewModels
 {
-	public class ChangPhoneNumberViewModel : BindableBase
-	{
+	public class ChangPhoneNumberViewModel : BaseViewModel
+    {
         #region Private Variable
         private readonly INavigationService _navigationService;
 

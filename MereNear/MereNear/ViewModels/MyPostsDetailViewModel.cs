@@ -1,4 +1,5 @@
 using MereNear.Model;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -12,7 +13,7 @@ using Xamarin.Forms.Maps;
 
 namespace MereNear.ViewModels
 {
-	public class MyPostsDetailViewModel : BindableBase, INavigationAware
+	public class MyPostsDetailViewModel : BaseViewModel, INavigationAware
 	{
         #region Private Variable
         private readonly INavigationService _navigationService;

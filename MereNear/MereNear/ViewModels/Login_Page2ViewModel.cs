@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using MereNear.Model;
 using MereNear.Services.ApiService.Common;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -14,8 +15,8 @@ using System.Windows.Input;
 
 namespace MereNear.ViewModels
 {
-	public class Login_Page2ViewModel : BindableBase
-	{
+	public class Login_Page2ViewModel : BaseViewModel
+    {
         #region Private Variables
         private readonly INavigationService _navigationService;
         protected readonly IWebApiRestClient _webApiRestClient;

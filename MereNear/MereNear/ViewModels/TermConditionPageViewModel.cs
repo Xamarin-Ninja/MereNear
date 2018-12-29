@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using MereNear.ViewModels.Common;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -9,8 +10,8 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class TermConditionPageViewModel : BindableBase
-	{
+	public class TermConditionPageViewModel : BaseViewModel
+    {
         #region Private Variables
         private readonly INavigationService _navigationService;
         #endregion

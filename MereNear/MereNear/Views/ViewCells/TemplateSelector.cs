@@ -9,6 +9,7 @@ namespace MereNear.Views.ViewCells
         private readonly DataTemplate incomingDataTemplate;
         private readonly DataTemplate outgoingDataTemplate;
         private readonly DataTemplate recieverDealTemplate;
+        private readonly DataTemplate senderDealTemplate;
         private readonly DataTemplate locationTemplate;
 
         public TemplateSelector()
@@ -17,6 +18,7 @@ namespace MereNear.Views.ViewCells
             this.incomingDataTemplate = new DataTemplate(typeof(ReceiverViewCell));
             this.outgoingDataTemplate = new DataTemplate(typeof(SenderViewCell));
             this.recieverDealTemplate = new DataTemplate(typeof(RecieverDealViewCell));
+            this.senderDealTemplate = new DataTemplate(typeof(SenderDealViewCell));
             this.locationTemplate = new DataTemplate(typeof(LocationViewCell));
         }
 
@@ -35,15 +37,36 @@ namespace MereNear.Views.ViewCells
 
             if(messageVm.MessageType == 1)
             {
-                return this.outgoingDataTemplate;
+                if (messageVm.SenderType == 0)
+                {
+                    return this.outgoingDataTemplate;
+                }
+                else
+                {
+                    return this.incomingDataTemplate;
+                }
             }
             else if(messageVm.MessageType == 2)
             {
-                return this.recieverDealTemplate;
+                if (messageVm.SenderType == 0)
+                {
+                    return this.senderDealTemplate;
+                }
+                else
+                {
+                    return this.recieverDealTemplate;
+                }
             }
             else if(messageVm.MessageType == 3)
             {
-                return this.locationTemplate;
+                if (messageVm.SenderType == 0)
+                {
+                    return this.locationTemplate;
+                }
+                else
+                {
+                    return this.locationTemplate;
+                }
             }
             else
             {

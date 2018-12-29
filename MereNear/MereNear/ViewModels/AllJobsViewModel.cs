@@ -1,4 +1,5 @@
 ﻿using MereNear.Model;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -12,8 +13,8 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class AllJobsViewModel : BindableBase
-	{
+	public class AllJobsViewModel : BaseViewModel
+    {
         #region Private Variables
         private readonly INavigationService _navigationService;
 
