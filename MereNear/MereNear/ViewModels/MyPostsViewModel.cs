@@ -1,6 +1,7 @@
 using Acr.UserDialogs;
 using MereNear.Helpers;
 using MereNear.Model;
+using MereNear.Resources;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -131,6 +132,8 @@ namespace MereNear.ViewModels
                     jobModel.TimeColor = Color.FromHex(ChangeColor.GrayColor);
                     jobModel.IsDateVisible = true;
                 }
+                jobModel.WhenLabel = AppResources.When;
+                jobModel.PostedOnLabel = AppResources.PostedOn + " :-";
                 GetData();
             }
         }

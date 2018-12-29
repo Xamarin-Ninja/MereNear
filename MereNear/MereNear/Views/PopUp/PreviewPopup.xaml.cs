@@ -1,4 +1,5 @@
 ﻿using MereNear.Model;
+using MereNear.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,15 @@ namespace MereNear.Views.PopUp
 		public PreviewPopup ()
 		{
 			InitializeComponent ();
+            detailsLabel.Text = AppResources.DetailsLabel;
+            CategoryLabel.Text = AppResources.CategoryNameLabel;
+            JobtitleLabel.Text = AppResources.jobTitleLabel;
+            jobdescriptionlabel.Text = AppResources.JobDescriptionLabel;
+            NeedServiceLabel.Text = AppResources.NeedServiceLabel;
+            PhotosLabel.Text = AppResources.PhotosLabel;
+            submitbutton.Text = AppResources.SubmitButton;
+
+
             MessagingCenter.Subscribe<PostJobModel>(this, "PreviewData", (sender) =>
             {
                 description.Text = sender.Description;

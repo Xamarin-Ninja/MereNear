@@ -7,6 +7,7 @@ namespace MereNear.Views
         public MyPosts()
         {
             InitializeComponent();
+            
         }
 
         private void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)

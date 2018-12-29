@@ -315,7 +315,7 @@ namespace MereNear.ViewModels
                 {
                     try
                     {
-                        await _navigationService.NavigateAsync(new Uri("/NavigationPage/JobOptionPage", UriKind.Absolute));
+                        await _navigationService.NavigateAsync(nameof(JobOptionPage));
                     }
                     catch (Exception ex)
                     {
@@ -398,7 +398,7 @@ namespace MereNear.ViewModels
             MessagesIcon = "message.png"; 
              NotificationsIcon = "notification.png";
 
-            TitleText = AppResources.HomePageTitle;
+            TitleText = AppResources.MereNear;
             HeaderLeft2ndIcon = "";
         }
 
@@ -420,7 +420,7 @@ namespace MereNear.ViewModels
                 MyPostsBGColor = Color.FromHex("#3B92E7");
                 MyPostsLabelColor = Color.White;
                 MyPostsIcon = "my_post_select.png";
-                TitleText = AppResources.MyPostsTab;
+                TitleText = AppResources.MyPostsMenu;
                 return;
             }
             if (Application.Current.Properties["TabClicked"].ToString() == "MessagesTab")
@@ -473,7 +473,7 @@ namespace MereNear.ViewModels
                 };
                 NewCategoryData.Insert(0, item);
             }
-            catch (WebException ex)
+            catch (Exception ex)
             {
                 UserDialogs.Instance.Alert(ex.Message);
             }

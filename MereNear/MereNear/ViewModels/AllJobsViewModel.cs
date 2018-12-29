@@ -1,4 +1,5 @@
 ﻿using MereNear.Model;
+using MereNear.Resources;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -87,7 +88,7 @@ namespace MereNear.ViewModels
                     Time = postJobData.Time,
                     TimeColor = postJobData.TimeColor,
                     Name = "Pardeep",
-                    Status = "Active",
+                    Status = AppResources.JobStatusActive,
                     StatusColor = Xamarin.Forms.Color.LightGreen,
                     Distance = postJobData.Distance
                 });

@@ -36,6 +36,11 @@ namespace MereNear.Model
         public bool IsDateVisible { get; set; }
 
         public string Distance { get; set; }
+
+        public string WhenLabel { get; set; }
+
+        public string PostedOnLabel { get; set; }
+
     }
 
 }

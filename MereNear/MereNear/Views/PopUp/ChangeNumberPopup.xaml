@@ -24,17 +24,17 @@
                         <ColumnDefinition Width="15"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Is this your phone number?" Grid.Row="0" Style="{StaticResource GrayLabel}" Grid.ColumnSpan="3"/>
+                    <Label x:Name="IsYourNumberLabel" Grid.Row="0" Style="{StaticResource GrayLabel}" Grid.ColumnSpan="3"/>
                     <Label Text="{Binding MobileNumber}" Grid.Row="1" Style="{StaticResource GrayLabel}" Grid.ColumnSpan="3"/>
-                    <Label Text="You'll recieve an SMS" Grid.Row="3" Style="{StaticResource GrayLabel}" Grid.ColumnSpan="3"/>
+                    <Label x:Name="recievesmsLabel" Grid.Row="3" Style="{StaticResource GrayLabel}" Grid.ColumnSpan="3"/>
 
                     <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.ColumnSpan="3" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand" Spacing="20">
-                        <Label Text="EDIT" Style="{StaticResource GreenLabel}" FontSize="18">
+                        <Label x:Name="EditButton" Style="{StaticResource GreenLabel}" FontSize="18">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding EditCommand}"/>
                             </Label.GestureRecognizers>
                         </Label>
-                        <Label Text="YES" Style="{StaticResource GreenLabelBold}" FontSize="18">
+                        <Label x:Name="YesButton" Style="{StaticResource GreenLabelBold}" FontSize="18">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding YesCommand}"/>
                             </Label.GestureRecognizers>
