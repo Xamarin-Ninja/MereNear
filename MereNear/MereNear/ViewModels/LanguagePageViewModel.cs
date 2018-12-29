@@ -33,33 +33,19 @@ namespace MereNear.ViewModels
                 else
                 {
                     var language = LanguageSelected;
-                    setString("AppLanguage", language.DisplayName);
+                    setString("AppLanguage", language.ShortName);
                     App.Setlanguage(language.ShortName);
                     try
                     {
-                        //DependencyService.Get<ILocalize>().ChangeLocale("hi");
-                        //App.CultureCode = "hi";
-                        
-                        //UserDialogs.Instance.ShowLoading("Loading");
-                        ////_navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
-                        GoToHomePage();
-                        //UserDialogs.Instance.HideLoading();
-                        
+                        GoToHomePage();                        
                     }
                     catch (Exception ex)
                     {
                         var msg = ex.Message;
-                        UserDialogs.Instance.Alert(msg);
                     }
                 }
             }
         }
-
-        //public ObservableCollection<LanguageModel> LanguagePicker
-        //{
-        //    get { return _languagePicker; }
-        //    set { SetProperty(ref _languagePicker, value); }
-        //}
         #endregion
 
         #region Command

@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using MereNear.Views.ViewCells;
 using Prism.Commands;
@@ -16,7 +17,7 @@ using Xamarin.Forms.Maps;
 
 namespace MereNear.ViewModels
 {
-	public class ChatPageViewModel : BindableBase, INavigationAware
+	public class ChatPageViewModel : BaseViewModel, INavigationAware
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
@@ -27,6 +28,8 @@ namespace MereNear.ViewModels
         private string _currencyType;
         private string _senderImage;
         private string _senderName;
+        private int _purchaseCostValue;
+        private int _serviceChargeValue;
 
         private int _senderType;
 
@@ -75,11 +78,17 @@ namespace MereNear.ViewModels
             get { return _isSendDealMessageButtonVisible; }
             set { SetProperty(ref _isSendDealMessageButtonVisible, value); }
         }
-        
-        public string DealAmount
+
+        public int ServiceChargeValue
         {
-            get { return _dealAmount; }
-            set { SetProperty(ref _dealAmount, value); }
+            get { return _serviceChargeValue; }
+            set { SetProperty(ref _serviceChargeValue, value); }
+        }
+
+        public int PurchaseCostValue
+        {
+            get { return _purchaseCostValue; }
+            set { SetProperty(ref _purchaseCostValue, value); }
         }
 
         public string CurrencyType
@@ -99,6 +108,8 @@ namespace MereNear.ViewModels
             get { return _senderName; }
             set { SetProperty(ref _senderName, value); }
         }
+
+        public string currentuser { get; set; }
         #endregion
 
         #region ChatMsgViewModel
@@ -142,6 +153,8 @@ namespace MereNear.ViewModels
             _chatServices = DependencyService.Get<IChatServices>();
             _chatMessage = new ChatMessageViewModel();
 
+            currentuser = getString("LoginMobileNumber");
+
             _roomName = "Rahul";
 
             _chatServices.Connect();
@@ -152,11 +165,17 @@ namespace MereNear.ViewModels
         #region Private/public Methods
         void _chatServices_OnMessageReceived(object sender, ChatItem e)
         {
-
             if (e.MessageType!= 0)
             {
-                SenderType = 1;
-                _messages.Add(new ChatItem { Name = e.Name, MessageType = e.MessageType, DealAmount = e.DealAmount,CurrencyType = e.CurrencyType,Location = e.Location, Message = e.Message,SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm") });
+                if (e.CurrentUser == currentuser)
+                {
+                    SenderType = 0;
+                }
+                else
+                {
+                    SenderType = 1;
+                }
+                _messages.Add(new ChatItem { Name = e.Name, MessageType = e.MessageType, PurchaseAmount = e.PurchaseAmount, ServiceAmount = e.ServiceAmount, SubtotalAmount = e.SubtotalAmount, TotalAmout = e.TotalAmout, CurrencyType = e.CurrencyType,Location = e.Location, Message = e.Message,SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm") });
             }
            
         }
@@ -212,7 +231,7 @@ namespace MereNear.ViewModels
                             a = 2;
                             //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
                         }
-                        await _chatServices.Send(new ChatItem { Name = App.CurrentUser, MessageType = 1, Message = MyMessage, Time = DateTime.Now.TimeOfDay.ToString()}, _roomName);
+                        await _chatServices.Send(new ChatItem {CurrentUser = currentuser, MessageType = 1, Message = MyMessage, Time = DateTime.Now.ToString("HH:mm") }, _roomName);
                     }
                     catch (Exception ex)
                     {
@@ -263,7 +282,7 @@ namespace MereNear.ViewModels
                             //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
                         }
 
-                        await _chatServices.SendLocation(new ChatItem { MessageType = 3, Location = mylocation }, _roomName);
+                        await _chatServices.SendLocation(new ChatItem { CurrentUser = currentuser, MessageType = 3, Location = mylocation, Time = DateTime.Now.ToString("HH:mm") }, _roomName);
                     }
                     catch (Exception ex)
                     {
@@ -323,7 +342,7 @@ namespace MereNear.ViewModels
                             //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
                         }
                         
-                        await _chatServices.SendDeal(new ChatItem { DealAmount = "150", MessageType = 2,CurrencyType = CurrencyType, Time = DateTime.Now.TimeOfDay.ToString() }, _roomName);
+                        await _chatServices.SendDeal(new ChatItem { CurrentUser = currentuser, PurchaseAmount = PurchaseCostValue, ServiceAmount = ServiceChargeValue, SubtotalAmount = PurchaseCostValue + ServiceChargeValue, TotalAmout = (PurchaseCostValue + ServiceChargeValue)*(5/100), MessageType = 2, CurrencyType = CurrencyType, Time = DateTime.Now.ToString("HH:mm") }, _roomName);
                     }
                     catch (Exception ex)
                     {

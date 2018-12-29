@@ -1,4 +1,5 @@
-﻿using MereNear.Views;
+﻿using MereNear.ViewModels.Common;
+using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -10,8 +11,8 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class SettingsPageViewModel : BindableBase
-	{
+	public class SettingsPageViewModel : BaseViewModel
+    {
         #region Private Variable
         private readonly INavigationService _navigationService;
         #endregion

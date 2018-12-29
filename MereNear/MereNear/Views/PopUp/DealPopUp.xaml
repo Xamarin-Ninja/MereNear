@@ -6,7 +6,7 @@
         <Grid Padding="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"/>
-                <RowDefinition Height="220"/>
+                <RowDefinition Height="280"/>
             </Grid.RowDefinitions>
             <Frame BackgroundColor="White" BorderColor="LightGray" Grid.Row="0" Grid.RowSpan="2" Padding="10" CornerRadius="0" HasShadow="False">
                 <Grid>
@@ -15,21 +15,26 @@
                         <RowDefinition Height="1"/>
                         <RowDefinition Height="60"/>
                         <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
                         <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
                     <Label Text="Make a deal" Grid.Row="0" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" Grid.ColumnSpan="2"/>
                     <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Fill" Margin="-10,0,-10,0"/>
                     <Button BackgroundColor="Transparent" BorderColor="Gray" BorderWidth="0.5" BorderRadius="0" Grid.Row="2" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Fill" Grid.ColumnSpan="2"/>
-                    <Entry Placeholder="Enter amount" HeightRequest="35" Grid.Row="2" Grid.ColumnSpan="2" Margin="10,0,0,0" Keyboard="Telephone" MaxLength="10" VerticalOptions="Center" FontSize="14"/>
-                    <Label Text="Vat 5%" TextColor="Black" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Button BackgroundColor="Transparent" BorderColor="Gray" BorderWidth="0.5" BorderRadius="0" Grid.Row="3" Grid.Column="1" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Fill"/>
-                    <Picker Title="Select" Grid.Row="3" Grid.Column="1" Margin="10" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="35">
+                    <Entry Placeholder="Enter purchase amount" Text="{Binding PurchaseCostValue}" HeightRequest="35" Grid.Row="2" Grid.ColumnSpan="2" Margin="10,0,0,0" Keyboard="Telephone" MaxLength="10" VerticalOptions="Center" FontSize="14"/>
+
+                    <Button BackgroundColor="Transparent" BorderColor="Gray" BorderWidth="0.5" BorderRadius="0" Grid.Row="3" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Fill" Grid.ColumnSpan="2"/>
+                    <Entry Placeholder="Enter service charge" Text="{Binding ServiceChargeValue}" HeightRequest="35" Grid.Row="3" Grid.ColumnSpan="2" Margin="10,0,0,0" Keyboard="Telephone" MaxLength="10" VerticalOptions="Center" FontSize="14"/>
+
+                    <Label Text="Vat 5%" TextColor="Black" Grid.Row="4" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Button BackgroundColor="Transparent" BorderColor="Gray" BorderWidth="0.5" BorderRadius="0" Grid.Row="4" Grid.Column="1" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Fill"/>
+                    <Picker Title="Select" Grid.Row="4" Grid.Column="1" Margin="10" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="35">
                         <Picker.Items>
                             <x:String>USD</x:String>
                             <x:String>INR</x:String>
                         </Picker.Items>
                     </Picker>
-                    <Button BackgroundColor="#70DA44" CornerRadius="0" Margin="-9,0,-9,-20" x:Name="SubmitButton" Text="Submit" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding SubmitDealCommand}"/>
+                    <Button BackgroundColor="#70DA44" CornerRadius="0" Margin="-9,0,-9,-20" x:Name="SubmitButton" Text="Submit" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="5" Grid.ColumnSpan="2" Command="{Binding SubmitDealCommand}"/>
                 </Grid>
             </Frame>
             <Image Source="cancel.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Start" Margin="-8">

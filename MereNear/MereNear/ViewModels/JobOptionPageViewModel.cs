@@ -1,4 +1,5 @@
-﻿using MereNear.Views;
+﻿using MereNear.ViewModels.Common;
+using MereNear.Views;
 using MereNear.Views.Common;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -10,8 +11,8 @@ using System.Windows.Input;
 
 namespace MereNear.ViewModels
 {
-	public class JobOptionPageViewModel : BindableBase
-	{
+	public class JobOptionPageViewModel : BaseViewModel
+    {
 
         #region Private Variables
         private readonly INavigationService _navigationService;

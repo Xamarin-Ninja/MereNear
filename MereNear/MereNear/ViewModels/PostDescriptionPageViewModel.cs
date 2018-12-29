@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using MereNear.Model;
+using MereNear.ViewModels.Common;
 using MereNear.Resources;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
@@ -19,7 +20,7 @@ using Xamarin.Forms.Maps;
 
 namespace MereNear.ViewModels
 {
-	public class PostDescriptionPageViewModel : BindableBase, INavigationAware
+	public class PostDescriptionPageViewModel : BaseViewModel, INavigationAware
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;

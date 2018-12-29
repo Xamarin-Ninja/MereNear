@@ -1,6 +1,7 @@
 using Acr.UserDialogs;
 using MereNear.Helpers;
 using MereNear.Model;
+using MereNear.ViewModels.Common;
 using MereNear.Resources;
 using MereNear.Views;
 using Prism.Commands;
@@ -15,7 +16,7 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class MyPostsViewModel : BindableBase, INavigationAware
+	public class MyPostsViewModel : BaseViewModel, INavigationAware
 	{
         #region Private Variable
         private readonly INavigationService _navigationService;

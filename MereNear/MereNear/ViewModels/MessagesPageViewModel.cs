@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -10,8 +11,8 @@ using System.Linq;
 
 namespace MereNear.ViewModels
 {
-	public class MessagesPageViewModel : BindableBase
-	{
+	public class MessagesPageViewModel : BaseViewModel
+    {
         private readonly INavigationService _navigationService;
         private ObservableCollection<MessagesListItems> _personChatList = new ObservableCollection<MessagesListItems>();
         private string _personRoomName;

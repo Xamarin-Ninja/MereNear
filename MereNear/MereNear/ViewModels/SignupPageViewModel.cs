@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using MereNear.Services;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -14,8 +15,8 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class SignupPageViewModel : BindableBase
-	{
+	public class SignupPageViewModel : BaseViewModel
+    {
         #region Private Variables
         private readonly INavigationService _navigationService;
 

@@ -3,6 +3,7 @@ using MereNear.Helpers;
 using MereNear.Model;
 using MereNear.Resources;
 using MereNear.Services.ApiService.Common;
+using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Newtonsoft.Json;
 using Prism.Commands;
@@ -21,8 +22,8 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class HomePageViewModel : BindableBase
-	{
+	public class HomePageViewModel : BaseViewModel
+    {
         #region Private Variables
         private readonly INavigationService _navigationService;
         protected readonly IWebApiRestClient _webApiRestClient;

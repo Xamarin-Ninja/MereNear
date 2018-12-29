@@ -1,4 +1,5 @@
-﻿using MereNear.Views;
+﻿using MereNear.ViewModels.Common;
+using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -11,8 +12,8 @@ using Xamarin.Forms.Maps;
 
 namespace MereNear.ViewModels
 {
-	public class PickLocationMapPageViewModel : BindableBase
-	{
+	public class PickLocationMapPageViewModel : BaseViewModel
+    {
         #region Private Variables
         private readonly INavigationService _navigationService;
         private string _address;

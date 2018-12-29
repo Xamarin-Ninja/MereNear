@@ -41,7 +41,7 @@ namespace SignalR.Interface
 
         public async Task SendDeal(ChatItem chatmessage, string roomName)
         {
-          _proxy.Invoke("SendMessage", chatmessage.MessageType, chatmessage.DealAmount, roomName);
+          _proxy.Invoke("SendMessage", chatmessage.MessageType, chatmessage.SenderType, roomName);
         }
 
         public async Task SendLocation(ChatItem chatmessage, string roomName)

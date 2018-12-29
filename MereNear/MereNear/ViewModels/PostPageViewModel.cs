@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using MereNear.Model;
+using MereNear.ViewModels.Common;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -14,8 +15,8 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class PostPageViewModel : BindableBase
-	{
+	public class PostPageViewModel : BaseViewModel
+    {
        
     }
 }

@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using MereNear.ViewModels.Common;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -8,8 +9,8 @@ using System.Windows.Input;
 
 namespace MereNear.ViewModels
 {
-	public class RequestRecievedViewModel : BindableBase
-	{
+	public class RequestRecievedViewModel : BaseViewModel
+    {
         #region Private Variables
         private readonly INavigationService _navigationService;
         #endregion
