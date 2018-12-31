@@ -11,7 +11,7 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <common:CustomHeader_Hamburger Grid.Row="0" TitleText="Settings"/>
+            <common:CustomHeader_Hamburger Grid.Row="0" x:Name="Settingstitle"/>
             <Grid Grid.Row="1" Padding="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
@@ -32,10 +32,10 @@
                     <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
                 <Image Source="account_setting.png" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label Text="Account" Grid.Row="0" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label x:Name="AccountHeader" Grid.Row="0" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
 
-                <Label Text="Change mobile number" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label x:Name="ChangeMobileLabel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <Label Text=">" Grid.Row="1" Grid.Column="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="End" VerticalOptions="Center"/>
                 <BoxView BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <BoxView.GestureRecognizers>
@@ -45,17 +45,17 @@
 
 
                 <Image Source="notification_setting.png" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label Text="Notifications" Grid.Row="3" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label x:Name="NotificationHeader" Grid.Row="3" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
 
-                <Label Text="Notifications" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label x:Name="NotificationLabel" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <Switch Grid.Row="4" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" OnColor="Green"/>
 
-                <Label Text="App Notifications" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label x:Name="AppNotificationLabel" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <Switch Grid.Row="5" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" OnColor="Green"/>
 
                 <Image Source="distance_setting.png" Grid.Row="7" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label Text="Distance" Grid.Row="7" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label x:Name="DistanceHeaderLabel" Grid.Row="7" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <Button BackgroundColor="White" BorderColor="LightGray" BorderWidth="0.5" Margin="0,0,0,2" BorderRadius="0" Grid.Row="7" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Center"/>
                 <Label x:Name="DistanceValue" Text="25" Grid.Row="7" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" />
                 <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
@@ -64,10 +64,10 @@
                 <Label Text="100 km" Grid.Row="8" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" />
 
                 <Image Source="more_setting.png" Grid.Row="9" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label Text="More" Grid.Row="9" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label x:Name="MoreHeader" Grid.Row="9" Grid.Column="1" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="Fill"/>
 
-                <Label Text="Change language" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label x:Name="ChangeLanguageLabel" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
                 <Label Text=">" Grid.Row="10" Grid.Column="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="End" VerticalOptions="Center"/>
                 <BoxView BackgroundColor="Transparent" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <BoxView.GestureRecognizers>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MereNear.Resources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,10 @@ namespace MereNear.Views.PopUp
 		public ChangeNumberPopup ()
 		{
 			InitializeComponent ();
+            IsYourNumberLabel.Text = AppResources.IsThisPhoneNumberLabel;
+            recievesmsLabel.Text = AppResources.ReceiveSMS;
+            EditButton.Text = AppResources.EditButton;
+            YesButton.Text = AppResources.YesButton;
 		}
     }
 }

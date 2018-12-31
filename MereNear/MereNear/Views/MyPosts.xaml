@@ -10,7 +10,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <common:CustomHeader_Hamburger Grid.Row="0" TitleText="My Posts"/>
+        <common:CustomHeader_Hamburger Grid.Row="0" x:Name="Myposttitle"/>
         <ListView x:Name="postListItems" ItemsSource="{Binding MyPostItems}" Grid.Row="1"
               SelectedItem="{Binding SelectedPost}"
                  RowHeight="130"
@@ -43,12 +43,12 @@
                                 </StackLayout>
 
                                 <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start">
-                                    <Label Text="When" FontSize="10" Style="{StaticResource BlackLabel}"/>
+                                    <Label Text="{Binding WhenLabel}" FontSize="10" Style="{StaticResource BlackLabel}"/>
                                     <Label Text="{Binding Date}" FontSize="10" TextColor="{Binding TimeColor}" IsVisible="{Binding IsDateVisible}"/>
                                     <Label Text="{Binding Time}" FontSize="10" TextColor="{Binding TimeColor}" IsVisible="{Binding IsDateVisible, Converter={StaticResource BoolToNotBoolConverter}}"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Start">
-                                    <Label Text="Posted On:" FontSize="10" Style="{StaticResource BlackLabel}"/>
+                                    <Label Text="{Binding PostedOnLabel}" FontSize="10" Style="{StaticResource BlackLabel}"/>
                                     <Label Text="{Binding PostedDate}" FontSize="10" TextColor="Gray"/>
                                 </StackLayout>
                             </Grid>

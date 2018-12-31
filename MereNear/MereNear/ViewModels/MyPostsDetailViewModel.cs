@@ -1,5 +1,6 @@
 using MereNear.Model;
 using MereNear.ViewModels.Common;
+using MereNear.Resources;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -179,7 +180,7 @@ namespace MereNear.ViewModels
                 PostsModelDetail = (PostJobModel)parameters["AllJobsPageData"];
                 GetDetail();
                 IsDistanceVisible = true;
-                ButtonTextChange = "Apply";
+                ButtonTextChange = AppResources.ApplyButton;
                 IsApplyButtonVisible = true;
                 var position = PostsModelDetail.AddressPosition;
                 MessagingCenter.Send("Location", "PostJobLocation", position);

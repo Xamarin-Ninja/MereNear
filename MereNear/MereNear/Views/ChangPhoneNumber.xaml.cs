@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using MereNear.Resources;
+using Xamarin.Forms;
 
 namespace MereNear.Views
 {
@@ -7,6 +8,10 @@ namespace MereNear.Views
         public ChangPhoneNumber()
         {
             InitializeComponent();
+            NewNumberLabel.Text = AppResources.NewNumberLabel;
+            MobileEntry.Placeholder = AppResources.MobileEntryPlaceholder;
+            NumberMakeSure.Text = AppResources.ChnageNumberSureLabel;
+            ContinueButton.Text = AppResources.ContinueButton;
         }
     }
 }

@@ -316,7 +316,7 @@ namespace MereNear.ViewModels
                 {
                     try
                     {
-                        await _navigationService.NavigateAsync(new Uri("/NavigationPage/JobOptionPage", UriKind.Absolute));
+                        await _navigationService.NavigateAsync(nameof(JobOptionPage));
                     }
                     catch (Exception ex)
                     {
@@ -474,7 +474,7 @@ namespace MereNear.ViewModels
                 };
                 NewCategoryData.Insert(0, item);
             }
-            catch (WebException ex)
+            catch (Exception ex)
             {
                 UserDialogs.Instance.Alert(ex.Message);
             }

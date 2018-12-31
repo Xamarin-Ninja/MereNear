@@ -11,7 +11,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <common:CustomHeader Grid.Row="0" TitleText="All Jobs"/>
+        <common:CustomHeader Grid.Row="0" x:Name="alljobstitle"/>
         <ListView x:Name="jobListItems" ItemsSource="{Binding AllJobItems}" Grid.Row="1"
               SelectedItem="{Binding SelectedAllJobs}" ItemSelected="jobListItems_ItemSelected"
                  RowHeight="120"

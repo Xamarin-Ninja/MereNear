@@ -16,6 +16,7 @@ namespace MereNear.Views
             DateLabel.Text = AppResources.DateLabel;
             TimeLabel.Text = AppResources.TimeLabel;
             AddphotosLabel.Text = AppResources.AddPhotosLabel;
+            previewbutton.Text = AppResources.PreviewButton;
         }
     }
 }

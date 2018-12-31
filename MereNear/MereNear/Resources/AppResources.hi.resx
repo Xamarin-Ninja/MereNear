@@ -241,4 +241,160 @@
     <value>समय</value>
     <comment>PostDescriptionPage</comment>
   </data>
+  <data name="AboutMereNearLabel" xml:space="preserve">
+    <value>MereNear के बारे में</value>
+  </data>
+  <data name="AboutUsTitle" xml:space="preserve">
+    <value>हमारे बारे में</value>
+  </data>
+  <data name="AcceptButton" xml:space="preserve">
+    <value>स्वीकार करें</value>
+  </data>
+  <data name="AccountHeading" xml:space="preserve">
+    <value>खाता</value>
+  </data>
+  <data name="AllJobstitle" xml:space="preserve">
+    <value>सारी नौकरियां</value>
+  </data>
+  <data name="ApplyButton" xml:space="preserve">
+    <value>आवेदन करें</value>
+  </data>
+  <data name="AppNotificationLabel" xml:space="preserve">
+    <value>एप्लिकेशन सूचनाएं </value>
+  </data>
+  <data name="CategoryNameLabel" xml:space="preserve">
+    <value>श्रेणी नाम</value>
+    <comment>PostPopUp</comment>
+  </data>
+  <data name="ChangeLanguageLabel" xml:space="preserve">
+    <value>भाषा बदलो</value>
+  </data>
+  <data name="ChangeMobileNumberLabel" xml:space="preserve">
+    <value>मोबाइल नंबर बदलें</value>
+  </data>
+  <data name="ChangeNumberTitle" xml:space="preserve">
+    <value>मोबाइल नंबर बदलें</value>
+  </data>
+  <data name="ChnageNumberSureLabel" xml:space="preserve">
+    <value>सुनिश्चित करें कि यह नंबर एसएमएस प्राप्त कर सकता है</value>
+  </data>
+  <data name="ContinueButton" xml:space="preserve">
+    <value>जारी रहना</value>
+  </data>
+  <data name="CurrentNumberLabel" xml:space="preserve">
+    <value>मौजूदा नंबर</value>
+  </data>
+  <data name="DealMessage" xml:space="preserve">
+    <value>आपको इस नौकरी के बारे में एक डील मिली है</value>
+  </data>
+  <data name="DealMessageTitle" xml:space="preserve">
+    <value>सौदा</value>
+  </data>
+  <data name="DeclineButton" xml:space="preserve">
+    <value>अस्वीकार करें</value>
+  </data>
+  <data name="DetailsLabel" xml:space="preserve">
+    <value>विवरण</value>
+    <comment>PostPopUp</comment>
+  </data>
+  <data name="DistanceHeader" xml:space="preserve">
+    <value>दूरी</value>
+  </data>
+  <data name="EditButton" xml:space="preserve">
+    <value>संपादित करें</value>
+  </data>
+  <data name="IsThisPhoneNumberLabel" xml:space="preserve">
+    <value>क्या यह आपका फोन नंबर है?</value>
+  </data>
+  <data name="JobDescriptionLabel" xml:space="preserve">
+    <value>नौकरी का विवरण</value>
+    <comment>PostPopUp</comment>
+  </data>
+  <data name="JobStatusActive" xml:space="preserve">
+    <value>सक्रिय</value>
+  </data>
+  <data name="JobStatusCompleted" xml:space="preserve">
+    <value>पूरा कर लिया है</value>
+  </data>
+  <data name="JobStatusLabel" xml:space="preserve">
+    <value>कार्य स्थिति</value>
+  </data>
+  <data name="JobStatusProgress" xml:space="preserve">
+    <value>चल रहा है</value>
+  </data>
+  <data name="MakeDealButton" xml:space="preserve">
+    <value>सौदा करो</value>
+  </data>
+  <data name="MoreHeader" xml:space="preserve">
+    <value>अतिरिक्त</value>
+  </data>
+  <data name="NeedServiceLabel" xml:space="preserve">
+    <value>सेवा चाहिए</value>
+    <comment>PostPopUp</comment>
+  </data>
+  <data name="NewNumberLabel" xml:space="preserve">
+    <value>मेरा नया नंबर है</value>
+  </data>
+  <data name="NotificationHeading" xml:space="preserve">
+    <value>सूचनाएं</value>
+  </data>
+  <data name="NotificationLabel" xml:space="preserve">
+    <value>सूचनाएं</value>
+  </data>
+  <data name="Now" xml:space="preserve">
+    <value>अभी</value>
+  </data>
+  <data name="PhotosLabel" xml:space="preserve">
+    <value>तस्वीरें</value>
+    <comment>PostPopUp</comment>
+  </data>
+  <data name="PleaseSendDealButton" xml:space="preserve">
+    <value>कृपया मुझे सौदा भेजें</value>
+  </data>
+  <data name="PostedOn" xml:space="preserve">
+    <value>प्रविष्ट किया</value>
+  </data>
+  <data name="ReasonForReportLabel" xml:space="preserve">
+    <value>रिपोर्ट का कारण</value>
+  </data>
+  <data name="ReceiveSMS" xml:space="preserve">
+    <value>आपको एक एसएमएस प्राप्त होगा</value>
+  </data>
+  <data name="ReportButton" xml:space="preserve">
+    <value>रिपोर्ट</value>
+  </data>
+  <data name="ResaonReportPlaceholder" xml:space="preserve">
+    <value>रिपोर्टिंग का अपना कारण दर्ज करें</value>
+  </data>
+  <data name="ServiceCharge" xml:space="preserve">
+    <value>सेवा शुल्क</value>
+  </data>
+  <data name="ShareLocationButton" xml:space="preserve">
+    <value>स्थान साझा करें</value>
+  </data>
+  <data name="SubmitButton" xml:space="preserve">
+    <value>जमा करें</value>
+    <comment>PostPopUp</comment>
+  </data>
+  <data name="SubTotal" xml:space="preserve">
+    <value>उप कुल</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>कुल</value>
+  </data>
+  <data name="TypeMessagePlaceholder" xml:space="preserve">
+    <value>संदेश लिखें..</value>
+  </data>
+  <data name="Vat" xml:space="preserve">
+    <value>वैट</value>
+  </data>
+  <data name="VerifyNumberTitle" xml:space="preserve">
+    <value>अपना नया नंबर सत्यापित करें</value>
+  </data>
+  <data name="When" xml:space="preserve">
+    <value>कब</value>
+  </data>
+  <data name="YesButton" xml:space="preserve">
+    <value>हाँ</value>
+  </data>
 </root>

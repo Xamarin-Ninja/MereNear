@@ -70,7 +70,7 @@ namespace MereNear.ViewModels
             }
             else
             {
-                await _navigationService.GoBackAsync();
+                await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
             }
         }
         //private void GetLanguages()

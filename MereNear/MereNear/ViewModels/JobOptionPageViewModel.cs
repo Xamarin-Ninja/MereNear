@@ -48,7 +48,7 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(async () =>
                 {
-                    await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
+                    await _navigationService.GoBackAsync();
                 });
             }
         }

@@ -1,4 +1,5 @@
 ﻿using MereNear.ViewModels.Common;
+using MereNear.Resources;
 using MereNear.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -107,6 +108,7 @@ namespace MereNear.ViewModels
         public ChangPhoneNumberViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+            CurrentNumberLabel = AppResources.CurrentNumberLabel + "";
         }
         #endregion
     }

@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using MereNear.Model;
 using MereNear.ViewModels.Common;
+using MereNear.Resources;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Plugin.Permissions;
@@ -288,7 +289,7 @@ namespace MereNear.ViewModels
                     JobModel.Description = Description;
                     JobModel.CategoryWork = CategoryWork;
                     JobModel.Distance = "20";
-                    JobModel.Status = "Active";
+                    JobModel.Status = AppResources.JobStatusActive;
                     if (IsScheduleSelected)
                     {
                         JobModel.Date = JobDate.ToString("dd/MM/yyyy");
@@ -297,7 +298,7 @@ namespace MereNear.ViewModels
                     else
                     {
                         JobModel.Date = DateTime.Now.Date.ToString("dd/MM/yyyy");
-                        JobModel.Time = "Now";
+                        JobModel.Time = AppResources.Now;
                         //JobModel.Time = DateTime.Now.TimeOfDay.ToString("HH:mm");
                     }
 

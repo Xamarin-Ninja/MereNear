@@ -148,7 +148,7 @@ namespace MereNear.ViewModels
             }
             if (parameters.ContainsKey("ChangeNumber"))
             {
-                OTPMainLabel = (string)parameters["ChangeNumber"];
+                OTPMainLabel = AppResources.VerifyNumberTitle + (string)parameters["ChangeNumber"];
                 lastNavigatedPage = "ChangeNumber";
             }            
         }

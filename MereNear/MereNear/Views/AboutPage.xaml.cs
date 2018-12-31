@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using MereNear.Resources;
+using Xamarin.Forms;
 
 namespace MereNear.Views
 {
@@ -7,6 +8,8 @@ namespace MereNear.Views
         public AboutPage()
         {
             InitializeComponent();
+            aboutustitle.TitleText = AppResources.AboutUsMenu;
+            AboutMereNearLabel.Text = AppResources.AboutMereNearLabel;
         }
     }
 }
