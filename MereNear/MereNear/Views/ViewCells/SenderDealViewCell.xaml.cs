@@ -15,6 +15,10 @@ namespace MereNear.Views.ViewCells
 		public SenderDealViewCell ()
 		{
 			InitializeComponent ();
+            purchasecostdata.Text = "Purchase cost: (USD) ";
+            servicecostdata.Text = "Service charge: (USD) ";
+            subtotaldata.Text = "Sub Total: (USD) ";
+            totaldata.Text = "Total: (USD) ()";
 		}
 	}
 }

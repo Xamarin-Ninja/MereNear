@@ -5,11 +5,11 @@ using Xamarin.Forms.Xaml;
 namespace MereNear.Views.ViewCells
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LocationViewCell : ViewCell
+	public partial class SenderLocationViewCell : ViewCell
 	{
-		public LocationViewCell()
-		{    
-			InitializeComponent();
+		public SenderLocationViewCell ()
+		{
+			InitializeComponent ();
             customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(30.711262, 76.686310), Distance.FromMiles(2)));
             customMap.Pins.Add(new Pin
             {
@@ -18,7 +18,6 @@ namespace MereNear.Views.ViewCells
                 Label = "",
                 Position = new Position(30.711262, 76.686310),
             });
-            
         }
 	}
 }

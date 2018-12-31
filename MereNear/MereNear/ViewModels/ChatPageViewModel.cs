@@ -165,17 +165,29 @@ namespace MereNear.ViewModels
         #region Private/public Methods
         void _chatServices_OnMessageReceived(object sender, ChatItem e)
         {
-            if (e.MessageType!= 0)
+            if (e.MessageType != 0)
             {
                 if (e.CurrentUser == currentuser)
                 {
-                    SenderType = 0;
+                    SenderType = 1;
                 }
                 else
                 {
-                    SenderType = 1;
+                    SenderType = 2;
                 }
                 _messages.Add(new ChatItem { Name = e.Name, MessageType = e.MessageType, PurchaseAmount = e.PurchaseAmount, ServiceAmount = e.ServiceAmount, SubtotalAmount = e.SubtotalAmount, TotalAmout = e.TotalAmout, CurrencyType = e.CurrencyType,Location = e.Location, Message = e.Message,SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm") });
+            }
+            else
+            {
+                if (e.CurrentUser == currentuser)
+                {
+                    SenderType = 1;
+                }
+                else
+                {
+                    SenderType = 2;
+                }
+                _messages.Add(new ChatItem { Name = e.Name, MessageType = 1, PurchaseAmount = e.PurchaseAmount, ServiceAmount = e.ServiceAmount, SubtotalAmount = e.SubtotalAmount, TotalAmout = e.TotalAmout, CurrencyType = e.CurrencyType, Location = e.Location, Message = e.Message, SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm") });
             }
            
         }

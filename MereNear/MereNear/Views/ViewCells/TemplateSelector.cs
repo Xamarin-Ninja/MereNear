@@ -10,7 +10,8 @@ namespace MereNear.Views.ViewCells
         private readonly DataTemplate outgoingDataTemplate;
         private readonly DataTemplate recieverDealTemplate;
         private readonly DataTemplate senderDealTemplate;
-        private readonly DataTemplate locationTemplate;
+        private readonly DataTemplate senderlocationTemplate;
+        private readonly DataTemplate recieverlocationTemplate;
 
         public TemplateSelector()
         {
@@ -19,7 +20,8 @@ namespace MereNear.Views.ViewCells
             this.outgoingDataTemplate = new DataTemplate(typeof(SenderViewCell));
             this.recieverDealTemplate = new DataTemplate(typeof(RecieverDealViewCell));
             this.senderDealTemplate = new DataTemplate(typeof(SenderDealViewCell));
-            this.locationTemplate = new DataTemplate(typeof(LocationViewCell));
+            this.recieverlocationTemplate = new DataTemplate(typeof(LocationViewCell));
+            this.senderlocationTemplate = new DataTemplate(typeof(SenderLocationViewCell));
         }
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
@@ -37,35 +39,47 @@ namespace MereNear.Views.ViewCells
 
             if(messageVm.MessageType == 1)
             {
-                if (messageVm.SenderType == 0)
+                if (messageVm.SenderType == 1)
                 {
                     return this.outgoingDataTemplate;
                 }
-                else
+                else if (messageVm.SenderType == 2)
                 {
                     return this.incomingDataTemplate;
+                }
+                else
+                {
+                    return null;
                 }
             }
             else if(messageVm.MessageType == 2)
             {
-                if (messageVm.SenderType == 0)
+                if (messageVm.SenderType == 1)
                 {
                     return this.senderDealTemplate;
                 }
-                else
+                else if (messageVm.SenderType == 2)
                 {
                     return this.recieverDealTemplate;
+                }
+                else
+                {
+                    return null;
                 }
             }
             else if(messageVm.MessageType == 3)
             {
-                if (messageVm.SenderType == 0)
+                if (messageVm.SenderType == 1)
                 {
-                    return this.locationTemplate;
+                    return this.senderlocationTemplate;
+                }
+                else if (messageVm.SenderType == 2)
+                {
+                    return this.recieverlocationTemplate;
                 }
                 else
                 {
-                    return this.locationTemplate;
+                    return null;
                 }
             }
             else

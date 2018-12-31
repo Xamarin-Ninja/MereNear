@@ -15,6 +15,8 @@ namespace SignalR.Interface
 
         public event EventHandler<ChatItem> OnMessageReceived;
 
+        public string callingmethod = "";
+
         public ChatServices()
         {
             _connection = new HubConnection("http://xamarin-chat.azurewebsites.net/");
@@ -27,26 +29,29 @@ namespace SignalR.Interface
         {
             await _connection.Start();
 
-            _proxy.On("GetMessage", (int messagetype, string item) => OnMessageReceived(this, new ChatItem
+            _proxy.On("GetMessage", (string currentuser, int messagetype) => OnMessageReceived(this, new ChatItem
             {
                 MessageType = messagetype,
-                Name = item
+                CurrentUser = currentuser
             }));
         }
 
         public async Task Send(ChatItem chatmessage, string roomName)
         {
-            _proxy.Invoke("SendMessage", chatmessage.MessageType, chatmessage.Message, roomName);
+            callingmethod = "message";
+            _proxy.Invoke("SendMessage", chatmessage.CurrentUser, chatmessage.Message, roomName);
         }
 
         public async Task SendDeal(ChatItem chatmessage, string roomName)
         {
-          _proxy.Invoke("SendMessage", chatmessage.MessageType, chatmessage.SenderType, roomName);
+            callingmethod = "messagetype";
+            _proxy.Invoke("SendMessage", chatmessage.CurrentUser, chatmessage.MessageType, roomName);
         }
 
         public async Task SendLocation(ChatItem chatmessage, string roomName)
         {
-            _proxy.Invoke("SendMessage", chatmessage.MessageType, chatmessage.Name, roomName);
+            callingmethod = "messagetype";
+            _proxy.Invoke("SendMessage", chatmessage.CurrentUser, chatmessage.MessageType, roomName);
         }
 
         public async Task JoinRoom(string roomName)

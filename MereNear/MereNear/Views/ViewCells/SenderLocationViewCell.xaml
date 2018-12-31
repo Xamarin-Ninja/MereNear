@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:local="clr-namespace:MereNear.CustomControl"
+          x:Class="MereNear.Views.ViewCells.SenderLocationViewCell">
+  <ViewCell.View>
+        <StackLayout Margin="0" Padding="80,10,10,0">
+            <Grid>
+                <Frame Margin="0" BackgroundColor="White" HasShadow="True" Padding="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="135"/>
+                            <RowDefinition Height="15"/>
+                        </Grid.RowDefinitions>
+                        <local:CustomMap x:Name="customMap" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Label FontSize="10" Grid.Row="1" Text="{Binding Time}" HorizontalOptions="End" VerticalOptions="End">
+                        </Label>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>
