@@ -40,7 +40,7 @@
                             <RowDefinition Height="40"/>
                         </Grid.RowDefinitions>
 
-                        <Image Source="home_master.png"  Grid.Row="0" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                        <Image Source="home_master.png"  Grid.Row="0" Grid.Column="0" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <Label x:Name="HomeMenu" Margin="7,0,0,0" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding HomePageTappped}"/>
@@ -48,49 +48,49 @@
                         </Label>
 
 
-                        <Image Source="about_master.png" Grid.Row="1" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                        <Image Source="about_master.png" Grid.Row="1" Grid.Column="0" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <Label x:Name="AboutUsMenu" Margin="7,0,0,0" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding AboutUsTapped}"/>
                             </Label.GestureRecognizers>
                         </Label>
 
-                        <Image Source="myjob_master.png" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                        <Image Source="myjob_master.png" Grid.Row="2" Grid.Column="0" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <Label x:Name="MyJobsMenu" Margin="7,0,0,0" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding MyJobTapped}"/>
                             </Label.GestureRecognizers>
                         </Label>
 
-                        <Image Source="myposts_master.png" Grid.Row="3" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                        <Image Source="myposts_master.png" Grid.Row="3" Grid.Column="0" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <Label x:Name="MyPostsMenu" Margin="7,0,0,0" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding MyPostTapped}"/>
                             </Label.GestureRecognizers>
                         </Label>
 
-                        <Image Source="our_policies_master.png" Grid.Row="4" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                        <Image Source="our_policies_master.png" Grid.Row="4" Grid.Column="0" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <Label x:Name="OurPoliciesMenu" Margin="7,0,0,0" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding PolicyTapped}"/>
                             </Label.GestureRecognizers>
                         </Label>
 
-                        <Image Source="rateus_master.png" Grid.Row="5" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                        <Image Source="rateus_master.png" Grid.Row="5" Grid.Column="0" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <Label x:Name="RateUsMenu" Margin="7,0,0,0" Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding RateUsTapped}"/>
                             </Label.GestureRecognizers>
                         </Label>
 
-                        <Image Source="setting_master.png" Grid.Row="6" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                        <Image Source="setting_master.png" Grid.Row="6" Grid.Column="0" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <Label x:Name="SettingsMenu" Margin="7,0,0,0" Grid.Row="6" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding SettingsTapped}"/>
                             </Label.GestureRecognizers>
                         </Label>
 
-                        <Image Source="support_master.png" Grid.Row="7" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                        <Image Source="support_master.png" Grid.Row="7" Grid.Column="0" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <Label x:Name="SupportMenu" Margin="7,0,0,0" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding SupportTapped}"/>
@@ -98,7 +98,7 @@
                         </Label>
 
                         <BoxView BackgroundColor="#DD5049"  Grid.Row="8" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                        <Image Source="logout_master.png" Grid.Row="8" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                        <Image Source="logout_master.png" Grid.Row="8" Grid.Column="0" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <Label x:Name="logoutMenu" Margin="7,0,0,0" Grid.Row="8" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="White">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding LogOutTapped}"/>

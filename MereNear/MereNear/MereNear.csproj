@@ -313,6 +313,9 @@
     <None Update="Views\ViewCells\SenderDealViewCell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Views\ViewCells\SenderLocationViewCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Views\ViewCells\SenderViewCell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>

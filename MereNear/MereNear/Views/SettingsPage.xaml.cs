@@ -17,6 +17,7 @@ namespace MereNear.Views
             NotificationHeader.Text = AppResources.NotificationHeading;
             NotificationLabel.Text = AppResources.NotificationLabel;
             DistanceHeaderLabel.Text = AppResources.DistanceHeader;
+            AppNotificationLabel.Text = AppResources.AppNotificationLabel;
             MoreHeader.Text = AppResources.MoreHeader;
             ChangeMobileLabel.Text = AppResources.ChangeMobileNumberLabel;
         }
