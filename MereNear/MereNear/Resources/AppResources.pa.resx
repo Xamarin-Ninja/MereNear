@@ -125,7 +125,7 @@
     <value>ਫੋਟੋਜ਼ ਸ਼ਾਮਲ ਕਰੋ</value>
     <comment>PostDescriptionPage</comment>
   </data>
-  <data name="AppSlogan1" xml:space="preserve">
+  <data name="AppSlogan" xml:space="preserve">
     <value>ਆਸਾਨੀ ਨਾਲ ਤੁਹਾਡੇ ਆਸ-ਪਾਸ ਦੀਆਂ ਸੇਵਾਵਾਂ ਲੱਭੋ</value>
     <comment>LoginPage</comment>
   </data>
@@ -242,7 +242,7 @@
     <comment>PostDescriptionPage</comment>
   </data>
   <data name="AboutMereNearLabel" xml:space="preserve">
-    <value>ਮੇਰੇ ਨੇੜੇ ਦੇ ਨੇੜੇ</value>
+    <value>ਮੇਰੇ ਨੇੜੇ ਦੇ ਬਾਰੇ</value>
   </data>
   <data name="AboutUsTitle" xml:space="preserve">
     <value>ਸਾਡੇ ਬਾਰੇ</value>
