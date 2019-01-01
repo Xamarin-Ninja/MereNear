@@ -1,4 +1,5 @@
 ﻿using Prism.Mvvm;
+using SignalR.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +9,8 @@ namespace MereNear.ViewModels.Common
 {
     public class BaseViewModel : BindableBase
     {
+        public static IChatServices _chatServices;
+
         public static void setInt(String key, int value)
         {
             Application.Current.Properties[key] = value;
@@ -18,6 +21,25 @@ namespace MereNear.ViewModels.Common
         {
             Application.Current.Properties[key] = value;
             Application.Current.SavePropertiesAsync();
+        }
+
+        public static void setBool(String key, bool value)
+        {
+            Application.Current.Properties[key] = value;
+            Application.Current.SavePropertiesAsync();
+        }
+
+        public static bool getBool(String key)
+        {
+
+            if (Application.Current.Properties.ContainsKey(key))
+            {
+                return (bool)(Application.Current.Properties[key]);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static String getString(String key)

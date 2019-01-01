@@ -374,16 +374,16 @@
     <value>ਰਿਪੋਰਟ ਕਰਨ ਦੇ ਤੁਹਾਡੇ ਕਾਰਨ ਦਰਜ ਕਰੋ</value>
   </data>
   <data name="ServiceCharge" xml:space="preserve">
-    <value>ਸੇਵਾ ਚਾਰਜ</value>
+    <value>ਸੇਵਾ ਚਾਰਜ:</value>
   </data>
   <data name="ShareLocationButton" xml:space="preserve">
     <value>ਟਿਕਾਣਾ ਸਾਂਝਾ ਕਰੋ</value>
   </data>
   <data name="SubTotal" xml:space="preserve">
-    <value>ਸਬ ਕੁਲ</value>
+    <value>ਸਬ ਕੁਲ:</value>
   </data>
   <data name="Total" xml:space="preserve">
-    <value>ਕੁੱਲ</value>
+    <value>ਕੁੱਲ:</value>
   </data>
   <data name="TypeMessagePlaceholder" xml:space="preserve">
     <value>ਸੁਨੇਹਾ ਟਾਈਪ ਕਰੋ ...</value>
@@ -396,5 +396,32 @@
   </data>
   <data name="YesButton" xml:space="preserve">
     <value>ਹਾਂ</value>
+  </data>
+  <data name="DealMessageSender" xml:space="preserve">
+    <value>ਤੁਸੀਂ ਇਸ ਨੌਕਰੀ ਬਾਰੇ ਇੱਕ ਸੌਦਾ ਭੇਜਿਆ ਹੈ</value>
+  </data>
+  <data name="DealPopupPurchase" xml:space="preserve">
+    <value>ਖਰੀਦ ਕੀਮਤ:</value>
+    <comment>DealViewCell</comment>
+  </data>
+  <data name="PurchaseAmountEntry" xml:space="preserve">
+    <value>ਖਰੀਦ ਰਕਮ ਦਰਜ ਕਰੋ</value>
+    <comment>DealPopup</comment>
+  </data>
+  <data name="ReviewButton" xml:space="preserve">
+    <value>ਸਮੀਖਿਆ ਸ਼ਾਮਲ ਕਰੋ</value>
+    <comment>ReviewPopup</comment>
+  </data>
+  <data name="ReviewPopupEditor" xml:space="preserve">
+    <value>ਟਿੱਪਣੀ ਦਾਖਲ ਕਰੋ</value>
+    <comment>ReviewPopup</comment>
+  </data>
+  <data name="ReviewPopupTitle" xml:space="preserve">
+    <value>ਰੇਟਿੰਗ ਦਿਓ</value>
+    <comment>ReviewPopup</comment>
+  </data>
+  <data name="ServiceChargeEntry" xml:space="preserve">
+    <value>ਸਰਵਿਸ ਚਾਰਜ ਦਾਖਲ ਕਰੋ</value>
+    <comment>DealPopup</comment>
   </data>
 </root>

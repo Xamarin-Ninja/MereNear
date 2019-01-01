@@ -2,6 +2,7 @@
 using MereNear.ViewModels.Common;
 using MereNear.Views;
 using MereNear.Views.ViewCells;
+using Plugin.LocalNotifications;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -21,7 +22,7 @@ namespace MereNear.ViewModels
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
-        private IChatServices _chatServices;
+        //private IChatServices _chatServices;
 
         private string _roomName;
         private string _dealAmount;
@@ -41,8 +42,6 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Public Variables
-        public int a = 1;
-
         public int SenderType
         {
             get { return _senderType; }
@@ -157,8 +156,14 @@ namespace MereNear.ViewModels
 
             _roomName = "Rahul";
 
-            _chatServices.Connect();
+            var serviceconnection = getBool("ServiceConnect");
+            if (!serviceconnection)
+            {
+                _chatServices.Connect();
+                setBool("ServiceConnect", true);
+            }
             _chatServices.OnMessageReceived += _chatServices_OnMessageReceived;
+            CrossLocalNotifications.Current.Show("merenear", "You have a new message");
         }
         #endregion
 
@@ -224,24 +229,11 @@ namespace MereNear.ViewModels
                 {
                     try
                     {
-
-                        //if (joinRooms.Count > 0)
-                        //{
-                        //    foreach (var item in joinRooms)
-                        //    {
-                        //        if (_roomName == item.roomInfo)
-                        //        {
-                        //            roomAlreadyJoined = true;
-                        //            break;
-                        //        }
-                        //    }
-
-                        //}
-                        if (a == 1)
+                        var roomjoiner = getBool("RoomJoin");
+                        if (!roomjoiner)
                         {
                             await _chatServices.JoinRoom(_roomName);
-                            a = 2;
-                            //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
+                            setBool("RoomJoin", true);
                         }
                         await _chatServices.Send(new ChatItem {CurrentUser = currentuser, MessageType = 1, Message = MyMessage, Time = DateTime.Now.ToString("HH:mm") }, _roomName);
                     }
@@ -287,11 +279,11 @@ namespace MereNear.ViewModels
 
                         var mylocation = new Position(30.711000, 76.686306);
 
-                        if (a == 1)
+                        var roomjoiner = getBool("RoomJoin");
+                        if (!roomjoiner)
                         {
                             await _chatServices.JoinRoom(_roomName);
-                            a = 2;
-                            //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
+                            setBool("RoomJoin", true);
                         }
 
                         await _chatServices.SendLocation(new ChatItem { CurrentUser = currentuser, MessageType = 3, Location = mylocation, Time = DateTime.Now.ToString("HH:mm") }, _roomName);
@@ -347,13 +339,13 @@ namespace MereNear.ViewModels
                 {
                     try
                     {
-                        if (a == 1)
+                        var roomjoiner = getBool("RoomJoin");
+                        if (!roomjoiner)
                         {
                             await _chatServices.JoinRoom(_roomName);
-                            a = 2;
-                            //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
+                            setBool("RoomJoin", true);
                         }
-                        
+
                         await _chatServices.SendDeal(new ChatItem { CurrentUser = currentuser, PurchaseAmount = PurchaseCostValue, ServiceAmount = ServiceChargeValue, SubtotalAmount = PurchaseCostValue + ServiceChargeValue, TotalAmout = (PurchaseCostValue + ServiceChargeValue)*(5/100), MessageType = 2, CurrencyType = CurrencyType, Time = DateTime.Now.ToString("HH:mm") }, _roomName);
                     }
                     catch (Exception ex)
@@ -373,11 +365,11 @@ namespace MereNear.ViewModels
                 {
                     try
                     {
-                        if (a == 1)
+                        var roomjoiner = getBool("RoomJoin");
+                        if (!roomjoiner)
                         {
                             await _chatServices.JoinRoom(_roomName);
-                            a = 2;
-                            //joinRooms.Add(new JoinRooms { roomInfo = _roomName });
+                            setBool("RoomJoin", true);
                         }
                     }
                     catch (Exception ex)

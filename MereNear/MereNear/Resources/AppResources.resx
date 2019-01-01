@@ -367,7 +367,7 @@
     <value>Enter your reason of reporting</value>
   </data>
   <data name="ServiceCharge" xml:space="preserve">
-    <value>Service Charge</value>
+    <value>Service Charge:</value>
   </data>
   <data name="ShareLocationButton" xml:space="preserve">
     <value>Share Location</value>
@@ -377,10 +377,10 @@
     <comment>PostPopUp</comment>
   </data>
   <data name="SubTotal" xml:space="preserve">
-    <value>Sub Total</value>
+    <value>Sub Total:</value>
   </data>
   <data name="Total" xml:space="preserve">
-    <value>Total</value>
+    <value>Total:</value>
   </data>
   <data name="TypeMessagePlaceholder" xml:space="preserve">
     <value>Type a message..</value>
@@ -396,5 +396,35 @@
   </data>
   <data name="YesButton" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="DealMessageSender" xml:space="preserve">
+    <value>You have sent a deal about this job</value>
+  </data>
+  <data name="DealPopupPurchase" xml:space="preserve">
+    <value>Purchase cost:</value>
+    <comment>DealViewCell</comment>
+  </data>
+  <data name="PurchaseAmountEntry" xml:space="preserve">
+    <value>Enter purchase amount</value>
+    <comment>DealPopup</comment>
+  </data>
+  <data name="ReviewButton" xml:space="preserve">
+    <value>Add Review</value>
+    <comment>ReviewPopup</comment>
+  </data>
+  <data name="ReviewPopupEditor" xml:space="preserve">
+    <value>Enter comment</value>
+    <comment>ReviewPopup</comment>
+  </data>
+  <data name="ReviewPopupTitle" xml:space="preserve">
+    <value>Give Rating</value>
+    <comment>ReviewPopup</comment>
+  </data>
+  <data name="ServiceChargeEntry" xml:space="preserve">
+    <value>Enter service charge</value>
+    <comment>DealPopup</comment>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
 </root>

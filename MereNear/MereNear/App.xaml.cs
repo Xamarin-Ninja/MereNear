@@ -7,7 +7,6 @@ using Xamarin.Forms.Xaml;
 using MereNear.Views.Common;
 using DLToolkit.Forms.Controls;
 using MereNear.Services.ApiService.Common;
-using MereNear.Localization;
 using SignalR.Interface;
 using System;
 using Plugin.Connectivity;
@@ -33,13 +32,13 @@ namespace MereNear
         public App() : this(null)
         {
         }
-
+        
         public App(IPlatformInitializer initializer) : base(initializer)
         {
         }
 
         #region SignalR Chat Implement Part 1
-        private IChatServices _chatServices;
+        //public static IChatServices _chatServices;
         #endregion
 
         public static string CultureCode { get; set; }
@@ -65,12 +64,12 @@ namespace MereNear
             #endregion
 
             #region SignalR Chat Implement Part 2
-            _chatServices = DependencyService.Get<IChatServices>();
+            //_chatServices = DependencyService.Get<IChatServices>();
+                       
             //_chatServices.Connect();
             #endregion
 
             FlowListView.Init();
-            DependencyService.Get<ILocalize>().SetLocale();
             
             var languageexist = BaseViewModel.getString("AppLanguage");
             var useralreadylogin = BaseViewModel.getString("LoginMobileNumber");

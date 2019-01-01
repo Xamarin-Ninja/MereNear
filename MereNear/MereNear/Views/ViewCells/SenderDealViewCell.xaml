@@ -32,7 +32,7 @@
                             </Grid.ColumnDefinitions>
                             <Label Text="Deal" Grid.Row="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="12" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                             <BoxView BackgroundColor="LightGray" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.ColumnSpan="3"/>
-                            <Label Text="You have recieved a deal about this job" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="12" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular" LineBreakMode="WordWrap"/>
+                            <Label x:Name="senderdealmessage" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="12" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular" LineBreakMode="WordWrap"/>
                             <!--<Label x:Name="purchasecostdata" Text="{Binding CurrencyType, Binding PurchaseAmount, StringFormat='Purchase cost: ({0}) {1}'}" Grid.Row="3" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>-->
                             <Label x:Name="purchasecostdata" Grid.Row="3" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                             
@@ -43,7 +43,7 @@
                             <Label x:Name="subtotaldata" Grid.Row="5" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                             
                             
-                            <Label Text="Vat 5%" Grid.Row="6" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                            <Label x:Name="vatValue" Grid.Row="6" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                             <BoxView BackgroundColor="LightGray" Grid.Row="7" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.ColumnSpan="3"/>
                             <!--<Label x:Name="totaldata" Text="{Binding CurrencyType, Binding TotalAmout, StringFormat='Total: ({0}) {1}'}" FontAttributes="Bold" Grid.Row="8" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>-->
                             <Label x:Name="totaldata" FontAttributes="Bold" Grid.Row="8" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>

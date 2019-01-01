@@ -31,6 +31,7 @@ namespace MereNear.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, bundle);
             FormsMaps.Init(this, bundle);
+            
             LoadApplication(new App(new AndroidInitializer()));
         }
 

@@ -367,7 +367,7 @@
     <value>रिपोर्टिंग का अपना कारण दर्ज करें</value>
   </data>
   <data name="ServiceCharge" xml:space="preserve">
-    <value>सेवा शुल्क</value>
+    <value>सेवा शुल्क:</value>
   </data>
   <data name="ShareLocationButton" xml:space="preserve">
     <value>स्थान साझा करें</value>
@@ -377,10 +377,10 @@
     <comment>PostPopUp</comment>
   </data>
   <data name="SubTotal" xml:space="preserve">
-    <value>उप कुल</value>
+    <value>उप कुल:</value>
   </data>
   <data name="Total" xml:space="preserve">
-    <value>कुल</value>
+    <value>कुल:</value>
   </data>
   <data name="TypeMessagePlaceholder" xml:space="preserve">
     <value>संदेश लिखें..</value>
@@ -396,5 +396,32 @@
   </data>
   <data name="YesButton" xml:space="preserve">
     <value>हाँ</value>
+  </data>
+  <data name="DealMessageSender" xml:space="preserve">
+    <value>आपने इस नौकरी के बारे में एक सौदा भेजा है</value>
+  </data>
+  <data name="DealPopupPurchase" xml:space="preserve">
+    <value>खरीद मूल्य:</value>
+    <comment>DealViewCell</comment>
+  </data>
+  <data name="PurchaseAmountEntry" xml:space="preserve">
+    <value>खरीद राशि दर्ज करें</value>
+    <comment>DealPopup</comment>
+  </data>
+  <data name="ReviewButton" xml:space="preserve">
+    <value>समीक्षा जोड़ें</value>
+    <comment>ReviewPopup</comment>
+  </data>
+  <data name="ReviewPopupEditor" xml:space="preserve">
+    <value>टिप्पणी दर्ज करें</value>
+    <comment>ReviewPopup</comment>
+  </data>
+  <data name="ReviewPopupTitle" xml:space="preserve">
+    <value>रेटिंग करें</value>
+    <comment>ReviewPopup</comment>
+  </data>
+  <data name="ServiceChargeEntry" xml:space="preserve">
+    <value>सर्विस चार्ज डालें</value>
+    <comment>DealPopup</comment>
   </data>
 </root>

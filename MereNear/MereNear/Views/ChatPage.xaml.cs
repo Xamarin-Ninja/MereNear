@@ -1,4 +1,5 @@
-﻿using MereNear.Views.ViewCells;
+﻿using MereNear.Resources;
+using MereNear.Views.ViewCells;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
@@ -9,6 +10,11 @@ namespace MereNear.Views
         public ChatPage()
         {
             InitializeComponent();
+
+            dealButton.Text = AppResources.MakeDealButton;
+            reportButton.Text = AppResources.ReportButton;
+            locationButton.Text = AppResources.ShareLocationButton;
+            sendDealButton.Text = AppResources.PleaseSendDealButton;
             //var list = new List<ChatItem>() {
             //    new ChatItem(){
             //        SenderType = 2,

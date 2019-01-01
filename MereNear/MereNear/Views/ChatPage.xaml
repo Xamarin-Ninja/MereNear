@@ -60,11 +60,11 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0" Padding="0" BackgroundColor="White" Text="Share Location" WidthRequest="100" FontSize="8" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding ShareLocationCommand}"/>
-                <Button Grid.Row="1" Padding="0" BackgroundColor="White" Text="Report" WidthRequest="100" FontSize="8" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding ReportCommand}"/>
-                <Button Grid.Row="2" Padding="0" BackgroundColor="White" Text="Make A Deal" WidthRequest="100" FontSize="8" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding MakeDealCommand}"/>
+                <Button x:Name="locationButton" Grid.Row="0" Padding="0" BackgroundColor="White" WidthRequest="100" FontSize="8" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding ShareLocationCommand}"/>
+                <Button x:Name="reportButton" Grid.Row="1" Padding="0" BackgroundColor="White" WidthRequest="100" FontSize="8" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding ReportCommand}"/>
+                <Button x:Name="dealButton" Grid.Row="2" Padding="0" BackgroundColor="White" WidthRequest="100" FontSize="8" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="Center" Command="{Binding MakeDealCommand}"/>
             </Grid>
-            <Button Grid.Row="2" Padding="0" BackgroundColor="White" Text="Please send me the deal" IsVisible="{Binding IsSendDealMessageButtonVisible}" WidthRequest="150" HeightRequest="20" FontSize="10" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="End" Command="{Binding SendDealMessageCommand}"/>
+            <Button x:Name="sendDealButton" Grid.Row="2" Padding="0" BackgroundColor="White" IsVisible="{Binding IsSendDealMessageButtonVisible}" WidthRequest="150" HeightRequest="20" FontSize="10" TextColor="Black" CornerRadius="10" BorderColor="Black" BorderWidth="0.5" HorizontalOptions="Start" VerticalOptions="End" Command="{Binding SendDealMessageCommand}"/>
             <Grid Grid.Row="3" Padding="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>

@@ -32,18 +32,25 @@
                             </Grid.ColumnDefinitions>
                             <Label Text="Deal" Grid.Row="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="12" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                             <BoxView BackgroundColor="LightGray" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.ColumnSpan="3"/>
-                            <Label Text="You have recieved a deal about this job" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="12" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                            <Label Text="{Binding CurrencyType, Binding PurchaseAmount, StringFormat='Purchase cost: ({0}) {1}'}" Grid.Row="3" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                            <Label x:Name="recieverdealmessage" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="12" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                            
+                            <!--<Label Text="{Binding CurrencyType, Binding PurchaseAmount, StringFormat='Purchase cost: ({0}) {1}'}" Grid.Row="3" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                             <Label Text="{Binding CurrencyType, Binding ServiceAmount, StringFormat='Service charge: ({0}) {1}'}" Grid.Row="4" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                            <Label Text="{Binding CurrencyType, Binding SubtotalAmount, StringFormat='Sub Total: ({0}) {1}'}" Grid.Row="5" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                            <!--<Label Text="{Binding DealAmount}" Grid.Row="4" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>-->
-                            <Label Text="Vat 5%" Grid.Row="6" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                            <Label Text="{Binding CurrencyType, Binding SubtotalAmount, StringFormat='Sub Total: ({0}) {1}'}" Grid.Row="5" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>-->
+                            <Label x:Name="purchasecostdata" Grid.Row="3" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                            <Label x:Name="servicecostdata" Grid.Row="4" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                            <Label x:Name="subtotaldata" Grid.Row="5" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                                                        
+                            <Label x:Name="vatValue" Grid.Row="6" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                             <BoxView BackgroundColor="LightGray" Grid.Row="7" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.ColumnSpan="3"/>
-                            <Label Text="{Binding CurrencyType, Binding TotalAmout, StringFormat='Total: ({0}) {1}'}" FontAttributes="Bold" Grid.Row="8" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                            
+                            <!--<Label Text="{Binding CurrencyType, Binding TotalAmout, StringFormat='Total: ({0}) {1}'}" FontAttributes="Bold" Grid.Row="8" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>-->
+                            <Label x:Name="totaldata" FontAttributes="Bold" Grid.Row="8" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                                        
                             <BoxView BackgroundColor="LightGray" Grid.Row="9" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.ColumnSpan="3"/>
-                            <Label Text="Accept" Grid.Row="10" Grid.Column="0" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" TextColor="LightGreen" FontSize="12"/>
+                            <Label x:Name="acceptButton" Grid.Row="10" Grid.Column="0" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" TextColor="LightGreen" FontSize="12"/>
                             <BoxView BackgroundColor="LightGray" Grid.Row="10" Grid.Column="1" WidthRequest="1" HorizontalOptions="Fill" VerticalOptions="Fill"/>
-                            <Label Text="Decline" Grid.Row="10" Grid.Column="2" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Red" FontSize="12"/>
+                            <Label x:Name="declineButton" Grid.Row="10" Grid.Column="2" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Red" FontSize="12"/>
                         </Grid>
                     </Frame>
                 </Frame>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MereNear.Resources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,13 @@ namespace MereNear.Views.ViewCells
 		public SenderDealViewCell ()
 		{
 			InitializeComponent ();
-            purchasecostdata.Text = "Purchase cost: (USD) ";
-            servicecostdata.Text = "Service charge: (USD) ";
-            subtotaldata.Text = "Sub Total: (USD) ";
-            totaldata.Text = "Total: (USD) ()";
+
+            senderdealmessage.Text = AppResources.DealMessageSender;
+            vatValue.Text = AppResources.Vat + "5%";
+            purchasecostdata.Text = AppResources.DealPopupPurchase + " (USD)";
+            servicecostdata.Text = AppResources.ServiceCharge + " (USD)";
+            subtotaldata.Text = AppResources.SubTotal + " (USD) ";
+            totaldata.Text = AppResources.Total + " (USD) ()";
 		}
 	}
 }

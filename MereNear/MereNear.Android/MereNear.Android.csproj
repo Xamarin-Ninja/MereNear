@@ -98,6 +98,9 @@
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
       <Version>3.0.0.5</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugins.Notifier">
+      <Version>3.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
@@ -110,7 +113,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AndroidLocalization\LocaleService.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renderers\BaseEntryRenderer.cs" />
     <Compile Include="Renderers\CheckBoxRenderer.cs" />

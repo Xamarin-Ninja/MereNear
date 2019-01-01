@@ -250,11 +250,29 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have sent a deal about this job.
+        /// </summary>
+        public static string DealMessageSender {
+            get {
+                return ResourceManager.GetString("DealMessageSender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deal.
         /// </summary>
         public static string DealMessageTitle {
             get {
                 return ResourceManager.GetString("DealMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase cost:.
+        /// </summary>
+        public static string DealPopupPurchase {
+            get {
+                return ResourceManager.GetString("DealPopupPurchase", resourceCulture);
             }
         }
         
@@ -619,6 +637,15 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter purchase amount.
+        /// </summary>
+        public static string PurchaseAmountEntry {
+            get {
+                return ResourceManager.GetString("PurchaseAmountEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rate Us.
         /// </summary>
         public static string RateUsMenu {
@@ -664,6 +691,33 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Review.
+        /// </summary>
+        public static string ReviewButton {
+            get {
+                return ResourceManager.GetString("ReviewButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter comment.
+        /// </summary>
+        public static string ReviewPopupEditor {
+            get {
+                return ResourceManager.GetString("ReviewPopupEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Give Rating.
+        /// </summary>
+        public static string ReviewPopupTitle {
+            get {
+                return ResourceManager.GetString("ReviewPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Schedule your job.
         /// </summary>
         public static string ScheduleLabel {
@@ -673,11 +727,20 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service Charge.
+        ///   Looks up a localized string similar to Service Charge:.
         /// </summary>
         public static string ServiceCharge {
             get {
                 return ResourceManager.GetString("ServiceCharge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter service charge.
+        /// </summary>
+        public static string ServiceChargeEntry {
+            get {
+                return ResourceManager.GetString("ServiceChargeEntry", resourceCulture);
             }
         }
         
@@ -700,6 +763,15 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Submit.
         /// </summary>
         public static string SubmitButton {
@@ -709,7 +781,7 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sub Total.
+        ///   Looks up a localized string similar to Sub Total:.
         /// </summary>
         public static string SubTotal {
             get {
@@ -736,7 +808,7 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total.
+        ///   Looks up a localized string similar to Total:.
         /// </summary>
         public static string Total {
             get {
