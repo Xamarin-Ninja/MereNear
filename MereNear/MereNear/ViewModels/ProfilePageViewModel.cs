@@ -24,8 +24,6 @@ namespace MereNear.ViewModels
         private string _personMobileNumber;
         private string _certificationText = "GET CERTIFIED";
         #endregion
-                     
-        
         
         #region Public Variables
 
@@ -53,6 +51,16 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Command
+        public ICommand HeaderLeftIconCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    MessagingCenter.Send("HamburgurClick", "OpenMasterDetailPage");
+                });
+            }
+        }
 
         public ICommand GetCertifiedClicked
         {

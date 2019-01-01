@@ -17,6 +17,16 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Command
+        public ICommand HeaderLeftIconCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    MessagingCenter.Send("HamburgurClick", "OpenMasterDetailPage");
+                });
+            }
+        }
 
         public ICommand CloseCommand
         {
@@ -25,17 +35,6 @@ namespace MereNear.ViewModels
                 return new DelegateCommand(() =>
                 {
                     _navigationService.GoBackAsync();
-                });
-            }
-        }
-
-        public ICommand HeaderLeftIconCommand
-        {
-            get
-            {
-                return new DelegateCommand(() =>
-                {
-                    MessagingCenter.Send("HamburgurClick", "OpenMasterDetailPage");
                 });
             }
         }

@@ -1,6 +1,4 @@
-﻿using SignalR.ViewModels;
-using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace MereNear.Views.ViewCells
 {
@@ -26,11 +24,6 @@ namespace MereNear.Views.ViewCells
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-
-            //var messageVm = item as ChatMessageViewModel;
-            //if (messageVm == null)
-            //    return null;
-            //return messageVm.IsMine == true ? this.outgoingDataTemplate : this.incomingDataTemplate;
 
             var messageVm = item as ChatItem;
             if (messageVm == null)

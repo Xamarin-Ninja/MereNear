@@ -8,16 +8,21 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
 	public class MessagesPageViewModel : BaseViewModel
     {
+        #region Private Variables
         private readonly INavigationService _navigationService;
         private ObservableCollection<MessagesListItems> _personChatList = new ObservableCollection<MessagesListItems>();
         private string _personRoomName;
         private MessagesListItems _personChatListDetail;
+        #endregion
 
+        #region Public Variables
         public string PersonRoomName
         {
             get { return _personRoomName; }
@@ -65,14 +70,17 @@ namespace MereNear.ViewModels
                 }
             }
         }
+        #endregion
 
-
+        #region Constructor
         public MessagesPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
             GetPersonChatList();
         }
+        #endregion
 
+        #region Private/Public Methods
         private void GetPersonChatList()
         {
             PersonChatList.Add(new MessagesListItems { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit", Icon = "logo.png", Time = "01:40pm", Name = "Rahul", IsUnread = true});
@@ -85,5 +93,19 @@ namespace MereNear.ViewModels
             param.Add("SingleChatMessage", PersonChatListDetail);
             await _navigationService.NavigateAsync(nameof(ChatPage),param);
         }
+        #endregion
+
+        #region Command
+        public ICommand HeaderLeftIconCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    MessagingCenter.Send("HamburgurClick", "OpenMasterDetailPage");
+                });
+            }
+        }
+        #endregion
     }
 }

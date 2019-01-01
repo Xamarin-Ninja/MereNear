@@ -16,7 +16,6 @@ namespace MereNear.ViewModels
         #region Private Variable
         private readonly INavigationService _navigationService;
 
-        private string _currentNumberLabel;
         private bool _isPopupVisible;
 
         private string _mobileNumber;
@@ -27,12 +26,6 @@ namespace MereNear.ViewModels
         {
             get { return _mobileNumber; }
             set { SetProperty(ref _mobileNumber, value); }
-        }
-
-        private string CurrentNumberLabel
-        {
-            get { return _currentNumberLabel; }
-            set { SetProperty(ref _currentNumberLabel, value); }
         }
 
         public bool IsPopupVisible
@@ -108,7 +101,6 @@ namespace MereNear.ViewModels
         public ChangPhoneNumberViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            CurrentNumberLabel = AppResources.CurrentNumberLabel + "";
         }
         #endregion
     }

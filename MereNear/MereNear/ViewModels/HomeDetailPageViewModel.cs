@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MereNear.Model;
 using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Commands;
@@ -15,147 +16,59 @@ using Xamarin.Forms.Maps;
 
 namespace MereNear.ViewModels
 {
-	public class HomeDetailPageViewModel : BaseViewModel
+	public class HomeDetailPageViewModel : BaseViewModel, INavigationAware
     {
         #region Private Variables
         private readonly INavigationService _navigationService;
 
-        private Color _satelliteButtonColor = Color.Transparent;
-        private Color _satelliteButtonTextColor = Color.Gray;
+        private HomePageDataModel _detailedData = new HomePageDataModel();
 
-        private Color _mapButtonTextColor = Color.White;
-        private Color _mapButtonColor = Color.FromHex("#3498db");
-
-        private string _searchBarText;
+        private string _starRating1 = "star_active.png";
+        private string _starRating2 = "star_active.png";
+        private string _starRating3 = "star_active.png";
+        private string _starRating4 = "star.png";
+        private string _starRating5 = "star.png";
         #endregion
 
         #region Public Variables
-        public Color SatelliteButtonColor
+        public HomePageDataModel DetailedData
         {
-            get { return _satelliteButtonColor; }
-            set { SetProperty(ref _satelliteButtonColor, value); }
+            get { return _detailedData; }
+            set { SetProperty(ref _detailedData, value); }
+        }
+        
+        public string StarRating1
+        {
+            get { return _starRating1; }
+            set { SetProperty(ref _starRating1, value); }
         }
 
-        public Color SatelliteButtonTextColor
+        public string StarRating2
         {
-            get { return _satelliteButtonTextColor; }
-            set { SetProperty(ref _satelliteButtonTextColor, value); }
+            get { return _starRating2; }
+            set { SetProperty(ref _starRating2, value); }
         }
 
-        public Color MapButtonColor
+        public string StarRating3
         {
-            get { return _mapButtonColor; }
-            set { SetProperty(ref _mapButtonColor, value); }
+            get { return _starRating3; }
+            set { SetProperty(ref _starRating3, value); }
         }
 
-        public Color MapButtonTextColor
+        public string StarRating4
         {
-            get { return _mapButtonTextColor; }
-            set { SetProperty(ref _mapButtonTextColor, value); }
+            get { return _starRating4; }
+            set { SetProperty(ref _starRating4, value); }
         }
 
-        public string SearchBarText
+        public string StarRating5
         {
-            get { return _searchBarText; }
-            set { SetProperty(ref _searchBarText, value); }
+            get { return _starRating5; }
+            set { SetProperty(ref _starRating5, value); }
         }
         #endregion
 
         #region Command
-        public ICommand MapViewCommand
-        {
-            get
-            {
-                return new DelegateCommand(async () =>
-                {
-                    if (MapButtonColor != Color.FromHex("#3498db"))
-                    {
-                        MapButtonColor = Color.FromHex("#3498db");
-                        MapButtonTextColor = Color.White;
-                        SatelliteButtonColor = Color.Transparent;
-                        SatelliteButtonTextColor = Color.Gray;
-                        if(string.IsNullOrEmpty(SearchBarText) || string.IsNullOrWhiteSpace(SearchBarText))
-                        {
-                            MessagingCenter.Send("Standard","MapType");
-                        }
-                        else
-                        {
-                            Application.Current.Properties["MapType"] = "Standard";
-                            Geocoder gc = new Geocoder();
-                            IEnumerable<Position> result = await gc.GetPositionsForAddressAsync(SearchBarText);
-                            MessagingCenter.Send(result, "SearchBarWithMapView");
-                        }
-                    }
-                });
-            }
-        }
-
-        public ICommand SatelliteViewCommand
-        {
-            get
-            {
-                return new DelegateCommand(async () =>
-                {
-                    if (SatelliteButtonColor != Color.FromHex("#3498db"))
-                    {
-                        SatelliteButtonColor = Color.FromHex("#3498db");
-                        SatelliteButtonTextColor = Color.White;
-                        MapButtonColor = Color.Transparent;
-                        MapButtonTextColor = Color.Gray;
-                        if (string.IsNullOrEmpty(SearchBarText) || string.IsNullOrWhiteSpace(SearchBarText))
-                        {
-                            MessagingCenter.Send("Satellite", "MapType");
-                        }
-                        else
-                        {
-                            Application.Current.Properties["MapType"] = "Satellite";
-                            Geocoder gc = new Geocoder();
-                            IEnumerable<Position> result = await gc.GetPositionsForAddressAsync(SearchBarText);
-                            MessagingCenter.Send(result, "SearchBarWithMapView");
-                        }
-                    }
-                });
-            }
-        }
-
-        public ICommand SearchCommand
-        {
-            get
-            {
-                return new DelegateCommand(async () =>
-                {
-                    if (!string.IsNullOrEmpty(SearchBarText) || !string.IsNullOrWhiteSpace(SearchBarText))
-                    {
-                        Geocoder gc = new Geocoder();
-                        IEnumerable<Position> result = await gc.GetPositionsForAddressAsync(SearchBarText);
-                        MessagingCenter.Send(result, "SearchBarWithMapView");
-                    }
-                });
-            }
-        }
-
-        public ICommand SubmitCommand
-        {
-            get
-            {
-                return new DelegateCommand(async () =>
-                {
-                    try
-                    {
-                        UserDialogs.Instance.ShowLoading("Loading...");
-                        await Task.Delay(500);
-                        await _navigationService.NavigateAsync(nameof(PlumberDetail), null, null, true);
-                        UserDialogs.Instance.HideLoading();
-                    }
-                    catch (Exception ex)
-                    {
-                        UserDialogs.Instance.HideLoading();
-                        UserDialogs.Instance.Alert(ex.Message);
-                    }
-                });
-            }
-        }
-
         public ICommand CloseCommand
         {
             get
@@ -172,21 +85,32 @@ namespace MereNear.ViewModels
         public HomeDetailPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            //Application.Current.Properties["MapType"] = "Standard";
-            MessagingCenter.Subscribe<string>(this, "SearchBarKeyboard", async (sender) =>
-            {
-                if (!string.IsNullOrEmpty(SearchBarText) || !string.IsNullOrWhiteSpace(SearchBarText))
-                {
-                    Geocoder gc = new Geocoder();
-                    IEnumerable<Position> result = await gc.GetPositionsForAddressAsync(SearchBarText);
-                    MessagingCenter.Send(result, "SearchBarWithMapView");
-                }
-            });
         }
         #endregion
 
         #region Private Methods
-        
+
+        #endregion
+
+        #region Navigation Parameters
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            
+        }
+
+        public void OnNavigatingTo(INavigationParameters parameters)
+        {
+            if (parameters.ContainsKey("HomePageDetail"))
+            {
+                DetailedData = (HomePageDataModel)parameters["HomePageDetail"];
+                
+            }
+        }
         #endregion
     }
 }

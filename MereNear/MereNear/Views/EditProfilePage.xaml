@@ -16,7 +16,7 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <common:CustomHeader Grid.Row="0" TitleText="Edit Profile" RightIconImage="edit_profile.png"/>
+        <common:CustomHeader Grid.Row="0" TitleText="Edit Profile"/>
         <Image Source="profile_pic_icon.png" Grid.Row="1" HorizontalOptions="Center" />
 
         <Grid Grid.Row="2">

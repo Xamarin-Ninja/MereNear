@@ -20,22 +20,29 @@ namespace MereNear.Views
             InitializeComponent();
             ChooseLocationLabel.Text = AppResources.ChooseLocationLabel;
             NextButton.Text = AppResources.NextButton;
-            GetCurrentPosition();
-            customMap.PropertyChanged += async (object sender, System.ComponentModel.PropertyChangedEventArgs e) =>
+            try
             {
-                var m = (Map)sender;
-                if (m.VisibleRegion != null)
+                GetCurrentPosition();
+                customMap.PropertyChanged += async (object sender, System.ComponentModel.PropertyChangedEventArgs e) =>
                 {
+                    var m = (Map)sender;
+                    if (m.VisibleRegion != null)
+                    {
                     // Debug.WriteLine("Lat: " + m.VisibleRegion.Center.Latitude.ToString() + " Lon:" + m.VisibleRegion.Center.Longitude.ToString());
                     var pickedposition = m.VisibleRegion.Center;
-                    Geocoder gc = new Geocoder();
+                        Geocoder gc = new Geocoder();
 
-                    IEnumerable<string> pickedaddress = await gc.GetAddressesForPositionAsync(pickedposition);
+                        IEnumerable<string> pickedaddress = await gc.GetAddressesForPositionAsync(pickedposition);
 
-                    address = pickedaddress.First().ToString();
-                    MessagingCenter.Send(address, "LocationAddress", pickedposition);
-                }
-            };
+                        address = pickedaddress.First().ToString();
+                        MessagingCenter.Send(address, "LocationAddress", pickedposition);
+                    }
+                };
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private async void GetCurrentPosition()

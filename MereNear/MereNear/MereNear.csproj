@@ -26,10 +26,6 @@
     <None Remove="SignalR\Views\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="SignalR\ViewModels\LoginPageViewModel.cs" />
-    <Compile Remove="SignalR\ViewModels\MainPageViewModel.cs" />
-    <Compile Remove="SignalR\ViewModels\PersonListViewModel.cs" />
-    <Compile Remove="SignalR\ViewModels\ViewModelBase.cs" />
     <Compile Remove="Views\SignupPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -112,12 +108,6 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MyPostsDetail.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\NewView\HomePageListData.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\NewView\HomePageView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\NotificationsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -242,12 +232,6 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\MyPostsDetail.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\NewView\HomePageListData.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\NewView\HomePageView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\NotificationsPage.xaml">

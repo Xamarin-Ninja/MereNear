@@ -8,6 +8,7 @@
             NavigationPage.HasNavigationBar="False"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
+            BarBackgroundColor="White"
             android:TabbedPage.IsSwipePagingEnabled="False">
     <tabs:HomePage x:Name="HomeTab" Icon="home.png" />
     <!--<tabs:MyPosts x:Name="MyPostsTab" Icon="my_job.png" Title="MyPosts"/>-->

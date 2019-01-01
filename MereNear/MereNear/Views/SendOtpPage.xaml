@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-                 prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:common="clr-namespace:MereNear.Views.Common"
+             prism:ViewModelLocator.AutowireViewModel="True"
                  x:Class="MereNear.Views.SendOtpPage" NavigationPage.HasNavigationBar="False">
     <Grid Padding="20" BackgroundColor="White">
         <Grid.RowDefinitions>
@@ -20,11 +21,12 @@
             <ColumnDefinition Width="40"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Image Source="back_arrow.png" Grid.Row="0" HorizontalOptions="Start" Grid.ColumnSpan="5" VerticalOptions="Start" HeightRequest="20" WidthRequest="20">
+        <common:CustomHeader Grid.Row="0" Grid.ColumnSpan="5" TitleText="{Binding HeaderText}"/>
+        <!--<Image Source="back_arrow.png" Grid.Row="0" HorizontalOptions="Start" Grid.ColumnSpan="5" VerticalOptions="Start" HeightRequest="20" WidthRequest="20">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="BackIcon_Tapped"/>
             </Image.GestureRecognizers>
-        </Image>
+        </Image>-->
         <Label x:Name="MainLabel" Text="{Binding OTPMainLabel}" Grid.Row="1" Grid.ColumnSpan="5" FontSize="18" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
         <Entry x:Name="OTP1" Text="{Binding OTP1}" Placeholder="." Grid.Row="2" Grid.Column="0" ReturnType="Send" Keyboard="Numeric"  HorizontalOptions="Fill" VerticalOptions="Center" FontFamily="Poppins-Bold.ttf#Poppins Bold" PlaceholderColor="Gray" TextColor="Gray" MaxLength="1"/>
         <Entry x:Name="OTP2" Text="{Binding OTP2}" Placeholder="." Grid.Row="2" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Fill" VerticalOptions="Center" FontFamily="Poppins-Bold.ttf#Poppins Bold" PlaceholderColor="Gray" TextColor="Gray" MaxLength="1"/>

@@ -27,11 +27,11 @@
                     <TapGestureRecognizer Command="{Binding BackButtonCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
-            <Label Text="{Binding CurrentNumberLabel}" Grid.Row="1" Grid.ColumnSpan="2" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            <Label x:Name="existingNumber" TextColor="Black" Grid.Row="1" Grid.ColumnSpan="2" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
             <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="2" Grid.ColumnSpan="2"/>
             <Label x:Name="NewNumberLabel" Grid.Row="3" Style="{StaticResource BlackLabelBold}" Grid.ColumnSpan="2" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
             <Picker Title="+91" Grid.Row="4" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,0,6"/>
-            <Entry x:Name="MobileEntry" Text="{Binding MobileNumber}" Margin="0,1,0,0"  Grid.Row="4" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black"  MaxLength="10"/>
+            <Entry x:Name="MobileEntry" Text="{Binding MobileNumber}" Margin="0,1,0,0"  Grid.Row="4" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="FillAndExpand" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black"  MaxLength="10"/>
             <BoxView BackgroundColor="Gray" HeightRequest="1" Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start"/>
             <Label x:Name="NumberMakeSure" Grid.Row="6" Grid.ColumnSpan="2" FontSize="10" Style="{StaticResource GrayLabel}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
             <Button Margin="-20,0,-20,-20" Command="{Binding ContinueCommand}" x:Name="ContinueButton" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="7" Grid.ColumnSpan="2"/>

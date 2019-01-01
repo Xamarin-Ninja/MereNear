@@ -7,7 +7,6 @@ using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using SignalR.Interface;
-using SignalR.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -112,12 +111,6 @@ namespace MereNear.ViewModels
         #endregion
 
         #region ChatMsgViewModel
-        private ChatMessageViewModel _chatMessage;
-        public ChatMessageViewModel ChatMessage
-        {
-            get { return _chatMessage; }
-            set { SetProperty(ref _chatMessage, value); }
-        }
         private ObservableCollection<ChatItem> _messages = new ObservableCollection<ChatItem>();
         public ObservableCollection<ChatItem> Messages
         {
@@ -132,17 +125,6 @@ namespace MereNear.ViewModels
             get { return _myMessage; }
             set { SetProperty(ref _myMessage, value); }
         }
-
-
-        //private ObservableCollection<ChatMessageViewModel> _messages;
-
-        //public ObservableCollection<ChatMessageViewModel> Messages
-        //{
-        //    get { return _messages; }
-        //    set { SetProperty(ref _messages, value); }
-        //}
-
-
         #endregion
 
         #region Constructor
@@ -150,7 +132,6 @@ namespace MereNear.ViewModels
         {
             _navigationService = navigationService;
             _chatServices = DependencyService.Get<IChatServices>();
-            _chatMessage = new ChatMessageViewModel();
 
             currentuser = getString("LoginMobileNumber");
 
@@ -221,6 +202,17 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Command
+        public ICommand CloseCommand
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    await _navigationService.GoBackAsync();
+                });
+            }
+        }
+
         public ICommand SendCommand
         {
             get

@@ -46,9 +46,9 @@ namespace MereNear.Views
             //SenderImage.Source = messagesListItems.Icon;
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+        private void chatlistView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Navigation.PopAsync();
+            chatTemplate.SelectedItem = null;
         }
     }
 }

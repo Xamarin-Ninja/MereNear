@@ -1,4 +1,5 @@
-﻿using MereNear.Resources;
+﻿using MereNear.Interface;
+using MereNear.Resources;
 using System;
 using Xamarin.Forms;
 
@@ -25,6 +26,19 @@ namespace MereNear.Views
         {
             var newStep = Math.Round(e.NewValue / StepValue);
             DistanceValue.Text = newStep.ToString()+ " km";
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            var result = DependencyService.Get<ToastMessage>().Show("Press back to close application.");
+            if (!result)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

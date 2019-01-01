@@ -202,7 +202,7 @@
     <comment>HomeTabbedPage</comment>
   </data>
   <data name="OTPMainLabel" xml:space="preserve">
-    <value>कृपया प्रतीक्षा करें। हम स्वचालित रूप से OTP को सत्यापित करेंगे</value>
+    <value>आपके द्वारा प्राप्त ओटीपी दर्ज करें</value>
     <comment>OTPPage</comment>
   </data>
   <data name="OurPoliciesMenu" xml:space="preserve">

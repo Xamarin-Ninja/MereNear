@@ -1,4 +1,5 @@
 ﻿using MereNear.Resources;
+using MereNear.ViewModels.Common;
 using Xamarin.Forms;
 
 namespace MereNear.Views
@@ -8,6 +9,7 @@ namespace MereNear.Views
         public ChangPhoneNumber()
         {
             InitializeComponent();
+            existingNumber.Text = AppResources.CurrentNumberLabel + " " + BaseViewModel.getString("LoginMobileNumber");
             NewNumberLabel.Text = AppResources.NewNumberLabel;
             MobileEntry.Placeholder = AppResources.MobileEntryPlaceholder;
             NumberMakeSure.Text = AppResources.ChnageNumberSureLabel;

@@ -565,7 +565,7 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please wait. We will auto verify the OTP sent to +91-.
+        ///   Looks up a localized string similar to Enter OTP you recieved.
         /// </summary>
         public static string OTPMainLabel {
             get {

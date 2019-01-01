@@ -25,6 +25,7 @@ namespace MereNear.ViewModels
 
         private string _activationCode;
         private string _otpMainLabel;
+        private string _headerText="";
 
         private string _otp1;
         private string _otp2;
@@ -44,6 +45,12 @@ namespace MereNear.ViewModels
         {
             get { return _otpMainLabel; }
             set { SetProperty(ref _otpMainLabel, value); }
+        }
+
+        public string HeaderText
+        {
+            get { return _headerText; }
+            set { SetProperty(ref _headerText, value); }
         }
 
         public string OTP1
@@ -74,6 +81,17 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Command
+        public ICommand CloseCommand
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    await _navigationService.GoBackAsync();
+                });
+            }
+        }
+
         public ICommand SubmitCommand
         {
             get
@@ -143,12 +161,19 @@ namespace MereNear.ViewModels
         {
             if (parameters.ContainsKey("LoginPage"))
             {
-                OTPMainLabel = AppResources.OTPMainLabel + (string)parameters["LoginPage"];
+                var existingNumber = (string)parameters["LoginPage"];
+                setString("LoginMobileNumber", existingNumber);
+
+                OTPMainLabel = AppResources.OTPMainLabel;
                 lastNavigatedPage = "LoginPage";
             }
             if (parameters.ContainsKey("ChangeNumber"))
             {
-                OTPMainLabel = AppResources.VerifyNumberTitle + (string)parameters["ChangeNumber"];
+                var existingNumber = (string)parameters["ChangeNumber"];
+                setString("LoginMobileNumber", existingNumber);
+
+                OTPMainLabel = AppResources.OTPMainLabel;
+                HeaderText = AppResources.VerifyNumberTitle;
                 lastNavigatedPage = "ChangeNumber";
             }            
         }
@@ -160,7 +185,6 @@ namespace MereNear.ViewModels
             otpModel.MobileNumber = OTPMainLabel;
             otpModel.OTPNumber = ActivationCode;
             //var result = await _webApiRestClient.PostAsync<OTPModel, OTPResponse>("?func=otp", otpModel);
-            setString("LoginMobileNumber", OTPMainLabel);
             await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
         }
         #endregion

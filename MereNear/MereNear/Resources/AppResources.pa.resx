@@ -202,7 +202,7 @@
     <comment>HomeTabbedPage</comment>
   </data>
   <data name="OTPMainLabel" xml:space="preserve">
-    <value>ਕ੍ਰਿਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ. ਅਸੀਂ ਆਟੋਮੈਟਿਕਲੀ OTP ਦੀ ਪੁਸ਼ਟੀ ਕਰਾਂਗੇ.</value>
+    <value>ਤੁਸੀਂ ਪ੍ਰਾਪਤ ਕੀਤੀ OTP ਦਰਜ ਕਰੋ</value>
     <comment>OTPPage</comment>
   </data>
   <data name="OurPoliciesMenu" xml:space="preserve">

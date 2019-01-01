@@ -25,6 +25,8 @@ namespace MereNear.ViewModels
         #region Private Variables
         private readonly INavigationService _navigationService;
 
+        private MediaFile _mediaFile;
+
         private string _immediatelyRadioButtonImage = "checked_circle";
         private string _scheduleRadioButtonImage = "unchecked_circle";
         private bool _isScheduleSelected = false;
@@ -146,7 +148,7 @@ namespace MereNear.ViewModels
                             return;
                         }
 
-                        var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                        _mediaFile = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
                         {
                             Directory = "Profile Photo",
                             SaveToAlbum = true,
@@ -156,17 +158,19 @@ namespace MereNear.ViewModels
                         });
 
 
-                        if (file == null)
+                        if (_mediaFile == null)
                             return;
 
                         //await App.Current.MainPage.DisplayAlert("File Location", file.Path, "OK");
 
-                        CameraPicker = ImageSource.FromStream(() =>
-                         {
-                             var stream = file.GetStream();
-                             file.Dispose();
-                             return stream;
-                         });
+
+                        CameraPicker = _mediaFile.Path;
+                        //CameraPicker = ImageSource.FromStream(() =>
+                        // {
+                        //     var stream = _mediaFile.GetStream();
+                        //     _mediaFile.Dispose();
+                        //     return stream;
+                        // });
                     }
                     catch (Exception ex)
                     {
@@ -189,22 +193,23 @@ namespace MereNear.ViewModels
                             await App.Current.MainPage.DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
                             return;
                         }
-                        var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                        _mediaFile = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
                         {
                             PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
 
                         });
 
 
-                        if (file == null)
+                        if (_mediaFile == null)
                             return;
 
-                        ImagePicker = ImageSource.FromStream(() =>
-                        {
-                            var stream = file.GetStream();
-                            file.Dispose();
-                            return stream;
-                        });
+                        ImagePicker = _mediaFile.Path;
+                        //ImagePicker = ImageSource.FromStream(() =>
+                        //{
+                        //    var stream = _mediaFile.GetStream();
+                        //    _mediaFile.Dispose();
+                        //    return stream;
+                        //});
                     }
                     catch (Exception ex)
                     {

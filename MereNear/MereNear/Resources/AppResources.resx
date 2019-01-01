@@ -202,7 +202,7 @@
     <comment>HomeTabbedPage</comment>
   </data>
   <data name="OTPMainLabel" xml:space="preserve">
-    <value>Please wait. We will auto verify the OTP sent to +91-</value>
+    <value>Enter OTP you recieved</value>
     <comment>OTPPage</comment>
   </data>
   <data name="OurPoliciesMenu" xml:space="preserve">

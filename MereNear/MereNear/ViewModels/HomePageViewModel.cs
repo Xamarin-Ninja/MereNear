@@ -273,40 +273,18 @@ namespace MereNear.ViewModels
             }
         }
 
-        public ICommand InfoCommand
-        {
-            get
-            {
-                return new DelegateCommand(() =>
-                {
-                    MessagingCenter.Send("InfoTap", "InfoTap");
-                   
-                });
-            }
-        }
+        public ICommand InfoCommand { get; set; }
 
-        public ICommand InfoHideCommand
-        {
-            get
-            {
-                return new DelegateCommand(() =>
-                {
-                    MessagingCenter.Send("ButtonTap", "InfoTap");
-                    
-                });
-            }
-        }
-
-        public ICommand ContactWorkerCommand
-        {
-            get
-            {
-                return new DelegateCommand(() =>
-                {
-
-                });
-            }
-        }
+        //public ICommand InfoCommand
+        //{
+        //    get
+        //    {
+        //        return new DelegateCommand(async() =>
+        //        {
+        //            await _navigationService.NavigateAsync(nameof(HomeDetailPage));
+        //        });
+        //    }
+        //}
 
         public ICommand HeaderRightIconCommand
         {
@@ -334,50 +312,14 @@ namespace MereNear.ViewModels
             _navigationService = navigationService;
             _webApiRestClient = webApiRestClient;
 
-            //ClearTab();
-            //if(AppResources.Culture.Name == "pa")
-            //{
-            //    TitleText = Pa.HomePageTitle;
-            //}
-            //else if(AppResources.Culture.Name == "hi")
-            //{
-            //    TitleText = Hi.HomePageTitle;
-            //}
-            //else
-            //{
-            //    TitleText = En.HomePageTitle;
-            //}
+            InfoCommand = new Command(Info_Command);
+            
             TitleText = AppResources.MereNear;
             GetCategoryApi();
             GetWorkerData();
             WorkerDetail = CategoryDataList.ElementAt(0).WorkerInformation;
             WorkerName = CategoryDataList.ElementAt(0).WorkerName;
             WorkerCategoryName = CategoryDataList.ElementAt(0).WorkerName;
-            MessagingCenter.Subscribe<object>(this, "WorkerDetailPage", (sender) =>
-            {
-                var result = (HomePageModel)sender;
-                if (result.CategoryName == "Plumber")
-                {
-                    _navigationService.NavigateAsync("/NavigationPage/HomeDetailPage");
-                }
-            });
-
-            MessagingCenter.Subscribe<string>(this, "CardSwipe", (sender) =>
-            {
-
-                if (sender == "LeftSwipe")
-                {
-
-                }
-                else if(sender == "RightSwipe")
-                {
-
-                }
-                else
-                {
-
-                }
-            });
         }
         #endregion
 
@@ -456,6 +398,14 @@ namespace MereNear.ViewModels
                 CategoryDataList.Add(new HomePageDataModel { WorkerImage = "Image8.jpg", WorkerName = "Himanshu", WorkerCategory = "Mobile Repair", WorkerInformation = "8th card" });
            
 
+        }
+
+        private async void Info_Command(object obj)
+        {
+            var displayData = (HomePageDataModel)obj;
+            var param = new NavigationParameters();
+            param.Add("HomePageDetail", displayData);
+            await _navigationService.NavigateAsync(nameof(HomeDetailPage), param);
         }
         #endregion
 
