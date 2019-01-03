@@ -40,6 +40,7 @@ namespace MereNear.ViewModels
         private string _categoryName;
         private string _categoryWork;
         private string _locationAddress;
+        private string _dropLocationAddress;
 
         private bool _isPreviewVisible = false;
 
@@ -65,6 +66,11 @@ namespace MereNear.ViewModels
             get { return _locationAddress; }
             set { SetProperty(ref _locationAddress, value); }
         }
+        public string DropLocationAddress
+        {
+            get { return _dropLocationAddress; }
+            set { SetProperty(ref _dropLocationAddress, value); }
+        }
 
         public DateTime MinimumDate
         {
@@ -73,6 +79,7 @@ namespace MereNear.ViewModels
         }
 
         public Position LocationAddressPosition { get; set; }
+        public Position DropLocationAddressPosition { get; set; }
 
         public string CategoryName
         {
@@ -273,7 +280,7 @@ namespace MereNear.ViewModels
                 return new DelegateCommand(async() =>
                 {
                     JobModel.PostedDate = DateTime.Now.Date.ToString("dd/MM/yyyy");
-                    Application.Current.Properties["PostJobModel"] = JobModel;
+                    setPostData("PostJobModel", JobModel);
                     var param = new NavigationParameters();
                     param.Add("PostJobData", JobModel);
                     //await _navigationService.NavigateAsync("/NavigationPage/MyPosts", param);
@@ -290,6 +297,8 @@ namespace MereNear.ViewModels
                     JobModel.Image = "plumbing.png";
                     JobModel.Address = LocationAddress;
                     JobModel.AddressPosition = LocationAddressPosition;
+                    JobModel.DropAddress = DropLocationAddress;
+                    JobModel.DropAddressPosition = DropLocationAddressPosition;
                     JobModel.CategoryName = CategoryName;
                     JobModel.Description = Description;
                     JobModel.CategoryWork = CategoryWork;
@@ -369,15 +378,23 @@ namespace MereNear.ViewModels
         {
             if (parameters.ContainsKey("Address"))
             {
-                if (parameters.ContainsKey("Categoryname"))
-                {
-                    if (parameters.ContainsKey("AddressPosition"))
-                    {
-                        LocationAddress = (string)parameters["Address"];
-                        CategoryName = (string)parameters["Categoryname"];
-                        LocationAddressPosition = (Position)parameters["AddressPosition"];
-                    }
-                }
+                LocationAddress = (string)parameters["Address"];
+            }
+            if (parameters.ContainsKey("Categoryname"))
+            {
+                CategoryName = (string)parameters["Categoryname"];
+            }
+            if (parameters.ContainsKey("AddressPosition"))
+            {
+                LocationAddressPosition = (Position)parameters["AddressPosition"];
+            }
+            if (parameters.ContainsKey("DropAddress"))
+            {
+                DropLocationAddress = (string)parameters["DropAddress"];
+            }
+            if (parameters.ContainsKey("DropAddressPosition"))
+            {
+                DropLocationAddressPosition = (Position)parameters["DropAddressPosition"];
             }
         }
         #endregion

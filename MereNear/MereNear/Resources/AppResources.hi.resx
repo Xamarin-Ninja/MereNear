@@ -424,4 +424,8 @@
     <value>सर्विस चार्ज डालें</value>
     <comment>DealPopup</comment>
   </data>
+  <data name="DropLocationLabel" xml:space="preserve">
+    <value>ड्रॉप स्थान</value>
+    <comment>Pick Location Page</comment>
+  </data>
 </root>

@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Xamarin.Forms;
 
 namespace MereNear.Model
 {
-    public class HomePageModel
+    public class HomePageModel: INotifyPropertyChanged
     {
         public string category_id { get; set; }
 
@@ -14,6 +15,21 @@ namespace MereNear.Model
 
         [JsonProperty("image")]
         public string CategoryImage { get; set; }
+
+        public string AvailableServiceProvider { get; set; }
+        private Color _frameColor = Color.LightGray;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName]string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public Color FrameColor
+        {
+            get { return _frameColor; }
+            set { _frameColor = value; OnPropertyChanged("FrameColor"); }
+        }
     }
 
     public class GetCatApiModel

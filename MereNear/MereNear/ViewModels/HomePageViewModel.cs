@@ -415,6 +415,7 @@ namespace MereNear.ViewModels
             try
             {
                 var result = await _webApiRestClient.GetAsync<GetCatApiModel>("?func=getcat");
+                setData("CategoryListData", result);
                 ListWidth = App.ScreenWidth;
                 NewCategoryData = new ObservableCollection<HomePageModel>(result.data);
                 var item = new HomePageModel()

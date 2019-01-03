@@ -322,6 +322,15 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drop Location.
+        /// </summary>
+        public static string DropLocationLabel {
+            get {
+                return ResourceManager.GetString("DropLocationLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string EditButton {

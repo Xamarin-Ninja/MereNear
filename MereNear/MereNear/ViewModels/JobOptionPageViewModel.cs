@@ -25,7 +25,9 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(async () =>
                 {
-                    await _navigationService.NavigateAsync(nameof(PickLocationMapPage));
+                    var param = new NavigationParameters();
+                    param.Add("JobOptionPage", "JobOptionPage");
+                    await _navigationService.NavigateAsync(nameof(PickLocationMapPage),param);
                     
                 });
             }

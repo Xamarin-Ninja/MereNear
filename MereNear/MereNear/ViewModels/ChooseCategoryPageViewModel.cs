@@ -1,4 +1,5 @@
-﻿using MereNear.Resources;
+﻿using MereNear.Model;
+using MereNear.Resources;
 using MereNear.ViewModels.Common;
 using MereNear.Views;
 using Prism.Commands;
@@ -20,9 +21,9 @@ namespace MereNear.ViewModels
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
-        private ObservableCollection<CategoryListModel> _postJobcategory = new ObservableCollection<CategoryListModel>();
+        private ObservableCollection<HomePageModel> _postJobcategory = new ObservableCollection<HomePageModel>();
 
-        private CategoryListModel _selectedItemCommand;
+        private HomePageModel _selectedItemCommand;
         private string _customHeaderTitle;
         #endregion
 
@@ -37,7 +38,7 @@ namespace MereNear.ViewModels
         }
         public Position LocationAddressPosition { get; set; }
 
-        public CategoryListModel SelectedItemCommand
+        public HomePageModel SelectedItemCommand
         {
             get { return _selectedItemCommand; }
             set
@@ -54,7 +55,7 @@ namespace MereNear.ViewModels
             }
         }
 
-        public ObservableCollection<CategoryListModel> PostJobcategory
+        public ObservableCollection<HomePageModel> PostJobcategory
         {
             get { return _postJobcategory; }
             set { SetProperty(ref _postJobcategory, value); }
@@ -78,18 +79,26 @@ namespace MereNear.ViewModels
                 {
                     if (IsPostAJob)
                     {
-                        var data = (CategoryListModel)Application.Current.Properties["LastSelectedValue"];
+                        var data = (HomePageModel)Application.Current.Properties["LastSelectedValue"];
                         var param = new NavigationParameters();
                         param.Add("Address", LocationAddress);
-                        param.Add("Categoryname", data.ServiceCategoryName);
+                        param.Add("Categoryname", data.CategoryName);
                         param.Add("AddressPosition", LocationAddressPosition);
-                        await _navigationService.NavigateAsync(nameof(PostDescriptionPage),param);
+                        if (data.CategoryName == "Home Delivery")
+                        {
+                            param.Add("HomeDeliveryOption", "HomeDeliveryOption");
+                            await _navigationService.NavigateAsync(nameof(PickLocationMapPage), param);
+                        }
+                        else
+                        {
+                            await _navigationService.NavigateAsync(nameof(PostDescriptionPage), param);
+                        }
                     }
                     if(IsLookingForAJob)
                     {
-                        var data = (CategoryListModel)Application.Current.Properties["LastSelectedValue"];
+                        var data = (HomePageModel)Application.Current.Properties["LastSelectedValue"];
                         var param = new NavigationParameters();
-                        param.Add("Categoryname", data.ServiceCategoryName);
+                        param.Add("Categoryname", data.CategoryName);
                         await _navigationService.NavigateAsync(nameof(AllJobs), param);
                     }
 
@@ -112,16 +121,13 @@ namespace MereNear.ViewModels
         #region Private Methods
         private void GetData()
         {
-            for (int i = 0; i < 8; i++)
+            var categoryData = getData("CategoryListData");
+            foreach (var item in categoryData.data)
             {
-                PostJobcategory.Add(new CategoryListModel
-                {
-                    ServiceCategoryImage = "plumbing.png",
-                    ServiceCategoryName = "Plumber",
-                    AvailableServiceProvider = "10",
-                    FrameColor = Color.LightGray
-                });
+                item.AvailableServiceProvider = "10";
+                item.FrameColor = Color.LightGray;
             }
+            PostJobcategory = new ObservableCollection<HomePageModel>(categoryData.data);
         }
         #endregion
 
@@ -156,26 +162,4 @@ namespace MereNear.ViewModels
         }
         #endregion
     }
-
-    #region Models
-    public class CategoryListModel: INotifyPropertyChanged
-    {
-        public string ServiceCategoryImage { get; set; }
-        public string ServiceCategoryName { get; set; }
-        public string AvailableServiceProvider { get; set; }
-        private Color _frameColor = Color.LightGray;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public Color FrameColor
-        {
-            get { return _frameColor; }
-            set { _frameColor = value; OnPropertyChanged("FrameColor"); }
-        }
-    }
-    #endregion
 }

@@ -1,6 +1,5 @@
 ﻿using MereNear.Model;
 using MereNear.Resources;
-using MereNear.ViewModels;
 using Xamarin.Forms;
 
 namespace MereNear.Views
@@ -17,7 +16,7 @@ namespace MereNear.Views
 
         private void SelectedItemTap(object sender, ItemTappedEventArgs e)
         {
-            var a = (CategoryListModel)e.Item;
+            var a = (HomePageModel)e.Item;
             a.FrameColor = Color.LightGreen;
             Application.Current.Properties["LastSelectedValue"] = a;
             NextButton.IsVisible = true;

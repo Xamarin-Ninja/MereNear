@@ -77,7 +77,7 @@ namespace MereNear.ViewModels
             set { SetProperty(ref _otp4, value); }
         }
 
-        public OTPModel otpModel = new OTPModel();
+        //public OTPModel otpModel = new OTPModel();
         #endregion
 
         #region Command
@@ -182,8 +182,8 @@ namespace MereNear.ViewModels
         #region API Methods
         private async void CallOTPApi()
         {
-            otpModel.MobileNumber = OTPMainLabel;
-            otpModel.OTPNumber = ActivationCode;
+            //otpModel.MobileNumber = OTPMainLabel;
+            //otpModel.OTPNumber = ActivationCode;
             //var result = await _webApiRestClient.PostAsync<OTPModel, OTPResponse>("?func=otp", otpModel);
             await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
         }

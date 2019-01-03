@@ -8,16 +8,7 @@ namespace MereNear.Views
         {
             InitializeComponent();
         }
-        private void BackIcon_Tapped(object sender, System.EventArgs e)
-        {
-            Navigation.PopAsync();
-        }
-
-        private void SubmitButton_Clicked(object sender, System.EventArgs e)
-        {
-            //Navigation.PushAsync(new HomeTabbedPage());
-        }
-
+        
         //private void OTP1TextChange(object sender, TextChangedEventArgs e)
         //{
         //    OTP2.Focus();

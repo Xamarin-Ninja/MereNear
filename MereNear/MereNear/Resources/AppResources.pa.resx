@@ -424,4 +424,8 @@
     <value>ਸਰਵਿਸ ਚਾਰਜ ਦਾਖਲ ਕਰੋ</value>
     <comment>DealPopup</comment>
   </data>
+  <data name="DropLocationLabel" xml:space="preserve">
+    <value>ਸਥਾਨ ਡ੍ਰੌਪ ਕਰੋ</value>
+    <comment>Pick Location Page</comment>
+  </data>
 </root>

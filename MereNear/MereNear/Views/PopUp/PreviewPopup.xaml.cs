@@ -31,7 +31,7 @@ namespace MereNear.Views.PopUp
                 description.Text = sender.Description;
                 jobTitle.Text = sender.CategoryWork;
                 needService.Text = sender.Date;
-                address.Text = sender.Address;
+                //address.Text = sender.Address;
             });
 		}
 	}

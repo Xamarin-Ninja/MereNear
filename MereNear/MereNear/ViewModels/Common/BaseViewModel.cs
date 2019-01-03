@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using MereNear.Model;
+using Prism.Mvvm;
 using SignalR.Interface;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,44 @@ namespace MereNear.ViewModels.Common
         {
             Application.Current.Properties[key] = value;
             Application.Current.SavePropertiesAsync();
+        }
+
+        public static void setData(String key, GetCatApiModel value)
+        {
+            Application.Current.Properties[key] = value;
+            Application.Current.SavePropertiesAsync();
+        }
+
+        public static GetCatApiModel getData(String key)
+        {
+
+            if (Application.Current.Properties.ContainsKey(key))
+            {
+                return (GetCatApiModel)(Application.Current.Properties[key]);
+            }
+            else
+            {
+                return default(GetCatApiModel);
+            }
+        }
+
+        public static void setPostData(String key, PostJobModel value)
+        {
+            Application.Current.Properties[key] = value;
+            Application.Current.SavePropertiesAsync();
+        }
+
+        public static PostJobModel getPostData(String key)
+        {
+
+            if (Application.Current.Properties.ContainsKey(key))
+            {
+                return (PostJobModel)(Application.Current.Properties[key]);
+            }
+            else
+            {
+                return default(PostJobModel);
+            }
         }
 
         public static bool getBool(String key)

@@ -11,6 +11,10 @@ namespace MereNear.Model
 
         public Position AddressPosition { get; set; }
 
+        public string DropAddress { get; set; }
+
+        public Position DropAddressPosition { get; set; }
+
         public string CategoryName { get; set; }
 
         public string CategoryWork { get; set; }
