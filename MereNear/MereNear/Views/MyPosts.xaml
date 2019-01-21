@@ -10,7 +10,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <common:CustomHeader_Hamburger Grid.Row="0" x:Name="Myposttitle"/>
+        <common:CustomHeader_Hamburger HeaderLeftIcon="menu.png" Grid.Row="0" x:Name="Myposttitle"/>
         <ListView x:Name="postListItems" ItemsSource="{Binding MyPostItems}" Grid.Row="1"
               SelectedItem="{Binding SelectedPost}"
                  RowHeight="130"

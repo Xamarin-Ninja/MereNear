@@ -1,10 +1,12 @@
 ﻿using Acr.UserDialogs;
+using CoreGraphics;
 using Foundation;
 using MereNear.Interface;
 using Prism;
 using Prism.Ioc;
 using UIKit;
 using Xamarin;
+using Xamarin.Forms;
 
 namespace MereNear.iOS
 {
@@ -29,9 +31,9 @@ namespace MereNear.iOS
             /*Screen height and width */
             App.ScreenHeight = (int)UIScreen.MainScreen.Bounds.Height;
             App.ScreenWidth = (int)UIScreen.MainScreen.Bounds.Width;
-
+            UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(111, 218, 68);
             LoadApplication(new App(new iOSInitializer()));
-
+           
             return base.FinishedLaunching(app, options);
         }
     }

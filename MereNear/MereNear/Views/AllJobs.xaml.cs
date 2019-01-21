@@ -1,5 +1,6 @@
 ﻿using MereNear.Resources;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -14,6 +15,13 @@ namespace MereNear.Views
         private void jobListItems_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             jobListItems.SelectedItem = null;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
         }
     }
 }

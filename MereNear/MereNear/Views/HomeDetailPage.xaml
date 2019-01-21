@@ -5,7 +5,8 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MereNear.Views.HomeDetailPage" NavigationPage.HasNavigationBar="False"
              xmlns:common="clr-namespace:MereNear.Views.Common"
-             xmlns:customcontrol="clr-namespace:MereNear.CustomControl">
+             xmlns:customcontrol="clr-namespace:MereNear.CustomControl"
+             xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -14,7 +15,14 @@
         </Grid.RowDefinitions>
         <common:CustomHeader Grid.Row="0" TitleText="Plumber"/>
         <Grid Grid.Row="1">
-            <Image Source="{Binding DetailedData.WorkerImage}" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+            <control:CarouselView ItemsSource="{Binding MyDataSource}" Position="{Binding Position, Mode=TwoWay}">
+                <control:CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding showcaseImage}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" />
+                    </DataTemplate>
+                </control:CarouselView.ItemTemplate>
+            </control:CarouselView>
+            <customcontrol:CarouselIndicators IndicatorHeight="16" ItemsSource="{Binding MyDataSource}" IndicatorWidth="16" UnselectedIndicator="unselected_circle.png" SelectedIndicator="selected_circle.png" Position="{Binding Position}"/>
         </Grid>
         <Grid Grid.Row="2" Padding="10">
             <Grid.RowDefinitions>

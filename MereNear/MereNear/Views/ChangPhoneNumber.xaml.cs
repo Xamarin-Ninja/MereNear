@@ -1,6 +1,7 @@
 ﻿using MereNear.Resources;
 using MereNear.ViewModels.Common;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -14,6 +15,13 @@ namespace MereNear.Views
             MobileEntry.Placeholder = AppResources.MobileEntryPlaceholder;
             NumberMakeSure.Text = AppResources.ChnageNumberSureLabel;
             ContinueButton.Text = AppResources.ContinueButton;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
         }
     }
 }

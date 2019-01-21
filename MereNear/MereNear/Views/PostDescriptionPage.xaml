@@ -77,14 +77,14 @@
 
                 <Label x:Name="AddphotosLabel" FontFamily="Poppins-Regular.ttf#Poppins Regular" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Start" FontSize="14"/>
 
-                <Image x:Name="cameraPicker" Source="{Binding CameraPicker}" Grid.Row="7" Grid.Column="0" Aspect="AspectFill" HeightRequest="70">
+                <Image x:Name="cameraPicker" Source="{Binding ImagePicker1}" Grid.Row="7" Grid.Column="0" Aspect="AspectFill" HeightRequest="70">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding CameraPickerCommand}"/>
+                        <TapGestureRecognizer Command="{Binding ImageUploadCommand1}"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="imagePicker" Source="{Binding ImagePicker}" Grid.Row="7" Grid.Column="1" Aspect="AspectFill" HeightRequest="70">
+                <Image x:Name="imagePicker" Source="{Binding ImagePicker2}" Grid.Row="7" Grid.Column="1" Aspect="AspectFill" HeightRequest="70">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ImagePickerCommand}"/>
+                        <TapGestureRecognizer Command="{Binding ImageUploadCommand2}"/>
                     </Image.GestureRecognizers>
                 </Image>
 

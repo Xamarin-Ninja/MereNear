@@ -1,6 +1,7 @@
 ﻿using MereNear.Model;
 using MereNear.Resources;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -18,8 +19,15 @@ namespace MereNear.Views
         {
             var a = (HomePageModel)e.Item;
             a.FrameColor = Color.LightGreen;
-            Application.Current.Properties["LastSelectedValue"] = a;
+            Xamarin.Forms.Application.Current.Properties["LastSelectedValue"] = a;
             NextButton.IsVisible = true;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MereNear.Resources;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -19,6 +20,13 @@ namespace MereNear.Views
             //var item = (MessagesListItems)e.SelectedItem;
             //Navigation.PushAsync(new ChatPage(item));
             MesagesList.SelectedItem = null;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
         }
     }
     public class MessagesListItems

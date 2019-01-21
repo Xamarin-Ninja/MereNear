@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -8,7 +9,7 @@ namespace MereNear.Views
         {
             InitializeComponent();
         }
-        
+
         //private void OTP1TextChange(object sender, TextChangedEventArgs e)
         //{
         //    OTP2.Focus();
@@ -29,5 +30,12 @@ namespace MereNear.Views
         //    OTP4.Unfocus();
         //    //MessagingCenter.Send("OTPAutoFillComplete", "OTPAutoFillComplete");
         //}
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
+        }
     }
 }

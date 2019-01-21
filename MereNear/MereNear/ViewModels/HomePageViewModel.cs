@@ -61,7 +61,7 @@ namespace MereNear.ViewModels
 
         private string _titleText;
         private string _headerLeft2ndIcon;
-
+        
         #region HomePageView Data
         private bool _isInfoVisible = true;
 
@@ -273,6 +273,8 @@ namespace MereNear.ViewModels
             }
         }
 
+        public ICommand HomePageCategorySelectedCommand { get; set; }
+
         public ICommand InfoCommand { get; set; }
 
         //public ICommand InfoCommand
@@ -309,17 +311,40 @@ namespace MereNear.ViewModels
         #region Constructor
         public HomePageViewModel(INavigationService navigationService, IWebApiRestClient webApiRestClient)
         {
-            _navigationService = navigationService;
-            _webApiRestClient = webApiRestClient;
+            try
+            {
+                _navigationService = navigationService;
+                _webApiRestClient = webApiRestClient;
+                HomePageCategorySelectedCommand = new Command(Categry_sel);
+                InfoCommand = new Command(Info_Command);
 
-            InfoCommand = new Command(Info_Command);
-            
-            TitleText = AppResources.MereNear;
-            GetCategoryApi();
-            GetWorkerData();
-            WorkerDetail = CategoryDataList.ElementAt(0).WorkerInformation;
-            WorkerName = CategoryDataList.ElementAt(0).WorkerName;
-            WorkerCategoryName = CategoryDataList.ElementAt(0).WorkerName;
+                TitleText = AppResources.MereNear;
+                GetCategoryApi();
+                GetWorkerData();
+                WorkerDetail = CategoryDataList.ElementAt(0).WorkerInformation;
+                WorkerName = CategoryDataList.ElementAt(0).WorkerName;
+                WorkerCategoryName = CategoryDataList.ElementAt(0).WorkerName;
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void Categry_sel(object sender)
+        {
+            var data = (HomePageModel)sender;
+            if (Application.Current.Properties.ContainsKey("PreviousSelectedValue"))
+            {
+                var previousData = (HomePageModel)Application.Current.Properties["PreviousSelectedValue"];
+                previousData.CategorySelected = false;
+                data.CategorySelected = true;
+                Application.Current.Properties["PreviousSelectedValue"] = data;
+            }
+            else
+            {
+                data.CategorySelected = true;
+                Application.Current.Properties["PreviousSelectedValue"] = data;
+            }
         }
         #endregion
 
@@ -414,15 +439,17 @@ namespace MereNear.ViewModels
         {
             try
             {
-                var result = await _webApiRestClient.GetAsync<GetCatApiModel>("?func=getcat");
+                var result = await _webApiRestClient.GetAsync<GetCatApiModel>("getCat");
                 setData("CategoryListData", result);
                 ListWidth = App.ScreenWidth;
                 NewCategoryData = new ObservableCollection<HomePageModel>(result.data);
                 var item = new HomePageModel()
                 {
                     CategoryName = "All",
-                    CategoryImage = "logo.png"
+                    CategoryImage = "logo.png",
+                    CategorySelected = true
                 };
+                Application.Current.Properties["PreviousSelectedValue"] = item;
                 NewCategoryData.Insert(0, item);
             }
             catch (Exception ex)

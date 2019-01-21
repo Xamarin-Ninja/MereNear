@@ -47,7 +47,13 @@ namespace MereNear.ViewModels
 
         public MyJobsViewModel(INavigationService navigationService)
         {
-            _navigationService = navigationService;
+            try
+            {
+                _navigationService = navigationService;
+            }
+            catch (Exception)
+            {
+            }
             //MyjobItems.Add(myJobDetail);
         }
 

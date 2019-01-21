@@ -10,9 +10,9 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <common:CustomHeader_Hamburger Grid.Row="0" x:Name="PolicyTitle"/>
+        <common:CustomHeader_Hamburger HeaderLeftIcon="menu.png" Grid.Row="0" x:Name="PolicyTitle"/>
         <ScrollView Grid.Row="1">
-            <Grid Padding="5" RowSpacing="10" >
+            <!--<Grid Padding="5" RowSpacing="10" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="Auto"/>
@@ -28,7 +28,8 @@
                 <Label Text="Privacy Policy" Grid.Row="4" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold"/>
                 <Label  Grid.Row="5" TextColor="Gray" FontSize="15" FontFamily="Poppins-Regular.ttf#Poppins Regular" Text="At QServices Inc. we are committed to safeguarding and preserving the privacy of our visitors. The data is gathered under two stages by QSI. The individual and contact data is asked by people contacting us via our hire-us form. This information is used to analyze the the demand of the prospect and to get in touch with them back. Upon the beginning of a project, some other information in regarding the project specifics and payments is exchanged with the customer. This information is never imparted with any outsider under any conditions. The information we gather is used exclusively for the purpose of contacting the clients and providing them with a hospitable and quick service."/>
 
-            </Grid>
+            </Grid>-->
+            <WebView Source="https://qservicesit.net/" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
         </ScrollView>
     </Grid>
 </ContentPage>

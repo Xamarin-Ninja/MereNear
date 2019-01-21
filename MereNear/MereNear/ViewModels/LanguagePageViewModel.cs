@@ -1,11 +1,14 @@
 ﻿using Acr.UserDialogs;
+using LiteDB;
+using LiteDB.LanguageModelDB;
 using MereNear.Model;
 using MereNear.ViewModels.Common;
 using MereNear.Views;
-using Prism.Mvvm;
+using System.Linq;
 using Prism.Navigation;
 using System;
 using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
@@ -13,11 +16,12 @@ namespace MereNear.ViewModels
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
+        private readonly ILanguageDBService languageDBService;
 
         private LanguageModel _languageSelected;
         private ObservableCollection<LanguageModel> _languagePicker = new ObservableCollection<LanguageModel>();
         #endregion
-
+        LiteDatabase _dataBase;
         #region Public Variable
         public string lastnavigatedpage { get; set; }
         public LanguageModel LanguageSelected
@@ -26,22 +30,50 @@ namespace MereNear.ViewModels
             set
             {
                 SetProperty(ref _languageSelected, value);
-                if(LanguageSelected == null)
+                if (LanguageSelected == null)
                 {
                     return;
                 }
                 else
                 {
-                    var language = LanguageSelected;
-                    setString("AppLanguage", language.ShortName);
-                    App.Setlanguage(language.ShortName);
                     try
                     {
-                        GoToHomePage();                        
+                        var IsLanguageDBExist = languageDBService.IsLanguageDbPresentInDB();
+                        if (IsLanguageDBExist)
+                        {
+                            var existinglanguage = languageDBService.ReadAllItems();
+                            BsonValue bsonid = existinglanguage.First().ID;
+                            languageDBService.UpdateLanguageModelInDb(bsonid,LanguageSelected);
+                        }
+                        else
+                        {
+                            languageDBService.CreateLanguageModelInDB(LanguageSelected);
+                        }
+
+                        //_dataBase = new LiteDatabase(DependencyService.Get<Interface.IDataBase>().GetFilePath("Users.db"));
+                        //language = _dataBase.GetCollection<User>();
+
+
+                        //User lang = new User
+                        //{
+                        //    Language = LanguageSelected.ShortName
+
+                        //};
+                        App.Setlanguage(LanguageSelected.ShortName);
+                        //setString("AppLanguage", LanguageSelected.ShortName);
+                        //language.Update(lang);
+                        try
+                        {
+                            GoToHomePage();
+                        }
+                        catch (Exception ex)
+                        {
+                            var msg = ex.Message;
+                        }
                     }
                     catch (Exception ex)
                     {
-                        var msg = ex.Message;
+                        App.Current.MainPage.DisplayAlert("Exception", ex.Message, "Ok");
                     }
                 }
             }
@@ -56,6 +88,7 @@ namespace MereNear.ViewModels
         public LanguagePageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+            languageDBService = DependencyService.Get<ILanguageDBService>();
             //GetLanguages();
         }
         #endregion

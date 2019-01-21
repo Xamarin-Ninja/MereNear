@@ -15,6 +15,13 @@ using MereNear.ViewModels.Common;
 using Plugin.Multilingual;
 using MereNear.Resources;
 using System.Globalization;
+using LiteDB;
+using MereNear.Model;
+using System.Linq;
+using MereNear.Interface;
+using LiteDB.LanguageModelDB;
+using System.Collections.Generic;
+using LiteDB.UserModelDB;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MereNear
@@ -28,13 +35,21 @@ namespace MereNear
          */
         public static int ScreenHeight { get; set; }
         public static int ScreenWidth { get; set; }
-
+        private ILanguageDBService languageDBService;
+        private IUserDBService userDBService;
+        public bool a;
+        public string shortname { get; set; }
+        LiteDatabase _dataBase;
+        LiteDatabase _dataBase2;
+        LiteCollection<LanguageModel> Language;
         public App() : this(null)
         {
+            
         }
         
         public App(IPlatformInitializer initializer) : base(initializer)
         {
+            
         }
 
         #region SignalR Chat Implement Part 1
@@ -54,7 +69,8 @@ namespace MereNear
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
+            languageDBService = DependencyService.Get<ILanguageDBService>();
+            userDBService = DependencyService.Get<IUserDBService>();
             #region Check Network Connection
             var seconds = TimeSpan.FromSeconds(1);
             Device.StartTimer(seconds,()=>
@@ -71,25 +87,80 @@ namespace MereNear
 
             FlowListView.Init();
             
-            var languageexist = BaseViewModel.getString("AppLanguage");
-            var useralreadylogin = BaseViewModel.getString("LoginMobileNumber");
+            
+            //if (string.IsNullOrEmpty(useralreadylogin) || string.IsNullOrWhiteSpace(useralreadylogin))
+            //{
+            //    if (string.IsNullOrEmpty(languageexist) || string.IsNullOrWhiteSpace(languageexist))
+            //    {
+            //        await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
+            //    }
+            //    else
+            //    {
+            //        await NavigationService.NavigateAsync("NavigationPage/Login_Page");
+            //    }
+            //}
+            //else
+            //{
+            //    await NavigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
+            //}
 
-            Setlanguage(languageexist);
-
-            if (string.IsNullOrEmpty(useralreadylogin) || string.IsNullOrWhiteSpace(useralreadylogin))
+            //try
+            //{
+            //    _dataBase = new LiteDatabase(DependencyService.Get<IDataBase>().GetFilePath("Users.db"));
+            //    Users = _dataBase.GetCollection<User>();
+            //    if (Users.Count() > 0)
+            //    {
+            //        var user = Users.FindAll().FirstOrDefault(x => x.Name == "Pardeep");
+            //        var lang = Users.FindAll().FirstOrDefault(x => x.Language != null);
+            //        if (lang !=null)
+            //        {
+            //            if (user!=null)
+            //            {
+            //                await NavigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute)); 
+            //            }
+            //            else
+            //            {
+            //                await NavigationService.NavigateAsync("NavigationPage/Login_Page");
+            //            }
+            //        }
+            //        else
+            //        {
+            //            await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    a = true;
+            //}
+            try
             {
-                if (string.IsNullOrEmpty(languageexist) || string.IsNullOrWhiteSpace(languageexist))
+                var IsLanguageDBExist = languageDBService.IsLanguageDbPresentInDB();
+                var IsUserDBExist = userDBService.IsUserDbPresentInDB();
+                if (IsLanguageDBExist)
                 {
-                    await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
+                    IEnumerable<LanguageModel> lang = languageDBService.ReadAllItems();
+                    Setlanguage(lang.First().ShortName);
+                    if (IsUserDBExist)
+                    {
+                        await NavigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
+                    }
+                    else
+                    {
+                        await NavigationService.NavigateAsync("NavigationPage/Login_Page");
+                    }
                 }
                 else
                 {
-                    await NavigationService.NavigateAsync("NavigationPage/Login_Page");
+                    await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
                 }
             }
-            else
+            catch(Exception ex)
             {
-                await NavigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
             }
         }
 
@@ -116,12 +187,9 @@ namespace MereNear
             containerRegistry.RegisterForNavigation<SendOtpPage, SendOtpPageViewModel>();
             containerRegistry.RegisterForNavigation<TermConditionPage, TermConditionPageViewModel>();
             containerRegistry.RegisterForNavigation<AboutPage, AboutPageViewModel>();
-            containerRegistry.RegisterForNavigation<PostPage, PostPageViewModel>();
             containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();
-            containerRegistry.RegisterForNavigation<RequestRecieved, RequestRecievedViewModel>();
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<HomeDetailPage, HomeDetailPageViewModel>();
-            containerRegistry.RegisterForNavigation<PlumberDetail, PlumberDetailViewModel>();
             containerRegistry.RegisterForNavigation<MasterPage, MasterPageViewModel>();
             containerRegistry.RegisterForNavigation<HomeTabbedPage, HomeTabbedPageViewModel>();
             containerRegistry.RegisterForNavigation<Login_Page, LoginMobilePageViewModel>();

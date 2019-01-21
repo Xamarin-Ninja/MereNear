@@ -17,20 +17,29 @@
             <!--<RowDefinition Height="100"/>-->
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" RowSpacing="0" HeightRequest="50" IsVisible="{Binding IsInfoIconVisible}">
-            <common:CustomHeader_Hamburger TitleText="{Binding TitleText}" RightIconImage="send_icon.png"/>
+            <common:CustomHeader_Hamburger HeaderLeftIcon="menu.png" TitleText="{Binding TitleText}" RightIconImage="send_icon.png"/>
         </Grid>
         <Grid Grid.Row="1" RowSpacing="0" HeightRequest="100" IsVisible="{Binding IsInfoIconVisible}">
             <ScrollView Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" HorizontalScrollBarVisibility="Never">
-                <Controls:HorizontalListView ItemsSource="{Binding NewCategoryData}">
+                <Controls:HorizontalListView x:Name="horizontalListView" ItemsSource="{Binding NewCategoryData}">
                     <Controls:HorizontalListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Margin="5,0">
+                            <Grid Margin="5,0" x:Name="Item">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <img:CircleImage Grid.Row="0" Source="{Binding CategoryImage}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BorderColor="LightGreen" BorderThickness="0.5" HeightRequest="55" WidthRequest="55" Aspect="AspectFill"/>
-                                <Label Grid.Row="1" Text="{Binding CategoryName}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="11" LineBreakMode="WordWrap"/>
+                                        <RowDefinition Height="55" />
+                                        <RowDefinition Height="Auto" />
+                                 </Grid.RowDefinitions>
+                                <img:CircleImage Grid.Row="0" Source="{Binding CategoryImage}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BorderColor="LightGreen" BorderThickness="0.5" HeightRequest="55" WidthRequest="55" Aspect="AspectFill">
+                                    <img:CircleImage.GestureRecognizers>
+                                        <TapGestureRecognizer BindingContext="{Binding Source={x:Reference horizontalListView}, Path=BindingContext}" CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}" Command="{Binding HomePageCategorySelectedCommand}"/>
+                                    </img:CircleImage.GestureRecognizers>
+                                </img:CircleImage>
+                                <Image Source="category_check.png" Grid.Row="0" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="End" IsVisible="{Binding CategorySelected}"/>
+                                <Label Grid.Row="1" Text="{Binding CategoryName}" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="11" LineBreakMode="WordWrap">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer BindingContext="{Binding Source={x:Reference horizontalListView}, Path=BindingContext}" CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}" Command="{Binding HomePageCategorySelectedCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
                             </Grid>
                         </DataTemplate>
                     </Controls:HorizontalListView.ItemTemplate>

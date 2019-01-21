@@ -8,12 +8,11 @@
             NavigationPage.HasNavigationBar="False"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            BarBackgroundColor="White"
             android:TabbedPage.IsSwipePagingEnabled="False">
-    <tabs:HomePage x:Name="HomeTab" Icon="home.png" />
+    <tabs:HomePage x:Name="HomeTab" Icon="home.png" Padding="0,10,0,0" />
     <!--<tabs:MyPosts x:Name="MyPostsTab" Icon="my_job.png" Title="MyPosts"/>-->
-    <tabs:MyJobs x:Name="MyJobsTab" Icon="my_job.png"/>
-    <tabs:NotificationsPage x:Name="NotificationTab" Icon="notification.png" />
-    <tabs:MessagesPage x:Name="MessageTab" Icon="message.png" />
-    <tabs:ProfilePage x:Name="ProfileTab" Icon="profile.png"/>
+    <tabs:MyJobs x:Name="MyJobsTab" Icon="my_job.png" Padding="0,10,0,0"/>
+    <tabs:NotificationsPage x:Name="NotificationTab" Icon="notification.png" Padding="0,10,0,0" />
+    <tabs:MessagesPage x:Name="MessageTab" Icon="message.png" Padding="0,10,0,0"/>
+    <tabs:ProfilePage x:Name="ProfileTab" Icon="profile.png" Padding="0,10,0,0"/>
 </TabbedPage>

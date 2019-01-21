@@ -15,7 +15,7 @@ using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class ProfilePageViewModel : BaseViewModel
+	public class ProfilePageViewModel : BaseViewModel, INavigationAware
     {
         #region Private Variables
         private readonly INavigationService _navigationService;
@@ -23,9 +23,25 @@ namespace MereNear.ViewModels
         private string _personName;
         private string _personMobileNumber;
         private string _certificationText = "GET CERTIFIED";
+
+        private string _headerLeftIcon;
+        private string _rightIconImage;
         #endregion
-        
+
         #region Public Variables
+        public string lastnavigatedpage = "";
+
+        public string RightIconImage
+        {
+            get { return _rightIconImage; }
+            set { SetProperty(ref _rightIconImage, value); }
+        }
+
+        public string HeaderLeftIcon
+        {
+            get { return _headerLeftIcon; }
+            set { SetProperty(ref _headerLeftIcon, value); }
+        }
 
         public string PersonName
         {
@@ -55,9 +71,16 @@ namespace MereNear.ViewModels
         {
             get
             {
-                return new DelegateCommand(() =>
+                return new DelegateCommand(async() =>
                 {
-                    MessagingCenter.Send("HamburgurClick", "OpenMasterDetailPage");
+                    if (lastnavigatedpage != "HomeDetailPage")
+                    {
+                        MessagingCenter.Send("HamburgurClick", "OpenMasterDetailPage");
+                    }
+                    else
+                    {
+                        await _navigationService.GoBackAsync();
+                    }
                 });
             }
         }
@@ -89,7 +112,10 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(async() =>
                 {
-                    await _navigationService.NavigateAsync(nameof(EditProfilePage));
+                    if (lastnavigatedpage != "HomeDetailPage")
+                    {
+                        await _navigationService.NavigateAsync(nameof(EditProfilePage)); 
+                    }
                 });
             }
         }
@@ -105,6 +131,33 @@ namespace MereNear.ViewModels
 
         #region Private Methods
 
+        #endregion
+
+        #region Navigation Parameters
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            
+        }
+
+        public void OnNavigatingTo(INavigationParameters parameters)
+        {
+            if (parameters.ContainsKey("HomeDetailPage"))
+            {
+                lastnavigatedpage = (string)parameters["HomeDetailPage"];
+                HeaderLeftIcon = "back_arrow.png";
+                RightIconImage = "";
+            }
+            else
+            {
+                HeaderLeftIcon = "menu.png";
+                RightIconImage = "edit_profile.png";
+            }
+        }
         #endregion
     }
 }

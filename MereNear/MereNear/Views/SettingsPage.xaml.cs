@@ -2,6 +2,7 @@
 using MereNear.Resources;
 using System;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -40,6 +41,13 @@ namespace MereNear.Views
             {
                 return false;
             }
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
         }
     }
 }

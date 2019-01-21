@@ -15,8 +15,8 @@
         <ScrollView Grid.Row="1">
             <Grid RowSpacing="0">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="2*"/>
                     <RowDefinition Height="1"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="20"/>

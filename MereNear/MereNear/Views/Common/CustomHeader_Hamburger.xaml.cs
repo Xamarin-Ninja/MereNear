@@ -23,6 +23,13 @@ namespace MereNear.Views.Common
             set { SetValue(TitleTextProperty, value); }
         }
 
+        public static readonly BindableProperty HeaderLeftIconProperty = BindableProperty.Create("HeaderLeftIcon", typeof(string), typeof(Image), null, BindingMode.TwoWay);
+        public string HeaderLeftIcon
+        {
+            get { return (string)GetValue(HeaderLeftIconProperty); }
+            set { SetValue(HeaderLeftIconProperty, value); }
+        }
+
         public static readonly BindableProperty RightIconImageProperty = BindableProperty.Create("RightIconImage", typeof(string), typeof(Image), null);
         public string RightIconImage
         {

@@ -13,7 +13,7 @@ namespace MereNear.Services.ApiService.Common
     public class WebApiRestClient : IWebApiRestClient
     {
         private readonly JsonSerializerSettings _jsonSettings;
-        Uri baseUri = new Uri("http://peertechnologies.in/Mnear/Merenear/");
+        Uri baseUri = new Uri("https://merenearapi.herokuapp.com/");
         public WebApiRestClient()
         {
             _jsonSettings = new JsonSerializerSettings
@@ -32,15 +32,7 @@ namespace MereNear.Services.ApiService.Common
 
         public async Task<TResponse> GetAsync<TResponse>(string action)
         {
-            Uri uri;
-            if (action[0] == '?')
-            {
-                uri = new Uri(baseUri, action);
-            }
-            else
-            {
-                uri = new Uri(action);
-            }
+            Uri uri = new Uri(baseUri, action);
             try
             {
                 UserDialogs.Instance.ShowLoading("Loading Data...");

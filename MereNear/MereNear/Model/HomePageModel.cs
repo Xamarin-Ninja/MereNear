@@ -16,6 +16,14 @@ namespace MereNear.Model
         [JsonProperty("image")]
         public string CategoryImage { get; set; }
 
+        private bool _categorySelected = false;
+
+        public bool CategorySelected
+        {
+            get { return _categorySelected; }
+            set { _categorySelected = value; OnPropertyChanged("CategorySelected"); }
+        }
+
         public string AvailableServiceProvider { get; set; }
         private Color _frameColor = Color.LightGray;
 

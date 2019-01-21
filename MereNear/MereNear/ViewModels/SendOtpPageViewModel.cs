@@ -1,4 +1,6 @@
 ﻿using Acr.UserDialogs;
+using LiteDB;
+using MereNear.Interface;
 using MereNear.Model;
 using MereNear.Resources;
 using MereNear.Services.ApiService.Common;
@@ -31,6 +33,9 @@ namespace MereNear.ViewModels
         private string _otp2;
         private string _otp3;
         private string _otp4;
+
+        LiteDatabase _dataBase;
+        
         #endregion
 
         #region Public Variables
@@ -121,24 +126,31 @@ namespace MereNear.ViewModels
         #region Constructor
         public SendOtpPageViewModel(INavigationService navigationService, IWebApiRestClient webApiRestClient)
         {
-            _navigationService = navigationService;
-            _webApiRestClient = webApiRestClient;
+            try
+            {
+                _navigationService = navigationService;
+                _webApiRestClient = webApiRestClient;
 
-            MessagingCenter.Subscribe<string>(this, "OtpReceived", async (sender) =>
+                MessagingCenter.Subscribe<string>(this, "OtpReceived", async (sender) =>
+                {
+                    ActivationCode = sender;
+                    UserDialogs.Instance.ShowLoading("Fetching Code");
+                    await Task.Delay(500);
+                    OTP1 = ActivationCode[0].ToString();
+                    OTP2 = ActivationCode[1].ToString();
+                    OTP3 = ActivationCode[2].ToString();
+                    OTP4 = ActivationCode[3].ToString();
+                    UserDialogs.Instance.HideLoading();
+                });
+                MessagingCenter.Subscribe<string>(this, "OTPAutoFillComplete", async (sender) =>
+                {
+                    await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
+                });
+            }
+            catch (Exception)
             {
-                ActivationCode = sender;
-                UserDialogs.Instance.ShowLoading("Fetching Code");
-                await Task.Delay(500);
-                OTP1 = ActivationCode[0].ToString();
-                OTP2 = ActivationCode[1].ToString();
-                OTP3 = ActivationCode[2].ToString();
-                OTP4 = ActivationCode[3].ToString();
-                UserDialogs.Instance.HideLoading();
-            });
-            MessagingCenter.Subscribe<string>(this, "OTPAutoFillComplete", async (sender) =>
-            {
-                await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
-            });
+
+            }
         }
         #endregion
 
@@ -182,10 +194,23 @@ namespace MereNear.ViewModels
         #region API Methods
         private async void CallOTPApi()
         {
-            //otpModel.MobileNumber = OTPMainLabel;
-            //otpModel.OTPNumber = ActivationCode;
-            //var result = await _webApiRestClient.PostAsync<OTPModel, OTPResponse>("?func=otp", otpModel);
-            await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
+            try
+            {
+                //_dataBase = new LiteDatabase(DependencyService.Get<IDataBase>().GetFilePath("Users.db"));
+                //Users = _dataBase.GetCollection<User>();
+
+                //User user = new User
+                //{
+                //    UserID = 1,
+                //    Name = "Pardeep"
+                                     
+                //};
+                //Users.Update(user);
+                await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
+            }
+            catch (Exception ex)
+            {
+            }
         }
         #endregion
     }

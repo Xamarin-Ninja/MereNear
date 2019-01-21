@@ -2,6 +2,7 @@ using MereNear.Resources;
 using MereNear.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -31,6 +32,13 @@ namespace MereNear.Views
             //customheader.TitleText = sender.WorkerJobType;
             //jobstatus.Text = sender.WorkerJobStatus;
             //jobstatus.TextColor = sender.JobStatusColor;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
         }
     }
 }

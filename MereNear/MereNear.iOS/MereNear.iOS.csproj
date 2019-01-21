@@ -88,11 +88,13 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataBase\DataBaseService.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\BaseEntryRenderer.cs" />
     <Compile Include="Renderers\CheckBoxRenderer.cs" />
     <Compile Include="Renderers\ExtendedViewCellRenderer.cs" />
+    <Compile Include="Renderers\KeyboardViewRenderer.cs" />
     <Compile Include="Renderers\MyEntryRenderer.cs" />
     <Compile Include="Renderers\MyPickerRenderer.cs" />
     <Compile Include="ToastService.cs" />
@@ -103,7 +105,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork@1x.png" />
     <ITunesArtwork Include="iTunesArtwork@2x.png" />
-    <ITunesArtwork Include="iTunesArtwork@3x.png" />
     <BundleResource Include="Resources\Fonts\fontawesome-webfont.ttf" />
     <BundleResource Include="Resources\Fonts\fa-regular-400.ttf" />
     <BundleResource Include="Resources\Fonts\fa-solid-900.ttf" />
@@ -216,8 +217,14 @@
     <PackageReference Include="Acr.UserDialogs">
       <Version>7.0.1</Version>
     </PackageReference>
+    <PackageReference Include="ContextViewCell">
+      <Version>1.0.2</Version>
+    </PackageReference>
     <PackageReference Include="DLToolkit.Forms.Controls.FlowListView">
       <Version>2.0.11</Version>
+    </PackageReference>
+    <PackageReference Include="LiteDB">
+      <Version>4.1.4</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNet.SignalR.Client">
       <Version>2.4.0-preview2-20181018-02</Version>
@@ -254,6 +261,9 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.1.0.431" />
+    <PackageReference Include="Xamarin.Forms.CarouselView">
+      <Version>2.3.0-pre2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>3.3.0.912540</Version>
     </PackageReference>
@@ -263,123 +273,6 @@
       <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
       <Name>MereNear</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\send_chatting%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\setting_active_master%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\setting_active_master%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\setting_active_master%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\setting_master%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\setting_master%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\setting_master%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\spalsh%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\spalsh%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\spalsh%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\star%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\star%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\star%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\star_active%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\star_active%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\star_active%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\support_active_master%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\support_active_master%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\support_active_master%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\support_master%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\support_master%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\support_master%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\about_active_master%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\about_active_master%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\about_active_master%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\about_master%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\about_master%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\about_master%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\account_setting%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\account_setting%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\account_setting%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\attach%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\attach%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\attach%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\back_arrow%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\back_arrow%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\back_arrow%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\camera%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\camera%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\camera%403x.png" />
@@ -392,6 +285,33 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\cancel%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chatting-drop-icon%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chatting-drop-icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chatting-drop-icon%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\checked_circle%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\checked_circle%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\checked_circle%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\circle-location%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\circle-location%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\circle-location%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\clear%401x.png" />
@@ -412,6 +332,24 @@
     <BundleResource Include="Resources\distance_setting%403x.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\down_arrow_black%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\down_arrow_black%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\down_arrow_black%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drop-location%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drop-location%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drop-location%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\edit_profile%401x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -421,13 +359,13 @@
     <BundleResource Include="Resources\edit_profile%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\feed%401x.png" />
+    <BundleResource Include="Resources\flag-drop-location%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\feed%402x.png" />
+    <BundleResource Include="Resources\flag-drop-location%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\feed%403x.png" />
+    <BundleResource Include="Resources\flag-drop-location%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\google_language%401x.png" />
@@ -437,6 +375,15 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\google_language%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\half_star_active%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\half_star_active%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\half_star_active%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\heart%401x.png" />
@@ -484,6 +431,18 @@
     <BundleResource Include="Resources\home_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\id-upload%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\id-upload%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\id-upload%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\info%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\info%402x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -526,6 +485,15 @@
     <BundleResource Include="Resources\location%403x.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\logo%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\logout_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -535,13 +503,13 @@
     <BundleResource Include="Resources\logout_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\lookingforjob%401x.png" />
+    <BundleResource Include="Resources\looking_for_job%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\lookingforjob%402x.png" />
+    <BundleResource Include="Resources\looking_for_job%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\lookingforjob%403x.png" />
+    <BundleResource Include="Resources\looking_for_job%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\menu%401x.png" />
@@ -643,6 +611,15 @@
     <BundleResource Include="Resources\need_service%403x.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\news_feed%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\news_feed%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\news_feed%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\notification%401x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -670,6 +647,24 @@
     <BundleResource Include="Resources\notification_setting%403x.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\our_policies_active_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\our_policies_active_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\our_policies_active_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\our_policies_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\our_policies_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\our_policies_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\pin%401x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -679,31 +674,13 @@
     <BundleResource Include="Resources\pin%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\policies_active_master%401x.png" />
+    <BundleResource Include="Resources\post_a_job%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\policies_active_master%402x.png" />
+    <BundleResource Include="Resources\post_a_job%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\policies_active_master%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\policies_master%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\policies_master%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\policies_master%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\postajob%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\postajob%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\postajob%403x.png" />
+    <BundleResource Include="Resources\post_a_job%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\profile%401x.png" />
@@ -751,16 +728,139 @@
     <BundleResource Include="Resources\send%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\send_chatting%401x.png" />
+    <BundleResource Include="Resources\send_icon%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\send_chatting%402x.png" />
+    <BundleResource Include="Resources\send_icon%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\cancel.png" />
+    <BundleResource Include="Resources\send_icon%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\banner%403x.png" />
+    <BundleResource Include="Resources\setting_active_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\setting_active_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\setting_active_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\setting_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\setting_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\setting_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\spalsh%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\spalsh%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\spalsh%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\star%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\star%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\star%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\star_active%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\star_active%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\star_active%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\support_active_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\support_active_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\support_active_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\support_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\support_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\support_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\unchecked_circle%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\unchecked_circle%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\unchecked_circle%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about_active_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about_active_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about_active_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about_master%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about_master%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about_master%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\account_setting%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\account_setting%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\account_setting%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\add-photo%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\add-photo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\add-photo%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\attach%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\attach%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\attach%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\back_arrow%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\back_arrow%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\back_arrow%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\banner%401x.png" />
@@ -769,46 +869,37 @@
     <BundleResource Include="Resources\banner%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\big_logo.png" />
+    <BundleResource Include="Resources\banner%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\plumbing.png" />
+    <BundleResource Include="Resources\camera%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\upload_photo_icon.jpg" />
+    <BundleResource Include="Resources\camera%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image1.jpg" />
+    <BundleResource Include="Resources\myposts_active_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image2.jpeg" />
+    <BundleResource Include="Resources\myposts_active_master%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image3.jpeg" />
+    <BundleResource Include="Resources\myposts_active_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image4.jpg" />
+    <BundleResource Include="Resources\myposts_master%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image5.jpg" />
+    <BundleResource Include="Resources\myposts_master%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image6.jpg" />
+    <BundleResource Include="Resources\myposts_master%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image7.jpg" />
+    <BundleResource Include="Resources\save_settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Image8.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\logo%401x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\logo%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\logo%403x.png" />
+    <BundleResource Include="Resources\category_check.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

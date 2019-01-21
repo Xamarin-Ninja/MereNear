@@ -7,6 +7,7 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,6 +29,8 @@ namespace MereNear.ViewModels
         private string _starRating3 = "star_active.png";
         private string _starRating4 = "star.png";
         private string _starRating5 = "star.png";
+        private ObservableCollection<ShowcaseImagesModel> _myDataSource = new ObservableCollection<ShowcaseImagesModel>();
+
         #endregion
 
         #region Public Variables
@@ -66,7 +69,25 @@ namespace MereNear.ViewModels
             get { return _starRating5; }
             set { SetProperty(ref _starRating5, value); }
         }
+        public ObservableCollection<ShowcaseImagesModel> MyDataSource
+        {
+            get
+            {
+                return _myDataSource;
+            }
+            set
+            {
+                SetProperty(ref _myDataSource, value);
+            }
+        }
         #endregion
+
+        private int _position;
+        public int Position
+        {
+            get { return _position; }
+            set { SetProperty(ref _position, value); }
+        }
 
         #region Command
         public ICommand CloseCommand
@@ -79,17 +100,80 @@ namespace MereNear.ViewModels
                 });
             }
         }
-        #endregion
 
+        public ICommand ContactCommand
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    try
+                    {
+                        await _navigationService.NavigateAsync(nameof(ChatPage));
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                });
+            }
+        }
+
+
+        public ICommand ProfileCommand
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    try
+                    {
+                        var param = new NavigationParameters();
+                        param.Add("HomeDetailPage", "HomeDetailPage");
+                        await _navigationService.NavigateAsync(nameof(ProfilePage),param);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                });
+            }
+        }
+        #endregion
+        
         #region Constructor
         public HomeDetailPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+            getCarouselData();
+          
         }
+
         #endregion
 
         #region Private Methods
 
+        private void getCarouselData()
+        {
+            var item = new ShowcaseImagesModel
+            {
+                showcaseImage = "Image1.jpg"
+            };
+            var item2 = new ShowcaseImagesModel
+            {
+                showcaseImage = "Image3.jpg"
+            };
+            MyDataSource.Add(item);
+            MyDataSource.Add(item2);
+            MyDataSource.Add(item);
+            MyDataSource.Add(item2);
+            MyDataSource.Add(item);
+            MyDataSource.Add(item2);
+            MyDataSource.Add(item);
+            MyDataSource.Add(item2);
+            MyDataSource.Add(item);
+            MyDataSource.Add(item2);
+        }
         #endregion
 
         #region Navigation Parameters

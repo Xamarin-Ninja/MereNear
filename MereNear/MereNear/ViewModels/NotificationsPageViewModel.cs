@@ -1,5 +1,6 @@
 ﻿using MereNear.ViewModels.Common;
 using Prism.Commands;
+using System;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -10,7 +11,14 @@ namespace MereNear.ViewModels
         #region Constructor
         public NotificationsPageViewModel()
         {
+            try
+            {
 
+            }
+            catch (Exception)
+            {
+
+            }
         }
         #endregion
 

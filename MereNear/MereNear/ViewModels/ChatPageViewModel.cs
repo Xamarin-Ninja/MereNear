@@ -1,14 +1,13 @@
 ﻿using Acr.UserDialogs;
+using MereNear.Services.LiteDB.ChatModelDB;
 using MereNear.ViewModels.Common;
 using MereNear.Views;
 using MereNear.Views.ViewCells;
 using Plugin.LocalNotifications;
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
 using SignalR.Interface;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
@@ -21,6 +20,7 @@ namespace MereNear.ViewModels
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
+        private readonly IChatModelDbService chatModelDbService;
         //private IChatServices _chatServices;
 
         private string _roomName;
@@ -132,6 +132,7 @@ namespace MereNear.ViewModels
         {
             _navigationService = navigationService;
             _chatServices = DependencyService.Get<IChatServices>();
+            chatModelDbService = DependencyService.Get<IChatModelDbService>();
 
             currentuser = getString("LoginMobileNumber");
 
@@ -144,6 +145,15 @@ namespace MereNear.ViewModels
                 setBool("ServiceConnect", true);
             }
             _chatServices.OnMessageReceived += _chatServices_OnMessageReceived;
+            var chatRecordExist = chatModelDbService.IsChatDbPresentInDB();
+            if (chatRecordExist)
+            {
+                var previousChat = chatModelDbService.ReadAllItems();
+                foreach(var data in previousChat.ToList())
+                {
+                    _messages.Add(data);
+                }
+            }
             CrossLocalNotifications.Current.Show("merenear", "You have a new message");
         }
         #endregion
@@ -161,7 +171,10 @@ namespace MereNear.ViewModels
                 {
                     SenderType = 2;
                 }
-                _messages.Add(new ChatItem { Name = e.Name, MessageType = e.MessageType, PurchaseAmount = e.PurchaseAmount, ServiceAmount = e.ServiceAmount, SubtotalAmount = e.SubtotalAmount, TotalAmout = e.TotalAmout, CurrencyType = e.CurrencyType,Location = e.Location, Message = e.Message,SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm") });
+                var chatRecord = new ChatItem { Name = e.Name, MessageType = e.MessageType, PurchaseAmount = e.PurchaseAmount, ServiceAmount = e.ServiceAmount, SubtotalAmount = e.SubtotalAmount, TotalAmout = e.TotalAmout, CurrencyType = e.CurrencyType, Location = e.Location, Message = e.Message, SenderType = SenderType, Time = DateTime.Now.ToString("HH:mm") };
+                _messages.Add(chatRecord);
+                chatModelDbService.CreateChatModelInDB(chatRecord);
+                var previousChat = chatModelDbService.ReadAllItems();
             }
             else
             {

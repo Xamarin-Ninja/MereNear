@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -54,11 +55,15 @@ namespace MereNear.Views
                 locator.DesiredAccuracy = 50;
                 try
                 {
-                    location = await locator.GetPositionAsync(TimeSpan.FromTicks(10000));
+                    location = await locator.GetPositionAsync(TimeSpan.FromTicks(5000));
                 }
                 catch (TaskCanceledException ex)
                 {
                     response = Convert.ToBoolean(ex.CancellationToken.IsCancellationRequested);
+                }
+                catch (Exception ex)
+                {
+                    response = true;
                 }
                 if (response.HasValue)
                 {
@@ -73,10 +78,10 @@ namespace MereNear.Views
                 }
                 else
                 {
-                    double? latitude = Convert.ToDouble(location.Latitude);
-                    double? longitude = Convert.ToDouble(location.Longitude);
-                    var pickedposition = new Position(latitude.Value, longitude.Value);
-                    customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(latitude.Value, longitude.Value), Distance.FromMiles(0.5)));
+                    double latitude = Convert.ToDouble(location.Latitude);
+                    double longitude = Convert.ToDouble(location.Longitude);
+                    var pickedposition = new Position(latitude, longitude);
+                    customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(latitude, longitude), Distance.FromMiles(0.5)));
                     Geocoder gc = new Geocoder();
 
                     IEnumerable<string> pickedaddress = await gc.GetAddressesForPositionAsync(pickedposition);
@@ -90,6 +95,13 @@ namespace MereNear.Views
 
             }
 
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
         }
     }
 }

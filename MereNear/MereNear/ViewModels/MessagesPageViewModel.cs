@@ -75,23 +75,44 @@ namespace MereNear.ViewModels
         #region Constructor
         public MessagesPageViewModel(INavigationService navigationService)
         {
-            _navigationService = navigationService;
-            GetPersonChatList();
+            try
+            {
+                _navigationService = navigationService;
+                GetPersonChatList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         #endregion
 
         #region Private/Public Methods
         private void GetPersonChatList()
         {
-            PersonChatList.Add(new MessagesListItems { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit", Icon = "logo.png", Time = "01:40pm", Name = "Rahul", IsUnread = true});
-            PersonChatList.Add(new MessagesListItems { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit", Icon = "logo.png", Time = "01:40pm", Name = "Pardeep", IsUnread = false });
+            try
+            {
+                PersonChatList.Add(new MessagesListItems { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit", Icon = "logo.png", Time = "01:40pm", Name = "Rahul", IsUnread = true });
+                PersonChatList.Add(new MessagesListItems { Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit", Icon = "logo.png", Time = "01:40pm", Name = "Pardeep", IsUnread = false });
+            }
+            catch (Exception)
+            {
+            }
         }
 
         public async void GetNavigation()
         {
-            var param = new NavigationParameters();
-            param.Add("SingleChatMessage", PersonChatListDetail);
-            await _navigationService.NavigateAsync(nameof(ChatPage),param);
+            try
+            {
+                var param = new NavigationParameters();
+                param.Add("SingleChatMessage", PersonChatListDetail);
+                await _navigationService.NavigateAsync(nameof(ChatPage), param);
+            }
+            catch (Exception)
+            {
+
+            }
         }
         #endregion
 

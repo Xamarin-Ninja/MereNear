@@ -1,6 +1,7 @@
 ﻿using MereNear.Interface;
 using MereNear.Resources;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -9,30 +10,38 @@ namespace MereNear.Views
         
         public HomeTabbedPage()
         {
-            InitializeComponent();
-            HomeTab.Title = AppResources.HomeTab;
-            MyJobsTab.Title = AppResources.MyJobsTab;
-            NotificationTab.Title = AppResources.NotificationsTab;
-            MessageTab.Title = AppResources.MessagesTab;
-            ProfileTab.Title = AppResources.ProfileTab;
-            MessagingCenter.Subscribe<string>(this, "ChangeCurrentPage", (sender) =>
+            try
             {
-                if (sender.Equals("HomePage"))
+                InitializeComponent();
+                HomeTab.Title = AppResources.HomeTab;
+                MyJobsTab.Title = AppResources.MyJobsTab;
+                NotificationTab.Title = AppResources.NotificationsTab;
+                MessageTab.Title = AppResources.MessagesTab;
+                ProfileTab.Title = AppResources.ProfileTab;
+                MessagingCenter.Subscribe<string>(this, "ChangeCurrentPage", (sender) =>
                 {
-                    CurrentPage = Children[0];
-                    this.Title = CurrentPage.Title;
-                }
-                else if (sender.Equals("MyJobs"))
-                {
-                    CurrentPage = Children[1];
-                    this.Title = this.CurrentPage.Title;
-                }
-                else
-                {
+                    if (sender.Equals("HomePage"))
+                    {
+                        CurrentPage = Children[0];
+                        this.Title = CurrentPage.Title;
+                    }
+                    else if (sender.Equals("MyJobs"))
+                    {
+                        CurrentPage = Children[1];
+                        this.Title = this.CurrentPage.Title;
+                    }
+                    else
+                    {
 
-                }
+                    }
 
-            });
+                });
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
         }
         
         protected override bool OnBackButtonPressed()
@@ -46,6 +55,13 @@ namespace MereNear.Views
             {
                 return false;
             }
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
         }
     }
 }

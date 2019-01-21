@@ -2,6 +2,7 @@
 using MereNear.Views.ViewCells;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -49,6 +50,13 @@ namespace MereNear.Views
         private void chatlistView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             chatTemplate.SelectedItem = null;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
         }
     }
 }

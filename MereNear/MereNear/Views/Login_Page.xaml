@@ -23,12 +23,12 @@
         <Label x:Name="AppSlogan" Grid.Row="1" Grid.ColumnSpan="2" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
         <Image Source="banner.png" Grid.Row="2" Grid.ColumnSpan="2" Aspect="Fill" Margin="-20,0"/>
         <Label x:Name="MobileEntryTitle" Grid.Row="3" Grid.ColumnSpan="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="End"/>
-        <Picker Title="+91" Grid.Row="4" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center">
-            <Picker.GestureRecognizers>
+        <Label Text="+91" Grid.Row="4" Margin="0,0,5,0" FontSize="16" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" TextColor="Gray">
+            <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="Entry_Focused"/>
-            </Picker.GestureRecognizers>
-        </Picker>
-        <Label x:Name="MobileEntryPlaceholer" FontSize="Medium" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" TextColor="Gray">
+            </Label.GestureRecognizers>
+        </Label>
+        <Label x:Name="MobileEntryPlaceholer" FontSize="16" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" TextColor="Gray">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="Entry_Focused"/>
             </Label.GestureRecognizers>

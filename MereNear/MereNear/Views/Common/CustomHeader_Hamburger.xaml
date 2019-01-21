@@ -10,7 +10,12 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="40"/>
         </Grid.ColumnDefinitions>
-        <Image Margin="15,0,0,0" Grid.Column="0"  BackgroundColor="Transparent" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" VerticalOptions="Center" Source="menu.png">
+        <!--<Image Margin="15,0,0,0" Grid.Column="0"  BackgroundColor="Transparent" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" VerticalOptions="Center" Source="menu.png">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HeaderLeftIconCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>-->
+        <Image Margin="15,0,0,0" Grid.Column="0"  BackgroundColor="Transparent" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" VerticalOptions="Center" Source="{Binding Source={x:Reference Root}, Path=HeaderLeftIcon}">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding HeaderLeftIconCommand}"/>
             </Image.GestureRecognizers>

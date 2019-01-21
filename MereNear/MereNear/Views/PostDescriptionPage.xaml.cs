@@ -1,5 +1,6 @@
 ﻿using MereNear.Resources;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -17,6 +18,13 @@ namespace MereNear.Views
             TimeLabel.Text = AppResources.TimeLabel;
             AddphotosLabel.Text = AppResources.AddPhotosLabel;
             previewbutton.Text = AppResources.PreviewButton;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
         }
     }
 }

@@ -5,6 +5,8 @@ namespace MereNear.Views.ViewCells
     
     public class ChatItem
     {
+        public int ID { get; set; }
+
         public int MessageType { get; set; }
 
         public string Icon { get; set; }

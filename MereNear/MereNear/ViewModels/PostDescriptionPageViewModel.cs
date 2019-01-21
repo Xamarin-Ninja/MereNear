@@ -17,6 +17,7 @@ using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using System.Threading.Tasks;
 
 namespace MereNear.ViewModels
 {
@@ -44,21 +45,21 @@ namespace MereNear.ViewModels
 
         private bool _isPreviewVisible = false;
 
-        private ImageSource _cameraPicker = "upload_photo_icon.jpg";
-        private ImageSource _imagePicker = "upload_photo_icon.jpg";
+        private ImageSource _imagePicker1 = "upload_photo_icon.jpg";
+        private ImageSource _imagePicker2 = "upload_photo_icon.jpg";
         #endregion
 
         #region Public Variables
-        public ImageSource CameraPicker
+        public ImageSource ImagePicker1
         {
-            get { return _cameraPicker; }
-            set { SetProperty(ref _cameraPicker, value); }
+            get { return _imagePicker1; }
+            set { SetProperty(ref _imagePicker1, value); }
         }
 
-        public ImageSource ImagePicker
+        public ImageSource ImagePicker2
         {
-            get { return _imagePicker; }
-            set { SetProperty(ref _imagePicker, value); }
+            get { return _imagePicker2; }
+            set { SetProperty(ref _imagePicker2, value); }
         }
 
         public string LocationAddress
@@ -141,90 +142,92 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Command
-        public ICommand CameraPickerCommand
-        {
-            get
-            {
-                return new DelegateCommand(async () =>
-                {
-                    try
-                    {
-                        if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-                        {
-                            await App.Current.MainPage.DisplayAlert("No Camera", ":( No camera available.", "OK");
-                            return;
-                        }
-
-                        _mediaFile = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-                        {
-                            Directory = "Profile Photo",
-                            SaveToAlbum = true,
-                            PhotoSize = PhotoSize.Medium,
-                            MaxWidthHeight = 2000,
-                            DefaultCamera = CameraDevice.Rear
-                        });
 
 
-                        if (_mediaFile == null)
-                            return;
+        //public ICommand CameraPickerCommand
+        //{
+        //    get
+        //    {
+        //        return new DelegateCommand(async () =>
+        //        {
+        //            try
+        //            {
+        //                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+        //                {
+        //                    await App.Current.MainPage.DisplayAlert("No Camera", ":( No camera available.", "OK");
+        //                    return;
+        //                }
 
-                        //await App.Current.MainPage.DisplayAlert("File Location", file.Path, "OK");
-
-
-                        CameraPicker = _mediaFile.Path;
-                        //CameraPicker = ImageSource.FromStream(() =>
-                        // {
-                        //     var stream = _mediaFile.GetStream();
-                        //     _mediaFile.Dispose();
-                        //     return stream;
-                        // });
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-                });
-            }
-        }
-
-        public ICommand ImagePickerCommand
-        {
-            get
-            {
-                return new DelegateCommand(async() =>
-                {
-                    try
-                    {
-                        if (!CrossMedia.Current.IsPickPhotoSupported)
-                        {
-                            await App.Current.MainPage.DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
-                            return;
-                        }
-                        _mediaFile = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
-                        {
-                            PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
-
-                        });
+        //                _mediaFile = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+        //                {
+        //                    Directory = "Profile Photo",
+        //                    SaveToAlbum = true,
+        //                    PhotoSize = PhotoSize.Medium,
+        //                    MaxWidthHeight = 2000,
+        //                    DefaultCamera = CameraDevice.Rear
+        //                });
 
 
-                        if (_mediaFile == null)
-                            return;
+        //                if (_mediaFile == null)
+        //                    return;
 
-                        ImagePicker = _mediaFile.Path;
-                        //ImagePicker = ImageSource.FromStream(() =>
-                        //{
-                        //    var stream = _mediaFile.GetStream();
-                        //    _mediaFile.Dispose();
-                        //    return stream;
-                        //});
-                    }
-                    catch (Exception ex)
-                    {
+        //                //await App.Current.MainPage.DisplayAlert("File Location", file.Path, "OK");
 
-                    }
-                });
-            }
-        }
+
+        //                CameraPicker = _mediaFile.Path;
+        //                //CameraPicker = ImageSource.FromStream(() =>
+        //                // {
+        //                //     var stream = _mediaFile.GetStream();
+        //                //     _mediaFile.Dispose();
+        //                //     return stream;
+        //                // });
+        //            }
+        //            catch (Exception ex)
+        //            {
+
+        //            }
+        //        });
+        //    }
+        //}
+
+        //public ICommand ImagePickerCommand
+        //{
+        //    get
+        //    {
+        //        return new DelegateCommand(async() =>
+        //        {
+        //            try
+        //            {
+        //                if (!CrossMedia.Current.IsPickPhotoSupported)
+        //                {
+        //                    await App.Current.MainPage.DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+        //                    return;
+        //                }
+        //                _mediaFile = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+        //                {
+        //                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+
+        //                });
+
+
+        //                if (_mediaFile == null)
+        //                    return;
+
+        //                ImagePicker = _mediaFile.Path;
+        //                //ImagePicker = ImageSource.FromStream(() =>
+        //                //{
+        //                //    var stream = _mediaFile.GetStream();
+        //                //    _mediaFile.Dispose();
+        //                //    return stream;
+        //                //});
+        //            }
+        //            catch (Exception ex)
+        //            {
+
+        //            }
+        //        });
+        //    }
+        //}
 
         public ICommand CloseCommand
         {
@@ -270,6 +273,124 @@ namespace MereNear.ViewModels
                 {
                     IsPreviewVisible = false;
                 });
+            }
+        }
+        public ICommand ImageUploadCommand1
+        {
+            get
+            {
+                return new DelegateCommand(async() =>
+                {
+                    
+                    var action = await App.Current.MainPage.DisplayActionSheet("Add Photo", "Cancel", null, "Camera", "Gallery");
+                    switch (action)
+                    {
+                        case "Camera":
+                            ImagePicker1 = await CameraCommand();
+                            break;
+                        case "Gallery":
+                            ImagePicker1 = await GalleryCommand();
+                            break;
+                        default:
+                            break;
+                    }
+                });
+            }
+        }
+
+        public ICommand ImageUploadCommand2
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+
+                    var action = await App.Current.MainPage.DisplayActionSheet("Add Photo", "Cancel", null, "Camera", "Gallery");
+                    switch (action)
+                    {
+                        case "Camera":
+                            ImagePicker2 = await CameraCommand();
+                            break;
+                        case "Gallery":
+                            ImagePicker2 = await GalleryCommand();
+                            break;
+                        default:
+                            break;
+                    }
+                });
+            }
+        }
+
+        private async Task<string> GalleryCommand()
+        {
+            try
+            {
+                if (!CrossMedia.Current.IsPickPhotoSupported)
+                {
+                    await App.Current.MainPage.DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                    return null;
+                }
+                _mediaFile = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                {
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+
+                });
+
+
+                if (_mediaFile == null)
+                    return null;
+
+                return _mediaFile.Path;
+                //ImagePicker = ImageSource.FromStream(() =>
+                //{
+                //    var stream = _mediaFile.GetStream();
+                //    _mediaFile.Dispose();
+                //    return stream;
+                //});
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        private async Task<string> CameraCommand()
+        {
+            try
+            {
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    await App.Current.MainPage.DisplayAlert("No Camera", ":( No camera available.", "OK");
+                    return null;
+                }
+
+                _mediaFile = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    Directory = "Profile Photo",
+                    SaveToAlbum = true,
+                    PhotoSize = PhotoSize.Medium,
+                    MaxWidthHeight = 2000,
+                    DefaultCamera = CameraDevice.Rear
+                });
+
+
+                if (_mediaFile == null)
+                    return null;
+
+                //await App.Current.MainPage.DisplayAlert("File Location", file.Path, "OK");
+
+
+                return _mediaFile.Path;
+                //CameraPicker = ImageSource.FromStream(() =>
+                // {
+                //     var stream = _mediaFile.GetStream();
+                //     _mediaFile.Dispose();
+                //     return stream;
+                // });
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
 

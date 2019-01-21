@@ -1,6 +1,7 @@
 ﻿using MereNear.Interface;
 using MereNear.Resources;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
 {
@@ -10,7 +11,7 @@ namespace MereNear.Views
         {
             InitializeComponent();
             aboutustitle.TitleText = AppResources.AboutUsMenu;
-            AboutMereNearLabel.Text = AppResources.AboutMereNearLabel;
+            //AboutMereNearLabel.Text = AppResources.AboutMereNearLabel;
         }
 
         protected override bool OnBackButtonPressed()
@@ -24,6 +25,13 @@ namespace MereNear.Views
             {
                 return false;
             }
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+            this.Padding = safeAreaInset;
         }
     }
 }

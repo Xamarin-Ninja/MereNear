@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using LiteDB.UserModelDB;
 using MereNear.Model;
 using MereNear.Services.ApiService.Common;
 using MereNear.ViewModels.Common;
@@ -12,6 +13,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
@@ -20,11 +22,13 @@ namespace MereNear.ViewModels
         #region Private Variables
         private readonly INavigationService _navigationService;
         protected readonly IWebApiRestClient _webApiRestClient;
+        private readonly IUserDBService userDBService;
 
         private string _mobileNumber;
         #endregion
 
         #region Public Variables
+        public UserModel userLogin = new UserModel();
         public string MobileNumber
         {
             get { return _mobileNumber; }
@@ -39,6 +43,8 @@ namespace MereNear.ViewModels
         {
             _navigationService = navigationService;
             _webApiRestClient = webApiRestClient;
+
+            userDBService = DependencyService.Get<IUserDBService>();
         }
         #endregion
 
@@ -47,27 +53,43 @@ namespace MereNear.ViewModels
         {
             get
             {
-                return new DelegateCommand(async () =>
+                try
                 {
-                    if (MobileNumber != null)
-                    {
-                        if (MobileNumber.Length == 10)
-                        {
-                            GetLoginApi();
-                            var param = new NavigationParameters();
-                            param.Add("LoginPage", MobileNumber);
-                            await _navigationService.NavigateAsync(nameof(SendOtpPage), param);
-                        }
-                        else
-                        {
-                            await App.Current.MainPage.DisplayAlert("Warning", "Please enter valid mobile number", "Ok");
-                        }
-                    }
-                    else
-                    {
-                        await App.Current.MainPage.DisplayAlert("Warning", "Please enter mobile number", "Ok");
-                    }
-                });
+                    return new DelegateCommand(async () =>
+                           {
+                               try
+                               {
+                                   if (MobileNumber != null)
+                                   {
+                                       if (MobileNumber.Length == 10)
+                                       {
+                                           //GetLoginApi();
+                                           var param = new NavigationParameters();
+                                           param.Add("LoginPage", MobileNumber);
+                                           userLogin.UserID = MobileNumber;
+                                           userDBService.CreateUserModelInDB(userLogin);
+                                           await _navigationService.NavigateAsync(nameof(SendOtpPage), param);
+                                       }
+                                       else
+                                       {
+                                           await App.Current.MainPage.DisplayAlert("Warning", "Please enter valid mobile number", "Ok");
+                                       }
+                                   }
+                                   else
+                                   {
+                                       await App.Current.MainPage.DisplayAlert("Warning", "Please enter mobile number", "Ok");
+                                   }
+                               }
+                               catch (Exception)
+                               {
+
+                               }
+                           });
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
             }
         }
 
@@ -86,9 +108,15 @@ namespace MereNear.ViewModels
         #region ApiMethod
         public async void GetLoginApi()
         {
-            loginModel.MobileNumber = MobileNumber;
-            var result = await _webApiRestClient.PostAsync<LoginModel, LoginResponse>("?func=login", loginModel);
-            Debug.WriteLine("ex:", result.code);
+            try
+            {
+                loginModel.MobileNumber = MobileNumber;
+                var result = await _webApiRestClient.PostAsync<LoginModel, LoginResponse>("?func=login", loginModel);
+                Debug.WriteLine("ex:", result.code);
+            }
+            catch (Exception)
+            {
+            }
         }
         #endregion
     }

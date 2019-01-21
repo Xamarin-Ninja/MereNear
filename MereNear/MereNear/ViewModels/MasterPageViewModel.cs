@@ -1,17 +1,12 @@
-﻿using Acr.UserDialogs;
-using Android.Content;
+﻿using LiteDB;
+using LiteDB.UserModelDB;
 using MereNear.Model;
 using MereNear.ViewModels.Common;
-using MereNear.Views;
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -21,10 +16,13 @@ namespace MereNear.ViewModels
     {
         #region Private Variables
         private readonly INavigationService _navigationService;
+        private readonly IUserDBService userDBService;
 
         private bool _isPresented;
         private MasterMenuModel _selectedItem;
         private ObservableCollection<MasterMenuModel> _masterMenuListData = new ObservableCollection<MasterMenuModel>();
+        LiteDatabase _dataBase;
+
         #endregion
 
         #region Public Variables
@@ -198,8 +196,18 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(async() =>
                 {
-                    setString("LoginMobileNumber", "");
-                    await _navigationService.NavigateAsync("NavigationPage/Login_Page");
+                    try
+                    {
+                        var data = userDBService.ReadAllItems();
+                        var usermodel = data.First();
+                        BsonValue bsonid = data.First().ID;
+                        userDBService.DeleteItemFromDB(bsonid, usermodel);
+                        await _navigationService.NavigateAsync("NavigationPage/Login_Page");
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
                 });
             }
         }
@@ -210,6 +218,7 @@ namespace MereNear.ViewModels
         {
             _navigationService = navigationService;
             //GetMasterMenuList();
+            userDBService = DependencyService.Get<IUserDBService>();
         }
         #endregion
 

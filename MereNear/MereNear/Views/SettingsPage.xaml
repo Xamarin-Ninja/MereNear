@@ -11,7 +11,7 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <common:CustomHeader_Hamburger Grid.Row="0" x:Name="Settingstitle"/>
+          <common:CustomHeader_Hamburger HeaderLeftIcon="menu.png" Grid.Row="0" x:Name="Settingstitle" RightIconImage="save_settings.png"/>
             <Grid Grid.Row="1" Padding="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>

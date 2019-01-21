@@ -39,24 +39,24 @@ namespace SignalR.Interface
         public async Task Send(ChatItem chatmessage, string roomName)
         {
             callingmethod = "message";
-            _proxy.Invoke("SendMessage", chatmessage.CurrentUser, chatmessage.Message, roomName);
+           await _proxy.Invoke("SendMessage", chatmessage.CurrentUser, chatmessage.Message, roomName);
         }
 
         public async Task SendDeal(ChatItem chatmessage, string roomName)
         {
             callingmethod = "messagetype";
-            _proxy.Invoke("SendMessage", chatmessage.CurrentUser, chatmessage.MessageType, roomName);
+           await _proxy.Invoke("SendMessage", chatmessage.CurrentUser, chatmessage.MessageType, roomName);
         }
 
         public async Task SendLocation(ChatItem chatmessage, string roomName)
         {
             callingmethod = "messagetype";
-            _proxy.Invoke("SendMessage", chatmessage.CurrentUser, chatmessage.MessageType, roomName);
+           await _proxy.Invoke("SendMessage", chatmessage.CurrentUser, chatmessage.MessageType, roomName);
         }
 
         public async Task JoinRoom(string roomName)
         {
-            _proxy.Invoke("JoinRoom", roomName);
+           await _proxy.Invoke("JoinRoom", roomName);
         }
 
         #endregion
