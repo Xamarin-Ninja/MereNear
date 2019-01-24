@@ -1,27 +1,23 @@
-﻿using Prism;
-using Prism.Ioc;
+﻿using Acr.UserDialogs;
+using DLToolkit.Forms.Controls;
+using LiteDB.LanguageModelDB;
+using LiteDB.UserModelDB;
+using MereNear.Model;
+using MereNear.Resources;
+using MereNear.Services.ApiService.Common;
 using MereNear.ViewModels;
 using MereNear.Views;
+using MereNear.Views.Common;
+using Plugin.Connectivity;
+using Plugin.Multilingual;
+using Prism;
+using Prism.Ioc;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using MereNear.Views.Common;
-using DLToolkit.Forms.Controls;
-using MereNear.Services.ApiService.Common;
-using SignalR.Interface;
-using System;
-using Plugin.Connectivity;
-using Acr.UserDialogs;
-using MereNear.ViewModels.Common;
-using Plugin.Multilingual;
-using MereNear.Resources;
-using System.Globalization;
-using LiteDB;
-using MereNear.Model;
-using System.Linq;
-using MereNear.Interface;
-using LiteDB.LanguageModelDB;
-using System.Collections.Generic;
-using LiteDB.UserModelDB;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MereNear
@@ -39,9 +35,6 @@ namespace MereNear
         private IUserDBService userDBService;
         public bool a;
         public string shortname { get; set; }
-        LiteDatabase _dataBase;
-        LiteDatabase _dataBase2;
-        LiteCollection<LanguageModel> Language;
         public App() : this(null)
         {
             
@@ -88,55 +81,6 @@ namespace MereNear
             FlowListView.Init();
             
             
-            //if (string.IsNullOrEmpty(useralreadylogin) || string.IsNullOrWhiteSpace(useralreadylogin))
-            //{
-            //    if (string.IsNullOrEmpty(languageexist) || string.IsNullOrWhiteSpace(languageexist))
-            //    {
-            //        await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
-            //    }
-            //    else
-            //    {
-            //        await NavigationService.NavigateAsync("NavigationPage/Login_Page");
-            //    }
-            //}
-            //else
-            //{
-            //    await NavigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
-            //}
-
-            //try
-            //{
-            //    _dataBase = new LiteDatabase(DependencyService.Get<IDataBase>().GetFilePath("Users.db"));
-            //    Users = _dataBase.GetCollection<User>();
-            //    if (Users.Count() > 0)
-            //    {
-            //        var user = Users.FindAll().FirstOrDefault(x => x.Name == "Pardeep");
-            //        var lang = Users.FindAll().FirstOrDefault(x => x.Language != null);
-            //        if (lang !=null)
-            //        {
-            //            if (user!=null)
-            //            {
-            //                await NavigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute)); 
-            //            }
-            //            else
-            //            {
-            //                await NavigationService.NavigateAsync("NavigationPage/Login_Page");
-            //            }
-            //        }
-            //        else
-            //        {
-            //            await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    a = true;
-            //}
             try
             {
                 var IsLanguageDBExist = languageDBService.IsLanguageDbPresentInDB();
@@ -209,107 +153,5 @@ namespace MereNear
             containerRegistry.RegisterForNavigation<EditProfilePage, EditProfilePageViewModel>();
             containerRegistry.RegisterForNavigation<ChangPhoneNumber, ChangPhoneNumberViewModel>();
         }
-
-        //protected override void OnStart()
-        //{
-        //    CrossFirebasePushNotification.Current.Subscribe("general");
-        //    CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
-        //    {
-        //        System.Diagnostics.Debug.WriteLine($"TOKEN REC: {p.Token}");
-        //    };
-        //    System.Diagnostics.Debug.WriteLine($"TOKEN: {CrossFirebasePushNotification.Current.Token}");
-
-        //    CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
-        //    {
-        //        try
-        //        {
-        //            System.Diagnostics.Debug.WriteLine("Received");
-        //            if (p.Data.ContainsKey("body"))
-        //            {
-        //                //Device.BeginInvokeOnMainThread(() =>
-        //                //{
-        //                //    mPage.Message = $"{p.Data["body"]}";
-        //                //});
-        //                MessagingCenter.Send("Notification Recieved", "Notification Recieved");
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-
-        //        }
-
-        //    };
-
-        //    CrossFirebasePushNotification.Current.OnNotificationOpened += (s, p) =>
-        //    {
-        //        //System.Diagnostics.Debug.WriteLine(p.Identifier);
-
-        //        System.Diagnostics.Debug.WriteLine("Opened");
-        //        foreach (var data in p.Data)
-        //        {
-        //            System.Diagnostics.Debug.WriteLine($"{data.Key} : {data.Value}");
-        //        }
-
-        //        if (!string.IsNullOrEmpty(p.Identifier))
-        //        {
-        //            Device.BeginInvokeOnMainThread(() =>
-        //            {
-        //                //mPage.Message = p.Identifier;
-        //            });
-        //        }
-        //        else if (p.Data.ContainsKey("color"))
-        //        {
-        //            Device.BeginInvokeOnMainThread(() =>
-        //            {
-        //                //mPage.Navigation.PushAsync(new ContentPage()
-        //                //{
-        //                //    BackgroundColor = Color.FromHex($"{p.Data["color"]}")
-
-        //                //});
-        //            });
-
-        //        }
-        //        else if (p.Data.ContainsKey("aps.alert.title"))
-        //        {
-        //            Device.BeginInvokeOnMainThread(() =>
-        //            {
-        //                //mPage.Message = $"{p.Data["aps.alert.title"]}";
-        //            });
-
-        //        }
-        //    };
-
-        //    CrossFirebasePushNotification.Current.OnNotificationAction += (s, p) =>
-        //    {
-        //        System.Diagnostics.Debug.WriteLine("Action");
-
-        //        if (!string.IsNullOrEmpty(p.Identifier))
-        //        {
-        //            System.Diagnostics.Debug.WriteLine($"ActionId: {p.Identifier}");
-        //            foreach (var data in p.Data)
-        //            {
-        //                System.Diagnostics.Debug.WriteLine($"{data.Key} : {data.Value}");
-        //            }
-
-        //        }
-
-        //    };
-
-        //    CrossFirebasePushNotification.Current.OnNotificationDeleted += (s, p) =>
-        //    {
-        //        System.Diagnostics.Debug.WriteLine("Dismissed");
-        //    };
-        //    base.OnStart();
-        //}
-
-        //protected override void OnSleep()
-        //{
-        //    base.OnSleep();
-        //}
-
-        //protected override void OnResume()
-        //{
-        //    base.OnResume();
-        //}
     }
 }

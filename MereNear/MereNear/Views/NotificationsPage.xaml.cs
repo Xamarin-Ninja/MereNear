@@ -24,7 +24,7 @@ namespace MereNear.Views
             InitializeComponent();
             NotificationTitle.TitleText = AppResources.NotificationsTab;
             notificationlist = new List<NotificationListItem>();
-            var job = new NotificationListItem() { Text = "Job Completed", Icon = "logo.png" ,Time = "15 minutes ago" };
+            var job = new NotificationListItem() { Text = "Job Completed", Icon = "logo.png", Time = "15 minutes ago" };
             var job1 = new NotificationListItem() { Text = "Someone sent a message", Icon = "logo.png", Time = "16 minutes ago" };
             notificationlist.Add(job);
             notificationlist.Add(job1);
@@ -36,7 +36,7 @@ namespace MereNear.Views
             notificationlist.Add(job1);
             notificationlist.Add(job);
             notificationlist.Add(job1);
- 
+
 
             NotificationList.ItemsSource = notificationlist;
         }
@@ -50,7 +50,7 @@ namespace MereNear.Views
 
         private void MenuItem_Clicked(object sender, System.EventArgs e)
         {
-           
+
         }
 
         private void NotificationList_ItemSelected(object sender, SelectedItemChangedEventArgs e)

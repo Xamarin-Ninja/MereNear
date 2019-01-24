@@ -123,7 +123,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBase\DataBaseService.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renderers\BaseEntryRenderer.cs" />
     <Compile Include="Renderers\CheckBoxRenderer.cs" />

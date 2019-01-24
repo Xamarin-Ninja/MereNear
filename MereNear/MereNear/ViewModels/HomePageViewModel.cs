@@ -329,7 +329,9 @@ namespace MereNear.ViewModels
             {
             }
         }
+        #endregion
 
+        #region Private/Public Methods
         private void Categry_sel(object sender)
         {
             var data = (HomePageModel)sender;
@@ -346,9 +348,7 @@ namespace MereNear.ViewModels
                 Application.Current.Properties["PreviousSelectedValue"] = data;
             }
         }
-        #endregion
 
-        #region Private Methods
         private void ClearTab()
         {
             MyJobsBGColor = Color.Transparent;
@@ -439,7 +439,8 @@ namespace MereNear.ViewModels
         {
             try
             {
-                var result = await _webApiRestClient.GetAsync<GetCatApiModel>("getCat");
+                //var result = await _webApiRestClient.GetAsync<GetCatApiModel>("getCat");
+                var result = await _webApiRestClient.GetAsync<GetCatApiModel>("?func=getcat");
                 setData("CategoryListData", result);
                 ListWidth = App.ScreenWidth;
                 NewCategoryData = new ObservableCollection<HomePageModel>(result.data);
