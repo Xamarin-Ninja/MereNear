@@ -421,6 +421,15 @@ namespace MereNear.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter mobile number.
+        /// </summary>
+        public static string LoginEntryPlaceHolder {
+            get {
+                return ResourceManager.GetString("LoginEntryPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Logout.
         /// </summary>
         public static string LogoutMenu {

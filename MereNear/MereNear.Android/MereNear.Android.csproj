@@ -931,7 +931,7 @@
     <AndroidResource Include="Resources\drawable\logout_master.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\map_red_pin.png" />
+    <AndroidResource Include="Resources\drawable\pin.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\menu.png" />

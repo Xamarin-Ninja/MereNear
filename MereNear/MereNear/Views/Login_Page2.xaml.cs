@@ -15,6 +15,7 @@ namespace MereNear.Views
         {
             InitializeComponent();
             MobileEntryTitle.Text = AppResources.MobileEntryTitle;
+            MobileEntry.Placeholder = AppResources.LoginEntryPlaceHolder;
             NextButton.Text ="";
             NextButton.IsEnabled = false;
             getCountryCode();

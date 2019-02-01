@@ -44,12 +44,12 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="location.png" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" />
-                    <Label Text="{Binding Address}" Grid.Row="0" Grid.Column="1" Style="{StaticResource GrayLabel}" HorizontalOptions="Start" VerticalOptions="Center" LineBreakMode="WordWrap"/>
+                    <Label Text="{Binding Address}" Grid.Row="0" Grid.Column="1" Style="{StaticResource GrayLabel}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalOptions="Center" LineBreakMode="WordWrap"/>
                     <Label Text="{Binding Distance,StringFormat='({0:N})'}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" Style="{StaticResource BlueLabel}" IsVisible="{Binding IsDistanceVisible}"/>
 
                     <Image Source="location.png" Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" />
-                    <Label Text="{Binding Address}" Grid.Row="2" Grid.Column="1" Style="{StaticResource GrayLabel}" HorizontalOptions="Start" VerticalOptions="Center" LineBreakMode="WordWrap"/>
-                    <Label Text="{Binding Distance,StringFormat='({0:N})'}" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" Style="{StaticResource BlueLabel}" IsVisible="{Binding IsDistanceVisible}"/>
+                    <Label Text="{Binding DropAddress}" Grid.Row="2" Grid.Column="1" Style="{StaticResource GrayLabel}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalOptions="Center" LineBreakMode="WordWrap"/>
+                    <!--<Label Text="{Binding Distance,StringFormat='({0:N})'}" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" Style="{StaticResource BlueLabel}" IsVisible="{Binding IsDistanceVisible}"/>-->
                     
                     <Image Source="job_title.png" Grid.Row="4" Grid.Column="0" HorizontalOptions="Start" />
                     <Label  x:Name="JobtitleLabel" Style="{StaticResource BlackLabelBold}"  FontAttributes="Bold" FontSize="12" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" />

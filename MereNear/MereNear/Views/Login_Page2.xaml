@@ -29,7 +29,7 @@
                 <TapGestureRecognizer Tapped="CountryCodePicker_Tapped"/>
             </Picker.GestureRecognizers>
         </Picker>
-        <Entry x:Name="MobileEntry" Text="{Binding MobileNumber}" Margin="0,1,0,0" Placeholder="Enter mobile number" Grid.Row="2" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black" TextChanged="Entry_TextChanged" MaxLength="10"/>
+        <Entry x:Name="MobileEntry" Text="{Binding MobileNumber}" Margin="0,1,0,0" Grid.Row="2" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black" TextChanged="Entry_TextChanged" MaxLength="10"/>
         <BoxView BackgroundColor="Black" HeightRequest="1" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start"/>
         <Button BackgroundColor="#70DA44" Margin="-20,0,-20,-20" x:Name="NextButton" Text="Next" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" HeightRequest="40" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding NextButton}"/>
         <StackLayout x:Name="CountryCodeListPopup" IsVisible="False" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="50">
