@@ -16,6 +16,7 @@ namespace MereNear.Views
             InitializeComponent();
             _webApiRestClient = new WebApiRestClient();
             MobileEntryTitle.Text = AppResources.MobileEntryTitle;
+            MobileEntry.Placeholder = AppResources.LoginEntryPlaceHolder;
             NextButton.Text ="";
             NextButton.IsEnabled = false;
             getCountryCode();

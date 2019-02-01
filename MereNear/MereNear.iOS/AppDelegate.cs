@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using CoreGraphics;
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
 using MereNear.Interface;
 using Prism;
 using Prism.Ioc;
@@ -26,7 +27,7 @@ namespace MereNear.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            
+            ImageCircleRenderer.Init();
             FormsMaps.Init();
             /*Screen height and width */
             App.ScreenHeight = (int)UIScreen.MainScreen.Bounds.Height;

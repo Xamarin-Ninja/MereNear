@@ -43,11 +43,11 @@
                     <Label x:Name="SenderName" Text="{Binding SenderName}" Grid.Column="1" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End"/>
                     </Grid>
                 
-                <Label Grid.Column="2" BackgroundColor="White" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="&#xf05a;" TextColor="Black" Style="{StaticResource FontAwesomeLabel}">
-                    <Label.GestureRecognizers>
+                <Image Grid.Column="2" BackgroundColor="White" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="info.png">
+                    <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding }"/>
-                    </Label.GestureRecognizers>
-                </Label>
+                    </Image.GestureRecognizers>
+                </Image>
             </Grid>
             <StackLayout Grid.Row="1" Grid.RowSpan="2">
                 <ListView x:Name="chatTemplate" ItemTemplate="{StaticResource MessageTemplateSelector}" HasUnevenRows="true" SeparatorVisibility="None" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding Messages}" ItemSelected="chatlistView_ItemSelected">
@@ -80,11 +80,11 @@
                     </Image.GestureRecognizers>
                 </Image>
                 <Entry Placeholder="Type a message.." Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Fill" HeightRequest="30" Text="{Binding MyMessage}" FontSize="14"/>
-                <Label Grid.Column="3" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Text="&#xf0c6;"  Style="{StaticResource FontAwesomeLabel}">
-                    <Label.GestureRecognizers>
+                <Image Grid.Column="3" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="attach.png">
+                    <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding }"/>
-                    </Label.GestureRecognizers>
-                </Label>
+                    </Image.GestureRecognizers>
+                </Image>
                 <Image Source="send" Grid.Column="4"  HorizontalOptions="Fill" HeightRequest="20" WidthRequest="20" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SendCommand}"/>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MereNear.Views.NotificationViewCell.NotificationView" x:Name="NotifyViewcell">
+  <ViewCell.View>
+        <Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="Remove" Grid.Column="1" BindingContext="{Binding Source={x:Reference NotifyViewcell}, Path=BindingContext}" CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}" Command="{Binding AddNotify}" Clicked="Button_Clicked" BackgroundColor="Red" TextColor="White"/>
+            </Grid>
+            <Grid Padding="10" RowSpacing="0" x:Name="Item" BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="Start"  VerticalOptions="Center"/>
+                <Label Text="{Binding Text}" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="Black"/>
+                <Label Text="{Binding Time}" Grid.Row="1" Grid.Column="1" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" VerticalOptions="Start"/>
+
+                <Grid.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Left" Swiped="ListViewLeftSwiped" BindingContext="{Binding Source={x:Reference NotifyViewcell}, Path=BindingContext}" CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}" />
+                    <SwipeGestureRecognizer Direction="Right" Swiped="ListViewRightSwiped" CommandParameter="{Binding .}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

@@ -33,10 +33,10 @@
                         </StackLayout>
 
                         <Image Source="location.png" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" />
-                        <Label x:Name="address" Text="{Binding LocationAddress}" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                        <Label x:Name="address" Text="{Binding LocationAddress}" Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
 
                         <Image Source="location.png" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" />
-                        <Label x:Name="dropaddress" Text="{Binding DropLocationAddress}" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                        <Label x:Name="dropaddress" Text="{Binding DropLocationAddress}" Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                         
                         <Image Source="job_title.png" Grid.Row="4" Grid.Column="0" HorizontalOptions="Center"/>
                         <Label x:Name="JobtitleLabel" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="Poppins-Bold.ttf#Poppins Bold" FontAttributes="Bold"/>

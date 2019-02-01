@@ -5,6 +5,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using ImageCircle.Forms.Plugin.Droid;
 using Plugin.Permissions;
 using Prism;
 using Prism.Ioc;
@@ -30,6 +31,7 @@ namespace MereNear.Droid
             UserDialogs.Init(this);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            ImageCircleRenderer.Init();
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, bundle);
             FormsMaps.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));

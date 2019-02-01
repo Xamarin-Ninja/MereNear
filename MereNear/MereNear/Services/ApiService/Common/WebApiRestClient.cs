@@ -13,7 +13,7 @@ namespace MereNear.Services.ApiService.Common
     public class WebApiRestClient : IWebApiRestClient
     {
         private readonly JsonSerializerSettings _jsonSettings;
-        Uri baseUri = new Uri("https://merenearapi.herokuapp.com/");
+        Uri baseUri = new Uri("http://peertechnologies.in/Mnear/Merenear/");
         public WebApiRestClient()
         {
             _jsonSettings = new JsonSerializerSettings

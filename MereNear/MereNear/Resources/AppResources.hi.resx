@@ -428,4 +428,8 @@
     <value>ड्रॉप स्थान</value>
     <comment>Pick Location Page</comment>
   </data>
+  <data name="LoginEntryPlaceHolder" xml:space="preserve">
+    <value>मोबाइल नंबर दर्ज करें</value>
+    <comment>Login_Page2</comment>
+  </data>
 </root>

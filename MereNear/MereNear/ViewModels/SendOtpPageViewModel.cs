@@ -1,25 +1,18 @@
 ﻿using Acr.UserDialogs;
-using LiteDB;
-using MereNear.Interface;
-using MereNear.Model;
 using MereNear.Resources;
 using MereNear.Services.ApiService.Common;
 using MereNear.ViewModels.Common;
-using MereNear.Views;
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MereNear.ViewModels
 {
-	public class SendOtpPageViewModel : BaseViewModel,INavigationAware
+    public class SendOtpPageViewModel : BaseViewModel,INavigationAware
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
@@ -33,8 +26,6 @@ namespace MereNear.ViewModels
         private string _otp2;
         private string _otp3;
         private string _otp4;
-
-        LiteDatabase _dataBase;
         
         #endregion
 
@@ -81,8 +72,6 @@ namespace MereNear.ViewModels
             get { return _otp4; }
             set { SetProperty(ref _otp4, value); }
         }
-
-        //public OTPModel otpModel = new OTPModel();
         #endregion
 
         #region Command
@@ -196,16 +185,6 @@ namespace MereNear.ViewModels
         {
             try
             {
-                //_dataBase = new LiteDatabase(DependencyService.Get<IDataBase>().GetFilePath("Users.db"));
-                //Users = _dataBase.GetCollection<User>();
-
-                //User user = new User
-                //{
-                //    UserID = 1,
-                //    Name = "Pardeep"
-                                     
-                //};
-                //Users.Update(user);
                 await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
             }
             catch (Exception ex)

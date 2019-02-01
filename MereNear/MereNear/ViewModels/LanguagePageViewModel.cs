@@ -21,7 +21,7 @@ namespace MereNear.ViewModels
         private LanguageModel _languageSelected;
         private ObservableCollection<LanguageModel> _languagePicker = new ObservableCollection<LanguageModel>();
         #endregion
-        LiteDatabase _dataBase;
+        
         #region Public Variable
         public string lastnavigatedpage { get; set; }
         public LanguageModel LanguageSelected
@@ -50,18 +50,7 @@ namespace MereNear.ViewModels
                             languageDBService.CreateLanguageModelInDB(LanguageSelected);
                         }
 
-                        //_dataBase = new LiteDatabase(DependencyService.Get<Interface.IDataBase>().GetFilePath("Users.db"));
-                        //language = _dataBase.GetCollection<User>();
-
-
-                        //User lang = new User
-                        //{
-                        //    Language = LanguageSelected.ShortName
-
-                        //};
                         App.Setlanguage(LanguageSelected.ShortName);
-                        //setString("AppLanguage", LanguageSelected.ShortName);
-                        //language.Update(lang);
                         try
                         {
                             GoToHomePage();
@@ -89,14 +78,12 @@ namespace MereNear.ViewModels
         {
             _navigationService = navigationService;
             languageDBService = DependencyService.Get<ILanguageDBService>();
-            //GetLanguages();
         }
         #endregion
 
         #region Private Methods
         private async void GoToHomePage()
         {
-            //_navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
             if (string.IsNullOrEmpty(lastnavigatedpage)||string.IsNullOrWhiteSpace(lastnavigatedpage))
             {
                 await _navigationService.NavigateAsync(nameof(Login_Page));
@@ -106,19 +93,6 @@ namespace MereNear.ViewModels
                 await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
             }
         }
-        //private void GetLanguages()
-        //{
-        //    LanguagePicker.Add(new LanguageModel
-        //    {
-        //        DisplayName = "English",
-        //        ShortName = "en"
-        //    });
-        //    LanguagePicker.Add(new LanguageModel
-        //    {
-        //        DisplayName = "Hindi",
-        //        ShortName = "hi"
-        //    });
-        //}
         #endregion
 
         #region Navigation Parameters
