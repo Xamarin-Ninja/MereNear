@@ -41,6 +41,7 @@
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0-preview3-35497" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.1.0-preview3-35497" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Plugin.FirebasePushNotification" Version="2.3.5" />
     <PackageReference Include="Plugin.Multilingual" Version="1.1.6-beta" />
     <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
     <PackageReference Include="System.Reactive" Version="4.0.0" />

@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "765540590957",
-    "firebase_url": "https://merenear-b0ed2.firebaseio.com",
-    "project_id": "merenear-b0ed2",
-    "storage_bucket": "merenear-b0ed2.appspot.com"
+    "project_number": "380269273919",
+    "firebase_url": "https://latest-f838d.firebaseio.com",
+    "project_id": "latest-f838d",
+    "storage_bucket": "latest-f838d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:765540590957:android:4b492e45ac3031c3",
+        "mobilesdk_app_id": "1:380269273919:android:4b492e45ac3031c3",
         "android_client_info": {
           "package_name": "com.qservices.merenear"
         }
       },
       "oauth_client": [
         {
-          "client_id": "765540590957-8mfr062kc6mhsckgiqcoadgt8hknlc9i.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.qservices.merenear",
-            "certificate_hash": "664d1f7e1ff7e7f1c317822cd47aee9f03d0cda0"
-          }
-        },
-        {
-          "client_id": "765540590957-sdl662lsfgsge901r2k84m0jhk26mdq7.apps.googleusercontent.com",
+          "client_id": "380269273919-pls93gjqt2ul1ur1jua5hbgp8no96sh8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD8R6jioWwzXVL7TXWKTSwApRi9NG6GdqI"
+          "current_key": "AIzaSyCwOfSbFe7J8cedPl54EVBrrRz_GJURdEk"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "765540590957-sdl662lsfgsge901r2k84m0jhk26mdq7.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
