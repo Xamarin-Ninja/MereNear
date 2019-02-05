@@ -1,3 +1,4 @@
+using Acr.UserDialogs;
 using MereNear.Model;
 using MereNear.ViewModels.Common;
 using MereNear.Views;
@@ -61,9 +62,16 @@ namespace MereNear.ViewModels
                 if (IsJobModelDBPresent)
                 {
                     var AppliedJobData = postJobDBService.ReadAllItems().Where(x => x.IsApplied);
-                    foreach(var item in AppliedJobData)
+                    if (AppliedJobData!=null)
                     {
-                        MyjobItems.Add(item);
+                        foreach (var item in AppliedJobData)
+                        {
+                            MyjobItems.Add(item);
+                        }
+                    }
+                    else
+                    {
+                        UserDialogs.Instance.Alert("Currently There is no job applied");
                     }
                 }
             }

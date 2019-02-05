@@ -1006,6 +1006,7 @@
     <BundleResource Include="Resources\House.png" />
     <Content Include="Resources\Image2.jpg" />
     <BundleResource Include="Resources\upload_photo_icon.jpg" />
+    <BundleResource Include="Resources\plumbing.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Image3.jpg" />
