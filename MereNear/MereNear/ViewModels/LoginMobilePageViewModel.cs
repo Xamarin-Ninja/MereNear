@@ -23,7 +23,6 @@ namespace MereNear.ViewModels
 
         #region Public Variables
         public string OTPNumber;
-        public int a, b;
         public string MobileNumber
         {
             get { return _mobileNumber; }
@@ -87,7 +86,6 @@ namespace MereNear.ViewModels
         public LoginMobilePageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            a = b = 1;
         }
         #endregion
 

@@ -22,8 +22,6 @@ namespace MereNear.ViewModels
         #region Private Variables
         private readonly INavigationService _navigationService;
         protected readonly IWebApiRestClient _webApiRestClient;
-        private readonly IUserDBService userDBService;
-
         private string _mobileNumber;
         #endregion
 
@@ -44,7 +42,6 @@ namespace MereNear.ViewModels
             _navigationService = navigationService;
             _webApiRestClient = webApiRestClient;
 
-            userDBService = DependencyService.Get<IUserDBService>();
         }
         #endregion
 
