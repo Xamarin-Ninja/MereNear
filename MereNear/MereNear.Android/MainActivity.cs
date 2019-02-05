@@ -2,15 +2,18 @@
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
+using Android.Gms.Common;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Widget;
 using ImageCircle.Forms.Plugin.Droid;
 using Plugin.Permissions;
 using Prism;
 using Prism.Ioc;
 using Xamarin;
 using Xamarin.Forms;
+
 
 namespace MereNear.Droid
 {
@@ -35,6 +38,27 @@ namespace MereNear.Droid
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, bundle);
             FormsMaps.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));
+
+            CheckForGoogleServices();
+
+        }
+
+        public bool CheckForGoogleServices()
+        {
+            var resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
+            if (resultCode  != ConnectionResult.Success )
+            {
+                if (GoogleApiAvailability.Instance.IsUserResolvableError(resultCode))
+                {
+                    Toast.MakeText(Android.App.Application.Context, GoogleApiAvailability.Instance.GetErrorString(resultCode), ToastLength.Long);
+                }
+                else
+                {
+                    Toast.MakeText(Android.App.Application.Context, " This device does not support Google Play Services ", ToastLength.Long);
+                }
+                return false;
+            }
+            return true;
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)

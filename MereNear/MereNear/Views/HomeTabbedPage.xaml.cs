@@ -37,10 +37,9 @@ namespace MereNear.Views
 
                 });
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
 
-                throw;
             }
         }
         

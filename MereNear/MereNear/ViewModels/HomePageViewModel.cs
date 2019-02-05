@@ -455,6 +455,7 @@ namespace MereNear.ViewModels
             }
             catch (Exception ex)
             {
+                UserDialogs.Instance.HideLoading();
                 UserDialogs.Instance.Alert(ex.Message);
             }
         }

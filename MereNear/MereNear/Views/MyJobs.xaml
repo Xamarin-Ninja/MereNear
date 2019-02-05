@@ -12,7 +12,7 @@
         </Grid.RowDefinitions>
       <common:CustomHeader_Hamburger HeaderLeftIcon="menu.png" Grid.Row="0" x:Name="MyJobTitle" />
         <ListView x:Name="jobListItems" ItemsSource="{Binding MyjobItems}" Grid.Row="1"
-              SelectedItem="{Binding SelectedAllJobs}" ItemSelected="jobListItems_ItemSelected"
+              SelectedItem="{Binding SelectedMyJob}" ItemSelected="jobListItems_ItemSelected"
                  RowHeight="120"
                  SeparatorVisibility="Default"
                 SeparatorColor="Transparent">

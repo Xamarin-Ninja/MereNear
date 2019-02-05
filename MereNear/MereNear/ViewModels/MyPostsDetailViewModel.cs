@@ -11,6 +11,7 @@ using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using LiteDB;
 
 namespace MereNear.ViewModels
 {
@@ -19,23 +20,13 @@ namespace MereNear.ViewModels
         #region Private Variable
         private readonly INavigationService _navigationService;
         private PostJobModel _postsModelDetail = new PostJobModel();
-        private string _customHeaderTitle;
-        private string _status;
-        private Color _statusColor;
-
+        
         private bool _isDistanceVisible;
-
-        private string _time;
-        private Color _timeColor;
-
-        private string _description;
-        private string _categoryWork;
+        private bool _isServicePhotoAvailable;
+        private bool _isApplyButtonVisible;
+        private bool _isDropLocationVisible;
 
         private string _buttonTextChange;
-        private string _address;
-        private string _distance;
-
-        private bool _isApplyButtonVisible;
         #endregion
 
         #region Public Variabel
@@ -45,70 +36,29 @@ namespace MereNear.ViewModels
             set { SetProperty(ref _postsModelDetail, value); }
         }
 
-        public string CustomHeaderTitle
-        {
-            get { return _customHeaderTitle; }
-            set { SetProperty(ref _customHeaderTitle, value); }
-        }
-
-        public string Status
-        {
-            get { return _status; }
-            set { SetProperty(ref _status, value); }
-        }
-
-        public Color StatusColor
-        {
-            get { return _statusColor; }
-            set { SetProperty(ref _statusColor, value); }
-        }
-
         public bool IsDistanceVisible
         {
             get { return _isDistanceVisible; }
             set { SetProperty(ref _isDistanceVisible, value); }
         }
 
-        public string Time
+        public bool IsDropLocationVisible
         {
-            get { return _time; }
-            set { SetProperty(ref _time, value); }
+            get { return _isDropLocationVisible; }
+            set { SetProperty(ref _isDropLocationVisible, value); }
         }
 
-        public Color TimeColor
-        {
-            get { return _timeColor; }
-            set { SetProperty(ref _timeColor, value); }
-        }
 
-        public string CategoryWork
+        public bool IsServicePhotoAvailable
         {
-            get { return _categoryWork; }
-            set { SetProperty(ref _categoryWork, value); }
-        }
-
-        public string Description
-{
-            get { return _description; }
-            set { SetProperty(ref _description, value); }
+            get { return _isServicePhotoAvailable; }
+            set { SetProperty(ref _isServicePhotoAvailable, value); }
         }
 
         public string ButtonTextChange
         {
             get { return _buttonTextChange; }
             set { SetProperty(ref _buttonTextChange, value); }
-        }
-
-        public string Address
-        {
-            get { return _address; }
-            set { SetProperty(ref _address, value); }
-        }
-
-        public string Distance
-        {
-            get { return _distance; }
-            set { SetProperty(ref _distance, value); }
         }
 
         public bool IsApplyButtonVisible
@@ -133,9 +83,14 @@ namespace MereNear.ViewModels
                 return new DelegateCommand(async () =>
                 {
                     var param = new NavigationParameters();
-                    param.Add("LookingJobFlow", PostsModelDetail);
+                    PostsModelDetail.Status = AppResources.JobStatusProgress;
+                    PostsModelDetail.IsApplied = true;
+                    ButtonTextChange = "Already Applied";
+                    BsonValue id = PostsModelDetail.ID;
+                    postJobDBService.UpdatePostJobModelInDb(id, PostsModelDetail);
+                    //param.Add("LookingJobFlow", PostsModelDetail);
                     //await _navigationService.NavigateAsync(nameof(MyJobs));
-                    await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute),param);
+                    await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/HomeTabbedPage", UriKind.Absolute));
                     MessagingCenter.Send("MyJobs", "ChangeCurrentPage");
                 });
             }
@@ -169,7 +124,23 @@ namespace MereNear.ViewModels
             if (parameters.ContainsKey("MyPostsData"))
             {
                 PostsModelDetail = (PostJobModel)parameters["MyPostsData"];
-                GetDetail();
+                if (string.IsNullOrEmpty(PostsModelDetail.DropAddress) && string.IsNullOrWhiteSpace(PostsModelDetail.DropAddress))
+                {
+                    IsDropLocationVisible = false;
+                }
+                else
+                {
+                    IsDropLocationVisible = true;
+                }
+                if(string.IsNullOrWhiteSpace(PostsModelDetail.ServiceImage1) && string.IsNullOrEmpty(PostsModelDetail.ServiceImage1) && string.IsNullOrWhiteSpace(PostsModelDetail.ServiceImage2) && string.IsNullOrEmpty(PostsModelDetail.ServiceImage2))
+                {
+                    IsServicePhotoAvailable = false;
+                }
+                else
+                {
+                    IsServicePhotoAvailable = true;
+                }
+                //GetDetail();
                 IsDistanceVisible = false;
                 IsApplyButtonVisible = false;
                 var position = PostsModelDetail.AddressPosition;
@@ -178,10 +149,35 @@ namespace MereNear.ViewModels
             if (parameters.ContainsKey("AllJobsPageData"))
             {
                 PostsModelDetail = (PostJobModel)parameters["AllJobsPageData"];
-                GetDetail();
+                //GetDetail();
                 IsDistanceVisible = true;
                 ButtonTextChange = AppResources.ApplyButton;
                 IsApplyButtonVisible = true;
+                var position = PostsModelDetail.AddressPosition;
+                MessagingCenter.Send("Location", "PostJobLocation", position);
+            }
+            if (parameters.ContainsKey("MyJobData"))
+            {
+                PostsModelDetail = (PostJobModel)parameters["MyJobData"];
+                if (string.IsNullOrEmpty(PostsModelDetail.DropAddress) && string.IsNullOrWhiteSpace(PostsModelDetail.DropAddress))
+                {
+                    IsDropLocationVisible = false;
+                }
+                else
+                {
+                    IsDropLocationVisible = true;
+                }
+                if (string.IsNullOrWhiteSpace(PostsModelDetail.ServiceImage1) && string.IsNullOrEmpty(PostsModelDetail.ServiceImage1) && string.IsNullOrWhiteSpace(PostsModelDetail.ServiceImage2) && string.IsNullOrEmpty(PostsModelDetail.ServiceImage2))
+                {
+                    IsServicePhotoAvailable = false;
+                }
+                else
+                {
+                    IsServicePhotoAvailable = true;
+                }
+                //GetDetail();
+                IsDistanceVisible = false;
+                IsApplyButtonVisible = false;
                 var position = PostsModelDetail.AddressPosition;
                 MessagingCenter.Send("Location", "PostJobLocation", position);
             }
@@ -189,18 +185,18 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Private Method
-        private void GetDetail()
-        {
-            CustomHeaderTitle = PostsModelDetail.CategoryName;
-            Status = PostsModelDetail.Status;
-            StatusColor = PostsModelDetail.StatusColor;
-            Address = PostsModelDetail.Address;
-            Time = PostsModelDetail.Time;
-            TimeColor = PostsModelDetail.TimeColor;
-            CategoryWork = PostsModelDetail.CategoryWork;
-            Description = PostsModelDetail.Description;
-            Distance = PostsModelDetail.Distance;
-        }
+        //private void GetDetail()
+        //{
+        //    CustomHeaderTitle = PostsModelDetail.CategoryName;
+        //    Status = PostsModelDetail.Status;
+        //    StatusColor = PostsModelDetail.StatusColor;
+        //    Address = PostsModelDetail.Address;
+        //    Time = PostsModelDetail.Time;
+        //    TimeColor = PostsModelDetail.TimeColor;
+        //    CategoryWork = PostsModelDetail.CategoryWork;
+        //    Description = PostsModelDetail.Description;
+        //    Distance = PostsModelDetail.Distance;
+        //}
         #endregion
     }
 }

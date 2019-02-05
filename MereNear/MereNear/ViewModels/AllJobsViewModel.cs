@@ -11,6 +11,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
+using MereNear.Helpers;
+using Acr.UserDialogs;
 
 namespace MereNear.ViewModels
 {
@@ -67,33 +69,52 @@ namespace MereNear.ViewModels
         public AllJobsViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            GetAllJobData();
+            var IsPostjobAvail = postJobDBService.IsPostJobDbPresentInDB();
+            if (IsPostjobAvail)
+            {
+                var jobdata = postJobDBService.ReadAllItems();
+                foreach (var item in jobdata)
+                {
+                    if (item.Status == "Active")
+                    {
+                        item.StatusColor = Color.FromHex(ChangeColor.GreenColor);
+                    }
+                    else if (item.Status == "Completed")
+                    {
+                        item.StatusColor = Color.FromHex(ChangeColor.OrangeColor);
+                    }
+                    else if (item.Status == "Disabled")
+                    {
+                        item.StatusColor = Color.FromHex(ChangeColor.RedColor);
+                    }
+
+                    if (item.Time == "Now")
+                    {
+                        item.TimeColor = Color.FromHex(ChangeColor.BlueColor);
+                        item.IsDateVisible = false;
+                    }
+                    else
+                    {
+                        item.TimeColor = Color.FromHex(ChangeColor.GrayColor);
+                        item.IsDateVisible = true;
+                    }
+                    item.WhenLabel = AppResources.When;
+                    item.PostedOnLabel = AppResources.PostedOn + " :-";
+                    GetAllJobData(item);
+                }
+            }
+            else
+            {
+                UserDialogs.Instance.Alert("Currently There is no job");
+            }
         }
         #endregion
 
         #region Private Methods
-        private void GetAllJobData()
+        private void GetAllJobData(PostJobModel postJobData)
         {
-            if (Application.Current.Properties.ContainsKey("PostJobModel"))
-            {
-                postJobData = (PostJobModel)Application.Current.Properties["PostJobModel"];
-                AllJobItems.Add(new PostJobModel
-                {
-                    Image = postJobData.Image,
-                    Description = postJobData.Description,
-                    CategoryWork = postJobData.CategoryWork,
-                    AddressPosition = postJobData.AddressPosition,
-                    Address = postJobData.Address,
-                    CategoryName = postJobData.CategoryName,
-                    Date = postJobData.Date,
-                    Time = postJobData.Time,
-                    TimeColor = postJobData.TimeColor,
-                    Name = "Pardeep",
-                    Status = AppResources.JobStatusActive,
-                    StatusColor = Xamarin.Forms.Color.LightGreen,
-                    Distance = postJobData.Distance
-                });
-            }
+            postJobData.Name = "Pardeep";
+            AllJobItems.Add(postJobData);
         }  
 
         private async void NavigateToDetailPage(PostJobModel selectedjob)

@@ -25,7 +25,7 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Public Variable
-        public PostJobModel jobModel = new PostJobModel();
+        //public PostJobModel jobModel = new PostJobModel();
         public ObservableCollection<PostJobModel> MyPostItems
         {
             get { return _myPostItems; }
@@ -74,14 +74,51 @@ namespace MereNear.ViewModels
         public MyPostsViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            //GetData();
+            var IsPostjobAvail = postJobDBService.IsPostJobDbPresentInDB();
+            if (IsPostjobAvail)
+            {
+                var jobdata = postJobDBService.ReadAllItems();
+                foreach(var item in jobdata)
+                {
+                    if (item.Status == "Active")
+                    {
+                        item.StatusColor = Color.FromHex(ChangeColor.GreenColor);
+                    }
+                    else if (item.Status == "Completed")
+                    {
+                        item.StatusColor = Color.FromHex(ChangeColor.OrangeColor);
+                    }
+                    else if (item.Status == "Disabled")
+                    {
+                        item.StatusColor = Color.FromHex(ChangeColor.RedColor);
+                    }
+
+                    if (item.Time == "Now")
+                    {
+                        item.TimeColor = Color.FromHex(ChangeColor.BlueColor);
+                        item.IsDateVisible = false;
+                    }
+                    else
+                    {
+                        item.TimeColor = Color.FromHex(ChangeColor.GrayColor);
+                        item.IsDateVisible = true;
+                    }
+                    item.WhenLabel = AppResources.When + ":";
+                    item.PostedOnLabel = AppResources.PostedOn + " :";
+                    GetData(item);
+                }
+            }
+            else
+            {
+                UserDialogs.Instance.Alert("Currently There is no post");
+            }
         }
         #endregion
 
         #region Private Methods
-        private void GetData()
+        private void GetData(PostJobModel data)
         {
-            MyPostItems.Add(jobModel);
+            MyPostItems.Add(data);
         }
         #endregion
 
@@ -107,36 +144,36 @@ namespace MereNear.ViewModels
 
         public void OnNavigatingTo(INavigationParameters parameters)
         {
-            if (parameters.ContainsKey("PostJobData"))
-            {
-                jobModel = (PostJobModel)parameters["PostJobData"];
-                if(jobModel.Status == "Active")
-                {
-                    jobModel.StatusColor = Color.FromHex(ChangeColor.GreenColor);
-                }
-                else if(jobModel.Status == "Completed")
-                {
-                    jobModel.StatusColor = Color.FromHex(ChangeColor.OrangeColor);
-                }
-                else if(jobModel.Status == "Disabled")
-                {
-                    jobModel.StatusColor = Color.FromHex(ChangeColor.RedColor);
-                }
+            //if (parameters.ContainsKey("PostJobData"))
+            //{
+            //    var jobModel = (PostJobModel)parameters["PostJobData"];
+            //    if(jobModel.Status == "Active")
+            //    {
+            //        jobModel.StatusColor = Color.FromHex(ChangeColor.GreenColor);
+            //    }
+            //    else if(jobModel.Status == "Completed")
+            //    {
+            //        jobModel.StatusColor = Color.FromHex(ChangeColor.OrangeColor);
+            //    }
+            //    else if(jobModel.Status == "Disabled")
+            //    {
+            //        jobModel.StatusColor = Color.FromHex(ChangeColor.RedColor);
+            //    }
 
-                if(jobModel.Time == "Now")
-                {
-                    jobModel.TimeColor = Color.FromHex(ChangeColor.BlueColor);
-                    jobModel.IsDateVisible = false;
-                }
-                else
-                {
-                    jobModel.TimeColor = Color.FromHex(ChangeColor.GrayColor);
-                    jobModel.IsDateVisible = true;
-                }
-                jobModel.WhenLabel = AppResources.When;
-                jobModel.PostedOnLabel = AppResources.PostedOn + " :-";
-                GetData();
-            }
+            //    if(jobModel.Time == "Now")
+            //    {
+            //        jobModel.TimeColor = Color.FromHex(ChangeColor.BlueColor);
+            //        jobModel.IsDateVisible = false;
+            //    }
+            //    else
+            //    {
+            //        jobModel.TimeColor = Color.FromHex(ChangeColor.GrayColor);
+            //        jobModel.IsDateVisible = true;
+            //    }
+            //    jobModel.WhenLabel = AppResources.When;
+            //    jobModel.PostedOnLabel = AppResources.PostedOn + " :-";
+            //    GetData(jobModel);
+            //}
         }
         #endregion
     }

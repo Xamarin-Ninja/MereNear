@@ -1,4 +1,5 @@
 using MereNear.Interface;
+using MereNear.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
@@ -9,7 +10,7 @@ namespace MereNear.Views
         public MyPosts()
         {
             InitializeComponent();
-            
+            Myposttitle.TitleText = AppResources.MyPostsMenu;
         }
 
         private void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)

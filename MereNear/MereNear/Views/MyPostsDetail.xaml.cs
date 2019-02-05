@@ -1,3 +1,4 @@
+using MereNear.Model;
 using MereNear.Resources;
 using MereNear.ViewModels;
 using Xamarin.Forms;
@@ -16,13 +17,14 @@ namespace MereNear.Views
             Needservicelabel.Text = AppResources.NeedServiceLabel;
             jobstatuslabel.Text = AppResources.JobStatusLabel;
             PhotosLabel.Text = AppResources.PhotosLabel;
-            MessagingCenter.Subscribe<string,Position>(this, "PostJobLocation", (sender,position) =>
+            MessagingCenter.Subscribe<string,LocationAddress>(this, "PostJobLocation", (sender,position) =>
             {
-                customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(position.Latitude,position.Longitude), Distance.FromMiles(0.5)));
+                Position savedPosition = new Position(position.Latitude, position.Longitude);
+                customMap.MoveToRegion(MapSpan.FromCenterAndRadius(savedPosition, Distance.FromMiles(0.5)));
                 var pin = new Pin
                 {
                     Type = PinType.Place,
-                    Position = position,
+                    Position = savedPosition,
                     Address = "",
                     Label = ""
                 };

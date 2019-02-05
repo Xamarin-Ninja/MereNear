@@ -17,7 +17,7 @@ namespace MereNear.ViewModels
 	{
         private readonly INavigationService _navigationService;
         private ObservableCollection<PostJobModel> _myjobItems = new ObservableCollection<PostJobModel>();
-        private PostJobModel _selectedJobs;
+        private PostJobModel _selectedMyJob;
         public PostJobModel myJobDetail = new PostJobModel();
 
 
@@ -27,23 +27,30 @@ namespace MereNear.ViewModels
             get { return _myjobItems; }
             set { SetProperty(ref _myjobItems, value); }
         }
-        public PostJobModel SelectedJobs
+        public PostJobModel SelectedMyJob
         {
-            get { return _selectedJobs; }
+            get { return _selectedMyJob; }
             set
             {
-                SetProperty(ref _selectedJobs, value);
-                if(_selectedJobs == null)
+                SetProperty(ref _selectedMyJob, value);
+                if(_selectedMyJob == null)
                 {
                     return;
                 }
                 else
                 {
-                    
+                    NavigateToDetailedPage(SelectedMyJob);
                 }
             }
         }
 
+        
+        private async void NavigateToDetailedPage(PostJobModel selectedMyJob)
+        {
+            var param = new NavigationParameters();
+            param.Add("MyJobData", "MyJobsPage");
+            await _navigationService.NavigateAsync(nameof(MyPostsDetail), param);
+        }
 
         public MyJobsViewModel(INavigationService navigationService)
         {

@@ -2,6 +2,7 @@
 using DLToolkit.Forms.Controls;
 using LiteDB.LanguageModelDB;
 using LiteDB.UserModelDB;
+using MereNear.Interface;
 using MereNear.Model;
 using MereNear.Resources;
 using MereNear.Services.ApiService.Common;
@@ -9,6 +10,7 @@ using MereNear.ViewModels;
 using MereNear.Views;
 using MereNear.Views.Common;
 using Plugin.Connectivity;
+using Plugin.FirebasePushNotification;
 using Plugin.Multilingual;
 using Prism;
 using Prism.Ioc;
@@ -32,8 +34,9 @@ namespace MereNear
         public static int ScreenHeight { get; set; }
         public static int ScreenWidth { get; set; }
         private ILanguageDBService languageDBService;
+        private ToastMessage toastMessage;
         private IUserDBService userDBService;
-        public bool a;
+        //public bool a;
         public string shortname { get; set; }
         public App() : this(null)
         {
@@ -62,8 +65,108 @@ namespace MereNear
         protected override async void OnInitialized()
         {
             InitializeComponent();
+
+            #region DataBase
             languageDBService = DependencyService.Get<ILanguageDBService>();
+            toastMessage = DependencyService.Get<ToastMessage>();
             userDBService = DependencyService.Get<IUserDBService>();
+            #endregion
+
+            #region FCM
+            CrossFirebasePushNotification.Current.Subscribe("general");
+            CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
+            {
+                System.Diagnostics.Debug.WriteLine($"TOKEN REC: {p.Token}");
+            };
+            System.Diagnostics.Debug.WriteLine($"TOKEN: {CrossFirebasePushNotification.Current.Token}");
+
+            CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
+            {
+                try
+                {
+                    System.Diagnostics.Debug.WriteLine("Received");
+                    if (p.Data.ContainsKey("body"))
+                    {
+                        var Message = $"{p.Data["body"]}";
+                        MessagingCenter.Send(Message, "Notification Recieved");
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+            };
+
+            CrossFirebasePushNotification.Current.OnNotificationOpened += (s, p) =>
+            {
+                //System.Diagnostics.Debug.WriteLine(p.Identifier);
+
+                System.Diagnostics.Debug.WriteLine("Opened");
+                foreach (var data in p.Data)
+                {
+                    System.Diagnostics.Debug.WriteLine($"{data.Key} : {data.Value}");
+                }
+
+                //if (p.Data.ContainsKey("body"))
+                //{
+                //    var Message = $"{p.Data["body"]}";
+                //    MessagingCenter.Send(Message, "Notification Recieved");
+                //    toastMessage.Show("You have recieved a new notification.");
+                //}
+
+                //if (!string.IsNullOrEmpty(p.Identifier))
+                //{
+                //    Device.BeginInvokeOnMainThread(() =>
+                //    {
+                //        //mPage.Message = p.Identifier;
+                //    });
+                //}
+                //else if (p.Data.ContainsKey("color"))
+                //{
+                //    Device.BeginInvokeOnMainThread(() =>
+                //    {
+                //        //mPage.Navigation.PushAsync(new ContentPage()
+                //        //{
+                //        //    BackgroundColor = Color.FromHex($"{p.Data["color"]}")
+
+                //        //});
+                //    });
+
+                //}
+                //else if (p.Data.ContainsKey("aps.alert.title"))
+                //{
+                //    Device.BeginInvokeOnMainThread(() =>
+                //    {
+                //        //mPage.Message = $"{p.Data["aps.alert.title"]}";
+                //    });
+
+                //}
+            };
+
+            CrossFirebasePushNotification.Current.OnNotificationAction += (s, p) =>
+            {
+                System.Diagnostics.Debug.WriteLine("Action");
+
+                if (!string.IsNullOrEmpty(p.Identifier))
+                {
+                    System.Diagnostics.Debug.WriteLine($"ActionId: {p.Identifier}");
+                    foreach (var data in p.Data)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"{data.Key} : {data.Value}");
+                    }
+
+                }
+
+            };
+
+            CrossFirebasePushNotification.Current.OnNotificationDeleted += (s, p) =>
+            {
+                System.Diagnostics.Debug.WriteLine("Dismissed");
+            };
+            #endregion
+
+            
             #region Check Network Connection
             var seconds = TimeSpan.FromSeconds(1);
             Device.StartTimer(seconds,()=>
@@ -152,6 +255,22 @@ namespace MereNear
             containerRegistry.RegisterForNavigation<SettingsPage, SettingsPageViewModel>();
             containerRegistry.RegisterForNavigation<EditProfilePage, EditProfilePageViewModel>();
             containerRegistry.RegisterForNavigation<ChangPhoneNumber, ChangPhoneNumberViewModel>();
+        }
+
+        protected override void OnStart()
+        {
+            
+            base.OnStart();
+        }
+
+        protected override void OnSleep()
+        {
+            base.OnSleep();
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
         }
     }
 }

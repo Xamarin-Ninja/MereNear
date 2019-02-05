@@ -29,6 +29,7 @@ namespace MereNear.ViewModels
         public Position LocationAddressPosition { get; set; }
         public string LocationAddress { get; set; }
         public string CategoryName { get; set; }
+        public string CategoryImage { get; set; }
         public string lastnavigatedpage = "";
 
         public string Address
@@ -159,6 +160,10 @@ namespace MereNear.ViewModels
             if (parameters.ContainsKey("Categoryname"))
             {
                 CategoryName = (string)parameters["Categoryname"];
+            }
+            if (parameters.ContainsKey("Categoryimage"))
+            {
+                CategoryImage = (string)parameters["Categoryimage"];
             }
             if (parameters.ContainsKey("AddressPosition"))
             {

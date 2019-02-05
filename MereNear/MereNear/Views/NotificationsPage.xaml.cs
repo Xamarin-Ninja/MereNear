@@ -8,8 +8,6 @@ namespace MereNear.Views
 {
     public partial class NotificationsPage : ContentPage
     {
-        public List<NotificationListItem> notificationlist { get; set; }
-
         protected T GetParent<T>(Button button, Element parent) where T : BaseActionViewCell
         {
             if (!(parent is T actionViewCell))
@@ -23,29 +21,6 @@ namespace MereNear.Views
         {
             InitializeComponent();
             NotificationTitle.TitleText = AppResources.NotificationsTab;
-            notificationlist = new List<NotificationListItem>();
-            var job = new NotificationListItem() { Text = "Job Completed", Icon = "logo.png", Time = "15 minutes ago" };
-            var job1 = new NotificationListItem() { Text = "Someone sent a message", Icon = "logo.png", Time = "16 minutes ago" };
-            notificationlist.Add(job);
-            notificationlist.Add(job1);
-            notificationlist.Add(job);
-            notificationlist.Add(job1);
-            notificationlist.Add(job);
-            notificationlist.Add(job1);
-            notificationlist.Add(job);
-            notificationlist.Add(job1);
-            notificationlist.Add(job);
-            notificationlist.Add(job1);
-
-
-            NotificationList.ItemsSource = notificationlist;
-        }
-
-        public class NotificationListItem
-        {
-            public string Text { get; set; }
-            public string Icon { get; set; }
-            public string Time { get; set; }
         }
 
         private void MenuItem_Clicked(object sender, System.EventArgs e)

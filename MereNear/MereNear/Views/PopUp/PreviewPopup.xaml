@@ -3,8 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MereNear.Views.PopUp.PreviewPopup">
   <ContentView.Content>
-        <Grid>
-            <Frame BackgroundColor="White" HeightRequest="500" CornerRadius="0" BorderColor="LightGray" HasShadow="True" Padding="10">
+        <Grid Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="485"/>
+            </Grid.RowDefinitions>
+            <Frame BackgroundColor="White" Grid.Row="0" Grid.RowSpan="2" CornerRadius="0" BorderColor="LightGray" HasShadow="False" Padding="10">
                 <ScrollView>
                     <Grid RowSpacing="0">
                         <Grid.RowDefinitions>
@@ -35,9 +39,9 @@
                         <Image Source="location.png" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" />
                         <Label x:Name="address" Text="{Binding LocationAddress}" Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
 
-                        <Image Source="location.png" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" />
-                        <Label x:Name="dropaddress" Text="{Binding DropLocationAddress}" Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                        
+                        <Image Source="location.png" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" IsVisible="{Binding IsDropLocationVisible}"/>
+                        <Label x:Name="dropaddress" Text="{Binding DropLocationAddress}" Grid.Row="3" Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular" IsVisible="{Binding IsDropLocationVisible}"/>
+
                         <Image Source="job_title.png" Grid.Row="4" Grid.Column="0" HorizontalOptions="Center"/>
                         <Label x:Name="JobtitleLabel" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" FontFamily="Poppins-Bold.ttf#Poppins Bold" FontAttributes="Bold"/>
                         <Label x:Name="jobTitle"  Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start" LineBreakMode="TailTruncation" MaxLines="2" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
@@ -53,14 +57,14 @@
                         <Label x:Name="PhotosLabel" Grid.Row="9" Grid.ColumnSpan="2" HorizontalOptions="Start" VerticalOptions="Center"/>
 
                         <Grid Grid.Row="10" Grid.ColumnSpan="2" ColumnSpacing="10">
-                            <Image Source="{Binding CameraPicker}" Grid.Column="0" Aspect="AspectFill"/>
-                            <Image Source="{Binding ImagePicker}" Grid.Column="1" Aspect="AspectFill"/>
+                            <Image Source="{Binding ImagePicker1}" Grid.Column="0" Aspect="AspectFill"/>
+                            <Image Source="{Binding ImagePicker2}" Grid.Column="1" Aspect="AspectFill"/>
                         </Grid>
                         <Button BackgroundColor="#70DA44" x:Name="submitbutton" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="11" Grid.ColumnSpan="2" Command="{Binding SubmitPostCommand}"/>
                     </Grid>
                 </ScrollView>
             </Frame>
-            <Image Source="cancel.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start">
+            <Image Source="cancel.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Start" Margin="-8">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding PopupCloseCommand}"/>
                 </Image.GestureRecognizers>

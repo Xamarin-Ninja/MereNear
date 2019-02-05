@@ -1,4 +1,5 @@
 ﻿using MereNear.Model;
+using MereNear.Services.LiteDB.PostJobModelDB;
 using Prism.Mvvm;
 using SignalR.Interface;
 using System;
@@ -11,6 +12,12 @@ namespace MereNear.ViewModels.Common
     public class BaseViewModel : BindableBase
     {
         public static IChatServices _chatServices;
+        protected readonly IPostJobDBService postJobDBService;
+
+        public BaseViewModel()
+        {
+            postJobDBService = DependencyService.Get<IPostJobDBService>();
+        }
 
         public static void setInt(String key, int value)
         {
@@ -46,25 +53,6 @@ namespace MereNear.ViewModels.Common
             else
             {
                 return default(GetCatApiModel);
-            }
-        }
-
-        public static void setPostData(String key, PostJobModel value)
-        {
-            Application.Current.Properties[key] = value;
-            Application.Current.SavePropertiesAsync();
-        }
-
-        public static PostJobModel getPostData(String key)
-        {
-
-            if (Application.Current.Properties.ContainsKey(key))
-            {
-                return (PostJobModel)(Application.Current.Properties[key]);
-            }
-            else
-            {
-                return default(PostJobModel);
             }
         }
 

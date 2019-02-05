@@ -14,7 +14,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <common:CustomHeader_Hamburger HeaderLeftIcon="menu.png" Grid.Row="0" x:Name="NotificationTitle" RightIconImage="clear.png"/>
-        <ListView x:Name="NotificationList" Grid.Row="1"
+        <ListView x:Name="NotificationList" Grid.Row="1" ItemsSource="{Binding NotificationList}"
                   RowHeight="80"
                  SeparatorVisibility="Default"
                 SeparatorColor="#3498db" ItemSelected="NotificationList_ItemSelected">

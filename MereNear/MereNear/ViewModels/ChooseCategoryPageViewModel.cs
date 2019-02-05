@@ -83,6 +83,7 @@ namespace MereNear.ViewModels
                         var param = new NavigationParameters();
                         param.Add("Address", LocationAddress);
                         param.Add("Categoryname", data.CategoryName);
+                        //param.Add("Categoryimage", data.CategoryImage);
                         param.Add("AddressPosition", LocationAddressPosition);
                         if (data.CategoryName == "Home Delivery")
                         {
@@ -99,6 +100,7 @@ namespace MereNear.ViewModels
                         var data = (HomePageModel)Application.Current.Properties["LastSelectedValue"];
                         var param = new NavigationParameters();
                         param.Add("Categoryname", data.CategoryName);
+                        //param.Add("Categoryimage", data.CategoryImage);
                         await _navigationService.NavigateAsync(nameof(AllJobs), param);
                     }
 

@@ -9,11 +9,11 @@ namespace MereNear.Model
 
         public string Address { get; set; }
 
-        public Position AddressPosition { get; set; }
+        public LocationAddress AddressPosition { get; set; }
 
         public string DropAddress { get; set; }
 
-        public Position DropAddressPosition { get; set; }
+        public LocationAddress DropAddressPosition { get; set; }
 
         public string CategoryName { get; set; }
 
@@ -27,7 +27,11 @@ namespace MereNear.Model
 
         public string Time { get; set; }
 
-        public string Image { get; set; }
+        public string CategoryImage { get; set; }
+
+        public string ServiceImage1 { get; set; }
+
+        public string ServiceImage2 { get; set; }
 
         public string Name { get; set; }
 
@@ -45,6 +49,6 @@ namespace MereNear.Model
 
         public string PostedOnLabel { get; set; }
 
+        public bool IsApplied { get; set; }
     }
-
 }

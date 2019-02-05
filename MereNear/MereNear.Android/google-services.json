@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "765540590957",
-    "firebase_url": "https://merenear-b0ed2.firebaseio.com",
-    "project_id": "merenear-b0ed2",
-    "storage_bucket": "merenear-b0ed2.appspot.com"
+    "project_number": "751464586222",
+    "firebase_url": "https://testingdevice-2447d.firebaseio.com",
+    "project_id": "testingdevice-2447d",
+    "storage_bucket": "testingdevice-2447d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:765540590957:android:4b492e45ac3031c3",
+        "mobilesdk_app_id": "1:751464586222:android:4b492e45ac3031c3",
         "android_client_info": {
           "package_name": "com.qservices.merenear"
         }
       },
       "oauth_client": [
         {
-          "client_id": "765540590957-8mfr062kc6mhsckgiqcoadgt8hknlc9i.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.qservices.merenear",
-            "certificate_hash": "664d1f7e1ff7e7f1c317822cd47aee9f03d0cda0"
-          }
-        },
-        {
-          "client_id": "765540590957-sdl662lsfgsge901r2k84m0jhk26mdq7.apps.googleusercontent.com",
+          "client_id": "751464586222-hkm8n0mcm43fj74fpkf9d02ca7ldluf2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD8R6jioWwzXVL7TXWKTSwApRi9NG6GdqI"
+          "current_key": "AIzaSyBCclFve9chrA_uSLibTP-A9dxRxkNVmAY"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "765540590957-sdl662lsfgsge901r2k84m0jhk26mdq7.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using MereNear.Resources;
+using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MereNear.Views
@@ -8,6 +9,7 @@ namespace MereNear.Views
         public SendOtpPage()
         {
             InitializeComponent();
+            SubmitButton.Text = AppResources.SubmitButton;
         }
 
         //private void OTP1TextChange(object sender, TextChangedEventArgs e)

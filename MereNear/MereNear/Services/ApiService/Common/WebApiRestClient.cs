@@ -42,6 +42,7 @@ namespace MereNear.Services.ApiService.Common
             }
             catch (Exception ex)
             {
+                UserDialogs.Instance.HideLoading();
                 Debug.WriteLine("Error in GetApi:-",ex.Message);
                 UserDialogs.Instance.Alert("Error in GetApi:" + ex.Message);
                 return JsonConvert.DeserializeObject<TResponse>(null);
