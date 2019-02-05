@@ -34,7 +34,6 @@
                                     <ColumnDefinition Width="7*"/>
                                     <ColumnDefinition Width="3*"/>
                                 </Grid.ColumnDefinitions>
-                                <!--<Image Source="{Binding CategoryImage}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center"/>-->
                                 <img:CircleImage Source="{Binding CategoryImage}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BorderColor="Gray" BorderThickness="0.5" HeightRequest="100" WidthRequest="100" Aspect="AspectFill"/>
 
                                 <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
