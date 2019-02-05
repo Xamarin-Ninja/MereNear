@@ -10,15 +10,17 @@ namespace MereNear.Views
 {
     public partial class Login_Page2 : ContentPage
     {
-        protected readonly IWebApiRestClient _webApiRestClient;
+        public IWebApiRestClient _webApiRestClient;
         public Login_Page2()
         {
             InitializeComponent();
+            _webApiRestClient = new WebApiRestClient();
             MobileEntryTitle.Text = AppResources.MobileEntryTitle;
             MobileEntry.Placeholder = AppResources.LoginEntryPlaceHolder;
             NextButton.Text ="";
             NextButton.IsEnabled = false;
-            getCountryCode();
+            //getCountryCode();
+            
             countryCodeList.ItemSelected += CountryCodeList_ItemSelected;
             MessagingCenter.Subscribe<string>(this, "EntryFocus", (sender) =>
             {
@@ -29,7 +31,18 @@ namespace MereNear.Views
 
         private void CountryCodeList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-           
+            try
+            {
+                var item = (CountryCodeModel)e.SelectedItem;
+                CountryCodeListPopup.IsVisible = false;
+                CountryCodePicker.Text = item.telpref;
+                countryCodeList.SelectedItem = null;
+                MainLayout.BackgroundColor = Color.White;
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private async void getCountryCode()
@@ -87,6 +100,7 @@ namespace MereNear.Views
 
         private void CountryCodePicker_Tapped(object sender, EventArgs e)
         {
+            MainLayout.BackgroundColor = Color.LightGray;
             CountryCodeListPopup.IsVisible = true;
         }
     }

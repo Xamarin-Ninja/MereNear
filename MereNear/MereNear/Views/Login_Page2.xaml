@@ -6,7 +6,7 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MereNear.Views.Login_Page2"
              NavigationPage.HasNavigationBar="False">
-    <views:KeyboardView Padding="20" BackgroundColor="White">
+    <views:KeyboardView x:Name="MainLayout" Padding="20" BackgroundColor="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="100"/>
@@ -24,32 +24,34 @@
             </Image.GestureRecognizers>
         </Image>
         <Label x:Name="MobileEntryTitle" Grid.Row="1" Grid.ColumnSpan="2" FontSize="18" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-        <Picker x:Name="CountryCodePicker" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,0,6">
-            <Picker.GestureRecognizers>
+        <Label x:Name="CountryCodePicker" Text="+91" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,0,6">
+            <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="CountryCodePicker_Tapped"/>
-            </Picker.GestureRecognizers>
-        </Picker>
+            </Label.GestureRecognizers>
+        </Label>
         <Entry x:Name="MobileEntry" Text="{Binding MobileNumber}" Margin="0,1,0,0" Grid.Row="2" Grid.Column="1" ReturnType="Send" Keyboard="Telephone" HorizontalOptions="Start" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" PlaceholderColor="Gray" TextColor="Black" TextChanged="Entry_TextChanged" MaxLength="10"/>
         <BoxView BackgroundColor="Black" HeightRequest="1" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start"/>
         <Button BackgroundColor="#70DA44" Margin="-20,0,-20,-20" x:Name="NextButton" Text="Next" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" HeightRequest="40" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding NextButton}"/>
-        <StackLayout x:Name="CountryCodeListPopup" IsVisible="False" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="50">
-            <Label Text="Select Country" FontSize="14" FontFamily="Poppins-Regular.ttf#Poppins Regular" TextColor="Black" Margin="5,10"/>
-            <ListView x:Name="countryCodeList" SeparatorVisibility="None" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="40"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Source="{Binding countryflag }" HeightRequest="15" WidthRequest="20" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <Label Text="{Binding countryname }" Grid.Column="1" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        <Frame x:Name="CountryCodeListPopup" HasShadow="True" CornerRadius="10" IsVisible="False" BackgroundColor="White" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10" Padding="10">
+            <StackLayout Spacing="10" >
+                <Label Text="Select Country" FontSize="18" FontFamily="Poppins-Regular.ttf#Poppins Regular" TextColor="HotPink" Margin="5,10"/>
+                <ListView x:Name="countryCodeList" SeparatorVisibility="None" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding countryflag}" HeightRequest="15" WidthRequest="20" Grid.Column="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                                    <Label Text="{Binding countryname}" Grid.Column="1" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
     </views:KeyboardView>
 </ContentPage>

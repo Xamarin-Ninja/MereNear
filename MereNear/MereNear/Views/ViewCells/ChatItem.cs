@@ -35,6 +35,5 @@ namespace MereNear.Views.ViewCells
 
         public Position Location { get; set; }
 
-        //public ChatItem Data { get; set; }
     }
 }
