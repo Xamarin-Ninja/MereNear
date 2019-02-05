@@ -19,7 +19,7 @@ namespace MereNear.Views
             MobileEntry.Placeholder = AppResources.LoginEntryPlaceHolder;
             NextButton.Text ="";
             NextButton.IsEnabled = false;
-            getCountryCode();
+            //getCountryCode();
             
             countryCodeList.ItemSelected += CountryCodeList_ItemSelected;
             MessagingCenter.Subscribe<string>(this, "EntryFocus", (sender) =>

@@ -10,8 +10,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -24,8 +24,6 @@
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>MereNear</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.companyname.appname</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>
@@ -56,15 +54,21 @@
 	<string>This app needs access to microphone.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app needs access to the photo gallery.</string>
-
-  <key>NSLocationAlwaysUsageDescription</key>
-  <string>Need location for geolocator plugin.</string>
-
-  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-  <string>Need location for geolocator plugin.</string>
-
-  <key>NSLocationWhenInUseUsageDescription</key>
-  <string>Need location for geolocator plugin.</string>
-  
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need location for geolocator plugin.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Need location for geolocator plugin.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need location for geolocator plugin.</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>w</string>
+	</array>
+	<key>CFBundleIdentifier</key>
+	<string>com.companyname.appname</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcons.appiconset</string>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 </dict>
 </plist>

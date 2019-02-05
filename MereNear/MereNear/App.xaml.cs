@@ -37,12 +37,12 @@ namespace MereNear
         public string shortname { get; set; }
         public App() : this(null)
         {
-            
+
         }
-        
+
         public App(IPlatformInitializer initializer) : base(initializer)
         {
-            
+
         }
 
         #region SignalR Chat Implement Part 1
@@ -57,7 +57,7 @@ namespace MereNear
             AppResources.Culture = culture;
             CrossMultilingual.Current.CurrentCultureInfo = culture;
         }
-       
+
 
         protected override async void OnInitialized()
         {
@@ -66,21 +66,21 @@ namespace MereNear
             userDBService = DependencyService.Get<IUserDBService>();
             #region Check Network Connection
             var seconds = TimeSpan.FromSeconds(1);
-            Device.StartTimer(seconds,()=>
-            {
-                return CheckConnection();
-            });
+            Device.StartTimer(seconds, () =>
+             {
+                 return CheckConnection();
+             });
             #endregion
 
             #region SignalR Chat Implement Part 2
             //_chatServices = DependencyService.Get<IChatServices>();
-                       
+
             //_chatServices.Connect();
             #endregion
 
             FlowListView.Init();
-            
-            
+
+
             try
             {
                 var IsLanguageDBExist = languageDBService.IsLanguageDbPresentInDB();
@@ -103,7 +103,7 @@ namespace MereNear
                     await NavigationService.NavigateAsync("NavigationPage/LanguagePage");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
             }
         }
