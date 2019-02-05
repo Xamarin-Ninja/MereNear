@@ -320,12 +320,9 @@ namespace MereNear.ViewModels
                 return new DelegateCommand(async() =>
                 {
                     JobModel.PostedDate = DateTime.Now.Date.ToString("dd/MM/yyyy");
-                    //setPostData("PostJobModel", JobModel);
+                    JobModel.Status = AppResources.JobStatusActive;
                     postJobDBService.CreatePostJobModelInDB(JobModel);
-                    var param = new NavigationParameters();
-                    param.Add("PostJobData", JobModel);
-                    //await _navigationService.NavigateAsync("/NavigationPage/MyPosts", param);
-                    await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/MyPosts", UriKind.Absolute), param);
+                    await _navigationService.NavigateAsync(new Uri("/MasterPage/NavigationPage/MyPosts", UriKind.Absolute));
                 });
             }
         }
@@ -369,7 +366,6 @@ namespace MereNear.ViewModels
                         JobModel.Description = Description;
                         JobModel.CategoryWork = CategoryWork;
                         JobModel.Distance = "20";
-                        JobModel.Status = AppResources.JobStatusActive;
                         if (IsScheduleSelected)
                         {
                             JobModel.Date = JobDate.ToString("dd/MM/yyyy");

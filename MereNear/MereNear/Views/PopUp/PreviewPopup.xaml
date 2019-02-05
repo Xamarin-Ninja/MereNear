@@ -6,7 +6,7 @@
         <Grid Padding="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"/>
-                <RowDefinition Height="485"/>
+                <RowDefinition Height="400"/>
             </Grid.RowDefinitions>
             <Frame BackgroundColor="White" Grid.Row="0" Grid.RowSpan="2" CornerRadius="0" BorderColor="LightGray" HasShadow="False" Padding="10">
                 <ScrollView>

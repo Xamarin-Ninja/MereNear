@@ -85,7 +85,6 @@ namespace MereNear.ViewModels
                     var param = new NavigationParameters();
                     PostsModelDetail.Status = AppResources.JobStatusProgress;
                     PostsModelDetail.IsApplied = true;
-                    ButtonTextChange = "Already Applied";
                     BsonValue id = PostsModelDetail.ID;
                     postJobDBService.UpdatePostJobModelInDb(id, PostsModelDetail);
                     //param.Add("LookingJobFlow", PostsModelDetail);
@@ -124,23 +123,7 @@ namespace MereNear.ViewModels
             if (parameters.ContainsKey("MyPostsData"))
             {
                 PostsModelDetail = (PostJobModel)parameters["MyPostsData"];
-                if (string.IsNullOrEmpty(PostsModelDetail.DropAddress) && string.IsNullOrWhiteSpace(PostsModelDetail.DropAddress))
-                {
-                    IsDropLocationVisible = false;
-                }
-                else
-                {
-                    IsDropLocationVisible = true;
-                }
-                if(string.IsNullOrWhiteSpace(PostsModelDetail.ServiceImage1) && string.IsNullOrEmpty(PostsModelDetail.ServiceImage1) && string.IsNullOrWhiteSpace(PostsModelDetail.ServiceImage2) && string.IsNullOrEmpty(PostsModelDetail.ServiceImage2))
-                {
-                    IsServicePhotoAvailable = false;
-                }
-                else
-                {
-                    IsServicePhotoAvailable = true;
-                }
-                //GetDetail();
+                GetJobDetail();
                 IsDistanceVisible = false;
                 IsApplyButtonVisible = false;
                 var position = PostsModelDetail.AddressPosition;
@@ -149,7 +132,7 @@ namespace MereNear.ViewModels
             if (parameters.ContainsKey("AllJobsPageData"))
             {
                 PostsModelDetail = (PostJobModel)parameters["AllJobsPageData"];
-                //GetDetail();
+                GetJobDetail();                
                 IsDistanceVisible = true;
                 ButtonTextChange = AppResources.ApplyButton;
                 IsApplyButtonVisible = true;
@@ -159,25 +142,10 @@ namespace MereNear.ViewModels
             if (parameters.ContainsKey("MyJobData"))
             {
                 PostsModelDetail = (PostJobModel)parameters["MyJobData"];
-                if (string.IsNullOrEmpty(PostsModelDetail.DropAddress) && string.IsNullOrWhiteSpace(PostsModelDetail.DropAddress))
-                {
-                    IsDropLocationVisible = false;
-                }
-                else
-                {
-                    IsDropLocationVisible = true;
-                }
-                if (string.IsNullOrWhiteSpace(PostsModelDetail.ServiceImage1) && string.IsNullOrEmpty(PostsModelDetail.ServiceImage1) && string.IsNullOrWhiteSpace(PostsModelDetail.ServiceImage2) && string.IsNullOrEmpty(PostsModelDetail.ServiceImage2))
-                {
-                    IsServicePhotoAvailable = false;
-                }
-                else
-                {
-                    IsServicePhotoAvailable = true;
-                }
-                //GetDetail();
-                IsDistanceVisible = false;
-                IsApplyButtonVisible = false;
+                GetJobDetail();
+                ButtonTextChange = "Already Applied";
+                IsDistanceVisible = true;
+                IsApplyButtonVisible = true;
                 var position = PostsModelDetail.AddressPosition;
                 MessagingCenter.Send("Location", "PostJobLocation", position);
             }
@@ -197,6 +165,25 @@ namespace MereNear.ViewModels
         //    Description = PostsModelDetail.Description;
         //    Distance = PostsModelDetail.Distance;
         //}
+        private void GetJobDetail()
+        {
+            if (string.IsNullOrEmpty(PostsModelDetail.DropAddress) && string.IsNullOrWhiteSpace(PostsModelDetail.DropAddress))
+            {
+                IsDropLocationVisible = false;
+            }
+            else
+            {
+                IsDropLocationVisible = true;
+            }
+            if (string.IsNullOrWhiteSpace(PostsModelDetail.ServiceImage1) && string.IsNullOrEmpty(PostsModelDetail.ServiceImage1) && string.IsNullOrWhiteSpace(PostsModelDetail.ServiceImage2) && string.IsNullOrEmpty(PostsModelDetail.ServiceImage2))
+            {
+                IsServicePhotoAvailable = false;
+            }
+            else
+            {
+                IsServicePhotoAvailable = true;
+            }
+        }
         #endregion
     }
 }

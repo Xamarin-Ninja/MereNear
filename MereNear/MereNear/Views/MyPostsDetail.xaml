@@ -19,6 +19,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="1"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="20"/>
                 </Grid.RowDefinitions>
                 <!--<mymapview:MyMap Grid.Row="0" HeightRequest="100" WidthRequest="100"/>-->
@@ -52,21 +53,21 @@
                     <!--<Label Text="{Binding Distance,StringFormat='({0:N})'}" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" Style="{StaticResource BlueLabel}" IsVisible="{Binding IsDistanceVisible}"/>-->
                     
                     <Image Source="job_title.png" Grid.Row="4" Grid.Column="0" HorizontalOptions="Start" />
-                    <Label  x:Name="JobtitleLabel" Style="{StaticResource BlackLabelBold}"  FontAttributes="Bold" FontSize="12" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" />
+                    <Label  x:Name="JobtitleLabel" Style="{StaticResource BlackLabelBold}"  FontAttributes="Bold" FontSize="12" Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
                     <Label Grid.Row="5"  Grid.Column="1" Style="{StaticResource GrayLabel}" FontSize="10" HorizontalOptions="Start" Text="{Binding PostsModelDetail.CategoryWork}" VerticalOptions="Start"/>
 
                     <Image Source="job_description.png" Grid.Row="6" Grid.Column="0" HorizontalOptions="Start" />
-                    <Label x:Name="jobdescriptionlabel" Style="{StaticResource BlackLabelBold}" FontSize="12" Grid.Row="6" Grid.Column="1" HorizontalOptions="Start" />
+                    <Label x:Name="jobdescriptionlabel" Style="{StaticResource BlackLabelBold}" FontSize="12" Grid.Row="6" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
                     <Label Grid.Row="7" Grid.Column="1" Style="{StaticResource GrayLabel}" FontSize="10" HorizontalOptions="Start" VerticalOptions="Start" Text="{Binding PostsModelDetail.Description}" LineBreakMode="WordWrap"/>
 
 
                     <Image Source="myjob_master.png" Grid.Row="8" Grid.Column="0" HorizontalOptions="Start" />
-                    <Label  x:Name="jobstatuslabel" Grid.Row="8" Grid.Column="1" Style="{StaticResource BlackLabelBold}" HorizontalOptions="Start" />
-                    <Label Text="{Binding PostsModelDetail.Status}" TextColor="{Binding PostsModelDetail.StatusColor}" Grid.Row="8" Grid.Column="1" HorizontalOptions="End" FontSize="12"/>
+                    <Label  x:Name="jobstatuslabel" Grid.Row="8" Grid.Column="1" Style="{StaticResource BlackLabelBold}" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Text="{Binding PostsModelDetail.Status}" TextColor="{Binding PostsModelDetail.StatusColor}" Grid.Row="8" Grid.Column="1" HorizontalOptions="End" FontSize="12" VerticalOptions="Center" VerticalTextAlignment="Center"/>
 
                     <Image Source="need_service.png" Grid.Row="9" Grid.Column="0" HorizontalOptions="Start" />
-                    <Label x:Name="Needservicelabel" Grid.Row="9" Grid.Column="1" Style="{StaticResource BlackLabelBold}" HorizontalOptions="Start" />
-                    <Label Text="{Binding PostsModelDetail.Time}" TextColor="{Binding PostsModelDetail.TimeColor}" Grid.Row="9" Grid.Column="1" HorizontalOptions="End" />
+                    <Label x:Name="Needservicelabel" Grid.Row="9" Grid.Column="1" Style="{StaticResource BlackLabelBold}" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Label Text="{Binding PostsModelDetail.Time}" TextColor="{Binding PostsModelDetail.TimeColor}" Grid.Row="9" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" VerticalTextAlignment="Center"/>
                 </Grid>
                 <BoxView HeightRequest="1" Grid.Row="2" BackgroundColor="Gray" HorizontalOptions="Fill" IsVisible="{Binding IsServicePhotoAvailable}"/>
                 <Grid Grid.Row="3" ColumnSpacing="0" IsVisible="{Binding IsServicePhotoAvailable}">
@@ -82,8 +83,12 @@
                     <Label x:Name="PhotosLabel" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Black"/>
                     <Image Source="{Binding PostsModelDetail.ServiceImage1}" Grid.Row="1" Grid.Column="0"/>
                     <Image Source="{Binding PostsModelDetail.ServiceImage2}" Grid.Row="1" Grid.Column="1"/>
-
-                    <Button Margin="-20,0,-20,-20" x:Name="applyButton" Text="{Binding ButtonTextChange}" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding ApplyButton}" IsVisible="{Binding IsApplyButtonVisible}"/>
+                </Grid>
+                <Grid Grid.Row="4" IsVisible="{Binding IsApplyButtonVisible}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Button Margin="-20,0,-20,-20" x:Name="applyButton" Text="{Binding ButtonTextChange}" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="0" Command="{Binding ApplyButton}"/>
                 </Grid>
             </Grid>
         </ScrollView>

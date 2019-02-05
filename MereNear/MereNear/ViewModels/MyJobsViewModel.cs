@@ -48,7 +48,7 @@ namespace MereNear.ViewModels
         private async void NavigateToDetailedPage(PostJobModel selectedMyJob)
         {
             var param = new NavigationParameters();
-            param.Add("MyJobData", "MyJobsPage");
+            param.Add("MyJobData", selectedMyJob);
             await _navigationService.NavigateAsync(nameof(MyPostsDetail), param);
         }
 
@@ -57,11 +57,19 @@ namespace MereNear.ViewModels
             try
             {
                 _navigationService = navigationService;
+                var IsJobModelDBPresent = postJobDBService.IsPostJobDbPresentInDB();
+                if (IsJobModelDBPresent)
+                {
+                    var AppliedJobData = postJobDBService.ReadAllItems().Where(x => x.IsApplied);
+                    foreach(var item in AppliedJobData)
+                    {
+                        MyjobItems.Add(item);
+                    }
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
             }
-            //MyjobItems.Add(myJobDetail);
         }
 
         public ICommand HeaderLeftIconCommand
@@ -87,11 +95,11 @@ namespace MereNear.ViewModels
 
         public void OnNavigatingTo(INavigationParameters parameters)
         {
-            if (parameters.ContainsKey("LookingJobFlow"))
-            {
-                myJobDetail = (PostJobModel)parameters["LookingJobFlow"];
-                MyjobItems.Add(myJobDetail);
-            }
+            //if (parameters.ContainsKey("LookingJobFlow"))
+            //{
+            //    myJobDetail = (PostJobModel)parameters["LookingJobFlow"];
+            //    MyjobItems.Add(myJobDetail);
+            //}
         }
     }
 

@@ -72,21 +72,21 @@ namespace MereNear.ViewModels
             var IsPostjobAvail = postJobDBService.IsPostJobDbPresentInDB();
             if (IsPostjobAvail)
             {
-                var jobdata = postJobDBService.ReadAllItems();
+                var jobdata = postJobDBService.ReadAllItems().Where(x => !x.IsApplied);
                 foreach (var item in jobdata)
                 {
                     if (item.Status == "Active")
                     {
                         item.StatusColor = Color.FromHex(ChangeColor.GreenColor);
                     }
-                    else if (item.Status == "Completed")
-                    {
-                        item.StatusColor = Color.FromHex(ChangeColor.OrangeColor);
-                    }
-                    else if (item.Status == "Disabled")
-                    {
-                        item.StatusColor = Color.FromHex(ChangeColor.RedColor);
-                    }
+                    //else if (item.Status == "Completed")
+                    //{
+                    //    item.StatusColor = Color.FromHex(ChangeColor.OrangeColor);
+                    //}
+                    //else if (item.Status == "Disabled")
+                    //{
+                    //    item.StatusColor = Color.FromHex(ChangeColor.RedColor);
+                    //}
 
                     if (item.Time == "Now")
                     {
