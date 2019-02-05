@@ -13,7 +13,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <!--<RowDefinition Height="100"/>-->
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" RowSpacing="0" HeightRequest="50" IsVisible="{Binding IsInfoIconVisible}">
             <common:CustomHeader_Hamburger HeaderLeftIcon="menu.png" TitleText="{Binding TitleText}" RightIconImage="send_icon.png"/>
