@@ -78,5 +78,7 @@ namespace MereNear.Views
             var safeAreaInset = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
             this.Padding = safeAreaInset;
         }
+
+        
     }
 }

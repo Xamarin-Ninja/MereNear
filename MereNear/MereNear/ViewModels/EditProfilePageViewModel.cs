@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -17,14 +18,23 @@ namespace MereNear.ViewModels
 {
 	public class EditProfilePageViewModel : BaseViewModel
     {
-
-        private ImageSource _cameraPicker = "upload_photo_icon.jpg";
+        private MediaFile _mediaFile;
+        private string _cameraPicker = "upload_photo_icon.jpg";
         private ShowcaseListModel _selectedItemCommand;
         private readonly INavigationService _navigationService;
         private ObservableCollection<ShowcaseListModel> _showcase = new ObservableCollection<ShowcaseListModel>();
 
+        private string _profilePicture;
 
-        public ImageSource CameraPicker
+        public string ProfilePicture
+        {
+            get { return _profilePicture; }
+            set { SetProperty(ref _profilePicture, value); }
+        }
+
+
+
+        public string CameraPicker
         {
             get { return _cameraPicker; }
             set { SetProperty(ref _cameraPicker, value); }
@@ -100,6 +110,103 @@ namespace MereNear.ViewModels
             }
         }
 
+        public ICommand EditProfilePictureCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    var action = await App.Current.MainPage.DisplayActionSheet("Add Photo", "Cancel", null, "Camera", "Gallery");
+                    switch (action)
+                    {
+                        case "Camera":
+                            ProfilePicture = await CameraCommand();
+                            break;
+                        case "Gallery":
+                            ProfilePicture = await GalleryCommand();
+                            break;
+                        default:
+                            break;
+                    }
+                });
+            }
+        }
+        private async Task<string> GalleryCommand()
+        {
+            try
+            {
+                if (!CrossMedia.Current.IsPickPhotoSupported)
+                {
+                    await App.Current.MainPage.DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                    return null;
+                }
+                _mediaFile = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                {
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+
+                });
+
+
+                if (_mediaFile == null)
+                    return null;
+
+                return _mediaFile.Path;
+                //ImagePicker = ImageSource.FromStream(() =>
+                //{
+                //    var stream = _mediaFile.GetStream();
+                //    _mediaFile.Dispose();
+                //    return stream;
+                //});
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        private async Task<string> CameraCommand()
+        {
+            try
+            {
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    await App.Current.MainPage.DisplayAlert("No Camera", ":( No camera available.", "OK");
+                    return null;
+                }
+
+                _mediaFile = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    Directory = "Profile Photo",
+                    SaveToAlbum = true,
+                    PhotoSize = PhotoSize.Medium,
+                    MaxWidthHeight = 2000,
+                    DefaultCamera = CameraDevice.Rear
+                });
+
+
+                if (_mediaFile == null)
+                    return null;
+
+                //await App.Current.MainPage.DisplayAlert("File Location", file.Path, "OK");
+
+
+                return _mediaFile.Path;
+                //CameraPicker = ImageSource.FromStream(() =>
+                // {
+                //     var stream = _mediaFile.GetStream();
+                //     _mediaFile.Dispose();
+                //     return stream;
+                // });
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+
+
         public ICommand CameraPickerCommand
         {
             get
@@ -128,13 +235,13 @@ namespace MereNear.ViewModels
                             return;
 
                         //await App.Current.MainPage.DisplayAlert("File Location", file.Path, "OK");
-
-                        CameraPicker = ImageSource.FromStream(() =>
-                        {
-                            var stream = file.GetStream();
-                            file.Dispose();
-                            return stream;
-                        });
+                        CameraPicker =  file.Path;
+                        //CameraPicker = ImageSource.FromStream(() =>
+                        //{
+                        //    var stream = file.GetStream();
+                        //    file.Dispose();
+                        //    return stream;
+                        //});
                     }
                     catch (Exception ex)
                     {

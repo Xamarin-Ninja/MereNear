@@ -19,10 +19,19 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <common:CustomHeader Grid.Row="0" TitleText="Edit Profile"/>
-            <Img:CircleImage Grid.Row="1" Source="https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg" Aspect="Fill" BorderColor="LightGreen" BorderThickness="2" WidthRequest="80" HeightRequest="80" HorizontalOptions="Center" VerticalOptions="Start"/>
-
-            <Grid Grid.Row="2" Margin="20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <common:CustomHeader Grid.Row="0" Grid.ColumnSpan="3" TitleText="Edit Profile"/>
+            <Img:CircleImage Grid.Row="1" Grid.Column="1" Source="{Binding ProfilePicture}" Aspect="Fill" BorderColor="LightGreen" BorderThickness="2" WidthRequest="80" HeightRequest="80" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+            <Image Source="camera" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End" HeightRequest="30" WidthRequest="30">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding EditProfilePictureCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Grid Grid.Row="2" Margin="20,0" Grid.ColumnSpan="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="6*"/>
@@ -32,7 +41,7 @@
                 <Entry Placeholder="Type here" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" />
                 <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
             </Grid>
-            <Grid Grid.Row="3" Margin="20,0">
+            <Grid Grid.Row="3" Margin="20,0" Grid.ColumnSpan="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="6*"/>
@@ -49,7 +58,7 @@
 
                 <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
             </Grid>
-            <Grid Grid.Row="4" Margin="20,0">
+            <Grid Grid.Row="4" Margin="20,0" Grid.ColumnSpan="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="6*"/>
@@ -69,7 +78,7 @@
                 <Entry  Grid.Column="1" Grid.Row="1" Keyboard="Telephone"  HorizontalOptions="Fill" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" FontSize="12" MaxLength="10"/>
                 <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
             </Grid>
-            <Grid Grid.Row="5" Margin="20,0">
+            <Grid Grid.Row="5" Margin="20,0" Grid.ColumnSpan="3" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="6*"/>
@@ -80,7 +89,7 @@
                 <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
             </Grid>
 
-            <Grid Grid.Row="6" Margin="20,0">
+            <Grid Grid.Row="6" Margin="20,0" Grid.ColumnSpan="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="28"/>
                     <RowDefinition Height="42"/>
@@ -113,7 +122,7 @@
                 </Image>
                 <Button BackgroundColor="#70DA44" Margin="-20,0,-20,0" x:Name="NextButton" Text="SUBMIT" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="3" Grid.ColumnSpan="2" Command="{Binding NextButton}"/>
             </Grid>
-            <Grid Grid.Row="7" Margin="20,0">
+            <Grid Grid.Row="7" Margin="20,0" Grid.ColumnSpan="3">
                 <flv:FlowListView x:Name="showcaseList" FlowItemTapped="SelectedItemTap" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="True"
                           FlowItemsSource="{Binding Showcase}">
                     <flv:FlowListView.FlowColumnTemplate>

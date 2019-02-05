@@ -31,11 +31,11 @@ namespace MereNear.Services.ApiService.Common
         HttpClient client = new HttpClient();
 
         public async Task<TResponse> GetAsync<TResponse>(string action)
-        {
+        {            
             Uri uri = new Uri(baseUri, action);
             try
             {
-                UserDialogs.Instance.ShowLoading("Loading Data...");
+                //UserDialogs.Instance.ShowLoading("Loading Data...");
                 var response = await client.GetStringAsync(uri);
                 UserDialogs.Instance.HideLoading();
                 return JsonConvert.DeserializeObject<TResponse>(response);
