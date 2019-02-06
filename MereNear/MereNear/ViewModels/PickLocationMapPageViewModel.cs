@@ -108,6 +108,8 @@ namespace MereNear.ViewModels
                         param.Add("AddressPosition", AddressPosition);
                         param.Add("DropAddress", DropAddress);
                         param.Add("DropAddressPosition", DropAddressPosition);
+                        param.Add("Categoryname", CategoryName);
+                        param.Add("Categoryimage", CategoryImage);
                         await _navigationService.NavigateAsync(nameof(PostDescriptionPage), param);
                     }
                 });
