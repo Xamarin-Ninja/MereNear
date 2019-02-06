@@ -7,107 +7,112 @@
              xmlns:common="clr-namespace:MereNear.Views.Common"
              xmlns:flv="clr-namespace:CustomFlowListView"
              xmlns:Img="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
-    <Grid x:Name="grid" IsVisible="true">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <common:CustomHeader_Hamburger HeaderLeftIcon="{Binding HeaderLeftIcon}" Grid.Row="0" x:Name="ProfileTitle" RightIconImage="{Binding RightIconImage}"/>
-
-        <StackLayout Grid.Row="2">
-            <Grid Padding="5,40,5,5">
+        <ScrollView Grid.Row="1">
+            <Grid x:Name="grid" IsVisible="true">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="80"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
-                <Frame CornerRadius="5" Grid.Row="0" Grid.RowSpan="2" HasShadow="False" HorizontalOptions="Center" BorderColor="Gray" BackgroundColor="Transparent"  Padding="0"  VerticalOptions="Fill">
-                    <Grid>
+                <StackLayout Grid.Row="2">
+                    <Grid Padding="5,40,5,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Frame CornerRadius="5" Grid.Row="0" Grid.RowSpan="2" HasShadow="False" HorizontalOptions="Center" BorderColor="Gray" BackgroundColor="Transparent"  Padding="0"  VerticalOptions="Fill">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Experience" IsVisible="{Binding IsCertifiedClicked}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" FontSize="8" TextColor="Gray"/>
+                                <Label Text="2 years" IsVisible="{Binding IsCertifiedClicked}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="End" TextColor="Black" FontSize="12"/>
+                                <Button x:Name="certifiedButton" Text="{Binding CertificationText}" Grid.Row="0" Grid.Column="2" BackgroundColor="White" HeightRequest="35" WidthRequest="80" FontSize="10" TextColor="#70DA44" BorderWidth="1" BorderColor="#70DA44" HorizontalOptions="Center" VerticalOptions="End" Command="{Binding GetCertifiedClicked}" Padding="0"/>
+                                <Label Text="Pardeep" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="End"/>
+                                <Label Text="Plumber" Grid.Row="2" IsVisible="{Binding IsCertifiedClicked}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Start" FontSize="10" TextColor="Gray"/>
+                                <StackLayout Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="0,3,0,0">
+                                    <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
+                                    <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
+                                    <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
+                                    <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
+                                    <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
+                                </StackLayout>
+                                <Label Text="Chandigarh(15)" Grid.Row="4" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="Gray"/>
+                                <Label Text="Lorem Ipsum is simply dummy text of the printing and type setting industry." Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="Gray" MaxLines="2" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                <Grid Grid.Row="6" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" Padding="5,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Row="0" IsVisible="{Binding IsCertifiedClicked}" Grid.Column="0"  Orientation="Horizontal" HorizontalOptions="Center">
+                                        <Label Text="Earning" HorizontalOptions="Start" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="12"  TextColor="Black"/>
+                                        <Label Text="(0)" TextColor="#3498db" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Start" />
+                                    </StackLayout>
+                                    <BoxView WidthRequest="1" IsVisible="{Binding IsCertifiedClicked}" Grid.Column="1" BackgroundColor="Black" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" Margin="10,0"/>
+                                    <StackLayout Grid.Row="0"   Grid.Column="2" HorizontalOptions="Center" Orientation="Horizontal">
+                                        <Label Text="Spent" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="Black"/>
+                                        <Label Text="(0)" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"  TextColor="#3498db"/>
+                                    </StackLayout>
+                                    <BoxView WidthRequest="1" Grid.Column="3" BackgroundColor="Black" Margin="10,0"/>
+                                    <StackLayout  Grid.Row="0" Grid.Column="4"  HorizontalOptions="Center"   Orientation="Horizontal">
+                                        <Label Text="Comments" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="12" TextColor="Black"/>
+                                        <Label Text="(0)" HorizontalOptions="Center"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#3498db"/>
+                                    </StackLayout>
+                                </Grid>
+                                <StackLayout Grid.Row="7" Padding="10,0,0,0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="Start">
+                                    <Label Text="Contact No:" FontSize="15" TextColor="Gray"/>
+                                    <Label Text="+1234567890" FontSize="15" TextColor="Black"/>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                    <Grid Margin="20,0" IsVisible="{Binding IsCertifiedClicked}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40"/>
-                            <RowDefinition Height="30"/>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Text="Experience" IsVisible="{Binding IsCertifiedClicked}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" FontSize="8" TextColor="Gray"/>
-                        <Label Text="2 years" IsVisible="{Binding IsCertifiedClicked}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="End" TextColor="Black" FontSize="12"/>
-                        <Button Text="{Binding CertificationText}" Grid.Row="0" Grid.Column="2" BackgroundColor="White" HeightRequest="35" WidthRequest="80" FontSize="10" TextColor="#70DA44" BorderWidth="1" BorderColor="#70DA44" HorizontalOptions="Center" VerticalOptions="End" Command="{Binding GetCertifiedClicked}" Padding="0"/>
-                        <Label Text="Pardeep" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="End"/>
-                        <Label Text="Plumber" Grid.Row="2" IsVisible="{Binding IsCertifiedClicked}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Start" FontSize="10" TextColor="Gray"/>
-                        <StackLayout Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
-                            <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
-                            <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
-                            <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
-                            <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
-                            <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
-                        </StackLayout>
-                        <Label Text="Chandigarh(15)" Grid.Row="4" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="Gray"/>
-                        <Label Text="Lorem Ipsum is simply dummy text of the printing and type setting industry." Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="Gray" MaxLines="2" LineBreakMode="TailTruncation" Margin="10,0"/>
-                        <Grid Grid.Row="6" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" Padding="5,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="30"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <StackLayout Grid.Row="0" IsVisible="{Binding IsCertifiedClicked}" Grid.Column="0"  Orientation="Horizontal" HorizontalOptions="Center">
-                                <Label Text="Earning" HorizontalOptions="Start" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="12"  TextColor="Black"/>
-                                <Label Text="(0)" TextColor="#3498db" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Start" />
-                            </StackLayout>
-                            <BoxView WidthRequest="1" IsVisible="{Binding IsCertifiedClicked}" Grid.Column="1" BackgroundColor="Black" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" Margin="10,0"/>
-                            <StackLayout Grid.Row="0"   Grid.Column="2" HorizontalOptions="Center" Orientation="Horizontal">
-                                <Label Text="Spent" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="Black"/>
-                                <Label Text="(0)" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"  TextColor="#3498db"/>
-                            </StackLayout>
-                            <BoxView WidthRequest="1" Grid.Column="3" BackgroundColor="Black" Margin="10,0"/>
-                            <StackLayout  Grid.Row="0" Grid.Column="4"  HorizontalOptions="Center"   Orientation="Horizontal">
-                                <Label Text="Comments" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="12" TextColor="Black"/>
-                                <Label Text="(0)" HorizontalOptions="Center"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#3498db"/>
-                            </StackLayout>
-                        </Grid>
-                        <StackLayout Grid.Row="7" Padding="10,0,0,0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="Start">
-                            <Label Text="Contact No:" FontSize="15" TextColor="Gray"/>
-                            <Label Text="+1234567890" FontSize="15" TextColor="Black"/>
-                        </StackLayout>
+                        <Label Text="Showcase" Grid.Row="0" HorizontalOptions="Start"  VerticalOptions="End" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                        <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="0"/>
+                        <flv:FlowListView Grid.Row="1" x:Name="showcaselist" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="True" RowHeight="105">
+                            <flv:FlowListView.FlowColumnTemplate>
+                                <DataTemplate>
+                                    <Frame HeightRequest="100" Padding="0" Margin="10,5,10,5">
+                                        <Image Source="{Binding showcaseImage}" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Fill"/>
+                                    </Frame> 
+                                </DataTemplate>
+                            </flv:FlowListView.FlowColumnTemplate>
+                        </flv:FlowListView>
                     </Grid>
-                </Frame>
-            </Grid>
-            <Grid Margin="20,0" IsVisible="{Binding IsCertifiedClicked}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Label Text="Showcase" Grid.Row="0" HorizontalOptions="Start"  VerticalOptions="End" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="0"/>
-                <flv:FlowListView Grid.Row="1" x:Name="showcaselist" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="True" RowHeight="100">
-                    <flv:FlowListView.FlowColumnTemplate>
-                        <DataTemplate>
-                            <Frame HeightRequest="100" Padding="0" Margin="10,5,10,5">
-                                <Image Source="{Binding showcaseImage}" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Fill"/>
-                            </Frame>
-                        </DataTemplate>
-                    </flv:FlowListView.FlowColumnTemplate>
-                </flv:FlowListView>
-            </Grid>
-        </StackLayout>
+                </StackLayout>
 
-        <Img:CircleImage Grid.Row="2" Source="https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg" Aspect="Fill" BorderColor="LightGreen" BorderThickness="2" WidthRequest="80" HeightRequest="80" HorizontalOptions="Center" VerticalOptions="Start"/>
+                <Img:CircleImage Grid.Row="2" Source="https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg" Aspect="Fill" BorderColor="LightGreen" BorderThickness="2" WidthRequest="80" HeightRequest="80" HorizontalOptions="Center" VerticalOptions="Start"/>
 
-        <!--<Grid Grid.Row="3" IsVisible="{Binding IsCertifiedClicked}">
+                <!--<Grid Grid.Row="3" IsVisible="{Binding IsCertifiedClicked}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="100"/>
@@ -136,12 +141,17 @@
                 </Picker>
                 <Image Source="upload_photo_icon.png" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill"/>
             </Grid>-->
-        <BoxView IsVisible="{Binding IsCertificationPopupVisible}" BackgroundColor="Gray" Opacity="0.5" Grid.Row="0" Grid.RowSpan="4">
+                <!--<show:ShowcaseView x:Name="showview" Margin="-10" Grid.Row="3"/>-->
+
+
+            </Grid>
+        </ScrollView>
+        <BoxView IsVisible="{Binding IsCertificationPopupVisible}" BackgroundColor="Gray" Opacity="0.5" Grid.Row="1" >
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding OverlayTapped}"/>
             </BoxView.GestureRecognizers>
         </BoxView>
-        <Frame IsVisible="{Binding IsCertificationPopupVisible}" CornerRadius="10" Grid.Row="1" Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White" HeightRequest="390" WidthRequest="250">
+        <Frame IsVisible="{Binding IsCertificationPopupVisible}" CornerRadius="10" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White" HeightRequest="350" WidthRequest="250">
             <Grid BackgroundColor="White">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
@@ -178,8 +188,6 @@
                 <Button BackgroundColor="#70DA44" Margin="-20,0,-20,0"  x:Name="NextButton" Text="SUBMIT" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding CertificationSubmitCommand}"/>
             </Grid>
         </Frame>
-        <!--<show:ShowcaseView x:Name="showview" Margin="-10" Grid.Row="3"/>-->
-
 
     </Grid>
 </ContentPage>

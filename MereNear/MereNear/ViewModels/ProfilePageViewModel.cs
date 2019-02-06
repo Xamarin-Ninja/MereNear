@@ -32,9 +32,6 @@ namespace MereNear.ViewModels
         private bool _isCertificationPopupVisible = false;
         #endregion
 
-       
-
-
         #region Public Variables
         public string lastnavigatedpage = "";
         public string CameraPicker
@@ -107,8 +104,10 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(() =>
                 {
-                    //IsCertifiedClicked = true;
-                    IsCertificationPopupVisible = true;
+                    if (!IsCertifiedClicked)
+                    {
+                        IsCertificationPopupVisible = true; 
+                    }
                 });
             }
         }
@@ -181,6 +180,26 @@ namespace MereNear.ViewModels
         public ProfilePageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+
+            var IsUserDataAvail = userDBService.IsUserDbPresentInDB();
+            if (IsUserDataAvail)
+            {
+                var data = userDBService.ReadAllItems();
+                var usermodel = data.First();
+                if(usermodel.UserID == "9034114494")
+                {
+                    CertificationText = "Certified";
+                    IsCertifiedClicked = true;
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+
+            }
         }
         #endregion
 

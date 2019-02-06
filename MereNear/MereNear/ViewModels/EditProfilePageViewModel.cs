@@ -25,7 +25,13 @@ namespace MereNear.ViewModels
         private ObservableCollection<ShowcaseListModel> _showcase = new ObservableCollection<ShowcaseListModel>();
 
         private string _profilePicture;
+        private bool _isCertifiedUser;
 
+        public bool IsCertifiedUser
+        {
+            get { return _isCertifiedUser; }
+            set { SetProperty(ref _isCertifiedUser, value); }
+        }
         public string ProfilePicture
         {
             get { return _profilePicture; }
@@ -253,6 +259,24 @@ namespace MereNear.ViewModels
         public EditProfilePageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+            var IsUserDataAvail = userDBService.IsUserDbPresentInDB();
+            if (IsUserDataAvail)
+            {
+                var data = userDBService.ReadAllItems();
+                var usermodel = data.First();
+                if (usermodel.UserID == "9034114494")
+                {
+                    IsCertifiedUser = true;
+                }
+                else
+                {
+                    IsCertifiedUser = false;
+                }
+            }
+            else
+            {
+                IsCertifiedUser = false;
+            }
             GetData();
         }
         private void GetData()

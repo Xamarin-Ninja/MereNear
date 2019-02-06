@@ -176,6 +176,9 @@
     <None Update="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="TestPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Views\AboutPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>

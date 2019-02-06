@@ -14,11 +14,13 @@ namespace MereNear.Views
         {
             InitializeComponent();
             ProfileTitle.TitleText = AppResources.ProfileTab;
-
+            
             var item = new ShowcaseImagesModel
             {
                 showcaseImage = "Image1.jpg"
             };
+            _showcaseList.Add(item);
+            _showcaseList.Add(item);
             _showcaseList.Add(item);
             _showcaseList.Add(item);
             _showcaseList.Add(item);

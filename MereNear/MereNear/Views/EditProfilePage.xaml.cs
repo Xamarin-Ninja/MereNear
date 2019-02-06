@@ -20,6 +20,10 @@ namespace MereNear.Views
             });
 
             showcaseList.FlowItemsSource = _showcase;
+            double ListHeightValue = _showcase.Count / 2;
+            var data = (int)Math.Round(ListHeightValue);
+            showcaseList.HeightRequest = data * showcaseList.RowHeight;
+            
         }
 
         public ObservableCollection<ShowcaseListModel> _showcase = new ObservableCollection<ShowcaseListModel>();
@@ -63,6 +67,9 @@ namespace MereNear.Views
                         }
 
                         showcaseList.FlowItemsSource = _showcase;
+                        double ListHeightValue = _showcase.Count / 2;
+                        var data = (int)Math.Round(ListHeightValue);
+                        showcaseList.HeightRequest = data * showcaseList.RowHeight;
                     } 
                 }
             }
