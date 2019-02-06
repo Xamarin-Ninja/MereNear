@@ -16,12 +16,10 @@ namespace MereNear.ViewModels
     {
         #region Private Variables
         private readonly INavigationService _navigationService;
-        private readonly IUserDBService userDBService;
-
+        
         private bool _isPresented;
         private MasterMenuModel _selectedItem;
         private ObservableCollection<MasterMenuModel> _masterMenuListData = new ObservableCollection<MasterMenuModel>();
-        LiteDatabase _dataBase;
 
         #endregion
 
@@ -218,7 +216,6 @@ namespace MereNear.ViewModels
         {
             _navigationService = navigationService;
             //GetMasterMenuList();
-            userDBService = DependencyService.Get<IUserDBService>();
         }
         #endregion
 

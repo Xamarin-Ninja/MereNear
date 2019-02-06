@@ -1,6 +1,12 @@
-﻿using MereNear.Model;
+﻿using LiteDB.LanguageModelDB;
+using LiteDB.UserModelDB;
+using MereNear.Model;
+using MereNear.Services.ApiService.Common;
+using MereNear.Services.LiteDB.ChatModelDB;
+using MereNear.Services.LiteDB.NotificationModelDB;
 using MereNear.Services.LiteDB.PostJobModelDB;
 using Prism.Mvvm;
+using Prism.Navigation;
 using SignalR.Interface;
 using System;
 using System.Collections.Generic;
@@ -11,12 +17,21 @@ namespace MereNear.ViewModels.Common
 {
     public class BaseViewModel : BindableBase
     {
-        public static IChatServices _chatServices;
+        protected static IChatServices _chatServices;
+        protected readonly IChatModelDbService chatModelDbService;
         protected readonly IPostJobDBService postJobDBService;
+        protected readonly IUserDBService userDBService;
+        protected readonly ILanguageDBService languageDBService;
+        protected readonly INotificationDBService notificationDBService;
 
         public BaseViewModel()
         {
+            _chatServices = DependencyService.Get<IChatServices>();
+            chatModelDbService = DependencyService.Get<IChatModelDbService>();
             postJobDBService = DependencyService.Get<IPostJobDBService>();
+            userDBService = DependencyService.Get<IUserDBService>();
+            languageDBService = DependencyService.Get<ILanguageDBService>();
+            notificationDBService = DependencyService.Get<INotificationDBService>();
         }
 
         public static void setInt(String key, int value)

@@ -18,7 +18,6 @@ namespace MereNear.ViewModels
         #region Private Variables
         private readonly INavigationService _navigationService;
         private readonly IWebApiRestClient _webApiRestClient;
-        private readonly INotificationDBService notificationDBService;
         private ToastMessage toastMessage;
 
         private ObservableCollection<NotificationModel> _notificationList = new ObservableCollection<NotificationModel>();
@@ -38,7 +37,7 @@ namespace MereNear.ViewModels
             _navigationService = navigationService;
             _webApiRestClient = webApiRestClient;
             toastMessage = DependencyService.Get<ToastMessage>();
-            notificationDBService = DependencyService.Get<INotificationDBService>();
+            
 
             AddNotify = new Command(add_click);
             var IsNotificationDBExist = notificationDBService.IsNotificationDbPresentInDB();

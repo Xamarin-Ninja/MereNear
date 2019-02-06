@@ -16,8 +16,6 @@ namespace MereNear.ViewModels
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
-        private readonly ILanguageDBService languageDBService;
-
         private LanguageModel _languageSelected;
         private ObservableCollection<LanguageModel> _languagePicker = new ObservableCollection<LanguageModel>();
         #endregion
@@ -77,7 +75,7 @@ namespace MereNear.ViewModels
         public LanguagePageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            languageDBService = DependencyService.Get<ILanguageDBService>();
+
         }
         #endregion
 

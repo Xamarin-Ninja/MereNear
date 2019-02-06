@@ -64,7 +64,7 @@
                     </Grid>
                 </ScrollView>
             </Frame>
-            <Image Source="cancel.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Start" Margin="-8">
+            <Image Source="cancel.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Start" Margin="0,-9,-9,0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding PopupCloseCommand}"/>
                 </Image.GestureRecognizers>

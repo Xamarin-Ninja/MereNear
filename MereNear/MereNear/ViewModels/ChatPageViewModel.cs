@@ -20,7 +20,6 @@ namespace MereNear.ViewModels
 	{
         #region Private Variables
         private readonly INavigationService _navigationService;
-        private readonly IChatModelDbService chatModelDbService;
         //private IChatServices _chatServices;
 
         private string _roomName;
@@ -131,19 +130,11 @@ namespace MereNear.ViewModels
         public ChatPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            _chatServices = DependencyService.Get<IChatServices>();
-            chatModelDbService = DependencyService.Get<IChatModelDbService>();
-
             currentuser = getString("LoginMobileNumber");
 
             _roomName = "Rahul";
 
-            var serviceconnection = getBool("ServiceConnect");
-            if (!serviceconnection)
-            {
-                _chatServices.Connect();
-                setBool("ServiceConnect", true);
-            }
+            _chatServices.Connect();
             _chatServices.OnMessageReceived += _chatServices_OnMessageReceived;
             var chatRecordExist = chatModelDbService.IsChatDbPresentInDB();
             if (chatRecordExist)
