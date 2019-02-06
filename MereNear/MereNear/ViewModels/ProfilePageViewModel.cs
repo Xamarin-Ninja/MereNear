@@ -2,6 +2,8 @@
 using MereNear.Services;
 using MereNear.ViewModels.Common;
 using MereNear.Views;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -18,19 +20,33 @@ namespace MereNear.ViewModels
 	public class ProfilePageViewModel : BaseViewModel, INavigationAware
     {
         #region Private Variables
+        private MediaFile _mediaFile;
         private readonly INavigationService _navigationService;
         private bool _isCertifiedClicked = false;
         private string _personName;
         private string _personMobileNumber;
         private string _certificationText = "GET CERTIFIED";
-
+        private string _cameraPicker = "upload_photo_icon.jpg";
         private string _headerLeftIcon;
         private string _rightIconImage;
+        private bool _isCertificationPopupVisible = false;
         #endregion
+
+       
+
 
         #region Public Variables
         public string lastnavigatedpage = "";
-
+        public string CameraPicker
+        {
+            get { return _cameraPicker; }
+            set { SetProperty(ref _cameraPicker, value); }
+        }
+        public bool IsCertificationPopupVisible
+        {
+            get { return _isCertificationPopupVisible; }
+            set { SetProperty(ref _isCertificationPopupVisible, value); }
+        }
         public string RightIconImage
         {
             get { return _rightIconImage; }
@@ -91,18 +107,30 @@ namespace MereNear.ViewModels
             {
                 return new DelegateCommand(() =>
                 {
-                    IsCertifiedClicked = true;
+                    //IsCertifiedClicked = true;
+                    IsCertificationPopupVisible = true;
                 });
             }
         }
         
+        public ICommand OverlayTapped
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    IsCertificationPopupVisible = false;
+                });
+            }
+        }
         public ICommand CertificationSubmitCommand
         {
             get
             {
                 return new DelegateCommand(() =>
                 {
-                    CertificationText = "CERTIFIED";
+                    CertificationText = "Applied";
+                    IsCertificationPopupVisible = false;
                 });
             }
         }
@@ -119,7 +147,34 @@ namespace MereNear.ViewModels
                 });
             }
         }
+        public ICommand CameraPickerCommand
+        {
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    try
+                    {
+                        var action = await App.Current.MainPage.DisplayActionSheet("Add Photo", "Cancel", null, "Camera", "Gallery");
+                        switch (action)
+                        {
+                            case "Camera":
+                                CameraPicker = await CameraCommand();
+                                break;
+                            case "Gallery":
+                                CameraPicker = await GalleryCommand();
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
 
+                    }
+                });
+            }
+        }
         #endregion
 
         #region Constructor
@@ -130,7 +185,78 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Private Methods
+        private async Task<string> GalleryCommand()
+        {
+            try
+            {
+                if (!CrossMedia.Current.IsPickPhotoSupported)
+                {
+                    await App.Current.MainPage.DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                    return null;
+                }
+                _mediaFile = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                {
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
 
+                });
+
+
+                if (_mediaFile == null)
+                    return null;
+
+                return _mediaFile.Path;
+                //ImagePicker = ImageSource.FromStream(() =>
+                //{
+                //    var stream = _mediaFile.GetStream();
+                //    _mediaFile.Dispose();
+                //    return stream;
+                //});
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        private async Task<string> CameraCommand()
+        {
+            try
+            {
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    await App.Current.MainPage.DisplayAlert("No Camera", ":( No camera available.", "OK");
+                    return null;
+                }
+
+                _mediaFile = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    Directory = "Profile Photo",
+                    SaveToAlbum = true,
+                    PhotoSize = PhotoSize.Medium,
+                    MaxWidthHeight = 2000,
+                    DefaultCamera = CameraDevice.Rear
+                });
+
+
+                if (_mediaFile == null)
+                    return null;
+
+                //await App.Current.MainPage.DisplayAlert("File Location", file.Path, "OK");
+
+
+                return _mediaFile.Path;
+                //CameraPicker = ImageSource.FromStream(() =>
+                // {
+                //     var stream = _mediaFile.GetStream();
+                //     _mediaFile.Dispose();
+                //     return stream;
+                // });
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         #endregion
 
         #region Navigation Parameters

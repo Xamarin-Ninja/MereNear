@@ -136,7 +136,48 @@
                 </Picker>
                 <Image Source="upload_photo_icon.png" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill"/>
             </Grid>-->
+        <BoxView IsVisible="{Binding IsCertificationPopupVisible}" BackgroundColor="Gray" Opacity="0.5" Grid.Row="0" Grid.RowSpan="4">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OverlayTapped}"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <Frame IsVisible="{Binding IsCertificationPopupVisible}" CornerRadius="10" Grid.Row="1" Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White" HeightRequest="390" WidthRequest="250">
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="42"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Upload Id to get certified" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Start" TextColor="Black" Font="12" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold"/>
+                <Label Text="Choose category" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="End" TextColor="Black" Font="10" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                <Image Source="down_arrow_black.png" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" HeightRequest="20" WidthRequest="20"/>
+                <Picker  Grid.Row="2" Grid.Column="0" Title="Choose category" HorizontalOptions="Fill"  VerticalOptions="Center"  TextColor="Gray" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular">
+                    <Picker.Items>
+                        <x:String>Plumber</x:String>
+                        <x:String>Electrician</x:String>
+                        <x:String>Painter</x:String>
+                    </Picker.Items>
+                </Picker>
+                <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="2" Grid.Column="0"/>
 
+                <Label Text="Experience" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start"  VerticalOptions="End" FontSize="10" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                <Entry Placeholder="Type here" Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" Keyboard="Numeric" />
+                <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="2" Grid.Column="1"/>
+
+                <Image x:Name="cameraPicker" Source="{Binding CameraPicker}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Aspect="Fill" HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CameraPickerCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button BackgroundColor="#70DA44" Margin="-20,0,-20,0"  x:Name="NextButton" Text="SUBMIT" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding CertificationSubmitCommand}"/>
+            </Grid>
+        </Frame>
         <!--<show:ShowcaseView x:Name="showview" Margin="-10" Grid.Row="3"/>-->
 
 
