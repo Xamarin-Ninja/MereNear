@@ -1,4 +1,6 @@
-﻿using MereNear.ViewModels;
+﻿using MereNear.Model;
+using MereNear.ViewModels;
+using MereNear.ViewModels.Common;
 using Plugin.Media;
 using System;
 using System.Collections.ObjectModel;
@@ -9,9 +11,35 @@ namespace MereNear.Views
 {
     public partial class EditProfilePage : ContentPage
     {
+        public ObservableCollection<CategoryModel> CategoryList = new ObservableCollection<CategoryModel>();
+        public ObservableCollection<AllCityModel> AllCityModels = new ObservableCollection<AllCityModel>();
         public EditProfilePage()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+
+            var categoryData = BaseViewModel.getData("CategoryListData");
+            foreach (var item in categoryData.data)
+            {
+                CategoryList.Add(new CategoryModel
+                {
+                    CategoryName = item.CategoryName
+                });
+            }
+            AllCityModels.Add(new AllCityModel
+            {
+                CityName = "Mohali"
+            });
+            AllCityModels.Add(new AllCityModel
+            {
+                CityName = "Ambala"
+            });
+            AllCityModels.Add(new AllCityModel
+            {
+                CityName = "Chandigarh"
+            });
+
+            categoryname.ItemsSource = CategoryList;
+            allcityname.ItemsSource = AllCityModels;
 
             _showcase.Add(new ShowcaseListModel
             {

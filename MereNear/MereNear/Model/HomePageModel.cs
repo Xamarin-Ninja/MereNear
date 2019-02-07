@@ -61,4 +61,14 @@ namespace MereNear.Model
 
         public string WorkerInformation { get; set; }
     }
+
+    public class CategoryModel
+    {
+        public string CategoryName { get; set; }
+    }
+
+    public class AllCityModel
+    {
+        public string CityName { get; set; }
+    }
 }

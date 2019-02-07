@@ -63,7 +63,7 @@ namespace MereNear.ViewModels
                                            //GetLoginApi();
                                            var param = new NavigationParameters();
                                            param.Add("LoginPage", MobileNumber);
-                                           userLogin.UserID = MobileNumber;
+                                           userLogin.MobileNumber = MobileNumber;
                                            userDBService.CreateUserModelInDB(userLogin);
                                            await _navigationService.NavigateAsync(nameof(SendOtpPage), param);
                                        }

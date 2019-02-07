@@ -30,6 +30,21 @@ namespace MereNear.Views
                         CurrentPage = Children[1];
                         this.Title = this.CurrentPage.Title;
                     }
+                    else if (sender.Equals("Notifications"))
+                    {
+                        CurrentPage = Children[2];
+                        this.Title = this.CurrentPage.Title;
+                    }
+                    else if (sender.Equals("Messages"))
+                    {
+                        CurrentPage = Children[3];
+                        this.Title = this.CurrentPage.Title;
+                    }
+                    else if (sender.Equals("MyProfile"))
+                    {
+                        CurrentPage = Children[4];
+                        this.Title = this.CurrentPage.Title;
+                    }
                     else
                     {
 

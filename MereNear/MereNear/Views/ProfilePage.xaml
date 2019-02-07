@@ -45,10 +45,10 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Text="Experience" IsVisible="{Binding IsCertifiedClicked}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" FontSize="8" TextColor="Gray"/>
-                                <Label Text="2 years" IsVisible="{Binding IsCertifiedClicked}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="End" TextColor="Black" FontSize="12"/>
+                                <Label Text="{Binding UserModel.TotalExperience,StringFormat=' {0:N} year'}" IsVisible="{Binding IsCertifiedClicked}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="End" TextColor="Black" FontSize="12"/>
                                 <Button x:Name="certifiedButton" Text="{Binding CertificationText}" Grid.Row="0" Grid.Column="2" BackgroundColor="White" HeightRequest="35" WidthRequest="80" FontSize="10" TextColor="#70DA44" BorderWidth="1" BorderColor="#70DA44" HorizontalOptions="Center" VerticalOptions="End" Command="{Binding GetCertifiedClicked}" Padding="0"/>
-                                <Label Text="Pardeep" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="End"/>
-                                <Label Text="Plumber" Grid.Row="2" IsVisible="{Binding IsCertifiedClicked}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Start" FontSize="10" TextColor="Gray"/>
+                                <Label Text="{Binding UserModel.Name}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="End"/>
+                                <Label Text="{Binding UserModel.CategoryName}" Grid.Row="2" IsVisible="{Binding IsCertifiedClicked}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Start" FontSize="10" TextColor="Gray"/>
                                 <StackLayout Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="0,3,0,0">
                                     <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
                                     <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
@@ -56,8 +56,8 @@
                                     <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
                                     <Image Source="star.png" HeightRequest="15" WidthRequest="15"/>
                                 </StackLayout>
-                                <Label Text="Chandigarh(15)" Grid.Row="4" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="Gray"/>
-                                <Label Text="Lorem Ipsum is simply dummy text of the printing and type setting industry." Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="Gray" MaxLines="2" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                <Label Text="{Binding UserModel.CityName}" Grid.Row="4" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="Gray"/>
+                                <Label Text="{Binding UserModel.Description}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12" TextColor="Gray" MaxLines="2" LineBreakMode="TailTruncation" Margin="10,0"/>
                                 <Grid Grid.Row="6" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand" Padding="5,0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="30"/>
@@ -86,7 +86,7 @@
                                 </Grid>
                                 <StackLayout Grid.Row="7" Padding="10,0,0,0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="Start">
                                     <Label Text="Contact No:" FontSize="15" TextColor="Gray"/>
-                                    <Label Text="+1234567890" FontSize="15" TextColor="Black"/>
+                                    <Label Text="{Binding UserModel.MobileNumber,StringFormat='+91{0:N}'}" FontSize="15" TextColor="Black"/>
                                 </StackLayout>
                             </Grid>
                         </Frame>
@@ -167,13 +167,8 @@
                 <Label Text="Upload Id to get certified" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Start" TextColor="Black" Font="12" FontFamily="Poppins-SemiBold.ttf#Poppins SemiBold"/>
                 <Label Text="Choose category" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="End" TextColor="Black" Font="10" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                 <Image Source="down_arrow_black.png" Grid.Row="2" Grid.Column="0" HorizontalOptions="End" HeightRequest="20" WidthRequest="20"/>
-                <Picker  Grid.Row="2" Grid.Column="0" Title="Choose category" HorizontalOptions="Fill"  VerticalOptions="Center"  TextColor="Gray" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular">
-                    <Picker.Items>
-                        <x:String>Plumber</x:String>
-                        <x:String>Electrician</x:String>
-                        <x:String>Painter</x:String>
-                    </Picker.Items>
-                </Picker>
+                <Picker x:Name="categorynamepicker" SelectedItem="{Binding SelectedCategory}" Grid.Row="2" Grid.Column="0" Title="Choose category" HorizontalOptions="Fill"  VerticalOptions="Center"  TextColor="Gray" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" ItemDisplayBinding="{Binding CategoryName}"/>
+
                 <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="2" Grid.Column="0"/>
 
                 <Label Text="Experience" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start"  VerticalOptions="End" FontSize="10" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>

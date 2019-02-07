@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MereNear.Model;
 using MereNear.Services;
 using MereNear.ViewModels.Common;
 using MereNear.Views;
@@ -20,6 +21,8 @@ namespace MereNear.ViewModels
 	public class ProfilePageViewModel : BaseViewModel, INavigationAware
     {
         #region Private Variables
+        private UserModel userModel = new UserModel();
+
         private MediaFile _mediaFile;
         private readonly INavigationService _navigationService;
         private bool _isCertifiedClicked = false;
@@ -33,6 +36,11 @@ namespace MereNear.ViewModels
         #endregion
 
         #region Public Variables
+        public UserModel UserModel
+        {
+            get { return userModel; }
+            set { SetProperty(ref userModel, value); }
+        }
         public string lastnavigatedpage = "";
         public string CameraPicker
         {
@@ -184,9 +192,12 @@ namespace MereNear.ViewModels
             var IsUserDataAvail = userDBService.IsUserDbPresentInDB();
             if (IsUserDataAvail)
             {
-                var data = userDBService.ReadAllItems();
-                var usermodel = data.First();
-                if(usermodel.UserID == "9034114494")
+                var usermodeldata = userDBService.ReadAllItems();
+                foreach(var data in usermodeldata)
+                {
+                    UserModel = data;
+                }
+                if(UserModel.MobileNumber == "9034114494")
                 {
                     CertificationText = "Certified";
                     IsCertifiedClicked = true;

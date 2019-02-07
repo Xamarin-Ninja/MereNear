@@ -43,7 +43,7 @@
 
                     </Grid.RowDefinitions>
                     <Label Text="Name" Grid.Row="0" HorizontalOptions="Start"  VerticalOptions="End" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                    <Entry Placeholder="Type here" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" />
+                    <Entry Placeholder="Enter Name" Text="{Binding UserModel.Name}" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" />
                     <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
                 </Grid>
                 <Grid Grid.Row="3" Margin="20,0" Grid.ColumnSpan="3">
@@ -53,12 +53,12 @@
                     </Grid.RowDefinitions>
                     <Label Text="City" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End" TextColor="Black" Font="12" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                     <Image Source="down_arrow_black.png" Grid.Row="1" HorizontalOptions="End" HeightRequest="20" WidthRequest="20"/>
-                    <Picker  Grid.Row="1" Title="Choose a City" HorizontalOptions="Fill"  VerticalOptions="Center"  TextColor="Gray" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular">
-                        <Picker.Items>
+                    <Picker x:Name="allcityname" SelectedItem="{Binding SelectedCity}" Grid.Row="1" Title="Choose a City" HorizontalOptions="Fill"  VerticalOptions="Center"  TextColor="Gray" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" ItemDisplayBinding="{Binding CityName}">
+                        <!--<Picker.Items>
                             <x:String>Ambala</x:String>
                             <x:String>Mohali</x:String>
                             <x:String>Chandigarh</x:String>
-                        </Picker.Items>
+                        </Picker.Items>-->
                     </Picker>
 
                     <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
@@ -80,7 +80,7 @@
                             <x:String>+93</x:String>
                         </Picker.Items>
                     </Picker>
-                    <Entry  Grid.Column="1" Grid.Row="1" Keyboard="Telephone"  HorizontalOptions="Fill" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" FontSize="12" MaxLength="10"/>
+                    <Entry Grid.Column="1" Text="{Binding UserModel.MobileNumber}" Grid.Row="1" Keyboard="Telephone"  HorizontalOptions="Fill" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" FontSize="12" MaxLength="10" IsEnabled="False"/>
                     <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
                 </Grid>
                 <Grid Grid.Row="5" Margin="20,0" Grid.ColumnSpan="3" >
@@ -90,7 +90,7 @@
 
                     </Grid.RowDefinitions>
                     <Label Text="Description" Grid.Row="0" HorizontalOptions="Start"  VerticalOptions="End" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                    <Editor Placeholder="Type here" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                    <Editor Placeholder="Type here" Text="{Binding UserModel.Description}" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                     <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
                 </Grid>
                 <Grid Grid.Row="6" Margin="20,0" Grid.ColumnSpan="3">
@@ -105,17 +105,17 @@
                     </Grid.ColumnDefinitions>
                     <Label Text="Choose category" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="End" TextColor="Black" Font="12" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
                     <Image Source="down_arrow_black.png" Grid.Row="1" Grid.Column="0" HorizontalOptions="End" HeightRequest="20" WidthRequest="20"/>
-                    <Picker  Grid.Row="1" Grid.Column="0" Title="Choose category" HorizontalOptions="Fill"  VerticalOptions="Center"  TextColor="Gray" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular">
-                        <Picker.Items>
+                    <Picker x:Name="categoryname" SelectedItem="{Binding SelectedCategory}" Grid.Row="1" Grid.Column="0" Title="Choose category" HorizontalOptions="Fill"  VerticalOptions="Center"  TextColor="Gray" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" ItemDisplayBinding="{Binding CategoryName}">
+                        <!--<Picker.Items>
                             <x:String>Plumber</x:String>
                             <x:String>Electrician</x:String>
                             <x:String>Painter</x:String>
-                        </Picker.Items>
+                        </Picker.Items>-->
                     </Picker>
                     <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1" Grid.Column="0"/>
 
                     <Label Text="Experience" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start"  VerticalOptions="End" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                    <Entry Placeholder="Type here" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" Keyboard="Numeric" />
+                    <Entry Placeholder="Type here" Text="{Binding UserModel.TotalExperience}" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" Keyboard="Numeric" />
                     <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1" Grid.Column="1"/>
 
                     <!--<Image x:Name="cameraPicker" Source="{Binding CameraPicker}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Aspect="Fill" HorizontalOptions="Fill" VerticalOptions="Fill">
@@ -145,6 +145,6 @@
                 </Grid>
             </Grid>
         </ScrollView>
-        <Button BackgroundColor="#70DA44" Margin="-20,0,-20,0" x:Name="NextButton" Text="SUBMIT" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="1" Command="{Binding NextButton}"/>
+        <Button BackgroundColor="#70DA44" Margin="-20,0,-20,0" x:Name="NextButton" Text="SUBMIT" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="1" Command="{Binding SubmitButton}"/>
     </Grid>
 </ContentPage>
