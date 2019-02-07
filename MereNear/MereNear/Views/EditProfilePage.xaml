@@ -7,139 +7,144 @@
              xmlns:flv="clr-namespace:CustomFlowListView"
              prism:ViewModelLocator.AutowireViewModel="True" NavigationPage.HasNavigationBar="False"
              x:Class="MereNear.Views.EditProfilePage">
-    <ScrollView>
-        <Grid>
-            <!--BackgroundColor="DarkKhaki"-->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="120"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <common:CustomHeader Grid.Row="0" Grid.ColumnSpan="3" TitleText="Edit Profile"/>
-            <Img:CircleImage Grid.Row="1" Grid.Column="1" Source="{Binding ProfilePicture}" Aspect="Fill" BorderColor="LightGreen" BorderThickness="2" WidthRequest="80" HeightRequest="80" HorizontalOptions="Fill" VerticalOptions="Fill"/>
-            <Image Source="camera" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End" HeightRequest="30" WidthRequest="30">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding EditProfilePictureCommand}"/>
-                </Image.GestureRecognizers>
-            </Image>
-            <Grid Grid.Row="2" Margin="20,0" Grid.ColumnSpan="3">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="0" VerticalOptions="FillAndExpand" Padding="0">
+            <Grid>
+                <!--BackgroundColor="DarkKhaki"-->
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"/>
-                    <RowDefinition Height="6*"/>
-
-                </Grid.RowDefinitions>
-                <Label Text="Name" Grid.Row="0" HorizontalOptions="Start"  VerticalOptions="End" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                <Entry Placeholder="Type here" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" />
-                <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
-            </Grid>
-            <Grid Grid.Row="3" Margin="20,0" Grid.ColumnSpan="3">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"/>
-                    <RowDefinition Height="6*"/>
-                </Grid.RowDefinitions>
-                <Label Text="City" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End" TextColor="Black" Font="12" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                <Image Source="down_arrow_black.png" Grid.Row="1" HorizontalOptions="End" HeightRequest="20" WidthRequest="20"/>
-                <Picker  Grid.Row="1" Title="Choose a City" HorizontalOptions="Fill"  VerticalOptions="Center"  TextColor="Gray" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular">
-                    <Picker.Items>
-                        <x:String>Ambala</x:String>
-                        <x:String>Mohali</x:String>
-                        <x:String>Chandigarh</x:String>
-                    </Picker.Items>
-                </Picker>
-
-                <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
-            </Grid>
-            <Grid Grid.Row="4" Margin="20,0" Grid.ColumnSpan="3">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"/>
-                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="80"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Text="Contact Number" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Start"  VerticalOptions="Start" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                <Picker Title="+91" Margin="0,7,0,0" Grid.Row="1" Grid.Column="0"  TextColor="Gray" FontSize="12" HorizontalOptions="Fill"  VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular">
-                    <Picker.Items>
-                        <x:String>+91</x:String>
-                        <x:String>+92</x:String>
-                        <x:String>+93</x:String>
-                    </Picker.Items>
-                </Picker>
-                <Entry  Grid.Column="1" Grid.Row="1" Keyboard="Telephone"  HorizontalOptions="Fill" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" FontSize="12" MaxLength="10"/>
-                <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
-            </Grid>
-            <Grid Grid.Row="5" Margin="20,0" Grid.ColumnSpan="3" >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"/>
-                    <RowDefinition Height="6*"/>
+                <common:CustomHeader Grid.Row="0" Grid.ColumnSpan="3" TitleText="Edit Profile"/>
+                <Img:CircleImage Grid.Row="1" Grid.Column="1" Source="{Binding ProfilePicture}" Aspect="Fill" BorderColor="LightGreen" BorderThickness="2" WidthRequest="80" HeightRequest="80" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                <Image Source="camera" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End" HeightRequest="30" WidthRequest="30">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding EditProfilePictureCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Grid Grid.Row="2" Margin="20,0" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="6*"/>
 
-                </Grid.RowDefinitions>
-                <Label Text="Description" Grid.Row="0" HorizontalOptions="Start"  VerticalOptions="End" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                <Editor Placeholder="Type here" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="StartAndExpand" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
-            </Grid>
+                    </Grid.RowDefinitions>
+                    <Label Text="Name" Grid.Row="0" HorizontalOptions="Start"  VerticalOptions="End" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                    <Entry Placeholder="Type here" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" />
+                    <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
+                </Grid>
+                <Grid Grid.Row="3" Margin="20,0" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="6*"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="City" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End" TextColor="Black" Font="12" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                    <Image Source="down_arrow_black.png" Grid.Row="1" HorizontalOptions="End" HeightRequest="20" WidthRequest="20"/>
+                    <Picker  Grid.Row="1" Title="Choose a City" HorizontalOptions="Fill"  VerticalOptions="Center"  TextColor="Gray" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular">
+                        <Picker.Items>
+                            <x:String>Ambala</x:String>
+                            <x:String>Mohali</x:String>
+                            <x:String>Chandigarh</x:String>
+                        </Picker.Items>
+                    </Picker>
 
-            <Grid Grid.Row="6" Margin="20,0" Grid.ColumnSpan="3">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="28"/>
-                    <RowDefinition Height="42"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="40"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="4*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Choose category" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="End" TextColor="Black" Font="12" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                <Image Source="down_arrow_black.png" Grid.Row="1" Grid.Column="0" HorizontalOptions="End" HeightRequest="20" WidthRequest="20"/>
-                <Picker  Grid.Row="1" Grid.Column="0" Title="Choose category" HorizontalOptions="Fill"  VerticalOptions="Center"  TextColor="Gray" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular">
-                    <Picker.Items>
-                        <x:String>Plumber</x:String>
-                        <x:String>Electrician</x:String>
-                        <x:String>Painter</x:String>
-                    </Picker.Items>
-                </Picker>
-                <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1" Grid.Column="0"/>
+                    <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
+                </Grid>
+                <Grid Grid.Row="4" Margin="20,0" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="6*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Contact Number" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Start"  VerticalOptions="Start" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                    <Picker Title="+91" Margin="0,7,0,0" Grid.Row="1" Grid.Column="0"  TextColor="Gray" FontSize="12" HorizontalOptions="Fill"  VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular">
+                        <Picker.Items>
+                            <x:String>+91</x:String>
+                            <x:String>+92</x:String>
+                            <x:String>+93</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Entry  Grid.Column="1" Grid.Row="1" Keyboard="Telephone"  HorizontalOptions="Fill" VerticalOptions="Center" FontFamily="Poppins-Regular.ttf#Poppins Regular" FontSize="12" MaxLength="10"/>
+                    <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                </Grid>
+                <Grid Grid.Row="5" Margin="20,0" Grid.ColumnSpan="3" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="6*"/>
 
-                <Label Text="Experience" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start"  VerticalOptions="End" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
-                <Entry Placeholder="Type here" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" Keyboard="Numeric" />
-                <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1" Grid.Column="1"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Description" Grid.Row="0" HorizontalOptions="Start"  VerticalOptions="End" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                    <Editor Placeholder="Type here" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                    <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1"/>
+                </Grid>
+                <Grid Grid.Row="6" Margin="20,0" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="28"/>
+                        <RowDefinition Height="42"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Choose category" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="End" TextColor="Black" Font="12" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                    <Image Source="down_arrow_black.png" Grid.Row="1" Grid.Column="0" HorizontalOptions="End" HeightRequest="20" WidthRequest="20"/>
+                    <Picker  Grid.Row="1" Grid.Column="0" Title="Choose category" HorizontalOptions="Fill"  VerticalOptions="Center"  TextColor="Gray" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular">
+                        <Picker.Items>
+                            <x:String>Plumber</x:String>
+                            <x:String>Electrician</x:String>
+                            <x:String>Painter</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1" Grid.Column="0"/>
 
-                <!--<Image x:Name="cameraPicker" Source="{Binding CameraPicker}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Aspect="Fill" HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <Label Text="Experience" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start"  VerticalOptions="End" FontSize="12" TextColor="Black" FontFamily="Poppins-Regular.ttf#Poppins Regular"/>
+                    <Entry Placeholder="Type here" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" FontSize="12" FontFamily="Poppins-Regular.ttf#Poppins Regular" Keyboard="Numeric" />
+                    <BoxView BackgroundColor="Black" HeightRequest="0.5" VerticalOptions="End" Grid.Row="1" Grid.Column="1"/>
+
+                    <!--<Image x:Name="cameraPicker" Source="{Binding CameraPicker}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Aspect="Fill" HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding CameraPickerCommand}"/>
                     </Image.GestureRecognizers>
                 </Image>-->
-                <Grid Grid.Row="2" Margin="20,0" Grid.ColumnSpan="2" IsVisible="{Binding IsCertifiedUser}" >
-                    <!--BackgroundColor="Red"-->
-                    <flv:FlowListView x:Name="showcaseList" FlowItemTapped="SelectedItemTap" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="True" FlowItemsSource="{Binding Showcase}"> <!--BackgroundColor="Blue"-->
-                          
-                        <flv:FlowListView.FlowColumnTemplate>
-                            <DataTemplate>
-                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="100"/>
-                                    </Grid.RowDefinitions>
-                                    <Image Grid.Row="0" Source="{Binding ShowcaseImages}" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Aspect="Fill" />
-                                </Grid>
-                            </DataTemplate>
-                        </flv:FlowListView.FlowColumnTemplate>
+                    <Grid Grid.Row="2" Margin="20,0" Grid.ColumnSpan="2" IsVisible="{Binding IsCertifiedUser}" >
+                        <!--BackgroundColor="Red"-->
+                        <flv:FlowListView x:Name="showcaseList" FlowItemTapped="SelectedItemTap" FlowColumnCount="2" SeparatorVisibility="None" HasUnevenRows="True" FlowItemsSource="{Binding Showcase}">
+                            <!--BackgroundColor="Blue"-->
 
-                    </flv:FlowListView>
+                            <flv:FlowListView.FlowColumnTemplate>
+                                <DataTemplate>
+                                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="100"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Grid.Row="0" Source="{Binding ShowcaseImages}" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" Aspect="Fill" />
+                                    </Grid>
+                                </DataTemplate>
+                            </flv:FlowListView.FlowColumnTemplate>
+
+                        </flv:FlowListView>
+                    </Grid>
+
                 </Grid>
-                <Button BackgroundColor="#70DA44" Margin="-20,0,-20,0" x:Name="NextButton" Text="SUBMIT" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="3" Grid.ColumnSpan="2" Command="{Binding NextButton}"/>
             </Grid>
-        </Grid>
-    </ScrollView>
+        </ScrollView>
+        <Button BackgroundColor="#70DA44" Margin="-20,0,-20,0" x:Name="NextButton" Text="SUBMIT" TextColor="White" FontFamily="Poppins-Regular.ttf#Poppins Regular" HorizontalOptions="FillAndExpand" VerticalOptions="End" HeightRequest="40" Grid.Row="1" Command="{Binding NextButton}"/>
+    </Grid>
 </ContentPage>
