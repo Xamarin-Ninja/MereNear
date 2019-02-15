@@ -14,6 +14,7 @@ namespace MereNear.Services.ApiService.Common
     {
         private readonly JsonSerializerSettings _jsonSettings;
         Uri baseUri = new Uri("http://peertechnologies.in/Mnear/Merenear/");
+        Uri baseUri2 = new Uri("https://merenearapi.herokuapp.com/");
         public WebApiRestClient()
         {
             _jsonSettings = new JsonSerializerSettings
@@ -31,8 +32,16 @@ namespace MereNear.Services.ApiService.Common
         HttpClient client = new HttpClient();
 
         public async Task<TResponse> GetAsync<TResponse>(string action)
-        {            
-            Uri uri = new Uri(baseUri, action);
+        {
+            Uri uri;
+            if(action == "getCountryCode")
+            {
+                uri = new Uri(baseUri2, action);
+            }
+            else
+            {
+                uri = new Uri(baseUri, action);
+            }
             try
             {
                 //UserDialogs.Instance.ShowLoading("Loading Data...");

@@ -7,7 +7,11 @@ using Prism;
 using Prism.Ioc;
 using UIKit;
 using Xamarin;
+using Plugin.FirebasePushNotification;
 using Xamarin.Forms;
+using System;
+using Plugin.FirebasePushNotification.Abstractions;
+using UserNotifications;
 
 namespace MereNear.iOS
 {
@@ -33,10 +37,42 @@ namespace MereNear.iOS
             App.ScreenHeight = (int)UIScreen.MainScreen.Bounds.Height;
             App.ScreenWidth = (int)UIScreen.MainScreen.Bounds.Width;
             UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(111, 218, 68);
+            
             LoadApplication(new App(new iOSInitializer()));
-           
+            FirebasePushNotificationManager.Initialize(options, true);
+            FirebasePushNotificationManager.CurrentNotificationPresentationOption = UNNotificationPresentationOptions.Alert | UNNotificationPresentationOptions.Badge;
             return base.FinishedLaunching(app, options);
         }
+        public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+        {
+            FirebasePushNotificationManager.DidRegisterRemoteNotifications(deviceToken);
+        }
+
+        public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
+        {
+            FirebasePushNotificationManager.RemoteNotificationRegistrationFailed(error);
+
+        }
+        // To receive notifications in foregroung on iOS 9 and below.
+        // To receive notifications in background in any iOS version
+        public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
+        {
+            // If you are receiving a notification message while your app is in the background,
+            // this callback will not be fired 'till the user taps on the notification launching the application.
+
+            // If you disable method swizzling, you'll need to call this method. 
+            // This lets FCM track message delivery and analytics, which is performed
+            // automatically with method swizzling enabled.
+            FirebasePushNotificationManager.DidReceiveMessage(userInfo);
+            // Do your magic to handle the notification data
+            System.Console.WriteLine(userInfo);
+
+            completionHandler(UIBackgroundFetchResult.NewData);
+        }
+        event FirebasePushNotificationTokenEventHandler OnTokenRefresh;
+        event FirebasePushNotificationResponseEventHandler OnNotificationReceived;
+        event FirebasePushNotificationResponseEventHandler OnNotificationOpened;
+        event FirebasePushNotificationErrorEventHandler OnNotificationError;
     }
 
     public class iOSInitializer : IPlatformInitializer

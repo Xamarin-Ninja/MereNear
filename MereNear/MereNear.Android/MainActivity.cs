@@ -7,6 +7,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using FFImageLoading.Forms.Droid;
+using FFImageLoading.Svg.Forms;
 using ImageCircle.Forms.Plugin.Droid;
 using Plugin.Permissions;
 using Prism;
@@ -36,6 +38,8 @@ namespace MereNear.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             ImageCircleRenderer.Init();
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, bundle);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+            
             FormsMaps.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));
 

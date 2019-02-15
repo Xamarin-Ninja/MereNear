@@ -64,11 +64,17 @@
 	<array>
 		<string>w</string>
 	</array>
-	<key>CFBundleIdentifier</key>
-	<string>com.companyname.appname</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcons.appiconset</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
+	<key>CFBundleIdentifier</key>
+	<string>com.qservices.merenear</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
 </dict>
 </plist>
